@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{bb55a80d-f36c-422e-b74e-481368cc47e4}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{155757d0-20bd-42e4-96b2-88b5311eefff}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Excel-Sheets">
+      <UniqueIdentifier>{a350d992-1758-4a3a-ac42-46a4f52a037a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Macros">
+      <UniqueIdentifier>{0a68b4bd-b588-4c7b-bf7e-647d179b2026}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IDL Files">
+      <UniqueIdentifier>{76726c96-62d7-4370-94b4-68964ddeab2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{cd3a4ea1-e9b1-4dcc-a59b-407c62bc0d16}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cCBS_StdConnection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdCORBA_Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdDB_Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdEvent_Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdEventHandlerAdapter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdEventLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdEventLogCyclicReminder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdEventLogFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdEventLogFrame_DestCodes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdEventLogFrameController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdFrame_Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdFrame_Server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdFrame_Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdFrame_TaskController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdInitBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdLog_Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdLogHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdLogHandlerAdapter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdMutex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdMutexHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdEventHandler_Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdEventSender_Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdCORBA_ServerTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCBS_StdCORBA_ClientTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CBS_Component_dynSK.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CBS_Component_s.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CBS_Tasks_dynSK.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CBS_Tasks_s.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CBS_Common_dynSK.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CBS_Common_s.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CBS_Activation_dynSK.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CBS_Activation_s.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cCBS_StdConnection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdCORBA_Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdDB_Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdEvent_Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdEventHandlerAdapter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdEventLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdEventLogCyclicReminder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdEventLogFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdEventLogFrame_DestCodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdEventLogFrameController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdFrame_Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdFrame_Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdFrame_Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdFrame_TaskController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdInitBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdLog_Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdLogHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdLogHandlerAdapter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdMutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdMutexHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdEventHandler_Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdEventSender_Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdCORBA_ServerTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCBS_StdCORBA_ClientTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cCBS_StdEventLogFrame.xls">
+      <Filter>Excel-Sheets</Filter>
+    </None>
+    <None Include="Macros.xls">
+      <Filter>Macros</Filter>
+    </None>
+    <None Include="CBS_Component_s.hh">
+      <Filter>Generated Files</Filter>
+    </None>
+    <None Include="CBS_Tasks_s.hh">
+      <Filter>Generated Files</Filter>
+    </None>
+    <None Include="CBS_Common_s.hh">
+      <Filter>Generated Files</Filter>
+    </None>
+    <None Include="CBS_Activation_s.hh">
+      <Filter>Generated Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\packages\CBS\include\CBS_Tasks\CBS_Activation.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\packages\CBS\include\CBS_Tasks\CBS_Common.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\packages\CBS\include\CBS_Tasks\CBS_Component.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\packages\CBS\include\CBS_Tasks\CBS_Tasks.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

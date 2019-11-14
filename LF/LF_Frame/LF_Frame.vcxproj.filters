@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>hh;h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{40b4938e-f6db-447a-a7cf-e363cb1b6642}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IDL Files">
+      <UniqueIdentifier>{be4a482f-e904-47ce-a491-4776ac2b54df}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CLFAnalysisEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFAnalysisHandlingWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFBottomStirringWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFCeloxMeasurementWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFChangePhysicalMaterialAvailibilityWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFCyclicMeasurementWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFElectricSignalsWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFLiquidMaterialsHandlingWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFManualMaterialBatchWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFMaterialHandlingEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFModelResultWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFModelStatusEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFModelStatusWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFModelTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFModelTestResultWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFMODELWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFModesAndAvailibilitiesEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFModesandAvailibilitiesWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFPurposeEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFPurposeHandlingWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFRoofPositionWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFSignalsAndMeasurementEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFSolidMaterialsHandlingWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFTemperaturMeasurementWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFTreatmentManagerDataWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLFTreatmentManagerEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iDM_Interface_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iSMC_DataProvider_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iSMC_DataProvider_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iSMC_DataDefinitions_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iSMC_DataDefinitions_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iModelResults_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iModelResults_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iEventMessages_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iEventMessages_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iDM_Interface_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CLFAnalysisEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFAnalysisHandlingWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFBottomStirringWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFCeloxMeasurementWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFChangePhysicalMaterialAvailibilityWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFCyclicMeasurementWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFElectricSignalsWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFLiquidMaterialsHandlingWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFManualMaterialBatchWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFMaterialHandlingEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFModelResultWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFModelStatusEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFModelStatusWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFModelTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFModelTestResultWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFMODELWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFModesAndAvailibilitiesEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFModesandAvailibilitiesWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFPurposeEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFPurposeHandlingWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFRoofPositionWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFSignalsAndMeasurementEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFSolidMaterialsHandlingWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFTemperaturMeasurementWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFTreatmentManagerDataWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLFTreatmentManagerEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\SMC_Frame\iSMC_DataProvider.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\SMC_Frame\iSMC_DataDefinitions.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\SMC_Frame\iModelResults.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\SMC_Frame\iEventMessages.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\DM\DM_Interface\iDM_Interface.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iSMC_DataProvider_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="iSMC_DataDefinitions_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="iModelResults_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="iEventMessages_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="iDM_Interface_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+  </ItemGroup>
+</Project>

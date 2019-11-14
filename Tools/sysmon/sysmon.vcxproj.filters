@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2a50510e-a62c-4ffa-b154-35c473262e93}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{b3ddd8f4-0ddc-4c37-aa20-a3971787624d}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Idl">
+      <UniqueIdentifier>{a05e5861-6b37-4ef0-b007-29c1782a6738}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{77cd189f-c35f-4922-bd67-d6bf82f90405}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProC/C++">
+      <UniqueIdentifier>{0dad27ba-ecac-4017-b18d-10333b36fe9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="INI Files">
+      <UniqueIdentifier>{41bde3a5-a78a-4d52-a634-9bb993a834e6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CSYSMON_Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intrfimpl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LastResponse.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CSYSMON_Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="intrfimpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LastResponse.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\cfg\Tools\SysMon.ini">
+      <Filter>INI Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="LastResponse.idl">
+      <Filter>Idl</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

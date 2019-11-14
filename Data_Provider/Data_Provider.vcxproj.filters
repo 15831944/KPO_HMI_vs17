@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{233ed326-0d80-4eda-b0ba-f2b1b0a9f9a7}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7c1491f3-a267-4904-9bee-9d9215ff194e}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;hh</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{c9fe853e-094c-40b5-bc3e-e912e1205fca}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Forms">
+      <UniqueIdentifier>{40f476ee-c7e2-43e1-9147-419b4776e61b}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="IDL Files">
+      <UniqueIdentifier>{76e9fa40-096a-48d3-b68f-0e9a95dc84cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{d3aaf423-f761-40e7-832a-8d71a8001996}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CData_Provider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CData_Provider_Critical_Section.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CData_Provider_Impl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CData_Provider_RuntimeController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataAny.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataBoolean.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataDouble.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataElement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataLong.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataRuleSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataRuleValidator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataRuleValidatorAny.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataRuleValidatorDouble.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataRuleValidatorLong.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataRuleValidatorString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntfDataValidator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iData_Provider_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iData_Provider_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CData_Provider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CData_Provider_Critical_Section.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CData_Provider_Impl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CData_Provider_RuntimeController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataAny.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataBoolean.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataDouble.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataElement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataLong.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataRuleSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataRuleValidator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataRuleValidatorAny.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataRuleValidatorDouble.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataRuleValidatorLong.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataRuleValidatorString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntfDataValidator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="iData_Provider.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iData_Provider_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+  </ItemGroup>
+</Project>

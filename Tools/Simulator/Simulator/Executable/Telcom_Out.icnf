@@ -1,0 +1,732 @@
+<?xml version="1.0"?>
+<Telcom_Out>
+  <TelegramId TelId="Head" ElemId="MessageId" TypId="Integer" LenId="MessageLength" LenTreat="Total Length">
+    <HDL200>
+    </HDL200>
+    <Head>
+    </Head>
+    <L2EA00>
+    </L2EA00>
+    <L2EA01>
+    </L2EA01>
+    <L2EA01_WATCH_DOG>
+    </L2EA01_WATCH_DOG>
+    <L2EA03>
+    </L2EA03>
+    <L2EA05>
+    </L2EA05>
+    <L2EA06>
+    </L2EA06>
+    <L2EA07>
+    </L2EA07>
+    <L2EA20>
+    </L2EA20>
+    <L2EA23>
+    </L2EA23>
+    <L2EA30>
+    </L2EA30>
+    <L2EA31>
+    </L2EA31>
+    <L2EA32>
+    </L2EA32>
+    <L2EA40>
+    </L2EA40>
+    <L2EA40_PROC_PATT>
+    </L2EA40_PROC_PATT>
+    <L2EA41>
+    </L2EA41>
+    <L2EA41_PROC_VALUES>
+    </L2EA41_PROC_VALUES>
+    <L2EA42>
+    </L2EA42>
+    <L2EA70>
+    </L2EA70>
+    <L2EA70_MAT_HANDL>
+    </L2EA70_MAT_HANDL>
+    <L2EA71>
+    </L2EA71>
+    <L2EA72>
+    </L2EA72>
+    <L2HD01>2001</L2HD01>
+    <L2HD01_WATCH_DOG>
+    </L2HD01_WATCH_DOG>
+    <L2HD03>2003</L2HD03>
+    <L2HD06>2006</L2HD06>
+    <L2HD07>2007</L2HD07>
+    <L2HD25>2025</L2HD25>
+    <L2HD30>2030</L2HD30>
+    <L2HD71>2071</L2HD71>
+    <L2HD72>2072</L2HD72>
+    <L2LF00>
+    </L2LF00>
+    <L2LF01>
+    </L2LF01>
+    <L2LF01_WATCH_DOG>
+    </L2LF01_WATCH_DOG>
+    <L2LF03>
+    </L2LF03>
+    <L2LF05>
+    </L2LF05>
+    <L2LF06>
+    </L2LF06>
+    <L2LF07>
+    </L2LF07>
+    <L2LF20>
+    </L2LF20>
+    <L2LF20_VOLTAGE_TAP>
+    </L2LF20_VOLTAGE_TAP>
+    <L2LF22>
+    </L2LF22>
+    <L2LF23>
+    </L2LF23>
+    <L2LF25>
+    </L2LF25>
+    <L2LF30>
+    </L2LF30>
+    <L2LF30_ELEC_PATT>
+    </L2LF30_ELEC_PATT>
+    <L2LF31>
+    </L2LF31>
+    <L2LF31_STIRR_PATT>
+    </L2LF31_STIRR_PATT>
+    <L2LF40>
+    </L2LF40>
+    <L2LF70>
+    </L2LF70>
+    <L2LF70_MAT_HANDL>
+    </L2LF70_MAT_HANDL>
+    <L2LF71>
+    </L2LF71>
+    <L2LF72>
+    </L2LF72>
+    <L2SY91>
+    </L2SY91>
+    <L2SY91_WATCH_DOG>
+    </L2SY91_WATCH_DOG>
+    <L2SY92>
+    </L2SY92>
+    <L2SY92_SCRAP_LOAD>
+    </L2SY92_SCRAP_LOAD>
+    <L2SY95>
+    </L2SY95>
+    <L2SY95_SCRAP_MAT>
+    </L2SY95_SCRAP_MAT>
+    <SMCCCS01>
+    </SMCCCS01>
+    <SMCCCS02>
+    </SMCCCS02>
+    <SMCL301>
+    </SMCL301>
+    <SMCL302>
+    </SMCL302>
+    <SMCL311>
+    </SMCL311>
+    <SMCL320>
+    </SMCL320>
+    <SMCL323>
+    </SMCL323>
+    <SMCL324>
+    </SMCL324>
+    <SMCL325>
+    </SMCL325>
+    <SMCL340>
+    </SMCL340>
+    <SMCLAB01>
+    </SMCLAB01>
+    <SMCLAB02>
+    </SMCLAB02>
+    <SMCLAB03>
+    </SMCLAB03>
+    <SYL200>
+    </SYL200>
+  </TelegramId>
+  <LogFile>
+    <Date>YYYY-MM-DD</Date>
+    <Time>HH:MM:SS.mm</Time>
+    <Separator>|</Separator>
+  </LogFile>
+  <Transport Swapping="NotSwapping" PaddingDir="Left" PaddingStr="" />
+  <Limit>NotTreat</Limit>
+  <ArrayView>
+    <CreateTime tel="L2EA01" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <CreateTime tel="L2EA03" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <ProdDate tel="L2EA03" count="8">
+      <Row1>Not Name</Row1>
+    </ProdDate>
+    <TapStartTime tel="L2EA03" count="8">
+      <Row1>Not Name</Row1>
+    </TapStartTime>
+    <HMLadleId tel="L2EA03" count="3">
+      <Row1>Not Name</Row1>
+    </HMLadleId>
+    <HMWeight tel="L2EA03" count="3">
+      <Row1>Not Name</Row1>
+    </HMWeight>
+    <ContainerNo tel="L2EA03" count="3">
+      <Row1>Not Name</Row1>
+    </ContainerNo>
+    <ContainerMatWeight tel="L2EA03" count="3">
+      <Row1>Not Name</Row1>
+    </ContainerMatWeight>
+    <Spare tel="L2EA03" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2EA05" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <PhaseNo tel="L2EA05" count="25">
+      <Row1>Not Name</Row1>
+    </PhaseNo>
+    <PhaseType tel="L2EA05" count="25">
+      <Row1>Not Name</Row1>
+    </PhaseType>
+    <BurnerStepSpecEgy tel="L2EA05" count="25">
+      <Row1>Not Name</Row1>
+    </BurnerStepSpecEgy>
+    <BurnerElecEnergyTotal tel="L2EA05" count="25">
+      <Row1>Not Name</Row1>
+    </BurnerElecEnergyTotal>
+    <FlameProfile_Burner_1 tel="L2EA05" count="25">
+      <Row1>Not Name</Row1>
+    </FlameProfile_Burner_1>
+    <FlameProfile_Burner_2 tel="L2EA05" count="25">
+      <Row1>Not Name</Row1>
+    </FlameProfile_Burner_2>
+    <FlameProfile_Burner_3 tel="L2EA05" count="25">
+      <Row1>Not Name</Row1>
+    </FlameProfile_Burner_3>
+    <FlameProfile_Burner_4 tel="L2EA05" count="25">
+      <Row1>Not Name</Row1>
+    </FlameProfile_Burner_4>
+    <FlameProfile_Burner_5 tel="L2EA05" count="25">
+      <Row1>Not Name</Row1>
+    </FlameProfile_Burner_5>
+    <Spare tel="L2EA05" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2EA06" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2EA06" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2EA07" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2EA07" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2EA20" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2EA20" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2EA23" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2EA23" count="4">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2EA30" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <RemDurStep tel="L2EA30" count="10">
+      <Row1>Not Name</Row1>
+    </RemDurStep>
+    <ElecEnergyStep tel="L2EA30" count="10">
+      <Row1>Not Name</Row1>
+    </ElecEnergyStep>
+    <TempEndStep tel="L2EA30" count="10">
+      <Row1>Not Name</Row1>
+    </TempEndStep>
+    <AimVoltTap tel="L2EA30" count="10">
+      <Row1>Not Name</Row1>
+    </AimVoltTap>
+    <AimCurveNo tel="L2EA30" count="10">
+      <Row1>Not Name</Row1>
+    </AimCurveNo>
+    <Spare tel="L2EA30" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2EA31" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <ElecEnergyStep tel="L2EA31" count="10">
+      <Row1>Not Name</Row1>
+    </ElecEnergyStep>
+    <MatFlowRate tel="L2EA31" count="10">
+      <Row1>Not Name</Row1>
+    </MatFlowRate>
+    <Spare tel="L2EA31" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2EA32" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <PhaseNo tel="L2EA32" count="25">
+      <Row1>Not Name</Row1>
+    </PhaseNo>
+    <PhaseType tel="L2EA32" count="25">
+      <Row1>Not Name</Row1>
+    </PhaseType>
+    <InjectorNo tel="L2EA32" count="25">
+      <Row1>Not Name</Row1>
+    </InjectorNo>
+    <ElecEnergyStep tel="L2EA32" count="25">
+      <Row1>Not Name</Row1>
+    </ElecEnergyStep>
+    <ElecEnergyTotal tel="L2EA32" count="25">
+      <Row1>Not Name</Row1>
+    </ElecEnergyTotal>
+    <RatioCarbDust tel="L2EA32" count="25">
+      <Row1>Not Name</Row1>
+    </RatioCarbDust>
+    <MatFlowRate tel="L2EA32" count="25">
+      <Row1>Not Name</Row1>
+    </MatFlowRate>
+    <Spare tel="L2EA32" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2EA40" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <PhaseNo tel="L2EA40" count="25">
+      <Row1>Not Name</Row1>
+    </PhaseNo>
+    <PhaseType tel="L2EA40" count="25">
+      <Row1>Not Name</Row1>
+    </PhaseType>
+    <AimVoltTap tel="L2EA40" count="25">
+      <Row1>Not Name</Row1>
+    </AimVoltTap>
+    <AimCurveNo tel="L2EA40" count="25">
+      <Row1>Not Name</Row1>
+    </AimCurveNo>
+    <Spare tel="L2EA40" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <ENTRY tel="L2EA40_PROC_PATT" count="25">
+      <Row1>Not Name</Row1>
+    </ENTRY>
+    <CreateTime tel="L2EA41" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2EA41" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2EA42" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2EA42" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2EA70" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <MatCode tel="L2EA70" count="10">
+      <Row1>Not Name</Row1>
+    </MatCode>
+    <MatWeight tel="L2EA70" count="10">
+      <Row1>Not Name</Row1>
+    </MatWeight>
+    <MatSequence tel="L2EA70" count="10">
+      <Row1>Not Name</Row1>
+    </MatSequence>
+    <FeedRate tel="L2EA70" count="10">
+      <Row1>Not Name</Row1>
+    </FeedRate>
+    <Spare tel="L2EA70" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <ENTRY tel="L2EA70_MAT_HANDL" count="300">
+      <Row1>Not Name</Row1>
+    </ENTRY>
+    <CreateTime tel="L2EA71" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2EA71" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2EA72" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2EA72" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2HD01" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <CreateTime tel="L2HD03" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <ProdDate tel="L2HD03" count="8">
+      <Row1>Not Name</Row1>
+    </ProdDate>
+    <DepTime tel="L2HD03" count="8">
+      <Row1>Not Name</Row1>
+    </DepTime>
+    <CreateTime tel="L2HD06" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <CreateTime tel="L2HD07" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <CreateTime tel="L2HD25" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <CreateTime tel="L2HD30" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <PhaseEnabled tel="L2HD30" count="5">
+      <Row1>Not Name</Row1>
+    </PhaseEnabled>
+    <PhaseDuration tel="L2HD30" count="5">
+      <Row1>Not Name</Row1>
+    </PhaseDuration>
+    <MatCode tel="L2HD30" count="6">
+      <Row1>Not Name</Row1>
+    </MatCode>
+    <Weight tel="L2HD30" count="6">
+      <Row1>Not Name</Row1>
+    </Weight>
+    <InjectionRate tel="L2HD30" count="6">
+      <Row1>Not Name</Row1>
+    </InjectionRate>
+    <CreateTime tel="L2HD71" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <CreateTime tel="L2HD72" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <CreateTime tel="L2LF01" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <CreateTime tel="L2LF03" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <ProdDate tel="L2LF03" count="8">
+      <Row1>Not Name</Row1>
+    </ProdDate>
+    <DepTime tel="L2LF03" count="8">
+      <Row1>Not Name</Row1>
+    </DepTime>
+    <Spare tel="L2LF03" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2LF05" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2LF05" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2LF06" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2LF06" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2LF07" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2LF07" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2LF20" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2LF20" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2LF22" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2LF22" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2LF23" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2LF23" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2LF25" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2LF25" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2LF30" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Enabled tel="L2LF30" count="7">
+      <Row1>Not Name</Row1>
+    </Enabled>
+    <RemDurStep tel="L2LF30" count="7">
+      <Row1>Not Name</Row1>
+    </RemDurStep>
+    <ElecEnergyStep tel="L2LF30" count="7">
+      <Row1>Not Name</Row1>
+    </ElecEnergyStep>
+    <TempEndStep tel="L2LF30" count="7">
+      <Row1>Not Name</Row1>
+    </TempEndStep>
+    <AimVoltTap tel="L2LF30" count="7">
+      <Row1>Not Name</Row1>
+    </AimVoltTap>
+    <AimCurveNo tel="L2LF30" count="7">
+      <Row1>Not Name</Row1>
+    </AimCurveNo>
+    <Spare tel="L2LF30" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <ENTRY tel="L2LF30_ELEC_PATT" count="7">
+      <Row1>Not Name</Row1>
+    </ENTRY>
+    <CreateTime tel="L2LF31" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <PhaseNo tel="L2LF31" count="20">
+      <Row1>Not Name</Row1>
+    </PhaseNo>
+    <Enabled tel="L2LF31" count="20">
+      <Row1>Not Name</Row1>
+    </Enabled>
+    <Duration tel="L2LF31" count="20">
+      <Row1>Not Name</Row1>
+    </Duration>
+    <StirrInt tel="L2LF31" count="20">
+      <Row1>Not Name</Row1>
+    </StirrInt>
+    <StirrGasFlow tel="L2LF31" count="20">
+      <Row1>Not Name</Row1>
+    </StirrGasFlow>
+    <StirrGasType tel="L2LF31" count="20">
+      <Row1>Not Name</Row1>
+    </StirrGasType>
+    <StepPriority tel="L2LF31" count="20">
+      <Row1>Not Name</Row1>
+    </StepPriority>
+    <Spare tel="L2LF31" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <ENTRY tel="L2LF31_STIRR_PATT" count="20">
+      <Row1>Not Name</Row1>
+    </ENTRY>
+    <CreateTime tel="L2LF40" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <ParamName tel="L2LF40" count="5">
+      <Row1>Not Name</Row1>
+    </ParamName>
+    <ParamValue tel="L2LF40" count="5">
+      <Row1>Not Name</Row1>
+    </ParamValue>
+    <Spare tel="L2LF40" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2LF70" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <MatCode tel="L2LF70" count="10">
+      <Row1>Not Name</Row1>
+    </MatCode>
+    <MatWeight tel="L2LF70" count="10">
+      <Row1>Not Name</Row1>
+    </MatWeight>
+    <MatSequence tel="L2LF70" count="10">
+      <Row1>Not Name</Row1>
+    </MatSequence>
+    <FeedRate tel="L2LF70" count="10">
+      <Row1>Not Name</Row1>
+    </FeedRate>
+    <Spare tel="L2LF70" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <ENTRY tel="L2LF70_MAT_HANDL" count="300">
+      <Row1>Not Name</Row1>
+    </ENTRY>
+    <CreateTime tel="L2LF71" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2LF71" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2LF72" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Spare tel="L2LF72" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="L2SY91" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <CreateTime tel="L2SY92" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <MatCode tel="L2SY92" count="10">
+      <Row1>Not Name</Row1>
+    </MatCode>
+    <MatWeight tel="L2SY92" count="10">
+      <Row1>Not Name</Row1>
+    </MatWeight>
+    <MatLoadSeq tel="L2SY92" count="10">
+      <Row1>Not Name</Row1>
+    </MatLoadSeq>
+    <Spare tel="L2SY92" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <ENTRY tel="L2SY92_SCRAP_LOAD" count="10">
+      <Row1>Not Name</Row1>
+    </ENTRY>
+    <CreateTime tel="L2SY95" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <MatCode tel="L2SY95" count="20">
+      <Row1>Not Name</Row1>
+    </MatCode>
+    <MatDescr tel="L2SY95" count="20">
+      <Row1>Not Name</Row1>
+    </MatDescr>
+    <Spare tel="L2SY95" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <ENTRY tel="L2SY95_SCRAP_MAT" count="20">
+      <Row1>Not Name</Row1>
+    </ENTRY>
+    <DateTime tel="SMCCCS01" count="8">
+      <Row1>Not Name</Row1>
+    </DateTime>
+    <EstimatedArrivalTime tel="SMCCCS01" count="8">
+      <Row1>Not Name</Row1>
+    </EstimatedArrivalTime>
+    <DateTime tel="SMCCCS02" count="8">
+      <Row1>Not Name</Row1>
+    </DateTime>
+    <TempMeasTime tel="SMCCCS02" count="8">
+      <Row1>Not Name</Row1>
+    </TempMeasTime>
+    <CreateTime tel="SMCL301" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <CreateTime tel="SMCL302" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <ProdStartTime tel="SMCL302" count="8">
+      <Row1>Not Name</Row1>
+    </ProdStartTime>
+    <ScrapChargeStartTime tel="SMCL302" count="8">
+      <Row1>Not Name</Row1>
+    </ScrapChargeStartTime>
+    <TapStartTime tel="SMCL302" count="8">
+      <Row1>Not Name</Row1>
+    </TapStartTime>
+    <TapEndTime tel="SMCL302" count="8">
+      <Row1>Not Name</Row1>
+    </TapEndTime>
+    <DepartureTime tel="SMCL302" count="8">
+      <Row1>Not Name</Row1>
+    </DepartureTime>
+    <ChargedMatCode tel="SMCL302" count="25">
+      <Row1>Not Name</Row1>
+    </ChargedMatCode>
+    <ChargedMatWeigth tel="SMCL302" count="25">
+      <Row1>Not Name</Row1>
+    </ChargedMatWeigth>
+    <ChargedMatOrgin tel="SMCL302" count="25">
+      <Row1>Not Name</Row1>
+    </ChargedMatOrgin>
+    <SteelAnl tel="SMCL302" count="40">
+      <Row1>Not Name</Row1>
+    </SteelAnl>
+    <Spare tel="SMCL302" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="SMCL311" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <TreatmentStartTime tel="SMCL311" count="8">
+      <Row1>Not Name</Row1>
+    </TreatmentStartTime>
+    <TreatmentEndTime tel="SMCL311" count="8">
+      <Row1>Not Name</Row1>
+    </TreatmentEndTime>
+    <LadleArrivalTime tel="SMCL311" count="8">
+      <Row1>Not Name</Row1>
+    </LadleArrivalTime>
+    <LadleDepartTime tel="SMCL311" count="8">
+      <Row1>Not Name</Row1>
+    </LadleDepartTime>
+    <ChargedMatCode tel="SMCL311" count="25">
+      <Row1>Not Name</Row1>
+    </ChargedMatCode>
+    <ChargedMatWeigth tel="SMCL311" count="25">
+      <Row1>Not Name</Row1>
+    </ChargedMatWeigth>
+    <ChargedMatOrgin tel="SMCL311" count="25">
+      <Row1>Not Name</Row1>
+    </ChargedMatOrgin>
+    <SteelAnl tel="SMCL311" count="40">
+      <Row1>Not Name</Row1>
+    </SteelAnl>
+    <SteelAnlCalc tel="SMCL311" count="40">
+      <Row1>Not Name</Row1>
+    </SteelAnlCalc>
+    <Spare tel="SMCL311" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+    <CreateTime tel="SMCL320" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <Plant tel="SMCL320" count="10">
+      <Row1>Not Name</Row1>
+    </Plant>
+    <PlantNo tel="SMCL320" count="10">
+      <Row1>Not Name</Row1>
+    </PlantNo>
+    <TreatmentPosition tel="SMCL320" count="10">
+      <Row1>Not Name</Row1>
+    </TreatmentPosition>
+    <StartTime tel="SMCL320" count="8">
+      <Row1>Not Name</Row1>
+    </StartTime>
+    <EndTime tel="SMCL320" count="8">
+      <Row1>Not Name</Row1>
+    </EndTime>
+    <CreateTime tel="SMCL323" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <ChangeTime tel="SMCL323" count="8">
+      <Row1>Not Name</Row1>
+    </ChangeTime>
+    <CreateTime tel="SMCL324" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <StartTime tel="SMCL324" count="8">
+      <Row1>Not Name</Row1>
+    </StartTime>
+    <CreateTime tel="SMCL325" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <CreateTime tel="SMCL340" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <CreateTime tel="SMCLAB01" count="8">
+      <Row1>Not Name</Row1>
+    </CreateTime>
+    <SampleTime tel="SMCLAB02" count="8">
+      <Row1>Not Name</Row1>
+    </SampleTime>
+    <SampleTime tel="SMCLAB03" count="8">
+      <Row1>Not Name</Row1>
+    </SampleTime>
+    <Spare tel="SYL200" count="5">
+      <Row1>Not Name</Row1>
+    </Spare>
+  </ArrayView>
+  <UseCase />
+</Telcom_Out>

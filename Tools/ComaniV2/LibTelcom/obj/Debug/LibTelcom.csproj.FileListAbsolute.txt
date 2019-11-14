@@ -1,0 +1,10 @@
+C:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\bin\Debug\LibTelcom.dll
+C:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\bin\Debug\LibTelcom.pdb
+C:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\obj\Debug\ResolveAssemblyReference.cache
+C:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\obj\Debug\LibTelcom.dll
+C:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\obj\Debug\LibTelcom.pdb
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\bin\Debug\LibTelcom.dll
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\bin\Debug\LibTelcom.pdb
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\obj\Debug\ResolveAssemblyReference.cache
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\obj\Debug\LibTelcom.dll
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\obj\Debug\LibTelcom.pdb

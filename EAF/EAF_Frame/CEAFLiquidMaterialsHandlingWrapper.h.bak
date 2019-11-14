@@ -1,0 +1,52 @@
+// Copyright (C) 2011 SMS Siemag AG
+
+#if defined (_MSC_VER) && (_MSC_VER >= 1000)
+#pragma once
+#endif
+#ifndef _INC_CEAFLIQUIDMATERIALSHANDLINGWRAPPER_41111E7900B2_INCLUDED
+#define _INC_CEAFLIQUIDMATERIALSHANDLINGWRAPPER_41111E7900B2_INCLUDED
+
+#include "CEAFModelWrapper.h"
+#include "CLiquidMaterialHandlingWrapper.h"
+
+//##ModelId=41111E7900B2
+class CEAFLiquidMaterialsHandlingWrapper 
+: public CLiquidMaterialHandlingWrapper
+, public CEAFModelWrapper
+{
+protected:
+public:
+	//##ModelId=415286A60308
+	virtual bool doOnRemoveLiquidSteelData(CEventMessage &Event);
+
+	//##ModelId=415286740192
+	virtual bool doOnRemoveLiquidFeCrData(CEventMessage &Event);
+
+	//##ModelId=429F12110391
+	virtual bool doOnRemoveLiquidAddition(CEventMessage &Event);
+
+	//##ModelId=41528366025E
+	virtual bool doOnRemoveHotMetalData(CEventMessage &Event);
+
+	//##ModelId=4152814A03D9
+	virtual bool doOnLiquidSteelCharged(CEventMessage &Event);
+
+	//##ModelId=41527F390207
+	virtual bool doOnLiquidFeCrCharged(CEventMessage &Event);
+
+	//##ModelId=41527D7D00CD
+	virtual bool doOnHotMetalCharged(CEventMessage &Event);
+
+	//##ModelId=429F12120040
+	virtual bool doOnLiquidAdditionCharged(CEventMessage &Event);
+
+	//##ModelId=4151A06B0265
+	virtual bool doOnChangeOfLiquidAdditionData(CEventMessage &Event);
+
+	//##ModelId=4118D2B00093
+	CEAFModelWrapper* theCEAFModelWrapper;
+
+
+};
+
+#endif /* _INC_CEAFLIQUIDMATERIALSHANDLINGWRAPPER_41111E7900B2_INCLUDED */

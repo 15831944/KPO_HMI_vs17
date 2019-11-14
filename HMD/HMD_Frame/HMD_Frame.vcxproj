@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CF38AF36-5301-40CE-BEFD-DCB2605FFE5D}</ProjectGuid>
+    <RootNamespace>HMD_Frame</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:/SMC/$(Configuration)/lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:/SMC/$(Configuration)/lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(CBSDIR)\include\CBS_StdAPI;$(XPACT_SMC_INC)/CBS_StdFrame;$(XPACT_SMC_INC)/SMC_EventLogSystem;$(XPACT_SMC_INC)/SMM_Frame;$(XPACT_SMC)/source/SMC_Frame;../../Data_Provider;../HMD_Frame;../../SMC_DBClasses;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\CBS_Lib;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_CorbaLibV2;$(CBSDIR)\include\CBS_EventLog;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_fevsWrapper;$(CBSDIR)\include\CBS_DB_Classes;$(CBSDIR)\include\FRIES_EventService;$(OMNIDIR)\include;$(OMNIDIR)\include\omniORB4;$(XPACT_SMC)\source\HMD\MHMD_Frame;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;__WIN32__;_OMNIORB_;__x86__;__OSVERSION__=4;__NT__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc70.pdb</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(CBSDIR)\include\CBS_StdAPI;$(XPACT_SMC_INC)/CBS_StdFrame;$(XPACT_SMC_INC)/SMC_EventLogSystem;$(XPACT_SMC_INC)/SMM_Frame;$(XPACT_SMC)/source/SMC_Frame;../../Data_Provider;../HMD_Frame;../../SMC_DBClasses;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\CBS_Lib;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_CorbaLibV2;$(CBSDIR)\include\CBS_EventLog;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_fevsWrapper;$(CBSDIR)\include\CBS_DB_Classes;$(CBSDIR)\include\FRIES_EventService;$(OMNIDIR)\include;$(OMNIDIR)\include\omniORB4;$(XPACT_SMC)\source\HMD\MHMD_Frame;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_OMNIORB_;__WIN32__;__x86__;__OSVERSION__=4;__NT__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc70.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CHMDEventHandler.cpp" />
+    <ClCompile Include="CHMDModelResultWrapper.cpp" />
+    <ClCompile Include="CHMDModelTask.cpp" />
+    <ClCompile Include="CHMDModelWrapper.cpp" />
+    <ClCompile Include="CHMDTreatmentManagerDataWrapper.cpp" />
+    <ClCompile Include="CHMDTreatmentManagerEventHandler.cpp" />
+    <ClCompile Include="WriteReeInput.cpp" />
+    <ClCompile Include="iData_Provider_dynSK.cpp" />
+    <ClCompile Include="iData_Provider_s.cpp" />
+    <ClCompile Include="iDM_Interface_dynSK.cpp" />
+    <ClCompile Include="iDM_Interface_s.cpp" />
+    <ClCompile Include="iEventMessages_dynSK.cpp" />
+    <ClCompile Include="iEventMessages_s.cpp" />
+    <ClCompile Include="iSMC_DataDefinitions_dynSK.cpp" />
+    <ClCompile Include="iSMC_DataDefinitions_s.cpp" />
+    <ClCompile Include="iSMC_DataProvider_dynSK.cpp" />
+    <ClCompile Include="iSMC_DataProvider_s.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CHMDEventHandler.h" />
+    <ClInclude Include="CHMDModelResultWrapper.h" />
+    <ClInclude Include="CHMDModelTask.h" />
+    <ClInclude Include="CHMDModelWrapper.h" />
+    <ClInclude Include="CHMDTreatmentManagerDataWrapper.h" />
+    <ClInclude Include="CHMDTreatmentManagerEventHandler.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\Data_Provider\iData_Provider.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I $(CBSDIR)\include  -I$(XPACT_SMC)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I $(CBSDIR)\include  -I$(XPACT_SMC)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\DM\DM_Interface\iDM_Interface.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(XPACT_SMC)\source -I$(CBSDIR)\include  -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(XPACT_SMC)\source -I$(CBSDIR)\include  -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\SMC_Frame\iEventMessages.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(XPACT_SMC)\source -I$(CBSDIR)\include  -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(XPACT_SMC)\source -I$(CBSDIR)\include  -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\SMC_Frame\iModelResults.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(XPACT_SMC)\source -I$(CBSDIR)\include  -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(XPACT_SMC)\source -I$(CBSDIR)\include  -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\SMC_Frame\iSMC_DataDefinitions.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(XPACT_SMC)\source -I$(CBSDIR)\include  -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(XPACT_SMC)\source -I$(CBSDIR)\include  -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\SMC_Frame\iSMC_DataProvider.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(XPACT_SMC)\source -I$(CBSDIR)\include  -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(XPACT_SMC)\source -I$(CBSDIR)\include  -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iData_Provider_s.hh" />
+    <None Include="iDM_Interface_s.hh" />
+    <None Include="iEventMessages_s.hh" />
+    <None Include="iSMC_DataDefinitions_s.hh" />
+    <None Include="iSMC_DataProvider_s.hh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SMC_Frame\SMC_Frame.vcxproj">
+      <Project>{72925ed1-44fa-3ae5-ad4a-ff5c37f10885}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

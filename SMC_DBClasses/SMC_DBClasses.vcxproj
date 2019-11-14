@@ -1,0 +1,1028 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{72925ED1-44FA-3AE5-AD4A-FF5C37F10886}</ProjectGuid>
+    <RootNamespace>SMC_DBClasses</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <SccAuxPath>
+    </SccAuxPath>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:/SMC/$(Configuration)/lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:/SMC/$(Configuration)/lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)_d</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>V:/SMC/$(Configuration)/lib\</OutDir>
+    <IntDir>V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 /EHsc %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\SMC_DBClasses;..\SMC_Frame;..\Data_Provider;..\SMC_EventLogSystem;..\CBS_StdFrame;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_CorbaLibV2;$(CBSDIR)\include\CBS_DB_Classes;$(CBSDIR)\include\FRIES_EventService;$(CBSDIR)\include\CBS_fevsWrapper;$(CBSDIR)\include\CBS_Lib;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Persi\CBS_Persilib;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_EventLog;$(OMNIDIR)\include;$(OMNIDIR)\include\omniorb4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;-GX;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 /EHsc %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\SMC_DBClasses;..\SMC_Frame;..\Data_Provider;..\SMC_EventLogSystem;..\CBS_StdFrame;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_CorbaLibV2;$(CBSDIR)\include\CBS_DB_Classes;$(CBSDIR)\include\FRIES_EventService;$(CBSDIR)\include\CBS_fevsWrapper;$(CBSDIR)\include\CBS_Lib;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Persi\CBS_Persilib;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_EventLog;$(OMNIDIR)\include;$(OMNIDIR)\include\omniorb4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;-GX;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 /EHsc %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\SMC_DBClasses;..\SMC_Frame;..\Data_Provider;..\SMC_EventLogSystem;..\CBS_StdFrame;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_CorbaLibV2;$(CBSDIR)\include\CBS_DB_Classes;$(CBSDIR)\include\FRIES_EventService;$(CBSDIR)\include\CBS_fevsWrapper;$(CBSDIR)\include\CBS_Lib;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Persi\CBS_Persilib;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_EventLog;$(OMNIDIR)\include;$(OMNIDIR)\include\omniorb4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;-GX;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_DEBUG;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_d.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 /EHsc %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\SMC_DBClasses;..\SMC_Frame;..\Data_Provider;..\SMC_EventLogSystem;..\CBS_StdFrame;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_CorbaLibV2;$(CBSDIR)\include\CBS_DB_Classes;$(CBSDIR)\include\FRIES_EventService;$(CBSDIR)\include\CBS_fevsWrapper;$(CBSDIR)\include\CBS_Lib;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Persi\CBS_Persilib;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_EventLog;$(OMNIDIR)\include;$(OMNIDIR)\include\omniorb4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;-GX;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_DEBUG;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_d.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CChem_Elem_Container.cpp" />
+    <ClCompile Include="CEquipmentData.cpp" />
+    <ClCompile Include="CGCH_CALC_MODE.cpp" />
+    <ClCompile Include="CGCH_EVENT_LOG.cpp" />
+    <ClCompile Include="CGCH_TREAT_TYPE.cpp" />
+    <ClCompile Include="CGC_ACTION_DEF.cpp" />
+    <ClCompile Include="CGC_ACTION_STATUS_COL.cpp" />
+    <ClCompile Include="CGC_ACTIVATION_CHILD_OBJECTS.cpp" />
+    <ClCompile Include="CGC_ACTIVATION_PRNT_OBJECTS.cpp" />
+    <ClCompile Include="CGC_ACTIVATION_TYPES.cpp" />
+    <ClCompile Include="CGC_BARS.cpp" />
+    <ClCompile Include="CGC_CHARGE_DEST.cpp" />
+    <ClCompile Include="CGC_Charge_Dest_Container.cpp" />
+    <ClCompile Include="CGC_COMBI_RECIPE_ENTRY.cpp" />
+    <ClCompile Include="CGC_COMP_STATUS.cpp" />
+    <ClCompile Include="CGC_COOLWATER.cpp" />
+    <ClCompile Include="CGC_CounterContainer.cpp" />
+    <ClCompile Include="CGC_CREW_CAT.cpp" />
+    <ClCompile Include="CGC_DELAY_GROUP.cpp" />
+    <ClCompile Include="CGC_ELEC_SYSTEM.cpp" />
+    <ClCompile Include="CGC_EQUIP_CAT.cpp" />
+    <ClCompile Include="CGC_EQUIP_COUNTER.cpp" />
+    <ClCompile Include="CGC_EQUIP_PROPERTIES.cpp" />
+    <ClCompile Include="CGC_GRADE_ANL.cpp" />
+    <ClCompile Include="CGC_GRAPH_DOTSTYLE.cpp" />
+    <ClCompile Include="CGC_GRAPH_GROUPS.cpp" />
+    <ClCompile Include="CGC_GRAPH_GROUPS_SPEC.cpp" />
+    <ClCompile Include="CGC_GRAPH_LINESTYLE.cpp" />
+    <ClCompile Include="CGC_HEAT_STATUS.cpp" />
+    <ClCompile Include="CGC_HEAT_STAT_OBJECT_ACTIVATION.cpp" />
+    <ClCompile Include="CGC_LADLE_DEF.cpp" />
+    <ClCompile Include="CGC_Ladle_Def_Container.cpp" />
+    <ClCompile Include="CGC_LADLE_PARTS.cpp" />
+    <ClCompile Include="CGC_LADLE_POS.cpp" />
+    <ClCompile Include="CGC_Ladle_Pos_Container.cpp" />
+    <ClCompile Include="CGC_LADLE_STATUS.cpp" />
+    <ClCompile Include="CGC_LADLE_TYPE.cpp" />
+    <ClCompile Include="CGC_MEASUREMENT_NAME.cpp" />
+    <ClCompile Include="CGC_MEASUREMENT_TYPE.cpp" />
+    <ClCompile Include="CGC_MEMBER_CAT.cpp" />
+    <ClCompile Include="CGC_PARAM_GROUP.cpp" />
+    <ClCompile Include="CGC_PARAM_TYPE.cpp" />
+    <ClCompile Include="CGC_PHASE.cpp" />
+    <ClCompile Include="CGC_PHASE_RES_PLANT.cpp" />
+    <ClCompile Include="CGC_PhaseContainer.cpp" />
+    <ClCompile Include="CGC_PLANT.cpp" />
+    <ClCompile Include="CGC_Plant_Container.cpp" />
+    <ClCompile Include="CGC_PLANT_DEF.cpp" />
+    <ClCompile Include="CGC_PLANT_ORDER.cpp" />
+    <ClCompile Include="CGC_PLANTGROUP.cpp" />
+    <ClCompile Include="CGC_Plantgroup_Container.cpp" />
+    <ClCompile Include="CGC_PLANTGROUP_DESC.cpp" />
+    <ClCompile Include="CGC_PLANTSTATUS.cpp" />
+    <ClCompile Include="CGC_PP_ORDER_SINGLE_AIMS.cpp" />
+    <ClCompile Include="CGC_PRACPHASE_DEF.cpp" />
+    <ClCompile Include="CGC_PRODPRAC_DEF.cpp" />
+    <ClCompile Include="CGC_PURPOSE_TYPE.cpp" />
+    <ClCompile Include="CGC_REBLOWCOOL_REASON.cpp" />
+    <ClCompile Include="CGC_RECIPE_L1.cpp" />
+    <ClCompile Include="CGC_Recipe_L1Container.cpp" />
+    <ClCompile Include="CGC_RECIPE_SOURCE.cpp" />
+    <ClCompile Include="CGC_RECIPE_STATUS.cpp" />
+    <ClCompile Include="CGC_RESTRI_DEF.cpp" />
+    <ClCompile Include="CGC_SAMPLELOC.cpp" />
+    <ClCompile Include="CGC_SAMPLEMODE.cpp" />
+    <ClCompile Include="CGC_SCRAP_CONTAINER.cpp" />
+    <ClCompile Include="CGC_SCRAP_CONTAINER_LOC.cpp" />
+    <ClCompile Include="CGC_SCRAP_CONTAINER_STATUS.cpp" />
+    <ClCompile Include="CGC_SCRAP_CONTAINER_TYPE.cpp" />
+    <ClCompile Include="CGC_SOURCE.cpp" />
+    <ClCompile Include="CGC_SourceContainer.cpp" />
+    <ClCompile Include="CGC_STATUS.cpp" />
+    <ClCompile Include="CGC_THERM_STAT.cpp" />
+    <ClCompile Include="CGC_TORPEDOCAR_DEF.cpp" />
+    <ClCompile Include="CGC_TORPEDOCAR_LOC.cpp" />
+    <ClCompile Include="CGC_TRANSFERCAR_DEF.cpp" />
+    <ClCompile Include="CGCC_TRANSLATE_VALUE.cpp" />
+    <ClCompile Include="CGD_EQUIP_STRUCT.cpp" />
+    <ClCompile Include="CGD_EQUIP_TYPE.cpp" />
+    <ClCompile Include="CGC_SHIFT_CAT.cpp" />
+    <ClCompile Include="CGD_SHIFT_PATTERN.cpp" />
+    <ClCompile Include="CGTH_PP_BASE_VAL.cpp" />
+    <ClCompile Include="CGTH_PP_BASE_VAL_STEP.cpp" />
+    <ClCompile Include="CGTH_PP_BLOWING.cpp" />
+    <ClCompile Include="CGTH_PP_INJECTION.cpp" />
+    <ClCompile Include="CGTH_PP_TEMP_CORR.cpp" />
+    <ClCompile Include="CGT_DELAY_CODE.cpp" />
+    <ClCompile Include="CGT_ENG_UNIT.cpp" />
+    <ClCompile Include="CGT_EQUIV.cpp" />
+    <ClCompile Include="CGT_EQUIV_ENTRY.cpp" />
+    <ClCompile Include="CGT_GRADE.cpp" />
+    <ClCompile Include="CGT_GRADE_ANL.cpp" />
+    <ClCompile Include="CGT_GRADE_EQUIV.cpp" />
+    <ClCompile Include="CGT_GRADE_PRODPRAC.cpp" />
+    <ClCompile Include="CGT_GRADE_SAMPLE_FLAG.cpp" />
+    <ClCompile Include="CGT_GRADE_SINGLE_AIMS.cpp" />
+    <ClCompile Include="CGT_MAT.cpp" />
+    <ClCompile Include="CGT_MAT_CHEM.cpp" />
+    <ClCompile Include="CGT_MAT_EFF.cpp" />
+    <ClCompile Include="CGT_MAT_FEED.cpp" />
+    <ClCompile Include="CGT_MAT_PURP.cpp" />
+    <ClCompile Include="CGT_MAT_PURP_Container.cpp" />
+    <ClCompile Include="CGT_PARAM.cpp" />
+    <ClCompile Include="CGT_PARAM_MATRIX.cpp" />
+    <ClCompile Include="CGT_PP_PARAM.cpp" />
+    <ClCompile Include="CGT_PURP.cpp" />
+    <ClCompile Include="CGT_RESTRI.cpp" />
+    <ClCompile Include="CGT_RESTRI_ENTRY.cpp" />
+    <ClCompile Include="CGT_TREATMODE.cpp" />
+    <ClCompile Include="CGT_TREATMODE_ENTRY.cpp" />
+    <ClCompile Include="CHDE_ACTUAL_RES.cpp" />
+    <ClCompile Include="CHDE_ACTUAL_RES_ANL.cpp" />
+    <ClCompile Include="CHDH_ACTION.cpp" />
+    <ClCompile Include="CHDH_ACT_EVENT_RES.cpp" />
+    <ClCompile Include="CHDH_CYCL_MEAS_DATA.cpp" />
+    <ClCompile Include="CHDH_EQUIP_COUNTER.cpp" />
+    <ClCompile Include="CHDH_GRADE.cpp" />
+    <ClCompile Include="CHDH_GRADE_ANL.cpp" />
+    <ClCompile Include="CHDH_HM_DATA.cpp" />
+    <ClCompile Include="CHDH_HM_DATA_PHASE.cpp" />
+    <ClCompile Include="CHDH_HM_DATA_PRODPRAC.cpp" />
+    <ClCompile Include="CHDH_HM_PHASE_RES.cpp" />
+    <ClCompile Include="CHDH_HM_RES.cpp" />
+    <ClCompile Include="CHDH_PARAM.cpp" />
+    <ClCompile Include="CHDH_PARAM_MATRIX.cpp" />
+    <ClCompile Include="CHDH_PP_BASE_VAL.cpp" />
+    <ClCompile Include="CHDH_PP_BASE_VAL_STEP.cpp" />
+    <ClCompile Include="CHDH_PP_BLOWING.cpp" />
+    <ClCompile Include="CHDH_PP_INJECTION.cpp" />
+    <ClCompile Include="CHDH_PP_TEMP_CORR.cpp" />
+    <ClCompile Include="CHDL_ACTUAL_RES_ANL.cpp" />
+    <ClCompile Include="CHDL_PHASE_STIRRING_RES.cpp" />
+    <ClCompile Include="CHD_ACTION.cpp" />
+    <ClCompile Include="CHD_COMP_DATA.cpp" />
+    <ClCompile Include="CHD_COOLWATER.cpp" />
+    <ClCompile Include="CHD_DELAYS.cpp" />
+    <ClCompile Include="CHD_ELEC_SYSTEM.cpp" />
+    <ClCompile Include="CHD_EQUIP_COUNTER.cpp" />
+    <ClCompile Include="CHD_GRADE.cpp" />
+    <ClCompile Include="CHD_GRADE_ANL.cpp" />
+    <ClCompile Include="CHD_GRADE_EQUIV.cpp" />
+    <ClCompile Include="CHD_GRADE_SINGLE_AIMS.cpp" />
+    <ClCompile Include="CHD_HEAT_DATA.cpp" />
+    <ClCompile Include="CHD_HEAT_DATA_CUST.cpp" />
+    <ClCompile Include="CHD_HEAT_DATA_LIQADD.cpp" />
+    <ClCompile Include="CHD_HEAT_DATA_MAT_FEED.cpp" />
+    <ClCompile Include="CHD_HEAT_DATA_PRODPRAC.cpp" />
+    <ClCompile Include="CHD_HEAT_DATA_STIRR.cpp" />
+    <ClCompile Include="CHD_LADLE.cpp" />
+    <ClCompile Include="CHD_LADLE_LIFE_DATA.cpp" />
+    <ClCompile Include="CHD_MAT_FEED.cpp" />
+    <ClCompile Include="CHD_MAT_FEED_CYCL_MEAS_DATA.cpp" />
+    <ClCompile Include="CHD_MAT_FEED_RES.cpp" />
+    <ClCompile Include="CHD_PARAM.cpp" />
+    <ClCompile Include="CHD_PARAM_MATRIX.cpp" />
+    <ClCompile Include="CHD_PHASE_RES.cpp" />
+    <ClCompile Include="CHD_PHASE_RES_ANL.cpp" />
+    <ClCompile Include="CHD_PHASE_RES_PLANT.cpp" />
+    <ClCompile Include="CHD_RECIPE.cpp" />
+    <ClCompile Include="CHD_RECIPE_ENTRY.cpp" />
+    <ClCompile Include="CHD_RESTRI.cpp" />
+    <ClCompile Include="CHD_RESTRI_ENTRY.cpp" />
+    <ClCompile Include="CHD_SAMPLE.cpp" />
+    <ClCompile Include="CHD_SAMPLE_ENTRY.cpp" />
+    <ClCompile Include="CHD_SAMPLE_REF.cpp" />
+    <ClCompile Include="CHD_TAPCH_DATA.cpp" />
+    <ClCompile Include="CHD_TREATMODE.cpp" />
+    <ClCompile Include="CHD_TREATMODE_ENTRY.cpp" />
+    <ClCompile Include="CHD_WASTEGAS_CYCL_MEAS_DATA.cpp" />
+    <ClCompile Include="CHeatDataConverter.cpp" />
+    <ClCompile Include="CHeatStatusContainer.cpp" />
+    <ClCompile Include="CHMI_PROFILES.cpp" />
+    <ClCompile Include="CPCA_COMP.cpp" />
+    <ClCompile Include="CPDE_ACTUAL_RES_ANL.cpp" />
+    <ClCompile Include="CPDH_ACTION.cpp" />
+    <ClCompile Include="CPDH_ACT_EVENT_RES.cpp" />
+    <ClCompile Include="CPDH_CYCL_MEAS_DATA.cpp" />
+    <ClCompile Include="CPDH_HM_DATA.cpp" />
+    <ClCompile Include="CPDH_HM_DATA_PHASE.cpp" />
+    <ClCompile Include="CPDH_HM_DATA_PRODPRAC.cpp" />
+    <ClCompile Include="CPDH_HM_PHASE_RES.cpp" />
+    <ClCompile Include="CPDH_HM_RES.cpp" />
+    <ClCompile Include="CPDH_LANCE_DATA.cpp" />
+    <ClCompile Include="CPDL_PHASE_STIRRING_RES.cpp" />
+    <ClCompile Include="CPD_ACTION.cpp" />
+    <ClCompile Include="CPD_COMP_DATA.cpp" />
+    <ClCompile Include="CPD_COOLWATER.cpp" />
+    <ClCompile Include="CPD_DELAYS.cpp" />
+    <ClCompile Include="CPD_ELEC_SYSTEM.cpp" />
+    <ClCompile Include="CPD_ELEC_TAPCH.cpp" />
+    <ClCompile Include="CPD_EQUIP_COUNTER.cpp" />
+    <ClCompile Include="CPD_EQUIP_MOUNT.cpp" />
+    <ClCompile Include="CPD_EQUIP_PROPERTY_DETAILS.cpp" />
+    <ClCompile Include="CPD_HEAT_DATA.cpp" />
+    <ClCompile Include="CPD_HEAT_DATA_CUST.cpp" />
+    <ClCompile Include="CPD_HEAT_DATA_LIQADD.cpp" />
+    <ClCompile Include="CPD_HEAT_DATA_MAT_FEED.cpp" />
+    <ClCompile Include="CPD_HEAT_DATA_PRODPRAC.cpp" />
+    <ClCompile Include="CPD_HEAT_DATA_STIRR.cpp" />
+    <ClCompile Include="CPD_HEAT_PLANT_REF.cpp" />
+    <ClCompile Include="CPD_HEAT_REF.cpp" />
+    <ClCompile Include="CPD_HEAT_YIELDS.cpp" />
+    <ClCompile Include="CPD_HM_REF.cpp" />
+    <ClCompile Include="CPD_HOT_METAL.cpp" />
+    <ClCompile Include="CPD_HOT_METAL_ORDER.cpp" />
+    <ClCompile Include="CPD_HOTHEEL.cpp" />
+    <ClCompile Include="CPD_LADLE.cpp" />
+    <ClCompile Include="CPD_LADLE_LIFE_DATA.cpp" />
+    <ClCompile Include="CPD_LADLE_ROUTES.cpp" />
+    <ClCompile Include="CPD_MAT_AVAIL.cpp" />
+    <ClCompile Include="CPD_MAT_FEED_CYCL_MEAS_DATA.cpp" />
+    <ClCompile Include="CPD_MAT_FEED_RES.cpp" />
+    <ClCompile Include="CPD_PHASE_RES.cpp" />
+    <ClCompile Include="CPD_PHASE_RES_ANL.cpp" />
+    <ClCompile Include="CPD_PHASE_RES_PLANT.cpp" />
+    <ClCompile Include="CPD_PLANTSTATUS.cpp" />
+    <ClCompile Include="CPD_PLANTSTATUS_PLANT.cpp" />
+    <ClCompile Include="CPD_PRETREATDATA.cpp" />
+    <ClCompile Include="CPD_RECIPE.cpp" />
+    <ClCompile Include="CPD_RECIPE_ENTRY.cpp" />
+    <ClCompile Include="CPD_SAMPLE.cpp" />
+    <ClCompile Include="CPD_SAMPLE_ENTRY.cpp" />
+    <ClCompile Include="CPD_SAMPLE_REF.cpp" />
+    <ClCompile Include="CPD_SCRAP_CONTAINER.cpp" />
+    <ClCompile Include="CPD_SCRAP_CONTAINER_ENTRY.cpp" />
+    <ClCompile Include="CPD_SCRAP_CONTAINER_ORDER.cpp" />
+    <ClCompile Include="CPD_SCRAP_CONTAINER_ORDER_ENTRY.cpp" />
+    <ClCompile Include="CPD_TAPCH_DATA.cpp" />
+    <ClCompile Include="CPD_TORPEDOCAR.cpp" />
+    <ClCompile Include="CPD_WASTEGAS_CYCL_MEAS_DATA.cpp" />
+    <ClCompile Include="CPP_HEAT.cpp" />
+    <ClCompile Include="CPP_HEAT_PLANT.cpp" />
+    <ClCompile Include="CPP_HM.cpp" />
+    <ClCompile Include="CPP_MEMBER_CREW_ASSIGNMENT.cpp" />
+    <ClCompile Include="CPP_ORDER.cpp" />
+    <ClCompile Include="CPP_ORDER_SINGLE_AIMS.cpp" />
+    <ClCompile Include="CPP_SHIFT_CREW_ASSIGNMENT.cpp" />
+    <ClCompile Include="CREPORT_MOTOR.cpp" />
+    <ClCompile Include="CREPORT_MOTOR_ENTRY.cpp" />
+    <ClCompile Include="CShiftCrewData.cpp" />
+    <ClCompile Include="CSMC_DBColProfile.cpp" />
+    <ClCompile Include="CSMC_DBColProfileBlob.cpp" />
+    <ClCompile Include="CSMC_DBColProfileBool.cpp" />
+    <ClCompile Include="CSMC_DBColProfileDate.cpp" />
+    <ClCompile Include="CSMC_DBColProfileDouble.cpp" />
+    <ClCompile Include="CSMC_DBColProfileLong.cpp" />
+    <ClCompile Include="CSMC_DBColProfileString.cpp" />
+    <ClCompile Include="CSMC_DBData.cpp" />
+    <ClCompile Include="CSMC_DBMetaData.cpp" />
+    <ClCompile Include="CSMC_DBTableBase.cpp" />
+    <ClCompile Include="CVPD_RECIPE_CURR_STATUS.cpp" />
+    <ClCompile Include="CGCE_BURNER.cpp" />
+    <ClCompile Include="CGCE_BURNER_GASTYPE.cpp" />
+    <ClCompile Include="CGCE_INJECTION.cpp" />
+    <ClCompile Include="CGCE_INJECTION_RATIO.cpp" />
+    <ClCompile Include="CGCE_INJECTION_TYPE.cpp" />
+    <ClCompile Include="CGCE_InjectionContainer.cpp" />
+    <ClCompile Include="CGCE_PRACPHASE_STEP.cpp" />
+    <ClCompile Include="CGCE_PROC_PHASE_CODES_EAF.cpp" />
+    <ClCompile Include="CGTE_PP_BURNER.cpp" />
+    <ClCompile Include="CGTE_PP_BURNER_STEP_ENTRY.cpp" />
+    <ClCompile Include="CGTE_PP_EL.cpp" />
+    <ClCompile Include="CGTE_PP_EL_PARAM.cpp" />
+    <ClCompile Include="CGTE_PP_EL_STEP_ENTRY.cpp" />
+    <ClCompile Include="CGTE_PP_FLAME_PROFILE.cpp" />
+    <ClCompile Include="CGTE_PP_INJECTION.cpp" />
+    <ClCompile Include="CGTE_PP_INJECTION_STEP_ENTRY.cpp" />
+    <ClCompile Include="CGTE_PP_PROCESS.cpp" />
+    <ClCompile Include="CGTE_PP_PROCESS_PARAM.cpp" />
+    <ClCompile Include="CGTE_PP_PROCESS_STEP_ENTRY.cpp" />
+    <ClCompile Include="CGTE_PP_SCRAP.cpp" />
+    <ClCompile Include="CGTE_PP_SCRAP_BASKET.cpp" />
+    <ClCompile Include="CGTE_PP_STIRR.cpp" />
+    <ClCompile Include="CGTE_PP_STIRR_SPEC.cpp" />
+    <ClCompile Include="CHDE_CYCL_MEAS_DATA.cpp" />
+    <ClCompile Include="CHDE_CYCL_MEAS_DATA_BURN.cpp" />
+    <ClCompile Include="CHDE_CYCL_MEAS_DATA_INJ.cpp" />
+    <ClCompile Include="CHDE_HEAT_DATA.cpp" />
+    <ClCompile Include="CHDE_HEAT_DATA_MELT.cpp" />
+    <ClCompile Include="CHDE_PHASE_BURNER_RES.cpp" />
+    <ClCompile Include="CHDE_PHASE_INJECT_RES.cpp" />
+    <ClCompile Include="CHDE_PHASE_PROCESS_RES.cpp" />
+    <ClCompile Include="CHDE_PHASE_STIRRING_RES.cpp" />
+    <ClCompile Include="CHDE_PP_BURNER.cpp" />
+    <ClCompile Include="CHDE_PP_BURNER_STEP_ENTRY.cpp" />
+    <ClCompile Include="CHDE_PP_EL.cpp" />
+    <ClCompile Include="CHDE_PP_EL_PARAM.cpp" />
+    <ClCompile Include="CHDE_PP_EL_STEP_ENTRY.cpp" />
+    <ClCompile Include="CHDE_PP_FLAME_PROFILE.cpp" />
+    <ClCompile Include="CHDE_PP_INJECTION.cpp" />
+    <ClCompile Include="CHDE_PP_INJECTION_STEP_ENTRY.cpp" />
+    <ClCompile Include="CHDE_PP_PROCESS.cpp" />
+    <ClCompile Include="CHDE_PP_PROCESS_PARAM.cpp" />
+    <ClCompile Include="CHDE_PP_PROCESS_STEP_ENTRY.cpp" />
+    <ClCompile Include="CHDE_PP_SCRAP.cpp" />
+    <ClCompile Include="CHDE_PP_SCRAP_BASKET.cpp" />
+    <ClCompile Include="CHDE_PP_STIRR.cpp" />
+    <ClCompile Include="CHDE_PP_STIRR_SPEC.cpp" />
+    <ClCompile Include="CPDE_ACTUAL_RES.cpp" />
+    <ClCompile Include="CPDE_CYCL_MEAS_DATA.cpp" />
+    <ClCompile Include="CPDE_CYCL_MEAS_DATA_BURN.cpp" />
+    <ClCompile Include="CPDE_CYCL_MEAS_DATA_INJ.cpp" />
+    <ClCompile Include="CPDE_HEAT_DATA.cpp" />
+    <ClCompile Include="CPDE_HEAT_DATA_BURN.cpp" />
+    <ClCompile Include="CPDE_HEAT_DATA_INJ.cpp" />
+    <ClCompile Include="CPDE_HEAT_DATA_MELT.cpp" />
+    <ClCompile Include="CPDE_PHASE_BURNER_RES.cpp" />
+    <ClCompile Include="CPDE_PHASE_ELEC_RES.cpp" />
+    <ClCompile Include="CPDE_PHASE_INJECT_RES.cpp" />
+    <ClCompile Include="CPDE_PHASE_PROCESS_RES.cpp" />
+    <ClCompile Include="CPDE_PHASE_STIRRING_RES.cpp" />
+    <ClCompile Include="CGCL_ACTIVITY.cpp" />
+    <ClCompile Include="CGCL_EL_PHASE.cpp" />
+    <ClCompile Include="CGCL_STEP.cpp" />
+    <ClCompile Include="CGCL_STIRR_INT.cpp" />
+    <ClCompile Include="CGCL_STIRR_PHASE.cpp" />
+    <ClCompile Include="CGTL_PP_EL.cpp" />
+    <ClCompile Include="CGTL_PP_EL_STEP.cpp" />
+    <ClCompile Include="CGTL_PP_STIRR.cpp" />
+    <ClCompile Include="CGTL_PP_STIRR_SPEC.cpp" />
+    <ClCompile Include="CHDL_ACTIVITY_RES.cpp" />
+    <ClCompile Include="CHDL_ACTUAL_RES.cpp" />
+    <ClCompile Include="CHDL_CYCL_MEAS_DATA.cpp" />
+    <ClCompile Include="CHDL_HEAT_DATA.cpp" />
+    <ClCompile Include="CHDL_HEAT_DATA_MELT.cpp" />
+    <ClCompile Include="CHDL_PHASE_ELEC_RES.cpp" />
+    <ClCompile Include="CHDL_PP_EL.cpp" />
+    <ClCompile Include="CHDL_PP_EL_STEP.cpp" />
+    <ClCompile Include="CHDL_PP_STIRR.cpp" />
+    <ClCompile Include="CHDL_PP_STIRR_SPEC.cpp" />
+    <ClCompile Include="CPDL_ACTIVITY_RES.cpp" />
+    <ClCompile Include="CPDL_ACTUAL_RES.cpp" />
+    <ClCompile Include="CPDL_ACTUAL_RES_ANL.cpp" />
+    <ClCompile Include="CPDL_CYCL_MEAS_DATA.cpp" />
+    <ClCompile Include="CPDL_HEAT_DATA.cpp" />
+    <ClCompile Include="CPDL_HEAT_DATA_MELT.cpp" />
+    <ClCompile Include="CPDL_PHASE_ELEC_RES.cpp" />
+    <ClCompile Include="iData_Provider_dynSK.cpp" />
+    <ClCompile Include="iData_Provider_s.cpp" />
+    <ClCompile Include="iSMC_DataDefinitions_dynSK.cpp" />
+    <ClCompile Include="iSMC_DataDefinitions_s.cpp" />
+    <ClCompile Include="iSMC_DataProvider_dynSK.cpp" />
+    <ClCompile Include="iSMC_DataProvider_s.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CChem_Elem_Container.h" />
+    <ClInclude Include="CEquipmentData.h" />
+    <ClInclude Include="CGCH_CALC_MODE.h" />
+    <ClInclude Include="CGCH_EVENT_LOG.h" />
+    <ClInclude Include="CGCH_TREAT_TYPE.h" />
+    <ClInclude Include="CGC_ACTION_DEF.h" />
+    <ClInclude Include="CGC_ACTION_STATUS_COL.h" />
+    <ClInclude Include="CGC_ACTIVATION_CHILD_OBJECTS.h" />
+    <ClInclude Include="CGC_ACTIVATION_PRNT_OBJECTS.h" />
+    <ClInclude Include="CGC_ACTIVATION_TYPES.h" />
+    <ClInclude Include="CGC_BARS.h" />
+    <ClInclude Include="CGC_CHARGE_DEST.h" />
+    <ClInclude Include="CGC_Charge_Dest_Container.h" />
+    <ClInclude Include="CGC_COMBI_RECIPE_ENTRY.h" />
+    <ClInclude Include="CGC_COMP_STATUS.h" />
+    <ClInclude Include="CGC_COOLWATER.h" />
+    <ClInclude Include="CGC_CounterContainer.h" />
+    <ClInclude Include="CGC_CREW_CAT.h" />
+    <ClInclude Include="CGC_DELAY_GROUP.h" />
+    <ClInclude Include="CGC_ELEC_SYSTEM.h" />
+    <ClInclude Include="CGC_EQUIP_CAT.h" />
+    <ClInclude Include="CGC_EQUIP_COUNTER.h" />
+    <ClInclude Include="CGC_EQUIP_PROPERTIES.h" />
+    <ClInclude Include="CGC_GRADE_ANL.h" />
+    <ClInclude Include="CGC_GRAPH_DOTSTYLE.h" />
+    <ClInclude Include="CGC_GRAPH_GROUPS.h" />
+    <ClInclude Include="CGC_GRAPH_GROUPS_SPEC.h" />
+    <ClInclude Include="CGC_GRAPH_LINESTYLE.h" />
+    <ClInclude Include="CGC_HEAT_STATUS.h" />
+    <ClInclude Include="CGC_HEAT_STAT_OBJECT_ACTIVATION.h" />
+    <ClInclude Include="CGC_LADLE_DEF.h" />
+    <ClInclude Include="CGC_Ladle_Def_Container.h" />
+    <ClInclude Include="CGC_LADLE_PARTS.h" />
+    <ClInclude Include="CGC_LADLE_POS.h" />
+    <ClInclude Include="CGC_Ladle_Pos_Container.h" />
+    <ClInclude Include="CGC_LADLE_STATUS.h" />
+    <ClInclude Include="CGC_LADLE_TYPE.h" />
+    <ClInclude Include="CGC_MEASUREMENT_NAME.h" />
+    <ClInclude Include="CGC_MEASUREMENT_TYPE.h" />
+    <ClInclude Include="CGC_MEMBER_CAT.h" />
+    <ClInclude Include="CGC_PARAM_GROUP.h" />
+    <ClInclude Include="CGC_PARAM_TYPE.h" />
+    <ClInclude Include="CGC_PHASE.h" />
+    <ClInclude Include="CGC_PHASE_RES_PLANT.h" />
+    <ClInclude Include="CGC_PhaseContainer.h" />
+    <ClInclude Include="CGC_PLANT.h" />
+    <ClInclude Include="CGC_Plant_Container.h" />
+    <ClInclude Include="CGC_PLANT_DEF.h" />
+    <ClInclude Include="CGC_PLANT_ORDER.h" />
+    <ClInclude Include="CGC_PLANTGROUP.h" />
+    <ClInclude Include="CGC_Plantgroup_Container.h" />
+    <ClInclude Include="CGC_PLANTGROUP_DESC.h" />
+    <ClInclude Include="CGC_PLANTSTATUS.h" />
+    <ClInclude Include="CGC_PP_ORDER_SINGLE_AIMS.h" />
+    <ClInclude Include="CGC_PRACPHASE_DEF.h" />
+    <ClInclude Include="CGC_PRODPRAC_DEF.h" />
+    <ClInclude Include="CGC_PRODUCTION_STATUS.h" />
+    <ClInclude Include="CGC_PURPOSE_TYPE.h" />
+    <ClInclude Include="CGC_REBLOWCOOL_REASON.h" />
+    <ClInclude Include="CGC_RECIPE_L1.h" />
+    <ClInclude Include="CGC_Recipe_L1Container.h" />
+    <ClInclude Include="CGC_RECIPE_SOURCE.h" />
+    <ClInclude Include="CGC_RECIPE_STATUS.h" />
+    <ClInclude Include="CGC_RESTRI_DEF.h" />
+    <ClInclude Include="CGC_SAMPLELOC.h" />
+    <ClInclude Include="CGC_SAMPLEMODE.h" />
+    <ClInclude Include="CGC_SCRAP_CONTAINER.h" />
+    <ClInclude Include="CGC_SCRAP_CONTAINER_LOC.h" />
+    <ClInclude Include="CGC_SCRAP_CONTAINER_STATUS.h" />
+    <ClInclude Include="CGC_SCRAP_CONTAINER_TYPE.h" />
+    <ClInclude Include="CGC_SOURCE.h" />
+    <ClInclude Include="CGC_SourceContainer.h" />
+    <ClInclude Include="CGC_STATUS.h" />
+    <ClInclude Include="CGC_StatusContainer.h" />
+    <ClInclude Include="CGC_THERM_STAT.h" />
+    <ClInclude Include="CGC_TORPEDOCAR_DEF.h" />
+    <ClInclude Include="CGC_TORPEDOCAR_LOC.h" />
+    <ClInclude Include="CGC_TRANSFERCAR_DEF.h" />
+    <ClInclude Include="CGCC_TRANSLATE_VALUE.h" />
+    <ClInclude Include="CGD_EQUIP_STRUCT.h" />
+    <ClInclude Include="CGD_EQUIP_TYPE.h" />
+    <ClInclude Include="CGC_SHIFT_CAT.h" />
+    <ClInclude Include="CGD_SHIFT_PATTERN.h" />
+    <ClInclude Include="CGTH_PP_BASE_VAL.h" />
+    <ClInclude Include="CGTH_PP_BASE_VAL_STEP.h" />
+    <ClInclude Include="CGTH_PP_BLOWING.h" />
+    <ClInclude Include="CGTH_PP_INJECTION.h" />
+    <ClInclude Include="CGTH_PP_TEMP_CORR.h" />
+    <ClInclude Include="CGT_DELAY_CODE.h" />
+    <ClInclude Include="CGT_ENG_UNIT.h" />
+    <ClInclude Include="CGT_EQUIV.h" />
+    <ClInclude Include="CGT_EQUIV_ENTRY.h" />
+    <ClInclude Include="CGT_GRADE.h" />
+    <ClInclude Include="CGT_GRADE_ANL.h" />
+    <ClInclude Include="CGT_GRADE_EQUIV.h" />
+    <ClInclude Include="CGT_GRADE_PRODPRAC.h" />
+    <ClInclude Include="CGT_GRADE_SAMPLE_FLAG.h" />
+    <ClInclude Include="CGT_GRADE_SINGLE_AIMS.h" />
+    <ClInclude Include="CGT_MAT.h" />
+    <ClInclude Include="CGT_MAT_CHEM.h" />
+    <ClInclude Include="CGT_MAT_EFF.h" />
+    <ClInclude Include="CGT_MAT_FEED.h" />
+    <ClInclude Include="CGT_MAT_PURP.h" />
+    <ClInclude Include="CGT_MAT_PURP_Container.h" />
+    <ClInclude Include="CGT_PARAM.h" />
+    <ClInclude Include="CGT_PARAM_MATRIX.h" />
+    <ClInclude Include="CGT_PP_PARAM.h" />
+    <ClInclude Include="CGT_PURP.h" />
+    <ClInclude Include="CGT_RESTRI.h" />
+    <ClInclude Include="CGT_RESTRI_ENTRY.h" />
+    <ClInclude Include="CGT_TREATMODE.h" />
+    <ClInclude Include="CGT_TREATMODE_ENTRY.h" />
+    <ClInclude Include="CHDE_ACTUAL_RES.h" />
+    <ClInclude Include="CHDE_ACTUAL_RES_ANL.h" />
+    <ClInclude Include="CHDH_ACTION.h" />
+    <ClInclude Include="CHDH_ACT_EVENT_RES.h" />
+    <ClInclude Include="CHDH_CYCL_MEAS_DATA.h" />
+    <ClInclude Include="CHDH_EQUIP_COUNTER.h" />
+    <ClInclude Include="CHDH_GRADE.h" />
+    <ClInclude Include="CHDH_GRADE_ANL.h" />
+    <ClInclude Include="CHDH_HM_DATA.h" />
+    <ClInclude Include="CHDH_HM_DATA_PHASE.h" />
+    <ClInclude Include="CHDH_HM_DATA_PRODPRAC.h" />
+    <ClInclude Include="CHDH_HM_PHASE_RES.h" />
+    <ClInclude Include="CHDH_HM_RES.h" />
+    <ClInclude Include="CHDH_PARAM.h" />
+    <ClInclude Include="CHDH_PARAM_MATRIX.h" />
+    <ClInclude Include="CHDH_PP_BASE_VAL.h" />
+    <ClInclude Include="CHDH_PP_BASE_VAL_STEP.h" />
+    <ClInclude Include="CHDH_PP_BLOWING.h" />
+    <ClInclude Include="CHDH_PP_INJECTION.h" />
+    <ClInclude Include="CHDH_PP_TEMP_CORR.h" />
+    <ClInclude Include="CHDL_ACTUAL_RES_ANL.h" />
+    <ClInclude Include="CHDL_PHASE_STIRRING_RES.h" />
+    <ClInclude Include="CHD_ACTION.h" />
+    <ClInclude Include="CHD_COMP_DATA.h" />
+    <ClInclude Include="CHD_COOLWATER.h" />
+    <ClInclude Include="CHD_DELAYS.h" />
+    <ClInclude Include="CHD_ELEC_SYSTEM.h" />
+    <ClInclude Include="CHD_EQUIP_COUNTER.h" />
+    <ClInclude Include="CHD_GRADE.h" />
+    <ClInclude Include="CHD_GRADE_ANL.h" />
+    <ClInclude Include="CHD_GRADE_EQUIV.h" />
+    <ClInclude Include="CHD_GRADE_SINGLE_AIMS.h" />
+    <ClInclude Include="CHD_HEAT_DATA.h" />
+    <ClInclude Include="CHD_HEAT_DATA_CUST.h" />
+    <ClInclude Include="CHD_HEAT_DATA_LIQADD.h" />
+    <ClInclude Include="CHD_HEAT_DATA_MAT_FEED.h" />
+    <ClInclude Include="CHD_HEAT_DATA_PRODPRAC.h" />
+    <ClInclude Include="CHD_HEAT_DATA_STIRR.h" />
+    <ClInclude Include="CHD_LADLE.h" />
+    <ClInclude Include="CHD_LADLE_LIFE_DATA.h" />
+    <ClInclude Include="CHD_MAT_FEED.h" />
+    <ClInclude Include="CHD_MAT_FEED_CYCL_MEAS_DATA.h" />
+    <ClInclude Include="CHD_MAT_FEED_RES.h" />
+    <ClInclude Include="CHD_PARAM.h" />
+    <ClInclude Include="CHD_PARAM_MATRIX.h" />
+    <ClInclude Include="CHD_PHASE_RES.h" />
+    <ClInclude Include="CHD_PHASE_RES_ANL.h" />
+    <ClInclude Include="CHD_PHASE_RES_PLANT.h" />
+    <ClInclude Include="CHD_RECIPE.h" />
+    <ClInclude Include="CHD_RECIPE_ENTRY.h" />
+    <ClInclude Include="CHD_RESTRI.h" />
+    <ClInclude Include="CHD_RESTRI_ENTRY.h" />
+    <ClInclude Include="CHD_SAMPLE.h" />
+    <ClInclude Include="CHD_SAMPLE_ENTRY.h" />
+    <ClInclude Include="CHD_SAMPLE_REF.h" />
+    <ClInclude Include="CHD_TAPCH_DATA.h" />
+    <ClInclude Include="CHD_TREATMODE.h" />
+    <ClInclude Include="CHD_TREATMODE_ENTRY.h" />
+    <ClInclude Include="CHD_WASTEGAS_CYCL_MEAS_DATA.h" />
+    <ClInclude Include="CHeatDataConverter.h" />
+    <ClInclude Include="CHeatStatusContainer.h" />
+    <ClInclude Include="CHMI_PROFILES.h" />
+    <ClInclude Include="CPCA_COMP.h" />
+    <ClInclude Include="CPDE_ACTUAL_RES_ANL.h" />
+    <ClInclude Include="CPDH_ACTION.h" />
+    <ClInclude Include="CPDH_ACT_EVENT_RES.h" />
+    <ClInclude Include="CPDH_CYCL_MEAS_DATA.h" />
+    <ClInclude Include="CPDH_HM_DATA.h" />
+    <ClInclude Include="CPDH_HM_DATA_PHASE.h" />
+    <ClInclude Include="CPDH_HM_DATA_PRODPRAC.h" />
+    <ClInclude Include="CPDH_HM_PHASE_RES.h" />
+    <ClInclude Include="CPDH_HM_RES.h" />
+    <ClInclude Include="CPDH_LANCE_DATA.h" />
+    <ClInclude Include="CPDL_PHASE_STIRRING_RES.h" />
+    <ClInclude Include="CPD_ACTION.h" />
+    <ClInclude Include="CPD_COMP_DATA.h" />
+    <ClInclude Include="CPD_COOLWATER.h" />
+    <ClInclude Include="CPD_DELAYS.h" />
+    <ClInclude Include="CPD_ELEC_SYSTEM.h" />
+    <ClInclude Include="CPD_ELEC_TAPCH.h" />
+    <ClInclude Include="CPD_EQUIP_COUNTER.h" />
+    <ClInclude Include="CPD_EQUIP_MOUNT.h" />
+    <ClInclude Include="CPD_EQUIP_PROPERTY_DETAILS.h" />
+    <ClInclude Include="CPD_HEAT_DATA.h" />
+    <ClInclude Include="CPD_HEAT_DATA_CUST.h" />
+    <ClInclude Include="CPD_HEAT_DATA_LIQADD.h" />
+    <ClInclude Include="CPD_HEAT_DATA_MAT_FEED.h" />
+    <ClInclude Include="CPD_HEAT_DATA_PRODPRAC.h" />
+    <ClInclude Include="CPD_HEAT_DATA_STIRR.h" />
+    <ClInclude Include="CPD_HEAT_PLANT_REF.h" />
+    <ClInclude Include="CPD_HEAT_REF.h" />
+    <ClInclude Include="CPD_HEAT_YIELDS.h" />
+    <ClInclude Include="CPD_HM_REF.h" />
+    <ClInclude Include="CPD_HOT_METAL.h" />
+    <ClInclude Include="CPD_HOT_METAL_ORDER.h" />
+    <ClInclude Include="CPD_HOTHEEL.h" />
+    <ClInclude Include="CPD_LADLE.h" />
+    <ClInclude Include="CPD_LADLE_LIFE_DATA.h" />
+    <ClInclude Include="CPD_LADLE_ROUTES.h" />
+    <ClInclude Include="CPD_MAT_AVAIL.h" />
+    <ClInclude Include="CPD_MAT_FEED_CYCL_MEAS_DATA.h" />
+    <ClInclude Include="CPD_MAT_FEED_RES.h" />
+    <ClInclude Include="CPD_PHASE_RES.h" />
+    <ClInclude Include="CPD_PHASE_RES_ANL.h" />
+    <ClInclude Include="CPD_PHASE_RES_PLANT.h" />
+    <ClInclude Include="CPD_PLANTSTATUS.h" />
+    <ClInclude Include="CPD_PLANTSTATUS_PLANT.h" />
+    <ClInclude Include="CPD_PRETREATDATA.h" />
+    <ClInclude Include="CPD_RECIPE.h" />
+    <ClInclude Include="CPD_RECIPE_ENTRY.h" />
+    <ClInclude Include="CPD_SAMPLE.h" />
+    <ClInclude Include="CPD_SAMPLE_ENTRY.h" />
+    <ClInclude Include="CPD_SAMPLE_REF.h" />
+    <ClInclude Include="CPD_SCRAP_CONTAINER.h" />
+    <ClInclude Include="CPD_SCRAP_CONTAINER_ENTRY.h" />
+    <ClInclude Include="CPD_SCRAP_CONTAINER_ORDER.h" />
+    <ClInclude Include="CPD_SCRAP_CONTAINER_ORDER_ENTRY.h" />
+    <ClInclude Include="CPD_TAPCH_DATA.h" />
+    <ClInclude Include="CPD_TORPEDOCAR.h" />
+    <ClInclude Include="CPD_WASTEGAS_CYCL_MEAS_DATA.h" />
+    <ClInclude Include="CPP_HEAT.h" />
+    <ClInclude Include="CPP_HEAT_PLANT.h" />
+    <ClInclude Include="CPP_HM.h" />
+    <ClInclude Include="CPP_MEMBER_CREW_ASSIGNMENT.h" />
+    <ClInclude Include="CPP_ORDER.h" />
+    <ClInclude Include="CPP_ORDER_SINGLE_AIMS.h" />
+    <ClInclude Include="CPP_SHIFT_CREW_ASSIGNMENT.h" />
+    <ClInclude Include="CREPORT_MOTOR.h" />
+    <ClInclude Include="CREPORT_MOTOR_ENTRY.h" />
+    <ClInclude Include="CShiftCrewData.h" />
+    <ClInclude Include="CSMC_DBColProfile.h" />
+    <ClInclude Include="CSMC_DBColProfileBlob.h" />
+    <ClInclude Include="CSMC_DBColProfileBool.h" />
+    <ClInclude Include="CSMC_DBColProfileDate.h" />
+    <ClInclude Include="CSMC_DBColProfileDouble.h" />
+    <ClInclude Include="CSMC_DBColProfileLong.h" />
+    <ClInclude Include="CSMC_DBColProfileString.h" />
+    <ClInclude Include="CSMC_DBData.h" />
+    <ClInclude Include="CSMC_DBMetaData.h" />
+    <ClInclude Include="CSMC_DBTableBase.h" />
+    <ClInclude Include="CVPD_RECIPE_CURR_STATUS.h" />
+    <ClInclude Include="CGCE_BURNER.h" />
+    <ClInclude Include="CGCE_BURNER_GASTYPE.h" />
+    <ClInclude Include="CGCE_INJECTION.h" />
+    <ClInclude Include="CGCE_INJECTION_RATIO.h" />
+    <ClInclude Include="CGCE_INJECTION_TYPE.h" />
+    <ClInclude Include="CGCE_InjectionContainer.h" />
+    <ClInclude Include="CGCE_PRACPHASE_STEP.h" />
+    <ClInclude Include="CGCE_PROC_PHASE_CODES_EAF.h" />
+    <ClInclude Include="CGTE_PP_BURNER.h" />
+    <ClInclude Include="CGTE_PP_BURNER_STEP_ENTRY.h" />
+    <ClInclude Include="CGTE_PP_EL.h" />
+    <ClInclude Include="CGTE_PP_EL_PARAM.h" />
+    <ClInclude Include="CGTE_PP_EL_STEP_ENTRY.h" />
+    <ClInclude Include="CGTE_PP_FLAME_PROFILE.h" />
+    <ClInclude Include="CGTE_PP_INJECTION.h" />
+    <ClInclude Include="CGTE_PP_INJECTION_STEP_ENTRY.h" />
+    <ClInclude Include="CGTE_PP_PROCESS.h" />
+    <ClInclude Include="CGTE_PP_PROCESS_PARAM.h" />
+    <ClInclude Include="CGTE_PP_PROCESS_STEP_ENTRY.h" />
+    <ClInclude Include="CGTE_PP_SCRAP.h" />
+    <ClInclude Include="CGTE_PP_SCRAP_BASKET.h" />
+    <ClInclude Include="CGTE_PP_STIRR.h" />
+    <ClInclude Include="CGTE_PP_STIRR_SPEC.h" />
+    <ClInclude Include="CHDE_CYCL_MEAS_DATA.h" />
+    <ClInclude Include="CHDE_CYCL_MEAS_DATA_BURN.h" />
+    <ClInclude Include="CHDE_CYCL_MEAS_DATA_INJ.h" />
+    <ClInclude Include="CHDE_HEAT_DATA.h" />
+    <ClInclude Include="CHDE_HEAT_DATA_MELT.h" />
+    <ClInclude Include="CHDE_PHASE_BURNER_RES.h" />
+    <ClInclude Include="CHDE_PHASE_INJECT_RES.h" />
+    <ClInclude Include="CHDE_PHASE_PROCESS_RES.h" />
+    <ClInclude Include="CHDE_PHASE_STIRRING_RES.h" />
+    <ClInclude Include="CHDE_PP_BURNER.h" />
+    <ClInclude Include="CHDE_PP_BURNER_STEP_ENTRY.h" />
+    <ClInclude Include="CHDE_PP_EL.h" />
+    <ClInclude Include="CHDE_PP_EL_PARAM.h" />
+    <ClInclude Include="CHDE_PP_EL_STEP_ENTRY.h" />
+    <ClInclude Include="CHDE_PP_FLAME_PROFILE.h" />
+    <ClInclude Include="CHDE_PP_INJECTION.h" />
+    <ClInclude Include="CHDE_PP_INJECTION_STEP_ENTRY.h" />
+    <ClInclude Include="CHDE_PP_PROCESS.h" />
+    <ClInclude Include="CHDE_PP_PROCESS_PARAM.h" />
+    <ClInclude Include="CHDE_PP_PROCESS_STEP_ENTRY.h" />
+    <ClInclude Include="CHDE_PP_SCRAP.h" />
+    <ClInclude Include="CHDE_PP_SCRAP_BASKET.h" />
+    <ClInclude Include="CHDE_PP_STIRR.h" />
+    <ClInclude Include="CHDE_PP_STIRR_SPEC.h" />
+    <ClInclude Include="CPDE_ACTUAL_RES.h" />
+    <ClInclude Include="CPDE_CYCL_MEAS_DATA.h" />
+    <ClInclude Include="CPDE_CYCL_MEAS_DATA_BURN.h" />
+    <ClInclude Include="CPDE_CYCL_MEAS_DATA_INJ.h" />
+    <ClInclude Include="CPDE_HEAT_DATA.h" />
+    <ClInclude Include="CPDE_HEAT_DATA_BURN.h" />
+    <ClInclude Include="CPDE_HEAT_DATA_INJ.h" />
+    <ClInclude Include="CPDE_HEAT_DATA_MELT.h" />
+    <ClInclude Include="CPDE_PHASE_BURNER_RES.h" />
+    <ClInclude Include="CPDE_PHASE_ELEC_RES.h" />
+    <ClInclude Include="CPDE_PHASE_INJECT_RES.h" />
+    <ClInclude Include="CPDE_PHASE_PROCESS_RES.h" />
+    <ClInclude Include="CPDE_PHASE_STIRRING_RES.h" />
+    <ClInclude Include="CGCL_ACTIVITY.h" />
+    <ClInclude Include="CGCL_EL_PHASE.h" />
+    <ClInclude Include="CGCL_STEP.h" />
+    <ClInclude Include="CGCL_STIRR_INT.h" />
+    <ClInclude Include="CGCL_STIRR_PHASE.h" />
+    <ClInclude Include="CGTL_PP_EL.h" />
+    <ClInclude Include="CGTL_PP_EL_STEP.h" />
+    <ClInclude Include="CGTL_PP_STIRR.h" />
+    <ClInclude Include="CGTL_PP_STIRR_SPEC.h" />
+    <ClInclude Include="CHDL_ACTUAL_RES.h" />
+    <ClInclude Include="CHDL_CYCL_MEAS_DATA.h" />
+    <ClInclude Include="CHDL_HEAT_DATA.h" />
+    <ClInclude Include="CHDL_HEAT_DATA_MELT.h" />
+    <ClInclude Include="CHDL_PHASE_ELEC_RES.h" />
+    <ClInclude Include="CHDL_PP_EL.h" />
+    <ClInclude Include="CHDL_PP_EL_STEP.h" />
+    <ClInclude Include="CHDL_PP_STIRR.h" />
+    <ClInclude Include="CHDL_PP_STIRR_SPEC.h" />
+    <ClInclude Include="CPDL_ACTUAL_RES.h" />
+    <ClInclude Include="CPDL_ACTUAL_RES_ANL.h" />
+    <ClInclude Include="CPDL_CYCL_MEAS_DATA.h" />
+    <ClInclude Include="CPDL_HEAT_DATA.h" />
+    <ClInclude Include="CPDL_HEAT_DATA_MELT.h" />
+    <ClInclude Include="CPDL_PHASE_ELEC_RES.h" />
+    <ClInclude Include="DEF_GCE_BURNER_GASTYPE.h" />
+    <ClInclude Include="DEF_GCL_STIRR_INT.h" />
+    <ClInclude Include="DEF_GC_ACTION_DEF.h" />
+    <ClInclude Include="DEF_GC_CHARGE_DEST.h" />
+    <ClInclude Include="DEF_GC_COMP_STATUS.h" />
+    <ClInclude Include="DEF_GC_COOLWATER.h" />
+    <ClInclude Include="DEF_GC_COUNTER_TYPE.h" />
+    <ClInclude Include="DEF_GC_DELAY_GROUP.h" />
+    <ClInclude Include="DEF_GC_EFF.h" />
+    <ClInclude Include="DEF_GC_ELEC_SYSTEM.h" />
+    <ClInclude Include="DEF_GC_GRADE_ANL.h" />
+    <ClInclude Include="DEF_GC_HEAT_STATUS.h" />
+    <ClInclude Include="DEF_GC_HOT_METAL_ORDER_STATUS.h" />
+    <ClInclude Include="DEF_GC_LADLE_PARTS.h" />
+    <ClInclude Include="DEF_GC_LADLE_POS.h" />
+    <ClInclude Include="DEF_GC_LADLE_STATUS.h" />
+    <ClInclude Include="DEF_GC_LADLE_TYPE.h" />
+    <ClInclude Include="DEF_GC_LIQADD_STATUS.h" />
+    <ClInclude Include="DEF_GC_LIQADD_TYPE.h" />
+    <ClInclude Include="DEF_GC_MEASUREMENT_NAME.h" />
+    <ClInclude Include="DEF_GC_MEASUREMENT_NAME_SCOPE.h" />
+    <ClInclude Include="DEF_GC_MEASUREMENT_ORIGIN.h" />
+    <ClInclude Include="DEF_GC_MEASUREMENT_TYPE.h" />
+    <ClInclude Include="DEF_GC_MEMBER_ROLE_CAT.h" />
+    <ClInclude Include="DEF_GC_MODEL_MEDIA_DEVICE.h" />
+    <ClInclude Include="DEF_GC_MODEL_MEDIA_TYPE.h" />
+    <ClInclude Include="DEF_GC_PARAM_TYPE.h" />
+    <ClInclude Include="DEF_GC_PHASE.h" />
+    <ClInclude Include="DEF_GC_PLANT.h" />
+    <ClInclude Include="DEF_GC_PLANTSTATUS.h" />
+    <ClInclude Include="DEF_GC_PLANT_DEF.h" />
+    <ClInclude Include="DEF_GC_PLANTGROUP_DESC.h" />
+    <ClInclude Include="DEF_GC_PP_ORDER_SINGLE_AIMS.h" />
+    <ClInclude Include="DEF_GC_PRODPRAC_DEF.h" />
+    <ClInclude Include="DEF_GC_RECIPE.h" />
+    <ClInclude Include="DEF_GC_RECIPE_SOURCE.h" />
+    <ClInclude Include="DEF_GC_RECIPE_STATUS.h" />
+    <ClInclude Include="DEF_GC_SAMPLELOC.h" />
+    <ClInclude Include="DEF_GC_SAMPLEMODE.h" />
+    <ClInclude Include="DEF_GC_SAMPLEUSABLE.h" />
+    <ClInclude Include="DEF_GC_SCRAP_CONTAINER_LOC.h" />
+    <ClInclude Include="DEF_GC_SCRAP_CONT_ORDER_STATUS.h" />
+    <ClInclude Include="DEF_GC_SCRAP_CONTAINER_STATUS.h" />
+    <ClInclude Include="DEF_GC_SCRAP_CONTAINER_TYPE.h" />
+    <ClInclude Include="DEF_GC_SHIFT_TYPE.h" />
+    <ClInclude Include="DEF_GC_SOURCE.h" />
+    <ClInclude Include="DEF_GC_STATUS.h" />
+    <ClInclude Include="DEF_GC_STIRR_DEVICE.h" />
+    <ClInclude Include="DEF_GC_STIRR_GAS_TYPE.h" />
+    <ClInclude Include="DEF_GC_THERM_STAT.h" />
+    <ClInclude Include="DEF_GC_TREATMENTPHASE_DEF.h" />
+    <ClInclude Include="DEF_GCE_BURNER.h" />
+    <ClInclude Include="DEF_GCE_INJECTION.h" />
+    <ClInclude Include="DEF_GCE_INJECTION_TYPE.h" />
+    <ClInclude Include="DEF_GCL_ACTIVITY.h" />
+    <ClInclude Include="DEF_GCL_STIRR_PHASE.h" />
+    <ClInclude Include="DEF_GD_EQUIP_TYPE.h" />
+    <ClInclude Include="DEF_GT_PARAM.h" />
+    <ClInclude Include="DEF_GT_PURP.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\SMC_Frame\iSMC_DataProvider.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OMNIDIR)\bin\x64\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Data_Provider\iData_Provider.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OMNIDIR)\bin\x64\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\SMC_Frame\iSMC_DataDefinitions.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OMNIDIR)\bin\x64\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iData_Provider_s.hh" />
+    <None Include="iSMC_DataDefinitions_s.hh" />
+    <None Include="iSMC_DataProvider_s.hh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMC_Frame\SMC_Frame.vcxproj">
+      <Project>{72925ed1-44fa-3ae5-ad4a-ff5c37f10885}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

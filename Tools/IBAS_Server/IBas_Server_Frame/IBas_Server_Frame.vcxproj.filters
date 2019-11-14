@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="IDL">
+      <UniqueIdentifier>{d756fdb0-8aef-4693-a8bb-d4f0c43d37db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{012551ba-5d16-4a99-adf1-0ecf5d957700}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Excel-Sheets">
+      <UniqueIdentifier>{980208d2-b230-40c5-9721-942fe22b6bb1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cBASIntrf_Impl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cIbas_Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cIbas_InterfaceTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cIbas_Server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cMutex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cStorage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cTagList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BASIntrf_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="BASIntrf_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="IBas_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="IBas_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_In_TagList.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cBASIntrf_Impl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cIbas_Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cIbas_InterfaceTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cIbas_Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cMutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cStorage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cTagList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tagNameDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BASIntrf_s.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+    <ClInclude Include="Telcom_In_TagList.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="BASIntrf.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IBas.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\TELCOM\TELCOM_IN\TELCOM_IN_Frame\Telcom_In.xls">
+      <Filter>Excel-Sheets</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

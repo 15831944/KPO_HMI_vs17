@@ -1,0 +1,518 @@
+#ifndef _CSMC_EventLogEAF_h_
+#define _CSMC_EventLogEAF_h_
+
+#include <string>
+
+#include "CSMC_EventLogFrame.h"
+#include "CSMC_DestCodes.h"
+
+class CSMC_EventLogEAF : public CSMC_EventLogFrame
+{
+protected:
+  long lRetValue;
+public:
+  CSMC_EventLogEAF(std::string sProcName = "",std::string sServiceName = "",std::string sContextName = "");
+
+  virtual ~CSMC_EventLogEAF();
+
+long EL_SteelAnalysisReceived( const char * SampleID,const char * SampleTime);
+
+long EL_SteelAnalysisReceived( sEventLogMessage &EventLogMessage, const char * SampleID,const char * SampleTime);
+
+long EL_SlagAnalysisReceived( const char * SampleID,const char * SampleTime);
+
+long EL_SlagAnalysisReceived( sEventLogMessage &EventLogMessage, const char * SampleID,const char * SampleTime);
+
+long EL_SteelSampleTaken( const char * SampleID,const char * SampleIDLevel1,const char * SampleLocation);
+
+long EL_SteelSampleTaken( sEventLogMessage &EventLogMessage, const char * SampleID,const char * SampleIDLevel1,const char * SampleLocation);
+
+long EL_SlagSampleTaken( const char * SampleID,const char * SampleIDLevel1,const char * SampleLocation);
+
+long EL_SlagSampleTaken( sEventLogMessage &EventLogMessage, const char * SampleID,const char * SampleIDLevel1,const char * SampleLocation);
+
+long EL_ChangeLiquidAdditionData();
+
+long EL_ChangeLiquidAdditionData( sEventLogMessage &EventLogMessage );
+
+long EL_RemoveLiquidAdditionData();
+
+long EL_RemoveLiquidAdditionData( sEventLogMessage &EventLogMessage );
+
+long EL_MaterialWeighingReport( int MeasWeight,int WeighingType,const char * LadelID,const char * LadelDeslagged);
+
+long EL_MaterialWeighingReport( sEventLogMessage &EventLogMessage, int MeasWeight,int WeighingType,const char * LadelID,const char * LadelDeslagged);
+
+long EL_ChangePhysicalMatAvailibility( const char * MatCode);
+
+long EL_ChangePhysicalMatAvailibility( sEventLogMessage &EventLogMessage, const char * MatCode);
+
+long EL_HandleUpdatePurpose();
+
+long EL_HandleUpdatePurpose( sEventLogMessage &EventLogMessage );
+
+long EL_MatBatchCharged( const char * RecipeName,int RecipeNo,const char * RecipeSource,const char * RecipeTarget,int RecipeStatus);
+
+long EL_MatBatchCharged( sEventLogMessage &EventLogMessage, const char * RecipeName,int RecipeNo,const char * RecipeSource,const char * RecipeTarget,int RecipeStatus);
+
+long EL_MatBatchDischarged( const char * RecipeName,int RecipeNo,const char * RecipeSource,const char * RecipeTarget,int RecipeStatus);
+
+long EL_MatBatchDischarged( sEventLogMessage &EventLogMessage, const char * RecipeName,int RecipeNo,const char * RecipeSource,const char * RecipeTarget,int RecipeStatus);
+
+long EL_DisableSourceRecipe( const char * RecipeName,int RecipeNo,const char * RecipeSource,const char * RecipeTarget);
+
+long EL_DisableSourceRecipe( sEventLogMessage &EventLogMessage, const char * RecipeName,int RecipeNo,const char * RecipeSource,const char * RecipeTarget);
+
+long EL_EnableSourceRecipe( const char * RecipeName,int RecipeNo,const char * RecipeSource,const char * RecipeTarget);
+
+long EL_EnableSourceRecipe( sEventLogMessage &EventLogMessage, const char * RecipeName,int RecipeNo,const char * RecipeSource,const char * RecipeTarget);
+
+long EL_RecipeMaterialCharged( const char * RecipeName,int RecipeNo,const char * RecipeSource,const char * RecipeTarget);
+
+long EL_RecipeMaterialCharged( sEventLogMessage &EventLogMessage, const char * RecipeName,int RecipeNo,const char * RecipeSource,const char * RecipeTarget);
+
+long EL_RecipeMaterialDischarged( const char * RecipeName,int RecipeNo,const char * RecipeSource,const char * RecipeTarget);
+
+long EL_RecipeMaterialDischarged( sEventLogMessage &EventLogMessage, const char * RecipeName,int RecipeNo,const char * RecipeSource,const char * RecipeTarget);
+
+long EL_ModelResultCode();
+
+long EL_ModelResultCode( sEventLogMessage &EventLogMessage );
+
+long EL_ModelResultActualSetPoints();
+
+long EL_ModelResultActualSetPoints( sEventLogMessage &EventLogMessage );
+
+long EL_ModelResultRecipeSetPoints();
+
+long EL_ModelResultRecipeSetPoints( sEventLogMessage &EventLogMessage );
+
+long EL_LadleStirringStart();
+
+long EL_LadleStirringStart( sEventLogMessage &EventLogMessage );
+
+long EL_LadleStirringStop();
+
+long EL_LadleStirringStop( sEventLogMessage &EventLogMessage );
+
+long EL_BurnerStart();
+
+long EL_BurnerStart( sEventLogMessage &EventLogMessage );
+
+long EL_BurnerStop();
+
+long EL_BurnerStop( sEventLogMessage &EventLogMessage );
+
+long EL_OxygenSideLanceStart();
+
+long EL_OxygenSideLanceStart( sEventLogMessage &EventLogMessage );
+
+long EL_OxygenSideLanceStop();
+
+long EL_OxygenSideLanceStop( sEventLogMessage &EventLogMessage );
+
+long EL_ElectrodesInOperatingPosition();
+
+long EL_ElectrodesInOperatingPosition( sEventLogMessage &EventLogMessage );
+
+long EL_ElectrodesOutOfOperatingPosition();
+
+long EL_ElectrodesOutOfOperatingPosition( sEventLogMessage &EventLogMessage );
+
+long EL_FurnaceBreakerOn();
+
+long EL_FurnaceBreakerOn( sEventLogMessage &EventLogMessage );
+
+long EL_FurnaceBreakerOff();
+
+long EL_FurnaceBreakerOff( sEventLogMessage &EventLogMessage );
+
+long EL_PowerOn();
+
+long EL_PowerOn( sEventLogMessage &EventLogMessage );
+
+long EL_PowerOff();
+
+long EL_PowerOff( sEventLogMessage &EventLogMessage );
+
+long EL_TapChangeStart( const char * VoltTapNo,const char * EltrdRegCurve,const char * FurnTapChangOn);
+
+long EL_TapChangeStart( sEventLogMessage &EventLogMessage, const char * VoltTapNo,const char * EltrdRegCurve,const char * FurnTapChangOn);
+
+long EL_TapChangeFinished( const char * VoltTapNo,const char * EltrdRegCurve,const char * FurnTapChangOn);
+
+long EL_TapChangeFinished( sEventLogMessage &EventLogMessage, const char * VoltTapNo,const char * EltrdRegCurve,const char * FurnTapChangOn);
+
+long EL_ElectrodeRegCurveNum();
+
+long EL_ElectrodeRegCurveNum( sEventLogMessage &EventLogMessage );
+
+long EL_ManipGasLanceStart( const char * EAFGasLanceNo);
+
+long EL_ManipGasLanceStart( sEventLogMessage &EventLogMessage, const char * EAFGasLanceNo);
+
+long EL_ManipGasLanceStop( const char * EAFGasLanceNo);
+
+long EL_ManipGasLanceStop( sEventLogMessage &EventLogMessage, const char * EAFGasLanceNo);
+
+long EL_ManipGasLanceStop( const char * Device,const char * GasType,double GasValue);
+
+long EL_ManipGasLanceStop( sEventLogMessage &EventLogMessage, const char * Device,const char * GasType,double GasValue);
+
+long EL_ManipInjectLanceStart( const char * Device,double MatNumber,const char * LanceMatCode);
+
+long EL_ManipInjectLanceStart( sEventLogMessage &EventLogMessage, const char * Device,double MatNumber,const char * LanceMatCode);
+
+long EL_ManipInjectLanceStop( const char * Device,double MatNumber,double LanceVal);
+
+long EL_ManipInjectLanceStop( sEventLogMessage &EventLogMessage, const char * Device,double MatNumber,double LanceVal);
+
+long EL_ManipInjectLanceStop( const char * Device,double MatNumber,const char * LanceMatCode);
+
+long EL_ManipInjectLanceStop( sEventLogMessage &EventLogMessage, const char * Device,double MatNumber,const char * LanceMatCode);
+
+long EL_CeloxMeasurement();
+
+long EL_CeloxMeasurement( sEventLogMessage &EventLogMessage );
+
+long EL_TempMeasurement( const char * MeasTemp,const char * MeasO2Conc);
+
+long EL_TempMeasurement( sEventLogMessage &EventLogMessage, const char * MeasTemp,const char * MeasO2Conc);
+
+long EL_OxygenMeasurement();
+
+long EL_OxygenMeasurement( sEventLogMessage &EventLogMessage );
+
+long EL_DeslaggingStart();
+
+long EL_DeslaggingStart( sEventLogMessage &EventLogMessage );
+
+long EL_DeslaggingEnd();
+
+long EL_DeslaggingEnd( sEventLogMessage &EventLogMessage );
+
+long EL_DoorOpened( const char * SlagDoorOpen);
+
+long EL_DoorOpened( sEventLogMessage &EventLogMessage, const char * SlagDoorOpen);
+
+long EL_DoorClosed( const char * SlagDoorOpen);
+
+long EL_DoorClosed( sEventLogMessage &EventLogMessage, const char * SlagDoorOpen);
+
+long EL_RoofArrivesInUpPosition( const char * RoofPosUp);
+
+long EL_RoofArrivesInUpPosition( sEventLogMessage &EventLogMessage, const char * RoofPosUp);
+
+long EL_RoofArrivesInDownPosition( const char * RoofPosUp);
+
+long EL_RoofArrivesInDownPosition( sEventLogMessage &EventLogMessage, const char * RoofPosUp);
+
+long EL_GantrySwungIn( const char * GantryPosIn);
+
+long EL_GantrySwungIn( sEventLogMessage &EventLogMessage, const char * GantryPosIn);
+
+long EL_GantrySwungOut( const char * GantryPosIn);
+
+long EL_GantrySwungOut( sEventLogMessage &EventLogMessage, const char * GantryPosIn);
+
+long EL_SetTappingMasses( const char * TappingMass);
+
+long EL_SetTappingMasses( sEventLogMessage &EventLogMessage, const char * TappingMass);
+
+long EL_TappingStart();
+
+long EL_TappingStart( sEventLogMessage &EventLogMessage );
+
+long EL_TappingEnd();
+
+long EL_TappingEnd( sEventLogMessage &EventLogMessage );
+
+long EL_HeatAnnouncement( const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_HeatAnnouncement( sEventLogMessage &EventLogMessage, const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_HeatAnnouncementOffline( const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_HeatAnnouncementOffline( sEventLogMessage &EventLogMessage, const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_HeatAnnounceStatus( const char * HeatAnnounceStatus,const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_HeatAnnounceStatus( sEventLogMessage &EventLogMessage, const char * HeatAnnounceStatus,const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_HeatCancellation( const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_HeatCancellation( sEventLogMessage &EventLogMessage, const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_HeatDeparture( const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_HeatDeparture( sEventLogMessage &EventLogMessage, const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_HeatStart( const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_HeatStart( sEventLogMessage &EventLogMessage, const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_HeatEnd( const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_HeatEnd( sEventLogMessage &EventLogMessage, const char * HeatID,const char * TreatID,const char * PlantID);
+
+long EL_ChangeAimData( const char * Steelgrade,const char * TempAim,const char * TreatEndAim,const char * AimWeight);
+
+long EL_ChangeAimData( sEventLogMessage &EventLogMessage, const char * Steelgrade,const char * TempAim,const char * TreatEndAim,const char * AimWeight);
+
+long EL_ChangeHotHeelData();
+
+long EL_ChangeHotHeelData( sEventLogMessage &EventLogMessage );
+
+long EL_ChangeTapLadleData( const char * TapLadleId,const char * TapLadleStatus);
+
+long EL_ChangeTapLadleData( sEventLogMessage &EventLogMessage, const char * TapLadleId,const char * TapLadleStatus);
+
+long EL_ChangeProdPracPointerElec( const char * EAFPracElecPT,const char * FlagHeatRelated);
+
+long EL_ChangeProdPracPointerElec( sEventLogMessage &EventLogMessage, const char * EAFPracElecPT,const char * FlagHeatRelated);
+
+long EL_ChangeProdPracPointerInjection( const char * EAFPracInjectPT,const char * FlagHeatRelated);
+
+long EL_ChangeProdPracPointerInjection( sEventLogMessage &EventLogMessage, const char * EAFPracInjectPT,const char * FlagHeatRelated);
+
+long EL_ChangeProdPracDataBurnerOxygen( const char * EAFPracBurnerPT,const char * FlagHeatRelated);
+
+long EL_ChangeProdPracDataBurnerOxygen( sEventLogMessage &EventLogMessage, const char * EAFPracBurnerPT,const char * FlagHeatRelated);
+
+long EL_ChangeProdPracPointerOxygen( const char * EAFPracLancePT,const char * FlagHeatRelated);
+
+long EL_ChangeProdPracPointerOxygen( sEventLogMessage &EventLogMessage, const char * EAFPracLancePT,const char * FlagHeatRelated);
+
+long EL_ChangeProdPracPointerParameter( const char * ParaPracPT,const char * FlagHeatRelated);
+
+long EL_ChangeProdPracPointerParameter( sEventLogMessage &EventLogMessage, const char * ParaPracPT,const char * FlagHeatRelated);
+
+long EL_ChangeProdPracPointerRestriction( const char * RestriPracPt,const char * FlagHeatRelated);
+
+long EL_ChangeProdPracPointerRestriction( sEventLogMessage &EventLogMessage, const char * RestriPracPt,const char * FlagHeatRelated);
+
+long EL_CreateTreatmentID();
+
+long EL_CreateTreatmentID( sEventLogMessage &EventLogMessage );
+
+long EL_DelayStatus( const char * DelayPlant,const char * DelayCode,const char * DelayStartDate,const char * DelayEndDate,const char * DelayDescription);
+
+long EL_DelayStatus( sEventLogMessage &EventLogMessage, const char * DelayPlant,const char * DelayCode,const char * DelayStartDate,const char * DelayEndDate,const char * DelayDescription);
+
+long EL_HeatScheduleUpdate();
+
+long EL_HeatScheduleUpdate( sEventLogMessage &EventLogMessage );
+
+long EL_SetComputerMode( const char * Device,int Status);
+
+long EL_SetComputerMode( sEventLogMessage &EventLogMessage, const char * Device,int Status);
+
+long EL_ActivateWallTempCtrl();
+
+long EL_ActivateWallTempCtrl( sEventLogMessage &EventLogMessage );
+
+long EL_DeactivateWallTempCtrl();
+
+long EL_DeactivateWallTempCtrl( sEventLogMessage &EventLogMessage );
+
+long EL_HandleScrapContainerDischarged( const char * ContainerNo,const char * ContainerInSeq,const char * LastScrapContainer);
+
+long EL_HandleScrapContainerDischarged( sEventLogMessage &EventLogMessage, const char * ContainerNo,const char * ContainerInSeq,const char * LastScrapContainer);
+
+long EL_MaterialHandlingReport( const char * RecipeName,const char * RecipeSource,const char * RecipeStatus,const char * RecipeNo,const char * RecipeTarget);
+
+long EL_MaterialHandlingReport( sEventLogMessage &EventLogMessage, const char * RecipeName,const char * RecipeSource,const char * RecipeStatus,const char * RecipeNo,const char * RecipeTarget);
+
+long EL_MaterialHandlingReport( const char * MatCode,double Mass);
+
+long EL_MaterialHandlingReport( sEventLogMessage &EventLogMessage, const char * MatCode,double Mass);
+
+long EL_HandleSetScrapContainerData( const char * ContainerNo,const char * ContainerInSeq,const char * LastScrapContainer);
+
+long EL_HandleSetScrapContainerData( sEventLogMessage &EventLogMessage, const char * ContainerNo,const char * ContainerInSeq,const char * LastScrapContainer);
+
+long EL_LiquidAdditionCharged();
+
+long EL_LiquidAdditionCharged( sEventLogMessage &EventLogMessage );
+
+long EL_LiqMatHandlReport( const char * MeasWeight,const char * WeighingType,const char * LadleId,const char * LadleDeslagged);
+
+long EL_LiqMatHandlReport( sEventLogMessage &EventLogMessage, const char * MeasWeight,const char * WeighingType,const char * LadleId,const char * LadleDeslagged);
+
+long EL_MinChargeableBinWeightUpdate();
+
+long EL_MinChargeableBinWeightUpdate( sEventLogMessage &EventLogMessage );
+
+long EL_ParameterUpdate( const char * ParamName,const char * ParamValue);
+
+long EL_ParameterUpdate( sEventLogMessage &EventLogMessage, const char * ParamName,const char * ParamValue);
+
+long EL_MatFeedingStart();
+
+long EL_MatFeedingStart( sEventLogMessage &EventLogMessage );
+
+long EL_MatFeedingStop();
+
+long EL_MatFeedingStop( sEventLogMessage &EventLogMessage );
+
+long EL_ScrapContainerDischargedError( int ContainerInSeq,int ContainerNo);
+
+long EL_ScrapContainerDischargedError( sEventLogMessage &EventLogMessage, int ContainerInSeq,int ContainerNo);
+
+long EL_ScrapContainerAssignmentError( int ContainerInSeq,int ContainerNo);
+
+long EL_ScrapContainerAssignmentError( sEventLogMessage &EventLogMessage, int ContainerInSeq,int ContainerNo);
+
+long EL_ScrapContainerRemoveError( int ContainerInSeq,int ContainerNo);
+
+long EL_ScrapContainerRemoveError( sEventLogMessage &EventLogMessage, int ContainerInSeq,int ContainerNo);
+
+long EL_HandleScrapContainerRemove( int ContainerInSeq,int ContainerNo);
+
+long EL_HandleScrapContainerRemove( sEventLogMessage &EventLogMessage, int ContainerInSeq,int ContainerNo);
+
+long EL_HotMetalAssignment( const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_HotMetalAssignment( sEventLogMessage &EventLogMessage, const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_HotMetalAssignmentError( const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_HotMetalAssignmentError( sEventLogMessage &EventLogMessage, const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_HotMetalDischarged( const char * LadleType,int LadleNo,int ChargeSeq,double Weight);
+
+long EL_HotMetalDischarged( sEventLogMessage &EventLogMessage, const char * LadleType,int LadleNo,int ChargeSeq,double Weight);
+
+long EL_HotMetalDischargedError( const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_HotMetalDischargedError( sEventLogMessage &EventLogMessage, const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_HotMetalData( const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_HotMetalData( sEventLogMessage &EventLogMessage, const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_HotMetalDataError( const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_HotMetalDataError( sEventLogMessage &EventLogMessage, const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_HotMetalRemove( const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_HotMetalRemove( sEventLogMessage &EventLogMessage, const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_HotMetalRemoveError( const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_HotMetalRemoveError( sEventLogMessage &EventLogMessage, const char * LadleType,int LadleNo,int ChargeSeq);
+
+long EL_ScrapContainerSetDataError( int ContainerInSeq,int ContainerNo);
+
+long EL_ScrapContainerSetDataError( sEventLogMessage &EventLogMessage, int ContainerInSeq,int ContainerNo);
+
+long EL_HandleSetScrapContainerData( int ContainerInSeq,int ContainerNo);
+
+long EL_HandleSetScrapContainerData( sEventLogMessage &EventLogMessage, int ContainerInSeq,int ContainerNo);
+
+long EL_TapChangeStart( const char * ReactTapNo,const char * VoltTapNo,const char * EltrdRegCurve,const char * FurnTapChangOn);
+
+long EL_TapChangeStart( sEventLogMessage &EventLogMessage, const char * ReactTapNo,const char * VoltTapNo,const char * EltrdRegCurve,const char * FurnTapChangOn);
+
+long EL_TapChangeFinished( const char * ReactTapNo,const char * VoltTapNo,const char * EltrdRegCurve,const char * FurnTapChangOn);
+
+long EL_TapChangeFinished( sEventLogMessage &EventLogMessage, const char * ReactTapNo,const char * VoltTapNo,const char * EltrdRegCurve,const char * FurnTapChangOn);
+
+long EL_HandleScrapOrder( const char * OrderID,int ContainerInSeq,const char * ContainerType);
+
+long EL_HandleScrapOrder( sEventLogMessage &EventLogMessage, const char * OrderID,int ContainerInSeq,const char * ContainerType);
+
+long EL_TempMeasurement( const char * MeasTemp,int TempSampleNo);
+
+long EL_TempMeasurement( sEventLogMessage &EventLogMessage, const char * MeasTemp,int TempSampleNo);
+
+long EL_ManipInjectLanceStart( const char * Device,const char * MatCode);
+
+long EL_ManipInjectLanceStart( sEventLogMessage &EventLogMessage, const char * Device,const char * MatCode);
+
+long EL_ManipInjectLanceStop( const char * Device,const char * MatCode,double Value);
+
+long EL_ManipInjectLanceStop( sEventLogMessage &EventLogMessage, const char * Device,const char * MatCode,double Value);
+
+long EL_InjectionStart( const char * Device,const char * MatCode);
+
+long EL_InjectionStart( sEventLogMessage &EventLogMessage, const char * Device,const char * MatCode);
+
+long EL_InjectionStop( const char * Device,const char * MatCode,double Value);
+
+long EL_InjectionStop( sEventLogMessage &EventLogMessage, const char * Device,const char * MatCode,double Value);
+
+long EL_ScrapContainerOrderError( int ContainerNo,int ContainerInSeqReq,int ScrapContainertInSeqAct);
+
+long EL_ScrapContainerOrderError( sEventLogMessage &EventLogMessage, int ContainerNo,int ContainerInSeqReq,int ScrapContainertInSeqAct);
+
+long EL_ChangeProdPracPointerElec( const char * ProdPracPointer);
+
+long EL_ChangeProdPracPointerElec( sEventLogMessage &EventLogMessage, const char * ProdPracPointer);
+
+long EL_ChangeProdPracPointerInjection( const char * ProdPracPointer);
+
+long EL_ChangeProdPracPointerInjection( sEventLogMessage &EventLogMessage, const char * ProdPracPointer);
+
+long EL_ChangeProdPracDataBurnerOxygen( const char * ProdPracPointer);
+
+long EL_ChangeProdPracDataBurnerOxygen( sEventLogMessage &EventLogMessage, const char * ProdPracPointer);
+
+long EL_ChangeProdPracPointerOxygen( const char * ProdPracPointer);
+
+long EL_ChangeProdPracPointerOxygen( sEventLogMessage &EventLogMessage, const char * ProdPracPointer);
+
+long EL_ChangeProdPracPointerParameter( const char * ProdPracPointer);
+
+long EL_ChangeProdPracPointerParameter( sEventLogMessage &EventLogMessage, const char * ProdPracPointer);
+
+long EL_ChangeProdPracPointerRestriction( const char * ProdPracPointer);
+
+long EL_ChangeProdPracPointerRestriction( sEventLogMessage &EventLogMessage, const char * ProdPracPointer);
+
+long EL_SetComputerModeManual( const char * Device);
+
+long EL_SetComputerModeManual( sEventLogMessage &EventLogMessage, const char * Device);
+
+long EL_SetComputerModeAutomatic( const char * Device);
+
+long EL_SetComputerModeAutomatic( sEventLogMessage &EventLogMessage, const char * Device);
+
+long EL_SetComputerModeDynamic( const char * Device);
+
+long EL_SetComputerModeDynamic( sEventLogMessage &EventLogMessage, const char * Device);
+
+long EL_SetComputerModePattern( const char * Device);
+
+long EL_SetComputerModePattern( sEventLogMessage &EventLogMessage, const char * Device);
+
+long EL_FlameProfileUnused();
+
+long EL_FlameProfileUnused( sEventLogMessage &EventLogMessage );
+
+long EL_DoorOpened();
+
+long EL_DoorOpened( sEventLogMessage &EventLogMessage );
+
+long EL_DoorClosed();
+
+long EL_DoorClosed( sEventLogMessage &EventLogMessage );
+
+long EL_RoofArrivesInUpPosition();
+
+long EL_RoofArrivesInUpPosition( sEventLogMessage &EventLogMessage );
+
+long EL_RoofArrivesInDownPosition();
+
+long EL_RoofArrivesInDownPosition( sEventLogMessage &EventLogMessage );
+
+long EL_GantrySwungIn();
+
+long EL_GantrySwungIn( sEventLogMessage &EventLogMessage );
+
+long EL_GantrySwungOut();
+
+long EL_GantrySwungOut( sEventLogMessage &EventLogMessage );
+};
+#endif

@@ -1,0 +1,18 @@
+﻿  CDM_GENAnalysisEventHandler.cpp
+  CDM_GENCCSEventHandler.cpp
+  CDM_GENDBManager.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CDM_GENDBManagerTask.cpp
+  CDM_GENEventHandler.cpp
+  CDM_GENHMIEventHandler.cpp
+  CDM_GENL3EventHandler.cpp
+  CDM_GENModesAndAvailabilitiesEventHandler.cpp
+  CDM_GENPlantManager.cpp
+  CDM_GENProductManager.cpp
+  CDM_GENTask.cpp
+  CDM_GENTreatmentManagementEventHandler.cpp
+  Generating Code...
+  DM_GEN_Frame.vcxproj -> X:\SMC\source\XPACT_SMC_BUILD\x64\Release\DM_GEN_Frame.lib

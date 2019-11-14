@@ -1,0 +1,45 @@
+// Copyright (C) 2007 SMS Demag AG
+
+#if defined (_MSC_VER) && (_MSC_VER >= 1000)
+#pragma once
+#endif
+#ifndef _INC_CARCHIVER_HMDANALYSISDATAWRAPPER_45D30C9700CF_INCLUDED
+#define _INC_CARCHIVER_HMDANALYSISDATAWRAPPER_45D30C9700CF_INCLUDED
+
+#include "CARCHIVER_AnalysisDataWrapper.h"
+
+
+
+//##ModelId=45D30C9700CF
+class CARCHIVER_HMDAnalysisDataWrapper 
+: public CARCHIVER_AnalysisDataWrapper
+{
+protected:
+	//##ModelId=45DAB55202CD
+	virtual void deleteDBClasses();
+
+	//##ModelId=45DAB5530170
+	virtual void initDBClasses();
+
+public:
+	//##ModelId=45D31AD402C7
+	bool doOnSampleTaken(CEventMessage& Event);
+
+	//##ModelId=45D30D4B0056
+	CARCHIVER_HMDAnalysisDataWrapper();
+
+	//##ModelId=45D30D4B0377
+	virtual ~CARCHIVER_HMDAnalysisDataWrapper();
+
+	//##ModelId=45D31AD402DB
+	bool doOnHotMetalAnalysisReceived(CEventMessage& Event);
+
+	//##ModelId=45D31AD402EF
+	bool doOnHotMetalSampleTaken(CEventMessage& Event);
+
+	//##ModelId=45D31B0602F2
+	bool doOnAnalysisReceived(CEventMessage& Event  );
+
+};
+
+#endif /* _INC_CARCHIVER_HMDANALYSISDATAWRAPPER_45D30C9700CF_INCLUDED */

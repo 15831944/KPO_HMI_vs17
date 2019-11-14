@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{ec1e37e2-9e56-41c3-91be-18eae8a866e3}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Rule Sets">
+      <UniqueIdentifier>{7ee464fc-27f7-4581-99a6-cebcdaf3fc9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="INI files">
+      <UniqueIdentifier>{383c475d-cbf4-4983-9c6b-10f59ae0f99b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\cfg\Dm\DM_EAFDataProviderRuleSet.asc">
+      <Filter>Rule Sets</Filter>
+    </None>
+    <None Include="..\..\..\..\cfg\Dm\DM_EAFEventRuleSet.asc">
+      <Filter>Rule Sets</Filter>
+    </None>
+    <None Include="..\InstallShield\cfg\SMC_OFFLINE\EAF_OFFLINE_RT.ini">
+      <Filter>INI files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

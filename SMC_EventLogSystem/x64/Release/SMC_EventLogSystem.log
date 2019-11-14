@@ -1,0 +1,65 @@
+﻿  CSMC_DestCodes.cpp
+  CSMC_EventLogEAF.cpp
+x:\smc\source\smc_eventlogsystem\csmc_eventlogeaf.cpp(2455): warning C4778: 'sprintf' : unterminated format string '%'
+x:\smc\source\smc_eventlogsystem\csmc_eventlogeaf.cpp(2455): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventlogeaf.cpp(2455): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventlogeaf.cpp(2478): warning C4778: 'sprintf' : unterminated format string '%'
+x:\smc\source\smc_eventlogsystem\csmc_eventlogeaf.cpp(2478): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventlogeaf.cpp(2478): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventlogeaf.cpp(2495): warning C4778: 'sprintf' : unterminated format string '%'
+x:\smc\source\smc_eventlogsystem\csmc_eventlogeaf.cpp(2495): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventlogeaf.cpp(2495): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventlogeaf.cpp(2520): warning C4778: 'sprintf' : unterminated format string '%'
+x:\smc\source\smc_eventlogsystem\csmc_eventlogeaf.cpp(2520): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventlogeaf.cpp(2520): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  CSMC_EventLogEAFController.cpp
+  CSMC_EventLogFrame.cpp
+x:\smc\source\smc_eventlogsystem\csmc_eventlogframe.cpp(3049): warning C4778: 'sprintf' : unterminated format string '%'
+x:\smc\source\smc_eventlogsystem\csmc_eventlogframe.cpp(3049): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventlogframe.cpp(3049): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventlogframe.cpp(3082): warning C4778: 'sprintf' : unterminated format string '%'
+x:\smc\source\smc_eventlogsystem\csmc_eventlogframe.cpp(3082): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventlogframe.cpp(3082): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  CSMC_EventLogFrameController.cpp
+  CSMC_EventLogHMD.cpp
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(805): warning C4778: 'sprintf' : unterminated format string '%l'
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(805): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(805): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(830): warning C4778: 'sprintf' : unterminated format string '%l'
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(830): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(830): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(847): warning C4778: 'sprintf' : unterminated format string '%l'
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(847): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(847): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(876): warning C4778: 'sprintf' : unterminated format string '%l'
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(876): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(876): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(947): warning C4778: 'sprintf' : unterminated format string '%l'
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(947): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(947): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(968): warning C4778: 'sprintf' : unterminated format string '%l'
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(968): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(968): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(981): warning C4778: 'sprintf' : unterminated format string '%l'
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(981): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(981): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1002): warning C4778: 'sprintf' : unterminated format string '%l'
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1002): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1002): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1199): warning C4778: 'sprintf' : unterminated format string '%l'
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1199): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1199): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1224): warning C4778: 'sprintf' : unterminated format string '%l'
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1224): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1224): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1241): warning C4778: 'sprintf' : unterminated format string '%l'
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1241): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1241): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1270): warning C4778: 'sprintf' : unterminated format string '%l'
+x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1270): warning C4474: 'sprintf' : too many arguments passed for format string
+  x:\smc\source\smc_eventlogsystem\csmc_eventloghmd.cpp(1270): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  CSMC_EventLogHMDController.cpp
+  CSMC_EventLogLF.cpp
+  CSMC_EventLogLFController.cpp
+  Generating Code...
+  SMC_EventLogSystem.vcxproj -> X:\SMC\source\XPACT_SMC_BUILD\x64\Release\SMC_EventLogSystem.lib

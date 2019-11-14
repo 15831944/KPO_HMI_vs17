@@ -1,0 +1,1104 @@
+#include "iSMC_DataDefinitions_s.hh"
+#include "iSMC_DataProvider_S.hh"
+#include "iEventMessages_s.hh"
+#include "iDM_Interface_s.hh"
+
+#include "CIntfData.h"
+#include "cCBS_StdInitBase.h"
+#include "cCBS_StdEventLogFrameController.h"
+#include "cCBS_DBExc.h"
+#include "cCBS_StdCORBA_Task.h"
+#include "CSMC_EventLogFrameController.h"
+#include "CEventMessage.h"
+#include "CDateTime.h"
+
+#include "CARCHIVER_HMDTreatmentWrapper.h"
+#include "CPD_PRETREATDATA.h"
+#include "CGT_PARAM.h"
+
+
+CARCHIVER_HMDTreatmentWrapper::CARCHIVER_HMDTreatmentWrapper() 
+//: m_pPDH_Heat_Data(0)
+//SS, m_pPP_Grade_Anl(0)
+//SS, m_pGC_Prd_Stat(0)
+//SS, m_pPD_Report(0)
+{
+    //m_PlantID = DEF_DB_PLANT::HMD;
+}
+
+CARCHIVER_HMDTreatmentWrapper::~CARCHIVER_HMDTreatmentWrapper()
+{
+}
+
+void CARCHIVER_HMDTreatmentWrapper::deleteDBClasses()
+{
+  CARCHIVER_TreatmentWrapper::deleteDBClasses();
+
+//  if (m_pPDH_Heat_Data) { delete m_pPDH_Heat_Data; m_pPDH_Heat_Data = 0;}
+//SS  if (m_pPP_Grade_Anl) { delete m_pPP_Grade_Anl; m_pPP_Grade_Anl = 0;}
+  if (m_pPD_Ladle_Life_Data) { delete m_pPD_Ladle_Life_Data; m_pPD_Ladle_Life_Data = 0;}
+  if (m_pGC_Ladle_Parts) { delete m_pGC_Ladle_Parts; m_pGC_Ladle_Parts = 0;}
+//  if (m_pPDH_Actual_Res) { delete m_pPDH_Actual_Res; m_pPDH_Actual_Res = 0;}
+//SS  if (m_pGC_Prd_Stat) {delete m_pGC_Prd_Stat; m_pGC_Prd_Stat = 0;}
+//SS  if (m_pPD_Report) { delete m_pPD_Report; m_pPD_Report = 0;}
+}
+
+void CARCHIVER_HMDTreatmentWrapper::initDBClasses()
+{
+	//  DUTM
+////  CARCHIVER_TreatmentWrapper::initDBClasses();
+//////SS  m_pGC_Prd_Stat = new CGC_PRD_STAT(m_pConnection);
+////  m_pGC_Ladle_Parts = new CGC_LADLE_PARTS(m_pConnection);
+////// m_pPDH_Heat_Data = new CPDH_HEAT_DATA(m_pConnection);
+//////SS  m_pPP_Grade_Anl = new CPP_GRADE_ANL(m_pConnection);
+////  m_pPD_Ladle_Life_Data = new CPD_LADLE_LIFE_DATA(m_pConnection);
+//////  m_pPDH_Actual_Res = new CPDH_ACTUAL_RES(m_pConnection);
+//////SS  m_pPD_Report = new CPD_REPORT(m_pConnection);
+////  
+////  // for Teaminng ladle parts life
+////  if (m_pGC_Ladle_Parts->select(CSMC_DBData::unspecString, DEF_LADLE_TYPES::HotMetalLadle))
+////  {
+////    std::string Message = "INFO: Life data will be set for teeming ladle parts ";
+////    std::string PartCode;
+////    for ( long row = 1; row <= m_pGC_Ladle_Parts->getLastRow(); row ++ )
+////    {
+////      PartCode = m_pGC_Ladle_Parts->getLADLEPARTCODE(row);
+////      Message  += " '" + PartCode + "'";
+////      m_LadlePartCode.push_back(PartCode);
+////    }
+////    log(Message,3);
+////  }
+////  else
+////  {
+////    std::string SearchKey = "Lalde type: ";
+////    SearchKey += DEF_LADLE_TYPES::HotMetalLadle;
+////    CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ErrorSearchingData(sMessage, SearchKey.c_str(),"GC_LADLE_PARTS");
+////  } 
+}
+
+bool CARCHIVER_HMDTreatmentWrapper::doOnHeatDeparture(CEventMessage& Event)
+{
+  bool RetValue = true;
+
+	 // DUTM
+
+////  std::string ProductID = Event.getProductID();
+////  std::string HeatID    = Event.getHeatID();
+////  std::string TreatID   = Event.getTreatID();
+////  std::string DataKey   = Event.getDataKey();
+////  std::string Sender    = Event.getSender();
+////  std::string PlantID   = Event.getPlantID();
+////  std::string OrderID   = Event.getOrderID();
+////  std::string ActPlant  = m_pPlantID_Interpreter->getPlant(PlantID);
+////  long ActPlantNo = m_pPlantID_Interpreter->getPlantNo(PlantID);
+////
+////  // Unified exception handling *******************************************************
+////  std::string Scope("CARCHIVER_HMDTreatmentWrapper::doOnHeatEnd");
+////  std::stringstream ExceptionMsg;
+////  ExceptionMsg << "Handling event: " << Sender
+////               << ", " << ProductID << ", " << HeatID
+////               << ", " << TreatID   << ", " << DataKey;
+////  //***********************************************************************************
+////  try
+////  { 
+////    if (!m_pConnection)
+////    {
+////      handleDBConnectionError();
+////      if (!m_pConnection) return false;
+////    }
+////
+////    CDateTime  hstart,announcetime;
+////
+////    // get product interface from sender to read Blow Pred. Results
+////    setpDM_Interface(Event.getSender(),DM::PRODUCT);
+////
+////    hstart.SetTime(m_pDM_Interface->getDate(ProductID.c_str(), DATA::HeatStartTime));
+////    announcetime.SetTime(m_pDM_Interface->getDate(ProductID.c_str(), DATA::HeatAnnounceTime));
+////
+////    CDateTime   now;
+////    CDeltaTime  DurTime;
+////    std::string LadleType;
+////    std::string LadleNo;
+////    seqHMDModelResult SeqHMDModelResult;
+////    sHMDModelResult HMDModelResult;
+////    setpDM_Interface(Event.getSender(),DM::PRODUCT);
+////    SeqHMDModelResult     = CIntfData::ToCORBAType(m_pDM_Interface->getHMDModelResult(ProductID.c_str(),DATA::HMDPredRes));
+////    CIntfData::getAt(HMDModelResult, SeqHMDModelResult, 0);
+////
+////    // update status of order and heat
+////    if (m_pPP_Heat_Plant->select(HeatID, TreatID, ActPlant))
+////    {
+////      std::string CustHeatID = m_pPP_Heat_Plant->getHEATID_CUST_PLAN(1); //SS ->getHEATID_CUST(1);
+////      // Definition are in table GC_HEAT_STAT and GC_PRD_STAT
+////      if (m_pPP_Heat->select(CustHeatID))
+////      {
+//////SS        m_pPP_Heat->doHeatAndOrderStatusChange(CustHeatID, ActPlant, DEF_GC_HEAT_STAT::LdlDepart, CSMC_DBData::unspecString);
+////      }
+////    }
+////    else
+////    {
+////      std::string SearchKey = HeatID + ", " + TreatID + ", " + ActPlant;
+////      CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ErrorSearchingData(sMessage,SearchKey.c_str(),"PP_HEAT_PLANT");
+////    }
+////
+////    setpDM_Interface(Sender,DM::EVENT);
+////
+////    LadleNo   = CIntfData::ToStdString(m_pDM_Interface->getString(DataKey.c_str(), DATA::LadleNo));
+////    LadleType = CIntfData::ToStdString(m_pDM_Interface->getString(DataKey.c_str(), DATA::LadleType));
+////    if (LadleNo == DEF::Inv_String || LadleNo.empty())
+////    {
+//////SS      if (m_pPD_Ladle_Data->select(HeatID, "LAST"))
+//////SS      {
+//////SS        LadleNo = m_pPD_Ladle_Data->getLADLENO(1);
+//////SS      }
+////    }
+////    if (LadleType == DEF::Inv_String || LadleType.empty())
+////      LadleType = DEF_LADLE_TYPES::HotMetalLadle;
+////
+//////SS    if (m_pPD_Ladle->select(LadleNo, LadleType))
+//////SS    {
+//////SS      m_pPD_Ladle->setLDLPOSID(DEF_GC_LADLE_POS::Undef);
+//////SS      RetValue = RetValue && m_pPD_Ladle->update();
+//////SS    }
+////
+////    //SS cheking if recived ladle data identical to announced ladle data
+////    //SS if (m_pPD_Heatdata->select(HeatID, TreatID, ActPlant))
+////    //SS {
+////    //SS   std::string LadleTypeAnn;
+////    //SS   std::string LadleNoAnn;
+////
+////    //SS   LadleTypeAnn = m_pPD_Heatdata->getLADLETYPE(1);
+////    //SS   LadleNoAnn   = m_pPD_Heatdata->getLADLENO(1);
+////
+////    //SS   if (LadleNo.empty() && LadleType.empty())
+////    //SS   {
+////    //SS     log("ERROR: departure: Invalid LadleType and LadleNo received!",2);
+////    //SS     LadleNo   = m_pPD_Heatdata->getLADLENO(1);
+////    //SS     LadleType = m_pPD_Heatdata->getLADLETYPE(1);
+////    //SS   }
+////    //SS   else
+////    //SS   {
+////    //SS     if (LadleNo != LadleNoAnn || LadleType != LadleTypeAnn)
+////    //SS     {
+////    //SS       // JOGE open point. additionally event log to HMI has to be sent
+////    //SS       std::string Message("WARNING: Received another ladle as announced! Announced ladle type was:");
+////    //SS       Message += LadleTypeAnn + " received :" + LadleType + ", announced ladle no:";
+////    //SS       Message += LadleNoAnn + " received :" + LadleNo;
+////    //SS     }
+////    //SS   }
+////    //SS }
+////    //SS else
+////    //SS {
+////    //SS   std::string SearchKey = HeatID + "," + TreatID + "," + ActPlant;
+////    //SS   CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////    //SS   sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    //SS   pEventLog->EL_ErrorSearchingData(sMessage,SearchKey.c_str(),"PD_HEATDATA");
+////    //SS }
+////  
+////    //------------------  increase ladle life in PD_LADLE_LIFE_DATA---------
+////
+////    if ((LadleType != DEF::Inv_String) && 
+////        (LadleNo != DEF::Inv_String))
+////    {
+//////SS      m_pPD_Ladle_Life_Data->incrLife(LadleType, LadleNo, m_LadlePartCode);
+////    }
+////    else
+////      log("ERROR: LadleType and LadleNo are Invalid!",2);
+/////* PDH_HEAT_DATA and PDH_ACTUAL_RES tables are not there in the DB
+////    if (m_pPDH_Heat_Data->select(ActPlant, HeatID, TreatID ))
+////    { 
+////      if(m_pPDH_Actual_Res->selectActual(HeatID,TreatID,ActPlant,HMDModelResult.TreatmentKind))
+////      {
+////        CGT_PARAM GT_Param(m_pConnection);
+////        double MinSlagWeight = 100, MinSteelWeight = 79000;
+////
+//////SS        MinSteelWeight = max(CDataConversion::StringToDouble(GT_Param.getValue("MassSlagMin", ActPlant, ActPlantNo, 0, CSMC_DBData::unspecLong)),
+//////SS                             MinSlagWeight);
+//////SS        MinSlagWeight = max(CDataConversion::StringToDouble(GT_Param.getValue("MassSteelMin", ActPlant, ActPlantNo, 0, CSMC_DBData::unspecLong)),
+//////SS                            MinSlagWeight);
+////
+////        if(!m_pPDH_Heat_Data->isNull("SLAG_WEIGHT_END",1))
+////        {
+////          //check, if data is valid
+////          if(m_pPDH_Heat_Data->getSLAG_WEIGHT_END(1) < MinSlagWeight)
+////           m_pPDH_Heat_Data->setSLAG_WEIGHT_END(m_pPDH_Actual_Res->getFINAL_SLAG_WEIGHT(1));
+////        }
+////        else
+////          m_pPDH_Heat_Data->setSLAG_WEIGHT_END(m_pPDH_Actual_Res->getFINAL_SLAG_WEIGHT(1));
+////
+////        if(!m_pPDH_Heat_Data->isNull("HM_WEIGHT_END",1)) 
+////        {
+////          // check, if data is valid
+////          if(m_pPDH_Heat_Data->getHM_WEIGHT_END(1) < MinSteelWeight)
+////            m_pPDH_Heat_Data->setHM_WEIGHT_END(m_pPDH_Actual_Res->getHOT_METAL_MASS(1));
+////        }
+////        else
+////          m_pPDH_Heat_Data->setHM_WEIGHT_END(m_pPDH_Actual_Res->getHOT_METAL_MASS(1));
+////        
+////        if(m_pPDH_Heat_Data->isNull("HM_TEMP_END",1))
+////          m_pPDH_Heat_Data->setHM_TEMP_END(long(m_pPDH_Actual_Res->getTEMP_END(1)));
+////
+////        if (m_pPDH_Heat_Data->isNull("INJECT_END_TIME",1))
+////          m_pPDH_Heat_Data->setINJECT_END_TIME(now);
+////     }
+////      else
+////        log("ERROR: The selection was not successful of PDH_ACTUAL_RES!",2);
+////
+////      std::vector<std::string>::iterator it;
+////      it = m_LadlePartCode.begin(); 
+////      for (it ; it < m_LadlePartCode.end() ; it++)
+////      {
+////       /* SSif (m_pPD_Ladle_Life_Data->select(LadleType, LadleNo, *it ))
+////        SS  {
+////        SS    std::string LadlePart = m_pPD_Ladle_Life_Data->getLADLEPARTCODE(1);
+////        SS    if(LadlePart == "LW")
+////        SS      m_pPDH_Heat_Data->setLADLE_WALL_LIFE(m_pPD_Ladle_Life_Data->getLIFE(1));
+////        SS    else if(LadlePart == "LB")
+////        SS      m_pPDH_Heat_Data->setLADLE_BOT_LIFE(m_pPD_Ladle_Life_Data->getLIFE(1));
+////        SS  }*/
+////      }
+////      
+////      // PAWAN 2010-10-26: Set Finally Operator Treatement Type.
+////      setpDM_Interface(Event.getSender(),DM::PLANT);
+////      long TreatTypeOper = m_pDM_Interface->getLong(DEF_PLANT::Furnace,DATA::HMDBlowType);
+////      if(TreatTypeOper != DEF::Inv_Long)
+////        m_pPDH_Heat_Data->setTREAT_TYPE_OPER(TreatTypeOper);
+////      
+////     RetValue = RetValue && m_pPDH_Heat_Data->update();
+////      // commit/rollback should be done only once at the end of the function
+////      // and has an effect on all DB-tables
+////    }
+////
+////    //-------------- update report table ---------------------
+////    //SS if (m_pPD_Report->select(HeatID, TreatID, ActPlant))
+////    //SS {
+////    //SS   m_pPD_Report->setDEPARTTIME(now);
+////    //SS   m_pPD_Report->setWEEKNO(now.getWeekNo());
+////    //SS   m_pPD_Report->setMONTHNO(now.getMonth());
+////
+////    //SS   // Pawan 20101014 PD_Delays returns DelayDur in minutes so /60 not needed.
+////    //SS   // If TREATSTART_ACT is NULL read ANNOUCETIME.
+////    //SS   if (!m_pPD_Report->isNull("TREATSTART_ACT",1))
+////    //SS     m_pPD_Report->setDELAYDUR(m_pPD_Delays->getDurDelays(ActPlant, ActPlantNo, m_pPD_Report->getTREATSTART_ACT(1), now));
+////    //SS   else
+////    //SS     m_pPD_Report->setDELAYDUR(m_pPD_Delays->getDurDelays(ActPlant, ActPlantNo, m_pPD_Report->getANNOUCETIME(1), now));
+////
+////    //SS   if (m_pPD_Anl->selectLastTemp(HeatID, TreatID))
+////    //SS   {
+////    //SS     m_pPD_Report->setLASTTEMP(m_pPD_Anl->getTEMP(1));
+////    //SS     m_pPD_Report->setTIMELASTTEMPBEFTAP(m_pPD_Anl->getSMPLTIME(1));
+////    //SS   }
+////    //SS   else
+////    //SS   {
+////    //SS     std::string SearchKey = HeatID + " " + TreatID + " last Temp";
+////    //SS     CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////    //SS     sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    //SS     pEventLog->EL_ErrorSearchingData(sMessage,SearchKey.c_str(),"PD_ANL");
+////    //SS   }
+////
+////    //SS   // 20101014 PAWAN TREATDUR should be calculated based on TREATSTART_ACT,
+////    //SS   // but if TREATSTART_ACT is NULL then ANNOUCETIME should be used.
+////    //SS   if (!m_pPD_Report->isNull("TREATSTART_ACT",1))
+////    //SS   {
+////    //SS     CDateTime StartTr;
+////    //SS     sDate st = m_pPD_Report->getTREATSTART_ACT(1).assDate();
+////    //SS     if (now.get_DST())
+////    //SS       st.dstFlag = true;
+////    //SS     StartTr.SetTime(st);
+////    //SS     DurTime  = CDateTime::subTimes (now, StartTr);
+////    //SS     m_pPD_Report->setTREATDUR(DurTime.asSeconds()/60);
+////    //SS   }
+////    //SS   else
+////    //SS   {
+////    //SS     CDateTime StartTr;
+////    //SS     sDate st = m_pPD_Report->getANNOUCETIME(1).assDate();
+////    //SS     if (now.get_DST())
+////    //SS       st.dstFlag = true;
+////    //SS     StartTr.SetTime(st);
+////    //SS     DurTime  = CDateTime::subTimes (now, StartTr);
+////    //SS     m_pPD_Report->setTREATDUR(DurTime.asSeconds()/60);
+////    //SS   }
+////
+////      // 20101014 PAWAN..
+////   //SS   if(m_pPDH_Heat_Data->select(ActPlant, HeatID, TreatID ))
+////   //SS     m_pPD_Report->setFINALSTEEL(m_pPDH_Heat_Data->getHM_WEIGHT_END(1));
+////
+////    //SS  if (m_pPD_Heatdata->select(HeatID, TreatID, ActPlant))
+////    //SS  {
+////    //SS    if (!m_pPD_Heatdata->isNull("AIMSTEELWGT_MOD",1))
+////    //SS      m_pPD_Report->setAIMSTEELWEIGHT_MOD(m_pPD_Heatdata->getAIMSTEELWGT_MOD(1));
+////    //SS    if (!m_pPD_Heatdata->isNull("AIMTEMP_MOD",1))
+////    //SS      m_pPD_Report->setAIMTEMP_MOD(m_pPD_Heatdata->getAIMTEMP_MOD(1));
+////    //SS    if (!m_pPD_Heatdata->isNull("TREATSTART_MOD",1))
+////    //SS      m_pPD_Report->setTREATSTART_MOD(m_pPD_Heatdata->getTREATSTART_MOD(1));
+////    //SS    if (!m_pPD_Heatdata->isNull("TREATEND_MOD",1))
+////    //SS      m_pPD_Report->setTREATEND_MOD(m_pPD_Heatdata->getTREATEND_MOD(1));
+////
+////    //SS    m_pPD_Heatdata->setTREATEND_ACT(now);
+////    //SS    RetValue = RetValue && m_pPD_Heatdata->update();
+////    //SS  }
+////    //SS  else
+////    //SS  {
+////    //SS    std::string SearchKey = HeatID + " " + TreatID + " " + ActPlant;
+////    //SS    CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////    //SS    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    //SS    pEventLog->EL_ErrorSearchingData(sMessage,SearchKey.c_str(),"PD_HEATDATA");
+////    //SS  }
+////
+////    //SS   RetValue = RetValue && m_pPD_Report->update();
+////    //SS }
+////    //SS else
+////    //SS {
+////    //SS   std::string SearchKey = HeatID + " " + TreatID + " " + ActPlant;
+////    //SS   CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////    //SS   sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    //SS   pEventLog->EL_ErrorSearchingData(sMessage,SearchKey.c_str(),"PD_REPORT");
+////    //SS }
+////
+////    //SS CPD_PRETREATDATA PD_PretreatData(m_pConnection);
+////    //SS if (PD_PretreatData.select(HeatID))
+////    //SS {
+////    //SS  PD_PretreatData.setLASTPLANT(ActPlant);
+////
+////    //SS  RetValue = RetValue && PD_PretreatData.update();
+////    //SS }
+////    //SS else
+////    //SS {
+////    //SS   CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////    //SS   sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    //SS   pEventLog->EL_ErrorSearchingData(sMessage,HeatID.c_str(),"PD_PRETREATDATA");
+////    //SS }
+//// }
+////  catch (cCBS_DBExc &e)
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+////      Scope.c_str(), ExceptionMsg.str().c_str()); 
+////    RetValue = false;
+////    handleDBConnectionError();
+////  }
+////  catch(CORBA::SystemException& sExc) 
+////  {
+////	  cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage,sExc._name(),
+////      Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////  }
+////  catch(CORBA::Exception& cExc) 
+////  {
+////	  cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage,cExc._name(),
+////      Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////  }
+////  catch(...)
+////  {
+////    std::string Msg("Unknown exception:");
+////    Msg += ExceptionMsg.str();
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ExceptionCaught(sMessage, "",
+////      Scope.c_str(), Msg.c_str()); 
+////    RetValue = false;
+////  }
+////  // common commit for all tables
+//////SS  if (RetValue)
+//////SS    m_pPD_Report->commit();
+//////SS  else
+//////SS    m_pPD_Report->rollback();
+
+  return RetValue;
+}
+
+bool CARCHIVER_HMDTreatmentWrapper::doOnHeatAnnouncement(CEventMessage& Event)
+{
+  cout << "************ SS>> in DM::doHMDHeatAnnouncement)" << endl;
+
+  bool RetValue = false;
+
+		// DUTM
+
+////  std::string ProductID = Event.getProductID();
+////  std::string HeatID    = Event.getHeatID();
+////  std::string TreatID   = Event.getTreatID();
+////  std::string DataKey   = Event.getDataKey();
+////  std::string PlantID   = Event.getPlantID();
+////  std::string ActPlant  = m_pPlantID_Interpreter->getPlant(PlantID);
+////
+////  std::string CustHeatID;
+////
+////  // Unified exception handling *******************************************************
+////  std::string Scope("CARCHIVER_HMDTreatmentWrapper::doOnHeatAnnouncement");
+////  std::stringstream ExceptionMsg;
+////  ExceptionMsg << "Handling event: " << Event.getSender()
+////               << ", " << ProductID << ", " << HeatID
+////               << ", " << TreatID   << ", " << DataKey;
+////  //***********************************************************************************
+////
+////  try
+////  {
+////    if (!m_pConnection)
+////    {
+////      handleDBConnectionError();
+////      if (!m_pConnection) return false;
+////    }
+////
+////    // update PP_Heat, PD_Action, PD_Report
+//////SS    handleHeatAnnouncement(Event);
+////
+////    setpDM_Interface(Event.getSender(),DM::EVENT);
+////    std::string LadleNo = CIntfData::ToStdString(m_pDM_Interface->getString(DataKey.c_str(), DATA::LadleNo));
+////
+////    if (LadleNo.empty() || LadleNo == DEF::Inv_String)
+////    {
+////      CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+//////SS      pEventLog->EL_ErrorUnknownLadleReceived(sMessage,DEF_LADLE_TYPES::HotMetalLadle,LadleNo.c_str());
+////      return true;
+////    }
+////
+////    // Read CustHeatID from PP_Heat_Plant
+////    if (m_pPP_Heat_Plant->select(HeatID, TreatID, ActPlant))
+////    {
+////      CustHeatID = m_pPP_Heat_Plant->getHEATID_CUST_PLAN(1); //SS getHEATID_CUST(1);
+////    }
+////    else
+////    {
+////      std::string SearchKey = HeatID + ", " + TreatID + ", " + ActPlant;
+////      CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ErrorSearchingData(sMessage,SearchKey.c_str(),"PP_HEAT_PLANT");
+////    }
+////
+////    if ( !CustHeatID.empty() && 
+////          CustHeatID != DEF::Inv_String && 
+////          m_pPP_Heat->select(CustHeatID))
+////    {
+////      if (Event.getMessage() == HMD_EvMsg::evHMDHeatAnnouncementOffline)
+////      {
+////        m_pPP_Heat->setHEATID(HeatID);
+////
+////        if (m_pPP_Heat->update())
+////          m_pPP_Heat->commit();
+////        else
+////        {
+////          log("ERROR: update HEATID in PP_HEAT failed!",2);
+////          m_pPP_Heat->rollback();
+////        }
+////      }
+////    }
+////    else
+////    {
+////      CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ErrorSearchingData(sMessage,CustHeatID.c_str(),"PP_HEAT");
+////    }
+////
+////    log("----------------------- START PRESETTING FOR HMD -----------------------", 2);
+////    m_pHMDPresettings = new CARCHIVER_HMDAnnouncementPresettings();
+////    m_pHMDPresettings->setpArchiverTask(m_pArchiverTask);
+////    m_pHMDPresettings->initialize(Event);
+////
+////    RetValue = m_pHMDPresettings->writeAll();
+////    log("----------------------- END PRESETTING FOR HMD -----------------------", 2);
+////  }
+////  catch (cCBS_DBExc &e)
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+////    Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////    handleDBConnectionError();
+////  }
+////  catch(CORBA::SystemException& sExc) 
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage,sExc._name(),
+////    Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////  }
+////  catch(CORBA::Exception& cExc) 
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage,cExc._name(),
+////    Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////  }
+////  catch(...)
+////  {
+////    std::string Msg("Unknown exception:");
+////    Msg += ExceptionMsg.str();
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage, "",
+////    Scope.c_str(), Msg.c_str()); 
+////    RetValue = false;
+////  }
+////  cout << "************ SS<< out of DM::doHMDHeatAnnouncement)" << endl;
+
+  return RetValue;
+}
+
+bool CARCHIVER_HMDTreatmentWrapper::doOnHeatStart(CEventMessage& Event)
+{
+  bool RetValue = false;
+
+		// DUTM
+
+  ////std::string ProductID = Event.getProductID();
+  ////std::string HeatID    = Event.getHeatID();
+  ////std::string TreatID   = Event.getTreatID();
+  ////std::string DataKey   = Event.getDataKey();
+  ////std::string PlantID   = Event.getPlantID();
+  ////std::string OrderID   = Event.getOrderID();
+  ////std::string ActPlant  = m_pPlantID_Interpreter->getPlant(PlantID);
+  ////long ActPlantNo = m_pPlantID_Interpreter->getPlantNo(PlantID);
+  ////std::string CustHeatID;
+
+  ////// Unified exception handling *******************************************************
+  ////std::string Scope("CARCHIVER_HMDTreatmentWrapper::doOnHeatStart");
+  ////std::stringstream ExceptionMsg;
+  ////ExceptionMsg << "Handling event: " << Event.getSender()
+  ////             << ", " << ProductID << ", " << HeatID
+  ////             << ", " << TreatID   << ", " << DataKey;
+  //////***********************************************************************************
+  
+////  try
+////  {
+////    if (!m_pConnection)
+////    {
+////      handleDBConnectionError();
+////      if (!m_pConnection) return false;
+////    }
+////    RetValue = handleHeatStart(Event);
+////
+////
+////    setpDM_Interface(Event.getSender(),DM::EVENT);
+////    std::string LadleNo = CIntfData::ToStdString(m_pDM_Interface->getString(DataKey.c_str(), DATA::LadleNo));
+////    std::string LadleType = CIntfData::ToStdString(m_pDM_Interface->getString(DataKey.c_str(), DATA::LadleType));
+////
+////    if (m_pPDH_Heat_Data->select(ActPlant, HeatID, TreatID))
+////    {
+////      m_pPDH_Heat_Data->setLADLENO(LadleNo);
+////      m_pPDH_Heat_Data->setLADLETYPE(LadleType);
+////      
+////      if (m_pPDH_Heat_Data->update())
+////        m_pPDH_Heat_Data->commit();
+////      else
+////        m_pPDH_Heat_Data->rollback();
+////    }
+////    else
+////    {
+////      std::stringstream SearchKey;
+////      SearchKey << "Plant = " << ActPlant << ", HeatID = " << HeatID << ", TreatID = " << TreatID;
+////      CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ErrorSearchingData(sMessage,CustHeatID.c_str(),"PDH_HEAT_DATA");
+////    }
+////    // read customer heatid from PP_HEAT_PLANT
+////
+////    CDateTime   now;
+////    long row = 0;
+////    m_pPP_Heat_Plant->select(HeatID, TreatID, ActPlant);
+////    if ((row = m_pPP_Heat_Plant->getLastRow()) > 0)
+////    {
+////      // set the values in PP_HEAT_PLANT
+////      CustHeatID = m_pPP_Heat_Plant->getHEATID_CUST_PLAN(1); //SS ->getHEATID_CUST(row);
+////      if (m_pPP_Heat_Plant->isNull("ACTTREATSTART",row))
+////      {
+////        m_pPP_Heat_Plant->setTREATSTART_PLAN(now); //SS  ->setACTTREATSTART(now);
+////        if (m_pPP_Heat_Plant->update())
+////        {
+////          RetValue = true;
+////          m_pPP_Heat_Plant->commit();
+////        }
+////      }
+////      else
+////      {
+////        m_pPP_Heat_Plant->rollback();
+////      }
+////      
+////      // set the values in PP_HEAT & PP_ORDER
+////      if (m_pPP_Heat->select(CustHeatID))
+////      {
+//////SS        RetValue = m_pPP_Heat->doHeatAndOrderStatusChange(CustHeatID, ActPlant, DEF_GC_HEAT_STAT::TreatStart, CSMC_DBData::unspecString);
+////      }
+////      else
+////      {
+////        CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////        sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////        pEventLog->EL_ErrorSearchingData(sMessage,CustHeatID.c_str(),"PP_HEAT");
+////      }
+////    }
+////    else
+////    {
+////      std::string SearchKey = HeatID + ", " + TreatID + ", " + ActPlant;
+////      CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ErrorSearchingData(sMessage,SearchKey.c_str(),"PP_HEAT_PLANT");
+////    }
+////
+////    // Update PD_Report with Actual Treatement Start Time.
+////    //SS if (m_pPD_Report->select(HeatID, TreatID, ActPlant))
+////    //SS {
+////    //SS   m_pPD_Report->setHEATSTARTTIME(now);
+////    //SS   m_pPD_Report->setTREATSTART_ACT(now);
+////    //SS   if (m_pPD_Report->update())
+////    //SS     m_pPD_Report->commit();
+////    //SS   else
+////    //SS     m_pPD_Report->rollback();
+////    //SS }
+////    //SS else
+////    //SS {
+////    //SS   std::string SearchKey = HeatID + ", " + TreatID + ", " + ActPlant;
+////    //SS   CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////    //SS   sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    //SS   pEventLog->EL_ErrorSearchingData(sMessage,SearchKey.c_str(),"PD_REPORT");
+////    //SS }
+////
+////    // Update PD_HEATDATA with Actual Treatement Start Time.
+////    //SS if (m_pPD_Heatdata->select(HeatID, TreatID, ActPlant))
+////    //SS {
+////    //SS   m_pPD_Heatdata->setTREATSTART_ACT(now);
+////    //SS   if (m_pPD_Heatdata->update())
+////    //SS     m_pPD_Heatdata->commit();
+////    //SS   else
+////    //SS     m_pPD_Heatdata->rollback();
+////    //SS }
+////    //SS else
+////    //SS {
+////    //SS   std::string SearchKey = HeatID + ", " + TreatID + ", " + ActPlant;
+////    //SS   CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////    //SS   sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    //SS   pEventLog->EL_ErrorSearchingData(sMessage,SearchKey.c_str(),"PD_HEATDATA");
+////    //SS }
+////  }
+////  catch (cCBS_DBExc &e)
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+////      Scope.c_str(), ExceptionMsg.str().c_str()); 
+////    RetValue = false;
+////    handleDBConnectionError();
+////  }
+////  catch(...)
+////  {
+////    std::string Msg("Unknown exception:");
+////    Msg += ExceptionMsg.str();
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ExceptionCaught(sMessage, "",
+////      Scope.c_str(), Msg.c_str()); 
+////    RetValue = false;
+////  }
+  return RetValue;
+}
+
+bool CARCHIVER_HMDTreatmentWrapper::doOnHeatEnd(CEventMessage& Event)
+{
+  bool RetValue = false;
+
+		// DUTM
+
+////  std::string ProductID = Event.getProductID();
+////  std::string HeatID    = Event.getHeatID();
+////  std::string TreatID   = Event.getTreatID();
+////  std::string DataKey   = Event.getDataKey();
+////  std::string PlantID   = Event.getPlantID();
+////  std::string ActPlant  = m_pPlantID_Interpreter->getPlantName(PlantID);
+////  long ActPlantNo = m_pPlantID_Interpreter->getPlantNo(PlantID);
+////  std::string CustHeatID;
+////
+////  // Unified exception handling *******************************************************
+////  std::string Scope("CARCHIVER_HMDTreatmentWrapper::doOnHeatEnd");
+////  std::stringstream ExceptionMsg;
+////  ExceptionMsg << "Handling event: " << Event.getSender()
+////               << ", " << ProductID << ", " << HeatID
+////               << ", " << TreatID   << ", " << DataKey;
+////  //***********************************************************************************
+////
+////  try
+////  {
+////    if (!m_pConnection)
+////    {
+////      handleDBConnectionError();
+////      if (!m_pConnection) return false;
+////    }
+////
+////    CDateTime   now;
+////    long row = 0;
+////    m_pPP_Heat_Plant->select(HeatID, TreatID, ActPlant);
+////    if ((row = m_pPP_Heat_Plant->getLastRow()) > 0)
+////    {
+////      // map heatid to CustHeatID
+////      CustHeatID = m_pPP_Heat_Plant->getHEATID_CUST_PLAN(1); //SS   getHEATID_CUST(row);
+////      m_pPP_Heat_Plant->setTREATEND_PLAN(now);   //SS setACTTREATEND(now);
+////      if (m_pPP_Heat_Plant->update())
+////      {
+////        RetValue = true;
+////        m_pPP_Heat_Plant->commit();
+////      }
+////    }
+////    else
+////    {
+////      std::string SearchKey = HeatID + ", " + TreatID + ", " + ActPlant;
+////      CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ErrorSearchingData(sMessage,SearchKey.c_str(),"PP_HEAT_PLANT");
+////    }
+////    
+////    //Pawan 20101005 set TREATEND_ACT also
+////    //SS if(m_pPD_Report->select(HeatID, TreatID, ActPlant))
+////    //SS {
+////    //SS   m_pPD_Report->setTREATEND_ACT(now);
+////    //SS   if (m_pPD_Report->update())
+////    //SS     m_pPD_Report->commit();
+////    //SS   else
+////    //SS     m_pPD_Report->rollback();
+////    //SS }
+////    //SS else
+////    //SS {
+////    //SS   std::string SearchKey = HeatID + ", " + TreatID + ", " + ActPlant;
+////    //SS   CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////    //SS   sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    //SS   pEventLog->EL_ErrorSearchingData(sMessage,SearchKey.c_str(),"PD_REPORT");
+////    //SS }
+////  }
+////  catch (cCBS_DBExc &e)
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+////      Scope.c_str(), ExceptionMsg.str().c_str()); 
+////    RetValue = false;
+////    handleDBConnectionError();
+////  }
+////  catch(...)
+////  {
+////    std::string Msg("Unknown exception:");
+////    Msg += ExceptionMsg.str();
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ExceptionCaught(sMessage, "",
+////      Scope.c_str(), Msg.c_str()); 
+////    RetValue = false;
+////  }
+  return RetValue;
+}
+
+bool CARCHIVER_HMDTreatmentWrapper::doOnHeatAnnounceStatus(CEventMessage& Event)
+{
+	return true;
+}
+
+bool CARCHIVER_HMDTreatmentWrapper::doOnHeatCancel(CEventMessage& Event)
+{
+	bool RetValue = false;
+////  DUTM
+////  std::string ProductID = Event.getProductID();
+////  std::string HeatID    = Event.getHeatID();
+////  std::string TreatID   = Event.getTreatID();
+////  std::string PlantID   = Event.getPlantID();
+////  std::string DataKey   = Event.getDataKey();
+////  std::string Sender    = Event.getSender();
+////  std::string ActPlant  = m_pPlantID_Interpreter->getPlantName(PlantID);
+////  long        PlantNo   = m_pPlantID_Interpreter->getPlantNo(PlantID);
+////
+////  // Unified exception handling *******************************************************
+////  std::string Scope("CARCHIVER_HMDTreatmentWrapper::doOnHeatCancel");
+////  std::stringstream ExceptionMsg;
+////  ExceptionMsg << "Handling event: " << Sender
+////               << ", " << ProductID << ", " << HeatID
+////               << ", " << TreatID   << ", " << DataKey;
+////  //***********************************************************************************
+////
+////  try
+////  {
+////    if (!m_pConnection)
+////    {
+////      handleDBConnectionError();
+////      if (!m_pConnection) return false;
+////    }
+////    
+////    // make new row in PP_Heat_Plant
+////    //handleHeatCancel(Event);
+////
+////    setpDM_Interface(Event.getSender(),DM::EVENT);
+////    std::string CustHeatID = CIntfData::ToStdString(m_pDM_Interface->getString(DataKey.c_str(), DATA::CustHeatID));
+////    std::string CustTreatID = CIntfData::ToStdString(m_pDM_Interface->getString(DataKey.c_str(), DATA::CustTreatID));
+////
+////    if (!CustHeatID.empty() && CustHeatID != DEF::Inv_String)
+////    {
+////      std::string Msg;
+////      Msg = "CustHeatID = " + CustHeatID + ", CustTreatID = " + CustTreatID;
+////      log(Msg);
+////      // delete heat from DB
+////     RetValue = m_pPDH_Heat_Data->deleteRows(HeatID, TreatID, ActPlant);
+//////SS      RetValue = RetValue && m_pPP_Heat_Plant->deleteOneRow(CustHeatID, CustTreatID);
+////      RetValue = RetValue && m_pPP_Heat->deleteOneRow(CustHeatID);
+//////SS      RetValue = RetValue && m_pPD_Heatdata->deleteOneRow(HeatID, TreatID, ActPlant);
+////
+////      // common commit/rollback for all tables
+////      if (RetValue)
+////        m_pPP_Heat->commit();
+////      else
+////        m_pPP_Heat->rollback();
+////    }
+////
+////    //SS if (m_pPD_Ladle_Data->select(HeatID, "LAST"))
+////    //SS {
+////    //SS  for (long i = 1; i <= m_pPD_Ladle_Data->getLastRow(); ++i)
+////    //SS  {
+////    //SS    bool LadleResetted = false;
+////
+////    //SS    std::string TempLadleNo = m_pPD_Ladle_Data->getLADLENO(i);
+////    //SS    std::string TempLadleType = m_pPD_Ladle_Data->getLADLETYPE(i);
+////
+////    //SS    if (m_pPD_Ladle->select(TempLadleNo, TempLadleType))
+////    //SS    {
+////    //SS      m_pPD_Ladle->setLDLPOSID(DEF_GC_LADLE_POS::Undef);
+////    //SS      LadleResetted = m_pPD_Ladle->update();
+////    //SS    }
+////
+////    //SS    m_pPD_Ladle_Data->setTAP_ID(CSMC_DBData::unspecString);
+////    //SS    LadleResetted = LadleResetted && m_pPD_Ladle_Data->update();
+////
+////    //SS    if (LadleResetted)
+////    //SS      m_pPD_Ladle_Data->commit();
+////    //SS    else
+////    //SS      m_pPD_Ladle_Data->rollback();
+////    //SS  }
+////    //SS}
+////  }
+////  catch (cCBS_DBExc &e)
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+////      Scope.c_str(), ExceptionMsg.str().c_str()); 
+////    RetValue = false;
+////    handleDBConnectionError();
+////  }
+////  catch(CORBA::SystemException& sExc) 
+////  {
+////	  cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage,sExc._name(),
+////      Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////  }
+////  catch(CORBA::Exception& cExc) 
+////  {
+////	  cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage,cExc._name(),
+////      Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////  }
+////  catch(...)
+////  {
+////    std::string Msg("Unknown exception:");
+////    Msg += ExceptionMsg.str();
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ExceptionCaught(sMessage, "",
+////      Scope.c_str(), Msg.c_str()); 
+////    RetValue = false;
+////  }
+  return RetValue;
+}
+
+bool CARCHIVER_HMDTreatmentWrapper::doOnUpdateAimDepartureTime(CEventMessage& Event)
+{
+  bool RetValue = false;
+
+		//  DUTM
+
+////  std::string ProductID = Event.getProductID();
+////  std::string HeatID    = Event.getHeatID();
+////  std::string TreatID   = Event.getTreatID();
+////  std::string DataKey   = Event.getDataKey();
+////  std::string Sender    = Event.getSender();
+////  std::string PlantID   = Event.getPlantID();
+////  std::string ActPlant  = m_pPlantID_Interpreter->getPlantName(PlantID);
+////
+////  // Unified exception handling *******************************************************
+////  std::string Scope("CARCHIVER_HMDTreatmentWrapper::doOnUpdateAimDepartureTime");
+////  std::stringstream ExceptionMsg;
+////  ExceptionMsg << "Handling event: " << Sender
+////               << ", " << ProductID << ", " << HeatID
+////               << ", " << TreatID   << ", " << DataKey;
+////  //***********************************************************************************
+////  
+////  try
+////  {
+////    if (!m_pConnection)
+////    {
+////      handleDBConnectionError();
+////      if (!m_pConnection) return false;
+////    }
+////    setpDM_Interface(Sender,DM::EVENT);
+////
+////    CDateTime depTime ;
+////    depTime.SetTime(m_pDM_Interface->getDate(DataKey.c_str(),DATA::TreatEndAim));
+////
+////    if(depTime != CDateTime::InvalidDateTime())
+////    {
+////      if(m_pPDH_Heat_Data->select(ActPlant, HeatID, TreatID))
+////      {
+////       m_pPDH_Heat_Data->setHM_TREAT_END_OPER(depTime);
+////       if (m_pPDH_Heat_Data->update())
+////          m_pPDH_Heat_Data->commit();
+////        else
+////          m_pPDH_Heat_Data->rollback();
+////      }
+////      else
+////      {
+////        std::string SearchKey = HeatID + " " + TreatID + " " + ActPlant;
+////        CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+////        sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////       pEventLog->EL_ErrorSearchingData(sMessage, SearchKey.c_str(),"PDH_Heat_Data");
+////      }
+////    }
+////
+////    // update PD_HEATDATA
+////    handleUpdateAimDepartureTime(Event,depTime);
+////  } 
+////  catch (cCBS_DBExc &e)
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+////      Scope.c_str(), ExceptionMsg.str().c_str()); 
+////    RetValue = false;
+////    handleDBConnectionError();
+////  }
+////  catch(CORBA::SystemException& sExc) 
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage,sExc._name(),
+////      Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////  }
+////  catch(CORBA::Exception& cExc) 
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage,cExc._name(),
+////      Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////  }
+////  catch(...)
+////  {
+////    std::string Msg("Unknown exception:");
+////    Msg += ExceptionMsg.str();
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ExceptionCaught(sMessage, "",
+////      Scope.c_str(), Msg.c_str()); 
+  //  RetValue = false;
+  //}
+  return RetValue;
+}
+
+
+bool CARCHIVER_HMDTreatmentWrapper::doOnChangeAimData(CEventMessage& Event)
+{
+  bool RetValue = false;
+////    DUTM
+////  std::string ProductID = Event.getProductID();
+////  std::string HeatID    = Event.getHeatID();
+////  std::string TreatID   = Event.getTreatID();
+////  std::string DataKey   = Event.getDataKey();
+////  std::string PlantID   = Event.getPlantID();
+////  std::string ActPlant  = m_pPlantID_Interpreter->getPlantName(PlantID);
+////  long ActPlantNo = m_pPlantID_Interpreter->getPlantNo(PlantID);
+////
+////  double AimSulphurContent = -1;
+////
+////  // Unified exception handling *******************************************************
+////  std::string Scope("CARCHIVER_HMDTreatmentWrapper::doOnChangeAimData");
+////  std::stringstream ExceptionMsg;
+////  ExceptionMsg << "Handling event: " << Event.getSender()
+////    << ", " << ProductID << ", " << HeatID
+////    << ", " << TreatID   << ", " << DataKey;
+////  //***********************************************************************************
+////
+////  try
+////  {
+////    if (!m_pConnection)
+////    {
+////      handleDBConnectionError();
+////      if (!m_pConnection) return false;
+////    }
+////    setpDM_Interface(Event.getSender(),DM::EVENT);
+////    AimSulphurContent = m_pDM_Interface->getDouble(DataKey.c_str(),DATA::RecipeContent);
+////    if (AimSulphurContent != -1 && AimSulphurContent!= CSMC_DBData::unspecDouble)
+////    {
+////      if (m_pPDH_Heat_Data->select(ActPlant, HeatID, TreatID))
+////      {
+////        m_pPDH_Heat_Data->setAIM_S_OPER(AimSulphurContent);
+////        RetValue = m_pPDH_Heat_Data->update();
+////      }
+////      if (RetValue)
+////        m_pPDH_Heat_Data->commit();
+////      else
+////     {
+////        m_pPDH_Heat_Data->rollback();
+////        log("ERROR: insert/update in PDH_Heat_Data failed!");
+////        RetValue = false;
+////      }
+////
+////    }
+////    return RetValue;
+////  }
+////  catch (cCBS_DBExc &e)
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+////      Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////    handleDBConnectionError();
+////  }
+////  catch(CORBA::SystemException& sExc) 
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage,sExc._name(),
+////      Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////  }
+////  catch(CORBA::Exception& cExc) 
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage,cExc._name(),
+////      Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////  }
+////  catch(...)
+////  {
+////    std::string Msg("Unknown exception:");
+////    Msg += ExceptionMsg.str();
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage, "",
+////      Scope.c_str(), Msg.c_str()); 
+////    RetValue = false;
+////  }
+  return RetValue;
+}
+

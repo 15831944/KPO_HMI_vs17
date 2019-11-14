@@ -1,0 +1,110 @@
+// Copyright (C) 2007 SMS Demag AG
+
+#include "iSMC_DataDefinitions_s.hh"
+#include "iSMC_DataProvider_S.hh"
+#include "cCBS_StdInitBase.h"
+#include "cCBS_StdEventLogFrameController.h"
+#include "cCBS_DBExc.h"
+#include "CSMC_EventLogFrameController.h"
+#include "CIntfData.h"
+
+#include "CARCHIVER_HMDTask.h"
+#include "CARCHIVER_HMDComputerModeWrapper.h"
+
+
+
+//##ModelId=45E534D3006C
+CARCHIVER_HMDComputerModeWrapper::CARCHIVER_HMDComputerModeWrapper() 
+{
+}
+
+//##ModelId=45E534D303E7
+CARCHIVER_HMDComputerModeWrapper::~CARCHIVER_HMDComputerModeWrapper()
+{
+}
+
+//##ModelId=45E535280277
+bool CARCHIVER_HMDComputerModeWrapper::doOnSetComputerMode(CEventMessage& Event)
+{
+  bool RetValue = false;
+
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();
+  //std::string PlantID   = Event.getPlantID();
+  //std::string OrderID   = Event.getOrderID();
+  //std::string ActPlant  = m_pGC_Plant_Container->getPlant(PlantID);
+  //long ActPlantNo = m_pGC_Plant_Container->getPlantNo(PlantID);
+
+  // Unified exception handling *******************************************************
+  std::string Scope("CARCHIVER_HMDComputerModeWrapper::doOnSetComputerMode");
+  std::stringstream ExceptionMsg;
+  ExceptionMsg << "Handling event: " << Event.getSender()
+               << ", " << ProductID << ", " << HeatID
+               << ", " << TreatID   << ", " << DataKey;
+  //**********************************************************************************
+  try
+  {
+
+    //-------------------------
+    seqComputerModes SeqComputerModes;
+    setpDM_Interface(Event.getSender(),DM::PLANT);
+    
+    SeqComputerModes = CIntfData::ToCORBAType(m_pDM_Interface->getComputerModes(DEF_PLANT::Furnace,DATA::ComputerModes));
+
+    // Do included UseCase
+    handleSetComputerMode(Event, SeqComputerModes);
+
+    //-------------------------
+  }
+  catch (cCBS_DBExc &e)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+      Scope.c_str(), ExceptionMsg.str().c_str()); 
+    RetValue = false;
+    handleDBConnectionError();
+  }
+  catch(CORBA::SystemException& sExc) 
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,sExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(CORBA::Exception& cExc) 
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,cExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(...)
+  {
+    std::string Msg("Unknown exception:");
+    Msg += ExceptionMsg.str();
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, "",
+      Scope.c_str(), Msg.c_str()); 
+    RetValue = false;
+  }
+  return RetValue;
+}
+
+//##ModelId=45E534D700AE
+void CARCHIVER_HMDComputerModeWrapper::initDBClasses()
+{
+  CARCHIVER_ComputerModeWrapper::initDBClasses();
+}
+
+//##ModelId=45E534D7029B
+void CARCHIVER_HMDComputerModeWrapper::deleteDBClasses()
+{
+  CARCHIVER_ComputerModeWrapper::deleteDBClasses();
+}
+

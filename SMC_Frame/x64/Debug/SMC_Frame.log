@@ -1,0 +1,560 @@
+﻿Build started 8/10/2018 18:15:26.
+     1>Project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" on node 5 (Build target(s)).
+     1>Building with tools version "15.0".
+       Target "EnableIntermediateOutputPathMismatchWarning" skipped, due to false condition; ('$(RestoreProjectStyle)' == 'PackageReference') was evaluated as ('' == 'PackageReference').
+     1>Target "_CheckForInvalidConfigurationAndPlatform" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "SetTelemetryEnvironmentVariables" depends on it):
+       Task "Error" skipped, due to false condition; ( '$(_InvalidConfigurationError)' == 'true' ) was evaluated as ( '' == 'true' ).
+       Task "Warning" skipped, due to false condition; ( '$(_InvalidConfigurationWarning)' == 'true' ) was evaluated as ( '' == 'true' ).
+       Task "Message"
+         Configuration=Debug
+       Done executing task "Message".
+       Task "Message"
+         Platform=x64
+       Done executing task "Message".
+       Task "Error" skipped, due to false condition; ('$(OutDir)' != '' and !HasTrailingSlash('$(OutDir)')) was evaluated as ('X:\SMC\source\XPACT_SMC_BUILD\x64\Debug\' != '' and !HasTrailingSlash('X:\SMC\source\XPACT_SMC_BUILD\x64\Debug\')).
+       Task "Error" skipped, due to false condition; ('$(BaseIntermediateOutputPath)' != '' and !HasTrailingSlash('$(BaseIntermediateOutputPath)')) was evaluated as ('obj\' != '' and !HasTrailingSlash('obj\')).
+       Task "Error" skipped, due to false condition; ('$(IntermediateOutputPath)' != '' and !HasTrailingSlash('$(IntermediateOutputPath)')) was evaluated as ('x64\Debug\' != '' and !HasTrailingSlash('x64\Debug\')).
+       Task "Error" skipped, due to false condition; ( '$(_InitialMSBuildProjectExtensionsPath)' != '' And '$(MSBuildProjectExtensionsPath)' != '$(_InitialMSBuildProjectExtensionsPath)' ) was evaluated as ( 'X:\SMC\source\SMC_Frame\obj\' != '' And 'X:\SMC\source\SMC_Frame\obj\' != 'X:\SMC\source\SMC_Frame\obj\' ).
+       Task "Warning" skipped, due to false condition; ( '$(EnableBaseIntermediateOutputPathMismatchWarning)' == 'true' And '$(_InitialBaseIntermediateOutputPath)' != '$(BaseIntermediateOutputPath)' And '$(BaseIntermediateOutputPath)' != '$(MSBuildProjectExtensionsPath)' ) was evaluated as ( '' == 'true' And 'obj\' != 'obj\' And 'obj\' != 'X:\SMC\source\SMC_Frame\obj\' ).
+     1>Done building target "_CheckForInvalidConfigurationAndPlatform" in project "SMC_Frame.vcxproj".
+       Target "_CheckForInvalidConfigurationAndPlatform" skipped. Previously built successfully.
+     1>Target "SetTelemetryEnvironmentVariables" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Cpp.DesignTime.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "Build" depends on it):
+       Using "SetEnv" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "SetEnv"
+         VSTEL_SolutionSessionID={9A5FB50D-7423-4F1D-AF48-24E610182833}
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         VSTEL_CurrentSolutionBuildID=456006226
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         VSTEL_ProjectID={72925ED1-44FA-3AE5-AD4A-FF5C37F10885}
+       Done executing task "SetEnv".
+     1>Done building target "SetTelemetryEnvironmentVariables" in project "SMC_Frame.vcxproj".
+     1>Target "_PrepareForBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "Build" depends on it):
+       Task "CreateItem" skipped, due to false condition; ('%(CustomBuild.IncludeFileToTool)'!='') was evaluated as (''!='').
+     1>Done building target "_PrepareForBuild" in project "SMC_Frame.vcxproj".
+     1>Target "_PrepareForReferenceResolution" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveReferences" depends on it):
+       Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
+     1>Done building target "_PrepareForReferenceResolution" in project "SMC_Frame.vcxproj".
+       Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('CCoolWaterHandler.cpp;CInjectDataHandler.cpp;CInjectLanceDataHandler.cpp;CLadleID.cpp;CLiquidMaterialHandler.cpp;CSMC_Error.cpp;CSMC_ErrorHandler.cpp;CSMC_FrameTask.cpp;CTreatIDCust.cpp;iData_Provider_dynSK.cpp;iData_Provider_s.cpp;iDM_Interface_dynSK.cpp;iDM_Interface_s.cpp;iEventData_dynSK.cpp;iEventData_s.cpp;iEventMessages_dynSK.cpp;iEventMessages_s.cpp;iModelResults_dynSK.cpp;iModelResults_s.cpp;iSMC_DataDefinitions_dynSK.cpp;iSMC_DataDefinitions_s.cpp;iSMC_DataProvider_dynSK.cpp;iSMC_DataProvider_s.cpp;CAnalysisHandlingWrapper.cpp;CCeloxMeasurementWrapper.cpp;CChangePhysicalMaterialAvailibilityWrapper.cpp;CChangeProdPracRecipeControlWrapper.cpp;CCyclicalMaterialChargedDataWrapper.cpp;CCyclicMeasumentCoolWaterDataWrapper.cpp;CCyclicTriggerCall.cpp;CCyclicWasteGasDataWrapper.cpp;CDataConversion.cpp;CDateTime.cpp;CDateTimeFormat.cpp;CDelayedTriggerCall.cpp;CDeltaTime.cpp;CElectricalSignalsWrapper.cpp;CEventHandler.cpp;CEventMessage.cpp;CEventMessageCtrl.cpp;CEventMessageError.cpp;CEventMessageReady.cpp;CFormattedID.cpp;CFormattedIDElement.cpp;CGasDataHandler.cpp;CGasLanceDataHandler.cpp;CHeatID.cpp;CHeatIDCust.cpp;CLiquidMaterialHandlingWrapper.cpp;CManualMaterialBatchWrapper.cpp;CModelEventHandler.cpp;CModelInterfaceData.cpp;CModelInterfaceManager.cpp;CModelResults_Impl.cpp;CModelTask.cpp;CModelWrapper.cpp;CPhaseID.cpp;CProductID.cpp;CPurposeHandlingWrapper.cpp;CRoofPositionWrapper.cpp;CRouteCode.cpp;CSampleCode.cpp;CSMC_AsyncFileLogHandler.cpp;CSMC_DataProvider_Impl.cpp;CSMC_EventValidator.cpp;CSMC_FileLogHandler.cpp;CSMC_FpFile.cpp;CSMC_LogDataFile.cpp;CSMC_LogDataHolder.cpp;CSMC_LogThread.cpp;CSMC_MemoryController.cpp;CSMC_Mutex.cpp;CSMC_MutexHandler.cpp;CSMC_RecipeHandler.cpp;CSMC_RuntimeController.cpp;CSolidMaterialHandlingWrapper.cpp;CStatusHandler.cpp;CStatusHandlerRuleSet.cpp;CStatusHandlerValidator.cpp;CStirringDataHandler.cpp;CTemperaturMeasurementWrapper.cpp;CTimeBase.cpp;CTreatID.cpp;CTreatmentManagerAimDataWrapper.cpp;TinyStr.cpp;TinyXml.cpp;TinyXmlError.cpp;TinyXmlParser.cpp'!='' and 'false'=='true' and '' != 'false').
+     1>Target "BeforeResolveReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveReferences" depends on it):
+     1>Done building target "BeforeResolveReferences" in project "SMC_Frame.vcxproj".
+     1>Target "AssignProjectConfiguration" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveReferences" depends on it):
+       Task "AssignProjectConfiguration"
+         Project reference "..\CBS_StdFrame\CBS_StdFrame.vcxproj" has been assigned the "Debug|x64" configuration.
+         Project reference "..\Data_Provider\Data_Provider.vcxproj" has been assigned the "Debug|x64" configuration.
+         Project reference "..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj" has been assigned the "Debug|x64" configuration.
+       Done executing task "AssignProjectConfiguration".
+     1>Done building target "AssignProjectConfiguration" in project "SMC_Frame.vcxproj".
+       Target "AssignProjectConfiguration" skipped. Previously built successfully.
+     1>Target "_SplitProjectReferencesByFileExistence" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "PrepareProjectReferences" depends on it):
+       Using "ResolveNonMSBuildProjectOutput" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "ResolveNonMSBuildProjectOutput"
+         Resolving project reference "..\CBS_StdFrame\CBS_StdFrame.vcxproj".
+         Project reference "..\CBS_StdFrame\CBS_StdFrame.vcxproj" has not been resolved.
+         Resolving project reference "..\Data_Provider\Data_Provider.vcxproj".
+         Project reference "..\Data_Provider\Data_Provider.vcxproj" has not been resolved.
+         Resolving project reference "..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj".
+         Project reference "..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj" has not been resolved.
+       Done executing task "ResolveNonMSBuildProjectOutput".
+     1>Done building target "_SplitProjectReferencesByFileExistence" in project "SMC_Frame.vcxproj".
+     1>Target "_GetProjectReferenceTargetFrameworkProperties" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "PrepareProjectReferences" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.SkipGetTargetFrameworkProperties)' != 'true') was evaluated as ('true' != 'true').
+       Task "GetReferenceNearestTargetFrameworkTask" skipped, due to false condition; ('@(_ProjectReferenceTargetFrameworkPossibilities->Count())' != '0' and '$(ReferringTargetFrameworkForProjectReferences)' != '') was evaluated as ('0' != '0' and '.NETFramework,Version=v4.0' != '').
+     1>Done building target "_GetProjectReferenceTargetFrameworkProperties" in project "SMC_Frame.vcxproj".
+     1>Target "PrepareProjectReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveProjectReferences" depends on it):
+     1>Done building target "PrepareProjectReferences" in project "SMC_Frame.vcxproj".
+     1>Target "_RemoveNameMetadataFromProjectReferenceItems" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveProjectReferences" depends on it):
+     1>Done building target "_RemoveNameMetadataFromProjectReferenceItems" in project "SMC_Frame.vcxproj".
+     1>Target "ResolveProjectReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveReferences" depends on it):
+       Task "MSBuild"
+         Global Properties:
+           Configuration=Debug
+           Platform=x64
+     1>Project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (1) is building "X:\SMC\source\Data_Provider\Data_Provider.vcxproj" (2) on node 3 (GetTargetPath target(s)).
+     2>Building with tools version "15.0".
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "GetResolvedWinMD" skipped. Previously built successfully.
+     2>Target "GetTargetPath" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\Data_Provider\Data_Provider.vcxproj" (entry point):
+     2>Done building target "GetTargetPath" in project "Data_Provider.vcxproj".
+     2>Done Building Project "X:\SMC\source\Data_Provider\Data_Provider.vcxproj" (GetTargetPath target(s)) -- FAILED.
+     1>Project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (1) is building "X:\SMC\source\CBS_StdFrame\CBS_StdFrame.vcxproj" (3) on node 2 (GetTargetPath target(s)).
+     3>Building with tools version "15.0".
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "GetResolvedWinMD" skipped. Previously built successfully.
+     3>Target "GetTargetPath" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\CBS_StdFrame\CBS_StdFrame.vcxproj" (entry point):
+     3>Done building target "GetTargetPath" in project "CBS_StdFrame.vcxproj".
+     3>Done Building Project "X:\SMC\source\CBS_StdFrame\CBS_StdFrame.vcxproj" (GetTargetPath target(s)) -- FAILED.
+     1>Done executing task "MSBuild".
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and ('$(BuildingInsideVisualStudio)' == 'true' or '$(BuildProjectReferences)' != 'true') and '$(VisualStudioVersion)' == '10.0' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('true' == 'true' and '..\CBS_StdFrame\CBS_StdFrame.vcxproj;..\Data_Provider\Data_Provider.vcxproj;..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj' != '' and ('true' == 'true' or 'true' != 'true') and '15.0' == '10.0' and '..\CBS_StdFrame\CBS_StdFrame.vcxproj;..\Data_Provider\Data_Provider.vcxproj;..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj' != '').
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '$(BuildingInsideVisualStudio)' != 'true' and '$(BuildProjectReferences)' == 'true' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('true' == 'true' and '..\CBS_StdFrame\CBS_StdFrame.vcxproj;..\Data_Provider\Data_Provider.vcxproj;..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj' != '' and 'true' != 'true' and 'true' == 'true' and '..\CBS_StdFrame\CBS_StdFrame.vcxproj;..\Data_Provider\Data_Provider.vcxproj;..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj' != '').
+       Task "MSBuild"
+         Global Properties:
+           Configuration=Debug
+           Platform=x64
+     1>Project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (1) is building "X:\SMC\source\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj" (4) on node 4 (GetTargetPath target(s)).
+     4>Building with tools version "15.0".
+     4>Target "_PrepareForReferenceResolution" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj" (target "GetTargetPath" depends on it):
+       Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
+     4>Done building target "_PrepareForReferenceResolution" in project "SMC_EventLogSystem.vcxproj".
+     4>Target "GetResolvedWinMD" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj" (target "GetTargetPath" depends on it):
+     4>Done building target "GetResolvedWinMD" in project "SMC_EventLogSystem.vcxproj".
+     4>Target "GetTargetPath" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj" (entry point):
+     4>Done building target "GetTargetPath" in project "SMC_EventLogSystem.vcxproj".
+     4>Done Building Project "X:\SMC\source\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj" (GetTargetPath target(s)).
+     1>Project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (1) is building "X:\SMC\source\CBS_StdFrame\CBS_StdFrame.vcxproj" (3:2) on node 2 (GetNativeManifest target(s)).
+   3:2>Building with tools version "15.0".
+   3:2>Target "GetNativeManifest" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\CBS_StdFrame\CBS_StdFrame.vcxproj" (entry point):
+   3:2>Done building target "GetNativeManifest" in project "CBS_StdFrame.vcxproj".
+   3:2>Done Building Project "X:\SMC\source\CBS_StdFrame\CBS_StdFrame.vcxproj" (GetNativeManifest target(s)) -- FAILED.
+     1>Project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (1) is building "X:\SMC\source\Data_Provider\Data_Provider.vcxproj" (2:2) on node 3 (GetNativeManifest target(s)).
+   2:2>Building with tools version "15.0".
+   2:2>Target "GetNativeManifest" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\Data_Provider\Data_Provider.vcxproj" (entry point):
+   2:2>Done building target "GetNativeManifest" in project "Data_Provider.vcxproj".
+   2:2>Done Building Project "X:\SMC\source\Data_Provider\Data_Provider.vcxproj" (GetNativeManifest target(s)) -- FAILED.
+     1>Project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (1) is building "X:\SMC\source\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj" (4:2) on node 4 (GetNativeManifest target(s)).
+   4:2>Building with tools version "15.0".
+   4:2>Target "GetNativeManifest" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj" (entry point):
+   4:2>Done building target "GetNativeManifest" in project "SMC_EventLogSystem.vcxproj".
+   4:2>Done Building Project "X:\SMC\source\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj" (GetNativeManifest target(s)).
+     1>Done executing task "MSBuild".
+       Task "Warning" skipped, due to false condition; ('@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceNonexistent)' != '') was evaluated as ('..\CBS_StdFrame\CBS_StdFrame.vcxproj;..\Data_Provider\Data_Provider.vcxproj;..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj' != '' and '' != '').
+     1>Done building target "ResolveProjectReferences" in project "SMC_Frame.vcxproj".
+       Target "FindInvalidProjectReferences" skipped, due to false condition; ('$(FindInvalidProjectReferences)' == 'true') was evaluated as ('' == 'true').
+       Target "ResolveNativeReferences" skipped, due to false condition; ('@(NativeReference)'!='') was evaluated as (''!='').
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "ResolveProjectReferences" skipped. Previously built successfully.
+       Target "FindInvalidProjectReferences" skipped, due to false condition; ('$(FindInvalidProjectReferences)' == 'true') was evaluated as ('' == 'true').
+     1>Target "GetFrameworkPaths" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.NETFramework.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+     1>Done building target "GetFrameworkPaths" in project "SMC_Frame.vcxproj".
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "GetWinFXPath" skipped, due to false condition; (('@(Page)' != '' or '@(ApplicationDefinition)' != '' or '@(Resource)' != '') and ('$(GetWinFXNativePath)' != '' or '$(GetWinFXWoWPath)' != '' )) was evaluated as (('' != '' or '' != '' or '' != '') and ('' != '' or '' != '' )).
+       Target "GetFrameworkPaths" skipped. Previously built successfully.
+     1>Target "GetReferenceAssemblyPaths" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "GetReferenceAssemblyPaths" skipped, due to false condition; ('$(TargetFrameworkMoniker)' != '' and ('$(_TargetFrameworkDirectories)' == '' or '$(_FullFrameworkReferenceAssemblyPaths)' == '')) was evaluated as ('' != '' and ('C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0' == '' or 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0' == '')).
+     1>Done building target "GetReferenceAssemblyPaths" in project "SMC_Frame.vcxproj".
+     1>Target "SetBuildDefaultEnvironmentVariables" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Current.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "SetEnv"
+         PATH=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86;C:\Program Files (x86)\Windows Kits\10\bin\10.0.17134.0\x86;;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\tools;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\ide;C:\Program Files (x86)\HTML Help Workshop;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin;C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\;;D:\Oracle\product\12.1.0\client_1\bin;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Common Files\SEAL Systems\Lib\;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\WINDOWS\CCM;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Microsoft SQL Server Migration Assistant for Oracle\bin\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Bin\;C:\Program Files\Java\jdk1.8.0_151\bin;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;c:\Program Files\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files\Microsoft SQL Server\110\DTS\Binn\;c:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;c:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\GitExtensions\;X:\SMC\packages\CBS\bin;X:\SMC\packages\omniORB\bin\x64;C:\Program Files (x86)\Enterprise Vault\EVClient\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Program Files (x86)\IncrediBuild;C:\Users\ffra\AppData\Local\Programs\Git\cmd;C:\oraclexe\app\oracle\product\11.2.0\server\bin;D:\Oracle\product\11.2.0\client_1\BIN;C:\Program Files (x86)\Google\Chrome\Application;C:\Program Files\Microsoft VS Code\bin;
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         LIB=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\lib\x64;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\atlmfc\lib\x64;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\VS\lib\x64;;C:\Program Files (x86)\Windows Kits\10\lib\10.0.17134.0\ucrt\x64;;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\VS\UnitTest\lib;C:\Program Files (x86)\Windows Kits\10\lib\10.0.17134.0\um\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\lib\um\x64;;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\Lib\um\x64
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         LIBPATH=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\atlmfc\lib\x64;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\lib\x64;
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\include;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\atlmfc\include;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\VS\include;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\ucrt;;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\VS\UnitTest\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\Include\um;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\Include\um;
+       Done executing task "SetEnv".
+     1>Done building target "SetBuildDefaultEnvironmentVariables" in project "SMC_Frame.vcxproj".
+       Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '' and '$(DesignTimeBuild)' != 'true') was evaluated as ('' != '' and '' != 'true').
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+     1>Target "GetResolvedWinMD" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "PrepareForBuild" depends on it):
+     1>Done building target "GetResolvedWinMD" in project "SMC_Frame.vcxproj".
+     1>Target "PlatformPrepareForBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Platform.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('$(_Error64bitToolsNotInstalled)' == 'true') was evaluated as ('' == 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == '') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == '').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v110') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == 'v110').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v100') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == 'v100').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v90') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == 'v90').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' != 'v90' and '$(PlatformToolset)' != 'v100' and '$(PlatformToolset)' != 'v110') was evaluated as (''!='true' and 'true' != 'true' and 'v141' != 'v90' and 'v141' != 'v100' and 'v141' != 'v110').
+     1>Done building target "PlatformPrepareForBuild" in project "SMC_Frame.vcxproj".
+     1>Target "_CheckWindowsSDKInstalled" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Cpp.WindowsSDK.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('$(WindowsSDKInstalled)' != 'true') was evaluated as ('true' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(PlatformShortName)' == 'ARM' and '$(WindowsAppContainer)' != 'true' and '$(WindowsSDKDesktopARMSupport)' != 'true') was evaluated as ('x64' == 'ARM' and 'false' != 'true' and '' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(PlatformShortName)' == 'ARM64' and '$(WindowsAppContainer)' != 'true' and '$(WindowsSDKDesktopARM64Support)' != 'true') was evaluated as ('x64' == 'ARM64' and 'false' != 'true' and '' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(WindowsAppContainer)' != 'true' and '$(WindowsSDK_Desktop_Support)' != true) was evaluated as ('false' != 'true' and 'true' != true).
+     1>Done building target "_CheckWindowsSDKInstalled" in project "SMC_Frame.vcxproj".
+       Target "GetFrameworkPaths" skipped. Previously built successfully.
+       Target "GetReferenceAssemblyPaths" skipped. Previously built successfully.
+       Target "AssignLinkMetadata" skipped, due to false condition; ( '$(SynthesizeLinkMetadata)' == 'true' ) was evaluated as ( '' == 'true' ).
+     1>Target "SetCABuildNativeEnvironmentVariables" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\Microsoft\VisualStudio\v15.0\CodeAnalysis\Microsoft.CodeAnalysis.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "SetEnv"
+         CAExcludePath=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\atlmfc\include;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\ucrt;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\Include\um;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\Include\um;
+       Done executing task "SetEnv".
+     1>Done building target "SetCABuildNativeEnvironmentVariables" in project "SMC_Frame.vcxproj".
+     1>Target "PrepareForBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)' != 'true' and '$(ConfigurationPlatformExists)' != 'true') was evaluated as ('' != 'true' and 'true' != 'true').
+       Task "MakeDir"
+       Done executing task "MakeDir".
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(WindowsAppContainer)'=='true' and '$(ConfigurationType)'!='Application' and '$(ConfigurationType)'!='DynamicLibrary' and '$(ConfigurationType)'!='StaticLibrary') was evaluated as (''!='true' and 'false'=='true' and 'StaticLibrary'!='Application' and 'StaticLibrary'!='DynamicLibrary' and 'StaticLibrary'!='StaticLibrary').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(VCToolsInstallDir)'=='' and '$(UseEnv)' != 'true' and ('$(TargetFrameworkVersion)'=='v3.5' or '$(TargetFrameworkVersion)'=='v3.0' or '$(TargetFrameworkVersion)'=='v2.0' )) was evaluated as (''!='true' and 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\'=='' and '' != 'true' and ('v4.0'=='v3.5' or 'v4.0'=='v3.0' or 'v4.0'=='v2.0' )).
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(VCToolsInstallDir)'=='' and '$(UseEnv)' != 'true' and '$(PlatformToolset)'=='v90') was evaluated as (''!='true' and 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\'=='' and '' != 'true' and 'v141'=='v90').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(VCToolsInstallDir)'=='' and '$(UseEnv)' != 'true') was evaluated as (''!='true' and 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\'=='' and '' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(WindowsSDKDir)'=='' and '$(UseEnv)' != 'true') was evaluated as (''!='true' and 'C:\Program Files (x86)\Windows Kits\10\'=='' and '' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(IntDirTrailingSlashWarning)'=='true') was evaluated as (''!='true' and ''=='true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(OutDirTrailingSlashWarning)'=='true') was evaluated as (''!='true' and ''=='true').
+       Task "VCMessage" skipped, due to false condition; ('%(CompatibilityIssues.Identity)' != '' and '$(DesignTimeBuild)'!='true') was evaluated as ('' != '' and ''!='true').
+       Task "VCMessage" skipped, due to false condition; ('$(IgnoreWarnIntDirSharingDetected)' != 'true' and '$(IntDirSharingDetected)' == 'true') was evaluated as ('' != 'true' and '' == 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(IgnoreWarnIntDirInTempDetected)' != 'true' and ('$(_IntDirFullpath.StartsWith($(Tmp), true, null))' == 'true' or '$(_IntDirFullpath.StartsWith($(Temp), true, null))' == 'true' or '$(_OutDirFullpath.StartsWith($(Tmp), true, null))' == 'true' or '$(_OutDirFullpath.StartsWith($(Temp), true, null))' == 'true')) was evaluated as (''!='true' and '' != 'true' and ('False' == 'true' or 'False' == 'true' or 'False' == 'true' or 'False' == 'true')).
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)' != 'true' and '$(SpectreMitigation)' != '' and '$(SpectreMitigation)' != 'false' and (('$(_VC_Target_Library_Platform)' == 'OneCore' and !Exists('$(VC_LibraryPath_VC_x86_OneCore)')) or ('$(_VC_Target_Library_Platform)' == 'Desktop' and !Exists('$(VC_LibraryPath_VC_x86_Desktop)')))) was evaluated as ('' != 'true' and 'false' != '' and 'false' != 'false' and (('Desktop' == 'OneCore' and !Exists('C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\lib\onecore\x86')) or ('Desktop' == 'Desktop' and !Exists('C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\lib\x86')))).
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "PrepareForBuild" in project "SMC_Frame.vcxproj".
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('CCoolWaterHandler.cpp;CInjectDataHandler.cpp;CInjectLanceDataHandler.cpp;CLadleID.cpp;CLiquidMaterialHandler.cpp;CSMC_Error.cpp;CSMC_ErrorHandler.cpp;CSMC_FrameTask.cpp;CTreatIDCust.cpp;iData_Provider_dynSK.cpp;iData_Provider_s.cpp;iDM_Interface_dynSK.cpp;iDM_Interface_s.cpp;iEventData_dynSK.cpp;iEventData_s.cpp;iEventMessages_dynSK.cpp;iEventMessages_s.cpp;iModelResults_dynSK.cpp;iModelResults_s.cpp;iSMC_DataDefinitions_dynSK.cpp;iSMC_DataDefinitions_s.cpp;iSMC_DataProvider_dynSK.cpp;iSMC_DataProvider_s.cpp;CAnalysisHandlingWrapper.cpp;CCeloxMeasurementWrapper.cpp;CChangePhysicalMaterialAvailibilityWrapper.cpp;CChangeProdPracRecipeControlWrapper.cpp;CCyclicalMaterialChargedDataWrapper.cpp;CCyclicMeasumentCoolWaterDataWrapper.cpp;CCyclicTriggerCall.cpp;CCyclicWasteGasDataWrapper.cpp;CDataConversion.cpp;CDateTime.cpp;CDateTimeFormat.cpp;CDelayedTriggerCall.cpp;CDeltaTime.cpp;CElectricalSignalsWrapper.cpp;CEventHandler.cpp;CEventMessage.cpp;CEventMessageCtrl.cpp;CEventMessageError.cpp;CEventMessageReady.cpp;CFormattedID.cpp;CFormattedIDElement.cpp;CGasDataHandler.cpp;CGasLanceDataHandler.cpp;CHeatID.cpp;CHeatIDCust.cpp;CLiquidMaterialHandlingWrapper.cpp;CManualMaterialBatchWrapper.cpp;CModelEventHandler.cpp;CModelInterfaceData.cpp;CModelInterfaceManager.cpp;CModelResults_Impl.cpp;CModelTask.cpp;CModelWrapper.cpp;CPhaseID.cpp;CProductID.cpp;CPurposeHandlingWrapper.cpp;CRoofPositionWrapper.cpp;CRouteCode.cpp;CSampleCode.cpp;CSMC_AsyncFileLogHandler.cpp;CSMC_DataProvider_Impl.cpp;CSMC_EventValidator.cpp;CSMC_FileLogHandler.cpp;CSMC_FpFile.cpp;CSMC_LogDataFile.cpp;CSMC_LogDataHolder.cpp;CSMC_LogThread.cpp;CSMC_MemoryController.cpp;CSMC_Mutex.cpp;CSMC_MutexHandler.cpp;CSMC_RecipeHandler.cpp;CSMC_RuntimeController.cpp;CSolidMaterialHandlingWrapper.cpp;CStatusHandler.cpp;CStatusHandlerRuleSet.cpp;CStatusHandlerValidator.cpp;CStirringDataHandler.cpp;CTemperaturMeasurementWrapper.cpp;CTimeBase.cpp;CTreatID.cpp;CTreatmentManagerAimDataWrapper.cpp;TinyStr.cpp;TinyXml.cpp;TinyXmlError.cpp;TinyXmlParser.cpp'!='' and 'false'=='true' and '' != 'false').
+       Target "GetInstalledSDKLocations" skipped, due to false condition; ('@(SDKReference)' != '') was evaluated as ('' != '').
+     1>Target "ResolveSDKReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "ResolveSDKReference" skipped, due to false condition; ('@(SDKReference)'!='') was evaluated as (''!='').
+     1>Done building target "ResolveSDKReferences" in project "SMC_Frame.vcxproj".
+       Target "ResolveSDKReferences" skipped. Previously built successfully.
+     1>Target "ExpandSDKReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "GetSDKReferenceFiles" skipped, due to false condition; ('@(ResolvedSDKReference)'!='') was evaluated as (''!='').
+     1>Done building target "ExpandSDKReferences" in project "SMC_Frame.vcxproj".
+       Target "ResolveNuGetPackageAssets" skipped, due to false condition; ('$(ResolveNuGetPackages)' == 'true' and exists('$(ProjectLockFile)')) was evaluated as ('true' == 'true' and exists('obj\project.assets.json')).
+       Target "ImplicitlyExpandNETStandardFacades" skipped, due to false condition; ('$(ImplicitlyExpandNETStandardFacades)' == 'true') was evaluated as ('' == 'true').
+       Target "GetReferenceAssemblyPaths" skipped. Previously built successfully.
+       Target "ImplicitlyExpandNETStandardFacades" skipped, due to false condition; ('$(ImplicitlyExpandNETStandardFacades)' == 'true') was evaluated as ('' == 'true').
+     1>Target "_HandlePackageFileConflicts" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\Microsoft.NET.Build.Extensions.ConflictResolution.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Using "ResolvePackageFileConflicts" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\\tools\net46\Microsoft.NET.Build.Extensions.Tasks.dll".
+       Task "ResolvePackageFileConflicts"
+       Done executing task "ResolvePackageFileConflicts".
+     1>Done building target "_HandlePackageFileConflicts" in project "SMC_Frame.vcxproj".
+     1>Target "ResolveAssemblyReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveReferences" depends on it):
+       Task "ResolveAssemblyReference" skipped, due to false condition; ('@(Reference)'!='' or '@(_ResolvedProjectReferencePaths)'!='' or '@(_ExplicitReference)' != '') was evaluated as (''!='' or ''!='' or '' != '').
+     1>Done building target "ResolveAssemblyReferences" in project "SMC_Frame.vcxproj".
+       Target "GenerateBindingRedirects" skipped, due to false condition; ('$(AutoGenerateBindingRedirects)' == 'true' and '$(GenerateBindingRedirectsOutputType)' == 'true') was evaluated as ('' == 'true' and '' == 'true').
+       Target "_RemoveZipFileSuggestedRedirect" skipped, due to false condition; ('$(_TargetFrameworkVersionWithoutV)' >= '4.7.1' And '$(AllowZipFileRedirect)' != 'true') was evaluated as ('4.0' >= '4.7.1' And '' != 'true').
+       Target "GenerateBindingRedirectsUpdateAppConfig" skipped, due to false condition; ('$(AutoGenerateBindingRedirects)' == 'true' and '$(GenerateBindingRedirectsOutputType)' == 'true' and Exists('$(_GenerateBindingRedirectsIntermediateAppConfig)')) was evaluated as ('' == 'true' and '' == 'true' and Exists('x64\Debug\SMC_Frame_d.lib.config')).
+       Target "ResolveComReferences" skipped, due to false condition; ('@(COMReference)'!='' or '@(COMFileReference)'!='') was evaluated as (''!='' or ''!='').
+     1>Target "AfterResolveReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ResolveReferences" depends on it):
+     1>Done building target "AfterResolveReferences" in project "SMC_Frame.vcxproj".
+       Target "ImplicitlyExpandDesignTimeFacades" skipped, due to false condition; ('$(ImplicitlyExpandDesignTimeFacades)' == 'true') was evaluated as ('' == 'true').
+       Target "ResolveTestReferences" skipped, due to false condition; ('@(Shadow)'!='') was evaluated as (''!='').
+     1>Target "ResolveReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "Build" depends on it):
+     1>Done building target "ResolveReferences" in project "SMC_Frame.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "PrepareForBuild" skipped. Previously built successfully.
+     1>Target "InitializeBuildStatus" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "Build" depends on it):
+       Task "ReadLinesFromFile"
+       Done executing task "ReadLinesFromFile".
+       Task "WriteLinesToFile"
+       Done executing task "WriteLinesToFile".
+       Task "Touch"
+         Touching "x64\Debug\SMC_Frame.tlog\unsuccessfulbuild".
+       Done executing task "Touch".
+     1>Done building target "InitializeBuildStatus" in project "SMC_Frame.vcxproj".
+       Target "PrepareProjectReferences" skipped. Previously built successfully.
+     1>Target "BuildGenerateSourcesTraverse" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "BuildGenerateSources" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '' and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '..\CBS_StdFrame\CBS_StdFrame.vcxproj;..\Data_Provider\Data_Provider.vcxproj;..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj' != '' and '..\CBS_StdFrame\CBS_StdFrame.vcxproj;..\Data_Provider\Data_Provider.vcxproj;..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj' != '' and 'true' == 'true').
+     1>Done building target "BuildGenerateSourcesTraverse" in project "SMC_Frame.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "BeforeBuildGenerateSources" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "BeforeBuildGenerateSources" in project "SMC_Frame.vcxproj".
+     1>Target "PreBuildEvent" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+       Task "Message" skipped, due to false condition; ('%(PreBuildEvent.Message)' != '' and '%(PreBuildEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
+       Task "Exec" skipped, due to false condition; ('%(PreBuildEvent.Command)' != '') was evaluated as ('' != '').
+     1>Done building target "PreBuildEvent" in project "SMC_Frame.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "InitializeBuildStatus" skipped. Previously built successfully.
+       Target "SetBuildDefaultEnvironmentVariables" skipped. Previously built successfully.
+       Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '' and '$(DesignTimeBuild)' != 'true') was evaluated as ('' != '' and '' != 'true').
+     1>Target "_SelectedFiles" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "SelectCustomBuild" depends on it):
+     1>Done building target "_SelectedFiles" in project "SMC_Frame.vcxproj".
+     1>Target "SelectCustomBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "CustomBuild" depends on it):
+     1>Done building target "SelectCustomBuild" in project "SMC_Frame.vcxproj".
+     1>Target "ComputeCustomBuildOutput" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "CustomBuild" depends on it):
+       Task "CreateItem" skipped, due to false condition; ('%(CustomBuildOutputs.OutputItemType)'!='') was evaluated as (''!='').
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "ComputeCustomBuildOutput" in project "SMC_Frame.vcxproj".
+     1>Target "CustomBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+       Using "GetOutOfDateItems" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "GetOutOfDateItems"
+       Done executing task "GetOutOfDateItems".
+       Task "ParallelCustomBuild" skipped, due to false condition; ('@(_ParallelCustomBuild)' != '') was evaluated as ('' != '').
+       Using "CustomBuild" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "CustomBuild"
+         Write Tracking Logs:
+         	x64\Debug\SMC_Frame.tlog\custombuild.write.1.tlog
+         Read Tracking Logs:
+         	x64\Debug\SMC_Frame.tlog\custombuild.read.1.tlog
+         Outputs for X:\SMC\SOURCE\DATA_PROVIDER\IDATA_PROVIDER.IDL|X:\SMC\SOURCE\DM\DM_INTERFACE\IDM_INTERFACE.IDL|X:\SMC\SOURCE\SMC_FRAME\IEVENTDATA.IDL|X:\SMC\SOURCE\SMC_FRAME\IEVENTMESSAGES.IDL|X:\SMC\SOURCE\SMC_FRAME\IMODELRESULTS.IDL|X:\SMC\SOURCE\SMC_FRAME\ISMC_DATADEFINITIONS.IDL|X:\SMC\SOURCE\SMC_FRAME\ISMC_DATAPROVIDER.IDL:
+         	X:\SMC\SOURCE\SMC_FRAME\IEVENTDATA_S.HH
+         	X:\SMC\SOURCE\SMC_FRAME\IEVENTDATA_S.CPP
+         	X:\SMC\SOURCE\SMC_FRAME\IEVENTDATA_DYNSK.CPP
+         	X:\SMC\SOURCE\SMC_FRAME\IEVENTMESSAGES_S.HH
+         	X:\SMC\SOURCE\SMC_FRAME\IEVENTMESSAGES_S.CPP
+         	X:\SMC\SOURCE\SMC_FRAME\IEVENTMESSAGES_DYNSK.CPP
+         	X:\SMC\SOURCE\SMC_FRAME\IMODELRESULTS_S.HH
+         	X:\SMC\SOURCE\SMC_FRAME\IMODELRESULTS_S.CPP
+         	X:\SMC\SOURCE\SMC_FRAME\IMODELRESULTS_DYNSK.CPP
+         	X:\SMC\SOURCE\SMC_FRAME\IDM_INTERFACE_S.HH
+         	X:\SMC\SOURCE\SMC_FRAME\IDM_INTERFACE_S.CPP
+         	X:\SMC\SOURCE\SMC_FRAME\IDM_INTERFACE_DYNSK.CPP
+         	X:\SMC\SOURCE\SMC_FRAME\IDATA_PROVIDER_S.HH
+         	X:\SMC\SOURCE\SMC_FRAME\IDATA_PROVIDER_S.CPP
+         	X:\SMC\SOURCE\SMC_FRAME\IDATA_PROVIDER_DYNSK.CPP
+         	X:\SMC\SOURCE\SMC_FRAME\ISMC_DATADEFINITIONS_S.HH
+         	X:\SMC\SOURCE\SMC_FRAME\ISMC_DATADEFINITIONS_S.CPP
+         	X:\SMC\SOURCE\SMC_FRAME\ISMC_DATADEFINITIONS_DYNSK.CPP
+         	X:\SMC\SOURCE\SMC_FRAME\ISMC_DATAPROVIDER_S.HH
+         	X:\SMC\SOURCE\SMC_FRAME\ISMC_DATAPROVIDER_S.CPP
+         	X:\SMC\SOURCE\SMC_FRAME\ISMC_DATAPROVIDER_DYNSK.CPP
+         All outputs are up-to-date.
+       Done executing task "CustomBuild".
+     1>Done building target "CustomBuild" in project "SMC_Frame.vcxproj".
+       Target "FxExport" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
+       Target "FxCompile" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
+       Target "_CreateCopyFileItems" skipped, due to false condition; ('@(CopyFileToFolders)' != '') was evaluated as ('' != '').
+       Target "_SelectedFiles" skipped. Previously built successfully.
+     1>Target "CopyFileToFolders" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+       Task "GetOutOfDateItems"
+       Done executing task "GetOutOfDateItems".
+       Task "Copy" skipped, due to false condition; ('@(_OutOfDateCopyFile)' != '') was evaluated as ('' != '').
+     1>Done building target "CopyFileToFolders" in project "SMC_Frame.vcxproj".
+       Target "Xsd" skipped, due to false condition; ('@(Xsd)' != '') was evaluated as ('' != '').
+     1>Target "_Xsd" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "_Xsd" in project "SMC_Frame.vcxproj".
+     1>Target "MakeDirsForMidl" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_Midl" depends on it):
+       Task "Makedir"
+       Done executing task "Makedir".
+     1>Done building target "MakeDirsForMidl" in project "SMC_Frame.vcxproj".
+       Target "Midl" skipped, due to false condition; ('@(Midl)' != '') was evaluated as ('' != '').
+       Target "FxExport" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
+       Target "FxCompile" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
+     1>Target "ComputeMIDLGeneratedCompileInputs" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_Midl" depends on it):
+     1>Done building target "ComputeMIDLGeneratedCompileInputs" in project "SMC_Frame.vcxproj".
+     1>Target "AfterMidl" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_Midl" depends on it):
+     1>Done building target "AfterMidl" in project "SMC_Frame.vcxproj".
+     1>Target "_Midl" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "_Midl" in project "SMC_Frame.vcxproj".
+     1>Target "AfterBuildGenerateSources" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "AfterBuildGenerateSources" in project "SMC_Frame.vcxproj".
+     1>Target "AfterBuildGenerateSourcesEvent" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "AfterBuildGenerateSourcesEvent" in project "SMC_Frame.vcxproj".
+     1>Target "_BuildGenerateSourcesAction" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "BuildGenerateSources" depends on it):
+     1>Done building target "_BuildGenerateSourcesAction" in project "SMC_Frame.vcxproj".
+     1>Target "BuildGenerateSources" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "Build" depends on it):
+     1>Done building target "BuildGenerateSources" in project "SMC_Frame.vcxproj".
+       Target "PrepareProjectReferences" skipped. Previously built successfully.
+     1>Target "BuildCompileTraverse" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "BuildCompile" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != ''  and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '..\CBS_StdFrame\CBS_StdFrame.vcxproj;..\Data_Provider\Data_Provider.vcxproj;..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj' != '' and '..\CBS_StdFrame\CBS_StdFrame.vcxproj;..\Data_Provider\Data_Provider.vcxproj;..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj' != ''  and 'true' == 'true').
+     1>Done building target "BuildCompileTraverse" in project "SMC_Frame.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "BeforeClCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "BeforeClCompile" in project "SMC_Frame.vcxproj".
+       Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
+     1>Target "ComputeCLInputPDBName" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "ComputeCLInputPDBName" in project "SMC_Frame.vcxproj".
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "ComputeReferenceCLInput" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_ClCompile" depends on it):
+       Task "WriteLinesToFile" skipped, due to false condition; (('@(_ReferenceCopyLocalPaths)'!='') and '$(DesignTimeBuild)' != 'true') was evaluated as ((''!='') and '' != 'true').
+       Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
+     1>Done building target "ComputeReferenceCLInput" in project "SMC_Frame.vcxproj".
+     1>Target "WarnCompileDuplicatedFilename" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_ClCompile" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CCoolWaterHandler.cpp' != 'CCoolWaterHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CInjectDataHandler.cpp' != 'CInjectDataHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CInjectLanceDataHandler.cpp' != 'CInjectLanceDataHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CLadleID.cpp' != 'CLadleID.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CLiquidMaterialHandler.cpp' != 'CLiquidMaterialHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_Error.cpp' != 'CSMC_Error.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_ErrorHandler.cpp' != 'CSMC_ErrorHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_FrameTask.cpp' != 'CSMC_FrameTask.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CTreatIDCust.cpp' != 'CTreatIDCust.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iData_Provider_dynSK.cpp' != 'iData_Provider_dynSK.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iData_Provider_s.cpp' != 'iData_Provider_s.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iDM_Interface_dynSK.cpp' != 'iDM_Interface_dynSK.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iDM_Interface_s.cpp' != 'iDM_Interface_s.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iEventData_dynSK.cpp' != 'iEventData_dynSK.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iEventData_s.cpp' != 'iEventData_s.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iEventMessages_dynSK.cpp' != 'iEventMessages_dynSK.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iEventMessages_s.cpp' != 'iEventMessages_s.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iModelResults_dynSK.cpp' != 'iModelResults_dynSK.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iModelResults_s.cpp' != 'iModelResults_s.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iSMC_DataDefinitions_dynSK.cpp' != 'iSMC_DataDefinitions_dynSK.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iSMC_DataDefinitions_s.cpp' != 'iSMC_DataDefinitions_s.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iSMC_DataProvider_dynSK.cpp' != 'iSMC_DataProvider_dynSK.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iSMC_DataProvider_s.cpp' != 'iSMC_DataProvider_s.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CAnalysisHandlingWrapper.cpp' != 'CAnalysisHandlingWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CCeloxMeasurementWrapper.cpp' != 'CCeloxMeasurementWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CChangePhysicalMaterialAvailibilityWrapper.cpp' != 'CChangePhysicalMaterialAvailibilityWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CChangeProdPracRecipeControlWrapper.cpp' != 'CChangeProdPracRecipeControlWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CCyclicalMaterialChargedDataWrapper.cpp' != 'CCyclicalMaterialChargedDataWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CCyclicMeasumentCoolWaterDataWrapper.cpp' != 'CCyclicMeasumentCoolWaterDataWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CCyclicTriggerCall.cpp' != 'CCyclicTriggerCall.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CCyclicWasteGasDataWrapper.cpp' != 'CCyclicWasteGasDataWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CDataConversion.cpp' != 'CDataConversion.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CDateTime.cpp' != 'CDateTime.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CDateTimeFormat.cpp' != 'CDateTimeFormat.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CDelayedTriggerCall.cpp' != 'CDelayedTriggerCall.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CDeltaTime.cpp' != 'CDeltaTime.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CElectricalSignalsWrapper.cpp' != 'CElectricalSignalsWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CEventHandler.cpp' != 'CEventHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CEventMessage.cpp' != 'CEventMessage.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CEventMessageCtrl.cpp' != 'CEventMessageCtrl.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CEventMessageError.cpp' != 'CEventMessageError.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CEventMessageReady.cpp' != 'CEventMessageReady.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CFormattedID.cpp' != 'CFormattedID.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CFormattedIDElement.cpp' != 'CFormattedIDElement.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CGasDataHandler.cpp' != 'CGasDataHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CGasLanceDataHandler.cpp' != 'CGasLanceDataHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CHeatID.cpp' != 'CHeatID.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CHeatIDCust.cpp' != 'CHeatIDCust.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CLiquidMaterialHandlingWrapper.cpp' != 'CLiquidMaterialHandlingWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CManualMaterialBatchWrapper.cpp' != 'CManualMaterialBatchWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CModelEventHandler.cpp' != 'CModelEventHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CModelInterfaceData.cpp' != 'CModelInterfaceData.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CModelInterfaceManager.cpp' != 'CModelInterfaceManager.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CModelResults_Impl.cpp' != 'CModelResults_Impl.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CModelTask.cpp' != 'CModelTask.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CModelWrapper.cpp' != 'CModelWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CPhaseID.cpp' != 'CPhaseID.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CProductID.cpp' != 'CProductID.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CPurposeHandlingWrapper.cpp' != 'CPurposeHandlingWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CRoofPositionWrapper.cpp' != 'CRoofPositionWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CRouteCode.cpp' != 'CRouteCode.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSampleCode.cpp' != 'CSampleCode.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_AsyncFileLogHandler.cpp' != 'CSMC_AsyncFileLogHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_DataProvider_Impl.cpp' != 'CSMC_DataProvider_Impl.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_EventValidator.cpp' != 'CSMC_EventValidator.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_FileLogHandler.cpp' != 'CSMC_FileLogHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_FpFile.cpp' != 'CSMC_FpFile.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_LogDataFile.cpp' != 'CSMC_LogDataFile.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_LogDataHolder.cpp' != 'CSMC_LogDataHolder.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_LogThread.cpp' != 'CSMC_LogThread.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_MemoryController.cpp' != 'CSMC_MemoryController.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_Mutex.cpp' != 'CSMC_Mutex.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_MutexHandler.cpp' != 'CSMC_MutexHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_RecipeHandler.cpp' != 'CSMC_RecipeHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSMC_RuntimeController.cpp' != 'CSMC_RuntimeController.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CSolidMaterialHandlingWrapper.cpp' != 'CSolidMaterialHandlingWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CStatusHandler.cpp' != 'CStatusHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CStatusHandlerRuleSet.cpp' != 'CStatusHandlerRuleSet.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CStatusHandlerValidator.cpp' != 'CStatusHandlerValidator.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CStirringDataHandler.cpp' != 'CStirringDataHandler.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CTemperaturMeasurementWrapper.cpp' != 'CTemperaturMeasurementWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CTimeBase.cpp' != 'CTimeBase.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CTreatID.cpp' != 'CTreatID.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CTreatmentManagerAimDataWrapper.cpp' != 'CTreatmentManagerAimDataWrapper.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'TinyStr.cpp' != 'TinyStr.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'TinyXml.cpp' != 'TinyXml.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'TinyXmlError.cpp' != 'TinyXmlError.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'TinyXmlParser.cpp' != 'TinyXmlParser.cpp' and 'x64\Debug\' == 'x64\Debug\').
+     1>Done building target "WarnCompileDuplicatedFilename" in project "SMC_Frame.vcxproj".
+     1>Target "FixupCLCompileOptions" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "FixupCLCompileOptions" in project "SMC_Frame.vcxproj".
+     1>Target "MakeDirsForCl" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_ClCompile" depends on it):
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "MakeDirsForCl" in project "SMC_Frame.vcxproj".
+       Target "_SelectedFiles" skipped. Previously built successfully.
+       Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
+       Target "ComputeCLInputPDBName" skipped. Previously built successfully.
+       Target "ComputeReferenceCLInput" skipped. Previously built successfully.
+       Target "WarnCompileDuplicatedFilename" skipped. Previously built successfully.
+       Target "FixupCLCompileOptions" skipped. Previously built successfully.
+       Target "SelectCustomBuild" skipped. Previously built successfully.
+     1>Target "SelectClCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "ClCompile" depends on it):
+     1>Done building target "SelectClCompile" in project "SMC_Frame.vcxproj".
+       Target "GenerateTargetFrameworkMonikerAttribute" skipped, due to false condition; ('$(GenerateTargetFrameworkAttribute)' == 'true') was evaluated as ('false' == 'true').
+       Target "ManagedIncrementalBuildPreProcessDependencyGraph" skipped, due to false condition; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('CCoolWaterHandler.cpp;CInjectDataHandler.cpp;CInjectLanceDataHandler.cpp;CLadleID.cpp;CLiquidMaterialHandler.cpp;CSMC_Error.cpp;CSMC_ErrorHandler.cpp;CSMC_FrameTask.cpp;CTreatIDCust.cpp;iData_Provider_dynSK.cpp;iData_Provider_s.cpp;iDM_Interface_dynSK.cpp;iDM_Interface_s.cpp;iEventData_dynSK.cpp;iEventData_s.cpp;iEventMessages_dynSK.cpp;iEventMessages_s.cpp;iModelResults_dynSK.cpp;iModelResults_s.cpp;iSMC_DataDefinitions_dynSK.cpp;iSMC_DataDefinitions_s.cpp;iSMC_DataProvider_dynSK.cpp;iSMC_DataProvider_s.cpp;CAnalysisHandlingWrapper.cpp;CCeloxMeasurementWrapper.cpp;CChangePhysicalMaterialAvailibilityWrapper.cpp;CChangeProdPracRecipeControlWrapper.cpp;CCyclicalMaterialChargedDataWrapper.cpp;CCyclicMeasumentCoolWaterDataWrapper.cpp;CCyclicTriggerCall.cpp;CCyclicWasteGasDataWrapper.cpp;CDataConversion.cpp;CDateTime.cpp;CDateTimeFormat.cpp;CDelayedTriggerCall.cpp;CDeltaTime.cpp;CElectricalSignalsWrapper.cpp;CEventHandler.cpp;CEventMessage.cpp;CEventMessageCtrl.cpp;CEventMessageError.cpp;CEventMessageReady.cpp;CFormattedID.cpp;CFormattedIDElement.cpp;CGasDataHandler.cpp;CGasLanceDataHandler.cpp;CHeatID.cpp;CHeatIDCust.cpp;CLiquidMaterialHandlingWrapper.cpp;CManualMaterialBatchWrapper.cpp;CModelEventHandler.cpp;CModelInterfaceData.cpp;CModelInterfaceManager.cpp;CModelResults_Impl.cpp;CModelTask.cpp;CModelWrapper.cpp;CPhaseID.cpp;CProductID.cpp;CPurposeHandlingWrapper.cpp;CRoofPositionWrapper.cpp;CRouteCode.cpp;CSampleCode.cpp;CSMC_AsyncFileLogHandler.cpp;CSMC_DataProvider_Impl.cpp;CSMC_EventValidator.cpp;CSMC_FileLogHandler.cpp;CSMC_FpFile.cpp;CSMC_LogDataFile.cpp;CSMC_LogDataHolder.cpp;CSMC_LogThread.cpp;CSMC_MemoryController.cpp;CSMC_Mutex.cpp;CSMC_MutexHandler.cpp;CSMC_RecipeHandler.cpp;CSMC_RuntimeController.cpp;CSolidMaterialHandlingWrapper.cpp;CStatusHandler.cpp;CStatusHandlerRuleSet.cpp;CStatusHandlerValidator.cpp;CStirringDataHandler.cpp;CTemperaturMeasurementWrapper.cpp;CTimeBase.cpp;CTreatID.cpp;CTreatmentManagerAimDataWrapper.cpp;TinyStr.cpp;TinyXml.cpp;TinyXmlError.cpp;TinyXmlParser.cpp' != '' and 'false' == 'True').
+     1>Target "ClCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (target "_ClCompile" depends on it):
+       Task "Delete" skipped, due to false condition; ('%(ClCompile.DebugInformationFormat)' != '' and '%(ClCompile.DebugInformationFormat)' != 'None' and '%(ClCompile.DebugInformationFormat)' != 'OldStyle' and '%(ClCompile.ProgramDataBaseFileName)' != '' and !Exists(%(ClCompile.ProgramDataBaseFileName))) was evaluated as ('ProgramDatabase' != '' and 'ProgramDatabase' != 'None' and 'ProgramDatabase' != 'OldStyle' and 'x64\Debug\SMC_Frame.pdb' != '' and !Exists(x64\Debug\SMC_Frame.pdb)).
+       Task "CL" skipped, due to false condition; ('%(ClCompile.PrecompiledHeader)' == 'Create' and '%(ClCompile.ExcludedFromBuild)'!='true' and '%(ClCompile.CompilerIteration)' == '') was evaluated as ('' == 'Create' and ''!='true' and '' == '').
+       Using "CL" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "CL"
+         Read Tracking Logs:
+         	x64\Debug\SMC_Frame.tlog\CL.read.1.tlog
+         Output details (176 of them) were not logged for performance reasons.
+         CCoolWaterHandler.cpp will be compiled because it was not found in the tracking log.
+         CCyclicTriggerCall.cpp will be compiled because it was not found in the tracking log.
+         CGasLanceDataHandler.cpp will be compiled because it was not found in the tracking log.
+         CInjectLanceDataHandler.cpp will be compiled because it was not found in the tracking log.
+         CModelEventHandler.cpp will be compiled because it was not found in the tracking log.
+         CModelResults_Impl.cpp will be compiled because it was not found in the tracking log.
+         CModelTask.cpp will be compiled because it was not found in the tracking log.
+         CModelWrapper.cpp will be compiled because it was not found in the tracking log.
+         CSMC_DataProvider_Impl.cpp will be compiled because it was not found in the tracking log.
+         CSMC_MutexHandler.cpp will be compiled because it was not found in the tracking log.
+         No output for X:\SMC\SOURCE\SMC_FRAME\CCOOLWATERHANDLER.CPP|X:\SMC\SOURCE\SMC_FRAME\CCYCLICTRIGGERCALL.CPP|X:\SMC\SOURCE\SMC_FRAME\CGASLANCEDATAHANDLER.CPP|X:\SMC\SOURCE\SMC_FRAME\CINJECTLANCEDATAHANDLER.CPP|X:\SMC\SOURCE\SMC_FRAME\CMODELEVENTHANDLER.CPP|X:\SMC\SOURCE\SMC_FRAME\CMODELRESULTS_IMPL.CPP|X:\SMC\SOURCE\SMC_FRAME\CMODELTASK.CPP|X:\SMC\SOURCE\SMC_FRAME\CMODELWRAPPER.CPP|X:\SMC\SOURCE\SMC_FRAME\CSMC_DATAPROVIDER_IMPL.CPP|X:\SMC\SOURCE\SMC_FRAME\CSMC_MUTEXHANDLER.CPP was found in the tracking log; source compilation required.
+         Write Tracking Logs:
+         	x64\Debug\SMC_Frame.tlog\CL.write.1.tlog
+         Environment Variables passed to tool:
+           VS_UNICODE_OUTPUT=1020
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /I..\SMC_Frame /I..\SMC_EventLogSystem /I..\SMC_DBClasses /I..\CBS_StdFrame /I..\Data_Provider /I..\..\packages\NCK\include\Util /I..\CBS_Files /IX:\SMC\packages\CBS\include\CBS_DB_Classes /IX:\SMC\packages\CBS\include\FRIES_EventService /IX:\SMC\packages\CBS\include\CBS_fevsWrapper /IX:\SMC\packages\CBS\include\CBS_Lib /IX:\SMC\packages\CBS\include\CBS_Threads /IX:\SMC\packages\CBS\include\CBS_Persi\CBS_Persilib /IX:\SMC\packages\CBS\include\CBS_CorbaLib /IX:\SMC\packages\CBS\include\CBS_CorbaLibV2 /IX:\SMC\packages\CBS\include\CBS_Exception /IX:\SMC\packages\CBS\include /IX:\SMC\packages\CBS\include\CBS_Tasks /IX:\SMC\packages\CBS\include\CBS_Utilities\CBS_Files /IX:\SMC\packages\CBS\include\CBS_Utilities /IX:\SMC\packages\CBS\include\CBS_EventLog /IX:\SMC\packages\omniORB\include /IX:\SMC\packages\omniORB\include\omniorb4 /Zi /nologo /W3 /WX- /diagnostics:classic /Od /D _OMNIORB_ /D _CRT_SECURE_NO_DEPRECATE /D "-GX" /D __WIN32__ /D __x86__ /D __NT__ /D _WIN32_WINNT=0x0502 /D __OSVERSION__=4 /D _DEBUG /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"x64\Debug\\" /Fd"x64\Debug\SMC_Frame.pdb" /FR"x64\Debug\\" /Gd /TP /FC /errorReport:prompt -Zm200 /EHsc CCoolWaterHandler.cpp CInjectLanceDataHandler.cpp CCyclicTriggerCall.cpp CGasLanceDataHandler.cpp CModelEventHandler.cpp CModelResults_Impl.cpp CModelTask.cpp CModelWrapper.cpp CSMC_DataProvider_Impl.cpp CSMC_MutexHandler.cpp
+         Tracking command:
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i X:\SMC\source\SMC_Frame\x64\Debug\SMC_Frame.tlog /r "X:\SMC\SOURCE\SMC_FRAME\CCOOLWATERHANDLER.CPP|X:\SMC\SOURCE\SMC_FRAME\CCYCLICTRIGGERCALL.CPP|X:\SMC\SOURCE\SMC_FRAME\CGASLANCEDATAHANDLER.CPP|X:\SMC\SOURCE\SMC_FRAME\CINJECTLANCEDATAHANDLER.CPP|X:\SMC\SOURCE\SMC_FRAME\CMODELEVENTHANDLER.CPP|X:\SMC\SOURCE\SMC_FRAME\CMODELRESULTS_IMPL.CPP|X:\SMC\SOURCE\SMC_FRAME\CMODELTASK.CPP|X:\SMC\SOURCE\SMC_FRAME\CMODELWRAPPER.CPP|X:\SMC\SOURCE\SMC_FRAME\CSMC_DATAPROVIDER_IMPL.CPP|X:\SMC\SOURCE\SMC_FRAME\CSMC_MUTEXHANDLER.CPP" /b MSBuildConsole_CancelEventb66cfeacc8f441a0869c7bbc358331a7  /c "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe"  /c /I..\SMC_Frame /I..\SMC_EventLogSystem /I..\SMC_DBClasses /I..\CBS_StdFrame /I..\Data_Provider /I..\..\packages\NCK\include\Util /I..\CBS_Files /IX:\SMC\packages\CBS\include\CBS_DB_Classes /IX:\SMC\packages\CBS\include\FRIES_EventService /IX:\SMC\packages\CBS\include\CBS_fevsWrapper /IX:\SMC\packages\CBS\include\CBS_Lib /IX:\SMC\packages\CBS\include\CBS_Threads /IX:\SMC\packages\CBS\include\CBS_Persi\CBS_Persilib /IX:\SMC\packages\CBS\include\CBS_CorbaLib /IX:\SMC\packages\CBS\include\CBS_CorbaLibV2 /IX:\SMC\packages\CBS\include\CBS_Exception /IX:\SMC\packages\CBS\include /IX:\SMC\packages\CBS\include\CBS_Tasks /IX:\SMC\packages\CBS\include\CBS_Utilities\CBS_Files /IX:\SMC\packages\CBS\include\CBS_Utilities /IX:\SMC\packages\CBS\include\CBS_EventLog /IX:\SMC\packages\omniORB\include /IX:\SMC\packages\omniORB\include\omniorb4 /Zi /nologo /W3 /WX- /diagnostics:classic /Od /D _OMNIORB_ /D _CRT_SECURE_NO_DEPRECATE /D "-GX" /D __WIN32__ /D __x86__ /D __NT__ /D _WIN32_WINNT=0x0502 /D __OSVERSION__=4 /D _DEBUG /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"x64\Debug\\" /Fd"x64\Debug\SMC_Frame.pdb" /FR"x64\Debug\\" /Gd /TP /FC /errorReport:prompt -Zm200 /EHsc CCoolWaterHandler.cpp CInjectLanceDataHandler.cpp CCyclicTriggerCall.cpp CGasLanceDataHandler.cpp CModelEventHandler.cpp CModelResults_Impl.cpp CModelTask.cpp CModelWrapper.cpp CSMC_DataProvider_Impl.cpp CSMC_MutexHandler.cpp
+         CCoolWaterHandler.cpp
+     1>x:\smc\source\smc_frame\ccoolwaterhandler.cpp(186): error C2664: 'void std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(std::initializer_list<std::basic_string<char,std::char_traits<char>,std::allocator<char>>>)': cannot convert argument 1 from 'CORBA::String_member' to 'const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &'
+                 with
+                 [
+                     _Kty=std::string,
+                     _Pr=std::less<std::string>,
+                     _Alloc=std::allocator<std::string>
+                 ]
+         x:\smc\source\smc_frame\ccoolwaterhandler.cpp(186): note: Reason: cannot convert from 'CORBA::String_member' to 'const std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+         x:\smc\source\smc_frame\ccoolwaterhandler.cpp(186): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+         CInjectLanceDataHandler.cpp
+     1>x:\smc\source\smc_frame\cinjectlancedatahandler.cpp(304): error C2664: 'void std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(std::initializer_list<std::basic_string<char,std::char_traits<char>,std::allocator<char>>>)': cannot convert argument 1 from 'CORBA::String_member' to 'const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &'
+                 with
+                 [
+                     _Kty=std::string,
+                     _Pr=std::less<std::string>,
+                     _Alloc=std::allocator<std::string>
+                 ]
+         x:\smc\source\smc_frame\cinjectlancedatahandler.cpp(304): note: Reason: cannot convert from 'CORBA::String_member' to 'const std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+         x:\smc\source\smc_frame\cinjectlancedatahandler.cpp(304): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+         CCyclicTriggerCall.cpp
+     1>x:\smc\source\smc_frame\ccyclictriggercall.cpp(4): fatal error C1083: Cannot open include file: 'wrapthread.h': No such file or directory
+         CGasLanceDataHandler.cpp
+     1>x:\smc\source\smc_frame\cgaslancedatahandler.cpp(420): error C2664: 'void std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(std::initializer_list<std::basic_string<char,std::char_traits<char>,std::allocator<char>>>)': cannot convert argument 1 from 'CORBA::String_member' to 'const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &'
+                 with
+                 [
+                     _Kty=std::string,
+                     _Pr=std::less<std::string>,
+                     _Alloc=std::allocator<std::string>
+                 ]
+         x:\smc\source\smc_frame\cgaslancedatahandler.cpp(420): note: Reason: cannot convert from 'CORBA::String_member' to 'const std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+         x:\smc\source\smc_frame\cgaslancedatahandler.cpp(420): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+         CModelEventHandler.cpp
+     1>x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         CModelResults_Impl.cpp
+     1>x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         CModelTask.cpp
+     1>x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         CModelWrapper.cpp
+     1>x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         CSMC_DataProvider_Impl.cpp
+     1>x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+     1>x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+     1>x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+     1>x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+     1>x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         CSMC_MutexHandler.cpp
+     1>x:\smc\source\smc_frame\csmc_mutexhandler.cpp(6): fatal error C1083: Cannot open include file: 'wrapthread.h': No such file or directory
+         Generating Code...
+         The command exited with code 2.
+       Done executing task "CL" -- FAILED.
+     1>Done building target "ClCompile" in project "SMC_Frame.vcxproj" -- FAILED.
+     1>Done Building Project "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+       "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (Build target) (1) ->
+       (ClCompile target) -> 
+         x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+         x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+         x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+         x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+
+
+       "X:\SMC\source\SMC_Frame\SMC_Frame.vcxproj" (Build target) (1) ->
+       (ClCompile target) -> 
+         x:\smc\source\smc_frame\ccoolwaterhandler.cpp(186): error C2664: 'void std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(std::initializer_list<std::basic_string<char,std::char_traits<char>,std::allocator<char>>>)': cannot convert argument 1 from 'CORBA::String_member' to 'const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &'
+         x:\smc\source\smc_frame\cinjectlancedatahandler.cpp(304): error C2664: 'void std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(std::initializer_list<std::basic_string<char,std::char_traits<char>,std::allocator<char>>>)': cannot convert argument 1 from 'CORBA::String_member' to 'const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &'
+         x:\smc\source\smc_frame\ccyclictriggercall.cpp(4): fatal error C1083: Cannot open include file: 'wrapthread.h': No such file or directory
+         x:\smc\source\smc_frame\cgaslancedatahandler.cpp(420): error C2664: 'void std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::insert(std::initializer_list<std::basic_string<char,std::char_traits<char>,std::allocator<char>>>)': cannot convert argument 1 from 'CORBA::String_member' to 'const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &'
+         x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         x:\smc\source\smc_frame\csmc_mutexhandler.cpp(6): fatal error C1083: Cannot open include file: 'wrapthread.h': No such file or directory
+
+    4 Warning(s)
+    10 Error(s)
+
+Time Elapsed 00:00:21.07

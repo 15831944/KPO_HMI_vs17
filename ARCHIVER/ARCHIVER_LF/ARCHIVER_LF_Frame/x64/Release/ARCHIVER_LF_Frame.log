@@ -1,0 +1,40 @@
+﻿  CARCHIVER_LFAnalysisDataWrapper.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CARCHIVER_LFComputerModeWrapper.cpp
+  CARCHIVER_LFDelayWrapper.cpp
+  CARCHIVER_LFEventHandler.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CARCHIVER_LFMaterialHandlingWrapper.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CARCHIVER_LFModelResultWrapper.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_dbclasses\cgc_phasecontainer.h(26): warning C4091: 'typedef ': ignored on left of 'CGC_PhaseContainer::PhaseData' when no variable is declared
+  CARCHIVER_LFSignalsAndMeasurementWrapper.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CARCHIVER_LFTask.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CARCHIVER_LFTreatmentWrapper.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  ARCHIVER_LF_Frame.vcxproj -> X:\SMC\source\XPACT_SMC_BUILD\x64\Release\ARCHIVER_LF_Frame.lib

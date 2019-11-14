@@ -1,0 +1,12 @@
+﻿  CDataProfile.cpp
+  CTelegram_Adapter.cpp
+  CTelegram_DataProfile.cpp
+  CTelegram_DataProfile_Combined.cpp
+  CTelegram_EventHandler.cpp
+  CTelegram_Handler.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  Telegram_Handler.vcxproj -> X:\SMC\source\XPACT_SMC_BUILD\x64\Release\Telegram_Handler.lib

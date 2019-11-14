@@ -1,0 +1,2290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{028abff8-8f3c-4b55-ae23-dec830089e93}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\EAF">
+      <UniqueIdentifier>{47e2fd7c-2183-494b-9478-edffadf9f02f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LF">
+      <UniqueIdentifier>{5d9ffebc-b2b5-49ca-94c5-4eb8f5b4fd6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{3774952f-b107-4b48-8498-18e02ae68c06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EAF">
+      <UniqueIdentifier>{0251d416-ee7a-4a1f-9d86-e2ae8f5ad3c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\LF">
+      <UniqueIdentifier>{d3676751-7d4f-4ff1-96ca-511af644996f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{74e883ce-fa94-4078-8f80-307a8f0be3a2}</UniqueIdentifier>
+      <Extensions>cpp;c;h;hh</Extensions>
+    </Filter>
+    <Filter Include="Definition Classes">
+      <UniqueIdentifier>{db1274d4-2d4f-4f94-adc6-dc3aaed1b045}</UniqueIdentifier>
+      <Extensions>DEF*.h</Extensions>
+    </Filter>
+    <Filter Include="IDL Files">
+      <UniqueIdentifier>{d931fcf9-09da-4816-8053-092a32a54127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HMD">
+      <UniqueIdentifier>{db9a0b0d-fb32-47eb-97ee-6f1bd994170f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\HMD">
+      <UniqueIdentifier>{9e68f5f0-d060-44f8-b174-ce54b0df8a1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Report">
+      <UniqueIdentifier>{59ac525e-dfdb-4168-a42f-e3d403478195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Report">
+      <UniqueIdentifier>{864c0801-1fba-460d-a3ff-f46433757344}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CChem_Elem_Container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEquipmentData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_ACTION_DEF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_ACTION_STATUS_COL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_ACTIVATION_CHILD_OBJECTS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_ACTIVATION_PRNT_OBJECTS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_ACTIVATION_TYPES.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_BARS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_CHARGE_DEST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_Charge_Dest_Container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_COMP_STATUS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_COOLWATER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_CounterContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_DELAY_GROUP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_ELEC_SYSTEM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_GRADE_ANL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_GRAPH_DOTSTYLE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_GRAPH_GROUPS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_GRAPH_GROUPS_SPEC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_GRAPH_LINESTYLE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_HEAT_STAT_OBJECT_ACTIVATION.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_LADLE_DEF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_LADLE_PARTS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_LADLE_POS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_LADLE_STATUS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_LADLE_TYPE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_MEASUREMENT_NAME.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_MEASUREMENT_TYPE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PARAM_GROUP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PARAM_TYPE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PHASE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PHASE_RES_PLANT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PhaseContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PLANT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_Plant_Container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PLANT_DEF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PLANT_ORDER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PLANTGROUP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_Plantgroup_Container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PLANTGROUP_DESC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PLANTSTATUS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PP_ORDER_SINGLE_AIMS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PRACPHASE_DEF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PRODPRAC_DEF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_PURPOSE_TYPE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_REBLOWCOOL_REASON.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_RECIPE_L1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_Recipe_L1Container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_RECIPE_SOURCE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_RECIPE_STATUS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_RESTRI_DEF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_SAMPLELOC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_SAMPLEMODE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_SCRAP_CONTAINER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_SCRAP_CONTAINER_LOC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_SCRAP_CONTAINER_STATUS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_SCRAP_CONTAINER_TYPE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_SOURCE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_SourceContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_THERM_STAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_TORPEDOCAR_DEF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_TORPEDOCAR_LOC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_TRANSFERCAR_DEF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCC_TRANSLATE_VALUE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_DELAY_CODE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_ENG_UNIT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_EQUIV.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_EQUIV_ENTRY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_GRADE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_GRADE_ANL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_GRADE_EQUIV.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_GRADE_PRODPRAC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_GRADE_SINGLE_AIMS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_MAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_MAT_CHEM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_MAT_EFF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_MAT_FEED.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_MAT_PURP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_MAT_PURP_Container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_PARAM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_PARAM_MATRIX.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_PP_PARAM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_PURP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_RESTRI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_RESTRI_ENTRY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_TREATMODE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_TREATMODE_ENTRY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_ACTION.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_COOLWATER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_DELAYS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_ELEC_SYSTEM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_GRADE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_GRADE_ANL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_GRADE_EQUIV.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_GRADE_SINGLE_AIMS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_HEAT_DATA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_HEAT_DATA_CUST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_HEAT_DATA_LIQADD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_HEAT_DATA_MAT_FEED.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_HEAT_DATA_PRODPRAC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_LADLE_LIFE_DATA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_MAT_FEED.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_MAT_FEED_CYCL_MEAS_DATA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_MAT_FEED_RES.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_PARAM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_PARAM_MATRIX.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_PHASE_RES.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_PHASE_RES_ANL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_PHASE_RES_PLANT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_RECIPE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_RECIPE_ENTRY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_RESTRI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_RESTRI_ENTRY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_SAMPLE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_SAMPLE_ENTRY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_SAMPLE_REF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_TAPCH_DATA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_TREATMODE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_TREATMODE_ENTRY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_WASTEGAS_CYCL_MEAS_DATA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHeatDataConverter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHeatStatusContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHMI_PROFILES.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPCA_COMP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_ACTION.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_COMP_DATA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_COOLWATER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_DELAYS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_ELEC_SYSTEM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_ELEC_TAPCH.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_EQUIP_MOUNT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_HEAT_DATA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_HEAT_DATA_CUST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_HEAT_DATA_LIQADD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_HEAT_DATA_MAT_FEED.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_HEAT_DATA_PRODPRAC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_HEAT_PLANT_REF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_HEAT_REF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_HEAT_YIELDS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_HOT_METAL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_HOT_METAL_ORDER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_HOTHEEL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_LADLE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_LADLE_LIFE_DATA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_MAT_AVAIL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_MAT_FEED_CYCL_MEAS_DATA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_MAT_FEED_RES.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_PHASE_RES.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_PHASE_RES_ANL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_PHASE_RES_PLANT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_PLANTSTATUS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_PLANTSTATUS_PLANT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_PRETREATDATA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_RECIPE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_RECIPE_ENTRY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_SAMPLE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_SAMPLE_ENTRY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_SAMPLE_REF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_SCRAP_CONTAINER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_SCRAP_CONTAINER_ENTRY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_SCRAP_CONTAINER_ORDER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_SCRAP_CONTAINER_ORDER_ENTRY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_TAPCH_DATA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_TORPEDOCAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_WASTEGAS_CYCL_MEAS_DATA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPP_HEAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPP_HEAT_PLANT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPP_ORDER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPP_ORDER_SINGLE_AIMS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPP_SHIFT_CREW_ASSIGNMENT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_DBColProfile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_DBColProfileBool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_DBColProfileDate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_DBColProfileDouble.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_DBColProfileLong.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_DBColProfileString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_DBData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_DBMetaData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_DBTableBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CVPD_RECIPE_CURR_STATUS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCE_BURNER.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCE_BURNER_GASTYPE.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCE_INJECTION.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCE_INJECTION_RATIO.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCE_INJECTION_TYPE.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCE_InjectionContainer.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCE_PRACPHASE_STEP.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCE_PROC_PHASE_CODES_EAF.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_BURNER.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_BURNER_STEP_ENTRY.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_EL.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_EL_PARAM.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_EL_STEP_ENTRY.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_FLAME_PROFILE.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_INJECTION.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_INJECTION_STEP_ENTRY.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_PROCESS.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_PROCESS_PARAM.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_PROCESS_STEP_ENTRY.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_SCRAP.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_SCRAP_BASKET.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_STIRR.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTE_PP_STIRR_SPEC.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_CYCL_MEAS_DATA.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_CYCL_MEAS_DATA_BURN.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_CYCL_MEAS_DATA_INJ.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_HEAT_DATA.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_HEAT_DATA_MELT.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PHASE_BURNER_RES.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PHASE_INJECT_RES.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PHASE_PROCESS_RES.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PHASE_STIRRING_RES.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_BURNER.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_BURNER_STEP_ENTRY.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_EL.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_EL_PARAM.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_EL_STEP_ENTRY.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_FLAME_PROFILE.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_INJECTION.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_INJECTION_STEP_ENTRY.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_PROCESS.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_PROCESS_PARAM.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_PROCESS_STEP_ENTRY.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_SCRAP.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_SCRAP_BASKET.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_STIRR.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_PP_STIRR_SPEC.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_ACTUAL_RES.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_CYCL_MEAS_DATA.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_CYCL_MEAS_DATA_BURN.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_CYCL_MEAS_DATA_INJ.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_HEAT_DATA.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_HEAT_DATA_BURN.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_HEAT_DATA_INJ.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_HEAT_DATA_MELT.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_PHASE_BURNER_RES.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_PHASE_ELEC_RES.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_PHASE_INJECT_RES.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_PHASE_PROCESS_RES.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_PHASE_STIRRING_RES.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCL_ACTIVITY.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCL_EL_PHASE.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCL_STEP.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCL_STIRR_INT.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCL_STIRR_PHASE.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTL_PP_EL.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTL_PP_EL_STEP.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTL_PP_STIRR.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTL_PP_STIRR_SPEC.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDL_ACTIVITY_RES.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDL_ACTUAL_RES.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDL_CYCL_MEAS_DATA.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDL_HEAT_DATA.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDL_HEAT_DATA_MELT.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDL_PHASE_ELEC_RES.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDL_PP_EL.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDL_PP_EL_STEP.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDL_PP_STIRR.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDL_PP_STIRR_SPEC.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDL_ACTIVITY_RES.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDL_ACTUAL_RES.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDL_ACTUAL_RES_ANL.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDL_CYCL_MEAS_DATA.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDL_HEAT_DATA.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDL_HEAT_DATA_MELT.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDL_PHASE_ELEC_RES.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDL_PHASE_STIRRING_RES.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_Ladle_Def_Container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDL_PHASE_STIRRING_RES.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_COMP_DATA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_LADLE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_HM_REF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_LADLE_ROUTES.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iData_Provider_dynSK.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iData_Provider_s.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iSMC_DataDefinitions_dynSK.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iSMC_DataDefinitions_s.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iSMC_DataProvider_dynSK.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iSMC_DataProvider_s.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_STATUS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_SHIFT_CAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGD_SHIFT_PATTERN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGD_EQUIP_STRUCT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGD_EQUIP_TYPE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_EQUIP_COUNTER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_EQUIP_PROPERTY_DETAILS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_EQUIP_CAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_EQUIP_COUNTER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_EQUIP_PROPERTIES.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPD_HEAT_DATA_STIRR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_COMBI_RECIPE_ENTRY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_HEAT_STATUS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGT_GRADE_SAMPLE_FLAG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CShiftCrewData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_CREW_CAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPP_MEMBER_CREW_ASSIGNMENT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_MEMBER_CAT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_ACTUAL_RES_ANL.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDE_ACTUAL_RES.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDL_ACTUAL_RES_ANL.cpp">
+      <Filter>Source Files\LF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDE_ACTUAL_RES_ANL.cpp">
+      <Filter>Source Files\EAF</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDH_HM_DATA.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDH_LANCE_DATA.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDH_ACT_EVENT_RES.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDH_ACTION.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDH_CYCL_MEAS_DATA.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDH_HM_DATA_PHASE.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDH_HM_DATA_PRODPRAC.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDH_HM_PHASE_RES.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CPDH_HM_RES.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CPP_HM.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_PP_TEMP_CORR.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_ACT_EVENT_RES.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_ACTION.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_GRADE.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_GRADE_ANL.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_HM_DATA.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_HM_DATA_PHASE.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_HM_DATA_PRODPRAC.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_HM_PHASE_RES.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_HM_RES.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_PARAM.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_PARAM_MATRIX.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_PP_BASE_VAL.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_PP_BASE_VAL_STEP.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_PP_BLOWING.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_PP_INJECTION.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCH_TREAT_TYPE.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCH_CALC_MODE.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CGCH_EVENT_LOG.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTH_PP_TEMP_CORR.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTH_PP_BASE_VAL.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTH_PP_BASE_VAL_STEP.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTH_PP_BLOWING.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CGTH_PP_INJECTION.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_EQUIP_COUNTER.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_EQUIP_COUNTER.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CREPORT_MOTOR_ENTRY.cpp">
+      <Filter>Source Files\Report</Filter>
+    </ClCompile>
+    <ClCompile Include="CREPORT_MOTOR.cpp">
+      <Filter>Source Files\Report</Filter>
+    </ClCompile>
+    <ClCompile Include="CHD_HEAT_DATA_STIRR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CHDH_CYCL_MEAS_DATA.cpp">
+      <Filter>Source Files\HMD</Filter>
+    </ClCompile>
+    <ClCompile Include="CGC_Ladle_Pos_Container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_DBColProfileBlob.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CChem_Elem_Container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEquipmentData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_ACTION_DEF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_ACTION_STATUS_COL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_ACTIVATION_CHILD_OBJECTS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_ACTIVATION_PRNT_OBJECTS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_ACTIVATION_TYPES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_BARS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_CHARGE_DEST.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_Charge_Dest_Container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_COMP_STATUS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_COOLWATER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_CounterContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_DELAY_GROUP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_ELEC_SYSTEM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_GRADE_ANL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_GRAPH_DOTSTYLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_GRAPH_GROUPS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_GRAPH_GROUPS_SPEC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_GRAPH_LINESTYLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_HEAT_STAT_OBJECT_ACTIVATION.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_LADLE_DEF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_LADLE_PARTS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_LADLE_POS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_LADLE_STATUS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_LADLE_TYPE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_MEASUREMENT_NAME.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_MEASUREMENT_TYPE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PARAM_GROUP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PARAM_TYPE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PHASE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PHASE_RES_PLANT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PhaseContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PLANT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_Plant_Container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PLANT_DEF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PLANT_ORDER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PLANTGROUP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_Plantgroup_Container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PLANTGROUP_DESC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PLANTSTATUS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PP_ORDER_SINGLE_AIMS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PRACPHASE_DEF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PRODPRAC_DEF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PURPOSE_TYPE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_REBLOWCOOL_REASON.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_RECIPE_L1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_Recipe_L1Container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_RECIPE_SOURCE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_RECIPE_STATUS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_RESTRI_DEF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_SAMPLELOC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_SAMPLEMODE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_SCRAP_CONTAINER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_SCRAP_CONTAINER_LOC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_SCRAP_CONTAINER_STATUS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_SCRAP_CONTAINER_TYPE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_SOURCE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_SourceContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_THERM_STAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_TORPEDOCAR_DEF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_TORPEDOCAR_LOC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_TRANSFERCAR_DEF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCC_TRANSLATE_VALUE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_DELAY_CODE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_ENG_UNIT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_EQUIV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_EQUIV_ENTRY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_GRADE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_GRADE_ANL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_GRADE_EQUIV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_GRADE_PRODPRAC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_GRADE_SINGLE_AIMS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_MAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_MAT_CHEM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_MAT_EFF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_MAT_FEED.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_MAT_PURP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_MAT_PURP_Container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_PARAM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_PARAM_MATRIX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_PP_PARAM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_PURP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_RESTRI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_RESTRI_ENTRY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_TREATMODE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_TREATMODE_ENTRY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_ACTION.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_COOLWATER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_DELAYS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_ELEC_SYSTEM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_GRADE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_GRADE_ANL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_GRADE_EQUIV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_GRADE_SINGLE_AIMS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_HEAT_DATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_HEAT_DATA_CUST.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_HEAT_DATA_LIQADD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_HEAT_DATA_MAT_FEED.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_HEAT_DATA_PRODPRAC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_LADLE_LIFE_DATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_MAT_FEED.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_MAT_FEED_CYCL_MEAS_DATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_MAT_FEED_RES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_PARAM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_PARAM_MATRIX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_PHASE_RES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_PHASE_RES_ANL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_PHASE_RES_PLANT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_RECIPE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_RECIPE_ENTRY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_RESTRI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_RESTRI_ENTRY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_SAMPLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_SAMPLE_ENTRY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_SAMPLE_REF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_TAPCH_DATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_TREATMODE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_TREATMODE_ENTRY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_WASTEGAS_CYCL_MEAS_DATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeatDataConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHeatStatusContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHMI_PROFILES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPCA_COMP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_ACTION.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_COMP_DATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_COOLWATER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_DELAYS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_ELEC_SYSTEM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_ELEC_TAPCH.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_EQUIP_MOUNT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_HEAT_DATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_HEAT_DATA_CUST.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_HEAT_DATA_LIQADD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_HEAT_DATA_MAT_FEED.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_HEAT_DATA_PRODPRAC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_HEAT_PLANT_REF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_HEAT_REF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_HEAT_YIELDS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_HOT_METAL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_HOT_METAL_ORDER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_HOTHEEL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_LADLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_LADLE_LIFE_DATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_MAT_AVAIL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_MAT_FEED_CYCL_MEAS_DATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_MAT_FEED_RES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_PHASE_RES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_PHASE_RES_ANL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_PHASE_RES_PLANT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_PLANTSTATUS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_PLANTSTATUS_PLANT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_PRETREATDATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_RECIPE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_RECIPE_ENTRY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_SAMPLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_SAMPLE_ENTRY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_SAMPLE_REF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_SCRAP_CONTAINER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_SCRAP_CONTAINER_ENTRY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_SCRAP_CONTAINER_ORDER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_SCRAP_CONTAINER_ORDER_ENTRY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_TAPCH_DATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_TORPEDOCAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_WASTEGAS_CYCL_MEAS_DATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPP_HEAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPP_HEAT_PLANT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPP_ORDER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPP_ORDER_SINGLE_AIMS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPP_SHIFT_CREW_ASSIGNMENT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_DBColProfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_DBColProfileBool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_DBColProfileDate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_DBColProfileDouble.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_DBColProfileLong.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_DBColProfileString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_DBData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_DBMetaData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_DBTableBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CVPD_RECIPE_CURR_STATUS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCE_BURNER.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCE_BURNER_GASTYPE.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCE_INJECTION.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCE_INJECTION_RATIO.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCE_INJECTION_TYPE.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCE_InjectionContainer.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCE_PRACPHASE_STEP.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCE_PROC_PHASE_CODES_EAF.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_BURNER.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_BURNER_STEP_ENTRY.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_EL.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_EL_PARAM.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_EL_STEP_ENTRY.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_FLAME_PROFILE.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_INJECTION.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_INJECTION_STEP_ENTRY.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_PROCESS.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_PROCESS_PARAM.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_PROCESS_STEP_ENTRY.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_SCRAP.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_SCRAP_BASKET.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_STIRR.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTE_PP_STIRR_SPEC.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_CYCL_MEAS_DATA.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_CYCL_MEAS_DATA_BURN.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_CYCL_MEAS_DATA_INJ.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_HEAT_DATA.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_HEAT_DATA_MELT.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PHASE_BURNER_RES.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PHASE_INJECT_RES.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PHASE_PROCESS_RES.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PHASE_STIRRING_RES.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_BURNER.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_BURNER_STEP_ENTRY.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_EL.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_EL_PARAM.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_EL_STEP_ENTRY.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_FLAME_PROFILE.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_INJECTION.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_INJECTION_STEP_ENTRY.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_PROCESS.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_PROCESS_PARAM.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_PROCESS_STEP_ENTRY.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_SCRAP.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_SCRAP_BASKET.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_STIRR.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_PP_STIRR_SPEC.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_ACTUAL_RES.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_CYCL_MEAS_DATA.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_CYCL_MEAS_DATA_BURN.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_CYCL_MEAS_DATA_INJ.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_HEAT_DATA.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_HEAT_DATA_BURN.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_HEAT_DATA_INJ.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_HEAT_DATA_MELT.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_PHASE_BURNER_RES.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_PHASE_ELEC_RES.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_PHASE_INJECT_RES.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_PHASE_PROCESS_RES.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_PHASE_STIRRING_RES.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCL_ACTIVITY.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCL_EL_PHASE.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCL_STEP.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCL_STIRR_INT.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCL_STIRR_PHASE.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTL_PP_EL.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTL_PP_EL_STEP.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTL_PP_STIRR.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTL_PP_STIRR_SPEC.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDL_ACTUAL_RES.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDL_CYCL_MEAS_DATA.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDL_HEAT_DATA.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDL_HEAT_DATA_MELT.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDL_PHASE_ELEC_RES.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDL_PP_EL.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDL_PP_EL_STEP.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDL_PP_STIRR.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDL_PP_STIRR_SPEC.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDL_ACTUAL_RES.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDL_ACTUAL_RES_ANL.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDL_CYCL_MEAS_DATA.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDL_HEAT_DATA.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDL_HEAT_DATA_MELT.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDL_PHASE_ELEC_RES.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_ACTION_DEF.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_CHARGE_DEST.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_COOLWATER.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_ELEC_SYSTEM.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_GRADE_ANL.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_LADLE_PARTS.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_LADLE_POS.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_LADLE_STATUS.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_LADLE_TYPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_LIQADD_STATUS.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_LIQADD_TYPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_MEASUREMENT_NAME.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_MEASUREMENT_NAME_SCOPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_MEASUREMENT_ORIGIN.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_MEASUREMENT_TYPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_MODEL_MEDIA_DEVICE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_MODEL_MEDIA_TYPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_PARAM_TYPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_PHASE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_PLANT.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_PLANT_DEF.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_PLANTGROUP_DESC.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_PP_ORDER_SINGLE_AIMS.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_PRODPRAC_DEF.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_RECIPE_SOURCE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_RECIPE_STATUS.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_SAMPLELOC.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_SAMPLEMODE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_SCRAP_CONT_ORDER_STATUS.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_SCRAP_CONTAINER_STATUS.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_SCRAP_CONTAINER_TYPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_SHIFT_TYPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_SOURCE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_THERM_STAT.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_TREATMENTPHASE_DEF.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GCE_BURNER.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GCE_INJECTION.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GCE_INJECTION_TYPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GCL_ACTIVITY.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GCL_STIRR_PHASE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GT_PURP.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_COMP_STATUS.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_HOT_METAL_ORDER_STATUS.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_PLANTSTATUS.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_SCRAP_CONTAINER_LOC.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GCE_BURNER_GASTYPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDL_PHASE_STIRRING_RES.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_Ladle_Def_Container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDL_PHASE_STIRRING_RES.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_COMP_DATA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_LADLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_HM_REF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_LADLE_ROUTES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_DELAY_GROUP.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_EFF.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GCL_STIRR_INT.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_HEAT_STATUS.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_STIRR_DEVICE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_STIRR_GAS_TYPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GD_EQUIP_TYPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_STATUS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_STATUS.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_SHIFT_CAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGD_SHIFT_PATTERN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_COUNTER_TYPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="CGD_EQUIP_STRUCT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGD_EQUIP_TYPE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_EQUIP_COUNTER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_EQUIP_PROPERTY_DETAILS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_EQUIP_CAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_EQUIP_PROPERTIES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_EQUIP_COUNTER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPD_HEAT_DATA_STIRR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_COMBI_RECIPE_ENTRY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_HEAT_STATUS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_MEMBER_ROLE_CAT.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_RECIPE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="CGT_GRADE_SAMPLE_FLAG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CShiftCrewData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_CREW_CAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPP_MEMBER_CREW_ASSIGNMENT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_MEMBER_CAT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GC_SAMPLEUSABLE.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_ACTUAL_RES_ANL.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDE_ACTUAL_RES.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDL_ACTUAL_RES_ANL.h">
+      <Filter>Header Files\LF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDE_ACTUAL_RES_ANL.h">
+      <Filter>Header Files\EAF</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDH_HM_DATA.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDH_ACT_EVENT_RES.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDH_ACTION.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDH_CYCL_MEAS_DATA.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDH_HM_DATA_PHASE.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDH_HM_DATA_PRODPRAC.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDH_HM_PHASE_RES.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDH_HM_RES.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CPDH_LANCE_DATA.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CPP_HM.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_PP_TEMP_CORR.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_ACT_EVENT_RES.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_ACTION.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_GRADE.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_GRADE_ANL.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_HM_DATA.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_HM_DATA_PHASE.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_HM_DATA_PRODPRAC.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_HM_PHASE_RES.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_HM_RES.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_PARAM.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_PARAM_MATRIX.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_PP_BASE_VAL.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_PP_BASE_VAL_STEP.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_PP_BLOWING.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_PP_INJECTION.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCH_TREAT_TYPE.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCH_CALC_MODE.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CGCH_EVENT_LOG.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTH_PP_TEMP_CORR.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTH_PP_BASE_VAL.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTH_PP_BASE_VAL_STEP.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTH_PP_BLOWING.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CGTH_PP_INJECTION.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_EQUIP_COUNTER.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_EQUIP_COUNTER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CREPORT_MOTOR_ENTRY.h">
+      <Filter>Header Files\Report</Filter>
+    </ClInclude>
+    <ClInclude Include="CREPORT_MOTOR.h">
+      <Filter>Header Files\Report</Filter>
+    </ClInclude>
+    <ClInclude Include="CHD_HEAT_DATA_STIRR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHDH_CYCL_MEAS_DATA.h">
+      <Filter>Header Files\HMD</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_Ladle_Pos_Container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_PRODUCTION_STATUS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGC_StatusContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_DBColProfileBlob.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DEF_GT_PARAM.h">
+      <Filter>Definition Classes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\SMC_Frame\iSMC_DataProvider.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\SMC_Frame\iSMC_DataDefinitions.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Data_Provider\iData_Provider.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iSMC_DataProvider_s.hh">
+      <Filter>Generated Files</Filter>
+    </None>
+    <None Include="iData_Provider_s.hh">
+      <Filter>Generated Files</Filter>
+    </None>
+    <None Include="iSMC_DataDefinitions_s.hh">
+      <Filter>Generated Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

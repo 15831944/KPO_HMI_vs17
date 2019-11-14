@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9619602a-9cc7-453c-81ea-f8655f258af7}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Rule Sets">
+      <UniqueIdentifier>{8a1e3d6e-824c-492a-ad0f-e12458899f7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="INI files">
+      <UniqueIdentifier>{2377ff1f-29ff-4126-8e4f-c41680360674}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\cfg\Dm\DM_GENDataProviderRuleSet.asc">
+      <Filter>Rule Sets</Filter>
+    </None>
+    <None Include="..\..\..\..\cfg\Dm\DM_GENEventRuleSet.asc">
+      <Filter>Rule Sets</Filter>
+    </None>
+    <None Include="..\InstallShield\cfg\SMC_OFFLINE\GEN_OFFLINE_RT.ini">
+      <Filter>INI files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

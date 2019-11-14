@@ -1,0 +1,31 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GenerateIDL", "GenerateIDL.vcproj", "{B46B92F7-15BE-449F-A18E-CEABB94F3BCA}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectName0 = SAK
+		SccLocalPath0 = ..\\..
+		SccProvider0 = MSSCCI:ClearCase
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection0 = Tools\\TELCOM_IdlGenerator\\
+		SccProjectUniqueName1 = GenerateIDL.vcproj
+		SccLocalPath1 = ..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection1 = Tools\\TELCOM_IdlGenerator\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B46B92F7-15BE-449F-A18E-CEABB94F3BCA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B46B92F7-15BE-449F-A18E-CEABB94F3BCA}.Debug|Win32.Build.0 = Debug|Win32
+		{B46B92F7-15BE-449F-A18E-CEABB94F3BCA}.Release|Win32.ActiveCfg = Release|Win32
+		{B46B92F7-15BE-449F-A18E-CEABB94F3BCA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

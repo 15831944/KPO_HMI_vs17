@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{c2d4575c-1ac1-4ccb-9c26-69e26de0363b}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4579f7a3-ac3e-4240-b5d8-7cad97f46cca}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;hh</Extensions>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{84b194bd-5edd-4c61-b80e-c07bf3009319}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IDL Files">
+      <UniqueIdentifier>{134b11f3-7577-441a-abf3-81b6a5b96f93}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CDH_IN_Interface_Impl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDH_IN_Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDH_IN_Telcom_Impl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEAF_TelegramHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLab_TelegramHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLF_TelegramHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTlgHandlerFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CL3_TelegramHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iDH_Interface_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iDH_Interface_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="CCCS_TelegramHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_L3_In_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_L3_In_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_In_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_In_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="CHMD_TelegramHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CDH_IN_Interface_Impl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDH_IN_Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDH_IN_Telcom_Impl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEAF_TelegramHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLab_TelegramHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLF_TelegramHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTlgHandlerFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CL3_TelegramHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCCS_TelegramHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CHMD_TelegramHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iDH_Interface_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="Telcom_L3_In_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="Telcom_In_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\DH_Telcom_Interface\Telcom_In.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\DH_Interface\iDH_Interface.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

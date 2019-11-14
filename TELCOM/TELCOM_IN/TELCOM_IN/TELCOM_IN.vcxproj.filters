@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{d7e01230-af8b-4a19-b1b0-0f127b5f4de7}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{aabce9c5-4520-41aa-9260-6a2c6b3ed021}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{a49c77e5-6445-43b3-b065-3ca08ef347ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="INI Files">
+      <UniqueIdentifier>{3314bfef-ee0a-4eba-b305-0c78e772edef}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\cfg\Telcom\TELCOM_LAB_IN.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_FPH_IN.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_RMH_IN.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_SAF_1_IN.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L3_IN.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_CCS_IN.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_IPQS_IN.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_AOD_1_IN.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_EAF_1_IN.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_LF_1_IN.ini">
+      <Filter>INI Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

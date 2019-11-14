@@ -1,0 +1,13 @@
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\bin\Release\Comani.exe.config
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\bin\Release\Comani.exe
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\bin\Release\Comani.pdb
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\bin\Release\LibTelcom.dll
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\obj\Release\ResolveAssemblyReference.cache
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\obj\Release\Comani.MainForm.resources
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\obj\Release\Comani.Properties.Resources.resources
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\obj\Release\Comani.Telegram.resources
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\obj\Release\Comani.DlgSelectProvider.resources
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\obj\Release\GenerateResource.read.1.tlog
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\obj\Release\GenerateResource.write.1.tlog
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\obj\Release\Comani.exe
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\obj\Release\Comani.pdb

@@ -1,0 +1,55 @@
+﻿  CDM_LFAnalysisEventHandler.cpp
+  CDM_LFDBManager.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\dm\dm_lf\dm_lf_frame\cdm_lfdbmanager.cpp(1613): warning C4244: 'argument': conversion from 'double' to 'long', possible loss of data
+  CDM_LFDBManagerTask.cpp
+  CDM_LFEventHandler.cpp
+  CDM_LFEventLogHandler.cpp
+  CDM_LFEventLogHandlerAnalysis.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CDM_LFEventLogHandlerMaterial.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CDM_LFEventLogHandlerModelResults.cpp
+  CDM_LFEventLogHandlerModesAndAvailabilities.cpp
+  CDM_LFEventLogHandlerPurpose.cpp
+  CDM_LFEventLogHandlerSignalsAndMeasurements.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CDM_LFEventLogHandlerTreatmentManagement.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CDM_LFMaterialEventHandler.cpp
+  CDM_LFModelResultEventHandler.cpp
+  CDM_LFModesAndAvailabilitiesEventHandler.cpp
+  CDM_LFPhaseChangeController.cpp
+  CDM_LFPlantManager.cpp
+  CDM_LFProductManager.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CDM_LFPurposeEventHandler.cpp
+  CDM_LFSignalsAndMeasurementsEventHandler.cpp
+  Generating Code...
+  Compiling...
+  CDM_LFTask.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CDM_LFTreatmentManagementEventHandler.cpp
+  Generating Code...
+  DM_LF_Frame.vcxproj -> X:\SMC\source\XPACT_SMC_BUILD\x64\Release\DM_LF_Frame.lib

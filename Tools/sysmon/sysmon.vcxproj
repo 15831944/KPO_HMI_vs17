@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6FFC533D-E428-33EF-8AC1-F80D23E44426}</ProjectGuid>
+    <SccProjectName>Rational ClearCase</SccProjectName>
+    <SccAuxPath>Rational ClearCase</SccAuxPath>
+    <SccLocalPath>Rational ClearCase</SccLocalPath>
+    <SccProvider>Rational ClearCase</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:/SMC/$(Configuration)/bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:/SMC/$(Configuration)/bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\CBS_StdFrame;..\..\SMC_Frame;..\..\SMC_EventLogSystem;..\..\Data_Provider;..\..\TSM\TSM_BaseApplication;..\..\TSM\TSM_LF\TSM_LF_Frame;..\..\DM\DM_General;..\..\DM\DM_LF\DM_LF_Frame;..\..\..\packages\NCK\include\TSM_Kernel;..\..\..\packages\NCK\include\Util;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\CBS_DB_Classes;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_CorbaLibV2;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_EventLog;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_fevsWrapper;$(CBSDIR)\include\FRIES_EventService;$(OMNIDIR)\include;$(OMNIDIR)\include\omniorb4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;-GX;__WIN32__;__x86__;__OSVERSION__=4;__NT__;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <StringPooling>false</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc80.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Data_Provider.lib;CBS_StdFrame.lib;SMC_EventLogSystem.lib;SMC_Frame.lib;CBS-K.lib;omniDynamic416_rt.lib;omnithread34_rt.lib;omniORB4_rt.lib;basem.lib;basem2.lib;libbtm.lib;libnetcomm.lib;tamm.lib;tcoram.lib;transportm.lib;$(ORASQLLIB);kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(ORACLE_HOME)\precomp\lib\msvc;$(ORACLE_HOME)\precomp\lib;$(OMNIDIR)\lib\x86_win32;$(CBSDIR)\Lib;$(BASE_HOME)\base4cpp\lib;$(TELCOMDIR)\lib\release;V:\SMC\$(Configuration)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile>
+      </ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <TargetMachine>NotSet</TargetMachine>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\CBS_StdFrame;..\..\SMC_Frame;..\..\SMC_EventLogSystem;..\..\Data_Provider;..\..\TSM\TSM_BaseApplication;..\..\TSM\TSM_LF\TSM_LF_Frame;..\..\DM\DM_General;..\..\DM\DM_LF\DM_LF_Frame;..\..\..\packages\NCK\include\TSM_Kernel;..\..\..\packages\NCK\include\Util;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\CBS_DB_Classes;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_CorbaLibV2;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_EventLog;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_fevsWrapper;$(CBSDIR)\include\FRIES_EventService;$(OMNIDIR)\include;$(OMNIDIR)\include\omniorb4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_NO_DEBUG;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;-GX;__WIN32__;__x86__;__OSVERSION__=4;__NT__;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc80.pdb</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Data_Provider_d.lib;CBS_StdFrame_d.lib;SMC_Frame_d.lib;SMC_EventLogSystem_d.lib;CBS-K_d.lib;omniDynamic416_rtd.lib;omnithread34_rtd.lib;omniORB4_rtd.lib;basem_d.lib;basem2_d.lib;libbtm.lib;libnetcomm.lib;tamm.lib;tcoram.lib;transportm.lib;$(ORASQLLIB);kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(ORACLE_HOME)\precomp\lib\msvc;$(ORACLE_HOME)\precomp\lib;$(OMNIDIR)\lib\x86_win32;$(CBSDIR)\Lib;$(BASE_HOME)\base4cpp\lib;$(TELCOMDIR)\lib\telcom_lib_debug;V:\SMC\$(Configuration)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CSYSMON_Task.cpp" />
+    <ClCompile Include="intrfimpl.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="LastResponse.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CSYSMON_Task.h" />
+    <ClInclude Include="intrfimpl.h" />
+    <ClInclude Include="LastResponse.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="LastResponse.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(OMNIDIR)"\Bin\x86_win32\omniidl.exe -bcxx  -Wbh=.h -Wbs=.cpp -Wbd=.cpp -Wba "%(FullPath)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).h;%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(OMNIDIR)"\Bin\x86_win32\omniidl.exe -bcxx  -Wbh=.h -Wbs=.cpp -Wbd=.cpp -Wba "%(FullPath)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename).h;%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\cfg\Tools\SysMon.ini" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

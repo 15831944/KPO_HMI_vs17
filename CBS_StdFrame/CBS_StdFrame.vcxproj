@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="$(MSBuildToolsVersion)" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9BF0B144-3239-3CC9-A42C-BAF0926401AA}</ProjectGuid>
+    <RootNamespace>CBS_StdFrame</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <SccAuxPath>
+    </SccAuxPath>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir>V:/SMC/$(Configuration)/lib\</OutDir>
+    <IntDir>V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)'=='Debug'">$(ProjectName)_d</TargetName>
+    <TargetName Condition="'$(Configuration)'=='Release'">$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;$(CBSDIR)\include\FRIES_EventService;$(CBSDIR)\include\CBS_fevsWrapper;$(CBSDIR)\include\CBS_Lib;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Persi\CBS_Persilib;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_DB_Classes;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_EventLog;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_StdAPI;$(OMNIDIR)\include;$(OMNIDIR)\include\omniorb4;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;-GX;__WIN32__;__x86__;__NT__;__OSVERSION__=4;QT_THREAD_SUPPORT;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>QT_NO_DEBUG;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;-GX;__WIN32__;__x86__;__NT__;__OSVERSION__=4;QT_THREAD_SUPPORT;_DEBUG;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_d.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CBS_Activation_dynSK.cpp" />
+    <ClCompile Include="CBS_Activation_s.cpp" />
+    <ClCompile Include="CBS_Common_dynSK.cpp" />
+    <ClCompile Include="CBS_Common_s.cpp" />
+    <ClCompile Include="CBS_Component_dynSK.cpp" />
+    <ClCompile Include="CBS_Component_s.cpp" />
+    <ClCompile Include="CBS_Tasks_dynSK.cpp" />
+    <ClCompile Include="CBS_Tasks_s.cpp" />
+    <ClCompile Include="cCBS_StdConnection.cpp" />
+    <ClCompile Include="cCBS_StdCORBA_ClientTask.cpp" />
+    <ClCompile Include="cCBS_StdCORBA_ServerTask.cpp" />
+    <ClCompile Include="cCBS_StdCORBA_Task.cpp" />
+    <ClCompile Include="cCBS_StdDB_Task.cpp" />
+    <ClCompile Include="cCBS_StdEventHandler_Task.cpp" />
+    <ClCompile Include="cCBS_StdEventSender_Task.cpp" />
+    <ClCompile Include="cCBS_StdEvent_Task.cpp" />
+    <ClCompile Include="cCBS_StdEventHandler.cpp" />
+    <ClCompile Include="cCBS_StdEventHandlerAdapter.cpp" />
+    <ClCompile Include="cCBS_StdEventLog.cpp" />
+    <ClCompile Include="cCBS_StdEventLogCyclicReminder.cpp" />
+    <ClCompile Include="cCBS_StdEventLogFrame.cpp" />
+    <ClCompile Include="cCBS_StdEventLogFrame_DestCodes.cpp" />
+    <ClCompile Include="cCBS_StdEventLogFrameController.cpp" />
+    <ClCompile Include="cCBS_StdFrame.cpp" />
+    <ClCompile Include="cCBS_StdFrame_Component.cpp" />
+    <ClCompile Include="cCBS_StdFrame_Server.cpp" />
+    <ClCompile Include="cCBS_StdFrame_Task.cpp" />
+    <ClCompile Include="cCBS_StdFrame_TaskController.cpp" />
+    <ClCompile Include="cCBS_StdInitBase.cpp" />
+    <ClCompile Include="cCBS_StdLog_Task.cpp" />
+    <ClCompile Include="cCBS_StdLogHandler.cpp" />
+    <ClCompile Include="cCBS_StdLogHandlerAdapter.cpp" />
+    <ClCompile Include="cCBS_StdMutex.cpp" />
+    <ClCompile Include="cCBS_StdMutexHandler.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cCBS_StdConnection.h" />
+    <ClInclude Include="cCBS_StdCORBA_ClientTask.h" />
+    <ClInclude Include="cCBS_StdCORBA_ServerTask.h" />
+    <ClInclude Include="cCBS_StdCORBA_Task.h" />
+    <ClInclude Include="cCBS_StdDB_Task.h" />
+    <ClInclude Include="cCBS_StdEventHandler_Task.h" />
+    <ClInclude Include="cCBS_StdEventSender_Task.h" />
+    <ClInclude Include="cCBS_StdEvent_Task.h" />
+    <ClInclude Include="cCBS_StdEventHandler.h" />
+    <ClInclude Include="cCBS_StdEventHandlerAdapter.h" />
+    <ClInclude Include="cCBS_StdEventLog.h" />
+    <ClInclude Include="cCBS_StdEventLogCyclicReminder.h" />
+    <ClInclude Include="cCBS_StdEventLogFrame.h" />
+    <ClInclude Include="cCBS_StdEventLogFrame_DestCodes.h" />
+    <ClInclude Include="cCBS_StdEventLogFrameController.h" />
+    <ClInclude Include="cCBS_StdFrame.h" />
+    <ClInclude Include="cCBS_StdFrame_Component.h" />
+    <ClInclude Include="cCBS_StdFrame_Server.h" />
+    <ClInclude Include="cCBS_StdFrame_Task.h" />
+    <ClInclude Include="cCBS_StdFrame_TaskController.h" />
+    <ClInclude Include="cCBS_StdInitBase.h" />
+    <ClInclude Include="cCBS_StdLog_Task.h" />
+    <ClInclude Include="cCBS_StdLogHandler.h" />
+    <ClInclude Include="cCBS_StdLogHandlerAdapter.h" />
+    <ClInclude Include="cCBS_StdMutex.h" />
+    <ClInclude Include="cCBS_StdMutexHandler.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CBS_Activation_s.hh" />
+    <None Include="CBS_Common_s.hh" />
+    <None Include="CBS_Component_s.hh" />
+    <None Include="CBS_Tasks_s.hh" />
+    <None Include="cCBS_StdEventLogFrame.xls" />
+    <None Include="Macros.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\packages\CBS\include\CBS_Tasks\CBS_Activation.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OMNIDIR)\bin\x64\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools on %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\%(Filename)_s.hh;.\%(Filename)_s.cpp;.\%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\packages\CBS\include\CBS_Tasks\CBS_Common.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OMNIDIR)\bin\x64\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools on %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\%(Filename)_s.hh;.\%(Filename)_s.cpp;.\%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\packages\CBS\include\CBS_Tasks\CBS_Component.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OMNIDIR)\bin\x64\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools on %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\%(Filename)_s.hh;.\%(Filename)_s.cpp;.\%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\packages\CBS\include\CBS_Tasks\CBS_Tasks.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OMNIDIR)\bin\x64\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools on %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\%(Filename)_s.hh;.\%(Filename)_s.cpp;.\%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

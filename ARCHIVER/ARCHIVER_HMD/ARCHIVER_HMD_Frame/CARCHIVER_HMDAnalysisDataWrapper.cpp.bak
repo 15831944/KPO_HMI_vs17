@@ -1,0 +1,435 @@
+// Copyright (C) 2007 SMS Demag AG
+
+#include "iSMC_DataDefinitions_s.hh"
+#include "iSMC_DataProvider_S.hh"
+#include "iEventMessages_s.hh"
+#include "iDM_Interface_s.hh"
+
+#include "CIntfData.h"
+#include "cCBS_StdInitBase.h"
+#include "cCBS_StdEventLogFrameController.h"
+#include "cCBS_DBExc.h"
+#include "cCBS_StdCORBA_Task.h"
+#include "CSMC_EventLogFrameController.h"
+#include "CEventMessage.h"
+#include "CDateTime.h"
+
+#include "CARCHIVER_HMDAnalysisDataWrapper.h"
+
+
+
+//##ModelId=45D30D4B0056
+CARCHIVER_HMDAnalysisDataWrapper::CARCHIVER_HMDAnalysisDataWrapper()
+{
+  //m_PlantID = DEF_DB_PLANT::HMD;
+}
+
+//##ModelId=45D30D4B0377
+CARCHIVER_HMDAnalysisDataWrapper::~CARCHIVER_HMDAnalysisDataWrapper()
+{
+}
+
+//##ModelId=45D31AD402DB
+bool CARCHIVER_HMDAnalysisDataWrapper::doOnHotMetalAnalysisReceived(CEventMessage& Event)
+{
+  bool RetValue = false;
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();
+  std::string ProdOrderID = Event.getOrderID();
+
+  // Unified exception handling *******************************************************
+  std::string Scope("CARCHIVER_HMDAnalysisDataWrapper::doOnHMAnalysisReceived");
+  std::stringstream ExceptionMsg;
+  ExceptionMsg << "Handling event: " << Event.getSender()
+               << ", " << ProductID << ", " << HeatID
+               << ", " << TreatID   << ", " << DataKey;
+  //***********************************************************************************
+
+  try
+  {
+    seqAnalysisData SeqAnalysisData;
+    // collect data from event data interface
+    setpDM_Interface(Event.getSender(),DM::EVENT);
+
+    SeqAnalysisData = CIntfData::ToCORBAType(m_pDM_Interface->getAnalysisData(DataKey.c_str(),DATA::HMMeasAnalysis));
+
+    if (CIntfData::getLength(SeqAnalysisData) == 0)
+    {
+      log("Analisis data empty. Try to fetch separately from data interface!",2);
+      sAnalysisData    AnalysisStruct;
+      // try get some info separately
+      AnalysisStruct.SampleData.SampleTime = (m_pDM_Interface->getDate(DataKey.c_str(),DATA::HMSampleTime));
+      AnalysisStruct.SampleData.SampleId = "NOTA";
+	  AnalysisStruct.SampleData.SampleNo = m_pDM_Interface->getLong(DataKey.c_str(), DATA::SampleNo);
+	  AnalysisStruct.SampleData.SampleType = m_pDM_Interface->getLong(DataKey.c_str(), DATA::MeasurementType);
+      AnalysisStruct.SampleData.ProcessStage  = CIntfData::ToStdString(m_pDM_Interface->getString(DataKey.c_str(),DATA::ProcessStage)).c_str();
+      AnalysisStruct.Analysis  = CIntfData::ToCORBAType(m_pDM_Interface->getAnalysis(DataKey.c_str(),DATA::HMMeasAnalysis));
+
+      CIntfData::insert(SeqAnalysisData, AnalysisStruct);
+    }
+
+    // insert analysis into PD_ANL_ENTRY, PD_LADLE_ANL
+    writeHMAnalysis(Event, SeqAnalysisData);
+
+    RetValue = true;
+  }
+  catch (cCBS_DBExc &e)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+      Scope.c_str(), ExceptionMsg.str().c_str()); 
+    RetValue = false;
+    handleDBConnectionError();
+  }
+  catch(CORBA::SystemException& sExc) 
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,sExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(CORBA::Exception& cExc) 
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,cExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(...)
+  {
+    std::string Msg("Unknown exception:");
+    Msg += ExceptionMsg.str();
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, "",
+      Scope.c_str(), Msg.c_str()); 
+    RetValue = false;
+  }
+  return RetValue;
+}
+
+//##ModelId=45D31AD402EF
+bool CARCHIVER_HMDAnalysisDataWrapper::doOnHotMetalSampleTaken(CEventMessage& Event)
+{
+  bool RetValue = false;
+
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();
+  std::string ProdOrderID = Event.getOrderID();
+  std::string PlantID   = Event.getPlantID();
+  std::string ActPlant;
+  long        ActPlantNo;
+  ActPlant   = m_pGC_Plant_Container->getPlant(PlantID);
+  ActPlantNo = m_pGC_Plant_Container->getPlantNo(PlantID);
+
+
+  // Unified exception handling *******************************************************
+  std::string Scope("CARCHIVER_HMDAnalysisDataWrapper::doOnHotMetalSampleTaken");
+  std::stringstream ExceptionMsg;
+  ExceptionMsg << "Handling event: " << Event.getSender()
+               << ", " << ProductID << ", " << HeatID
+               << ", " << TreatID   << ", " << DataKey;
+  //***********************************************************************************
+
+  try
+  {
+    std::string LadleType;
+    std::string LadleNo;
+    seqSampleData SeqSampleData;
+
+    // collect data from event data interface
+    setpDM_Interface(Event.getSender(),DM::EVENT);
+
+    LadleNo    = CIntfData::ToStdString(m_pDM_Interface->getString(DataKey.c_str(),DATA::LadleNo));
+    LadleType  = CIntfData::ToStdString(m_pDM_Interface->getString(DataKey.c_str(),DATA::LadleType));
+    if (LadleNo == DEF::Inv_String)
+      LadleNo = "";
+    if (LadleType == DEF::Inv_String)
+      LadleType = "";
+
+    SeqSampleData = CIntfData::ToCORBAType(m_pDM_Interface->getSampleData(DataKey.c_str(), DATA::SampleData));
+
+    // write into PD_ANL, PD_LADLE_DATA
+//SS    writeHMSample(Event, SeqSampleData);
+    
+    // set report data
+//SS     if (!m_pPD_Report->increaseSampleCounter(HeatID, TreatID, ActPlant, true))
+//SS       {
+//SS         log("ERROR: Increasing sample counter not successful!",2);
+//SS         RetValue = false;
+//SS       }
+
+    // seting actual position of ladle for ladle tracking
+    if (!LadleType.empty() && !LadleNo.empty())
+    {
+      log("INFO: update LAST_TREATMENT_STATION in PD_Ladle!",2);
+//SS       if (m_pPD_Ladle->select(LadleNo, LadleType))
+//SS       {
+//SS         m_pPD_Ladle->setLAST_TREATMENT_STATION("H");
+//SS         if (m_pPD_Ladle->update())
+//SS           m_pPD_Ladle->commit();
+//SS         else
+//SS           log("ERROR: update PD_Ladle!");
+//SS       }
+//SS       else
+//SS       {
+//SS         std::string Mes("Ladle:");
+//SS         Mes += LadleType + LadleNo;
+//SS         CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+//SS         sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+//SS         pEventLog->EL_ErrorSearchingData(sMessage,Mes.c_str(),"PD_LADLE");
+//SS       }
+    }
+  }
+  catch (cCBS_DBExc &e)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+      Scope.c_str(), ExceptionMsg.str().c_str()); 
+    RetValue = false;
+    handleDBConnectionError();
+  }
+  catch(CORBA::SystemException& sExc) 
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,sExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(CORBA::Exception& cExc) 
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,cExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(...)
+  {
+    std::string Msg("Unknown exception:");
+    Msg += ExceptionMsg.str();
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, "",
+      Scope.c_str(), Msg.c_str()); 
+    RetValue = false;
+  }
+  return RetValue;
+}
+
+//##ModelId=45D31B0602F2
+bool CARCHIVER_HMDAnalysisDataWrapper::doOnAnalysisReceived(CEventMessage& Event  )
+{
+  bool RetValue = false;
+
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();
+  std::string PlantID   = Event.getPlantID();
+  std::string ActPlant  = m_pGC_Plant_Container->getPlant(PlantID);
+  long ActPlantNo       = m_pGC_Plant_Container->getPlantNo(PlantID);
+  std::string ProdOrderID = Event.getOrderID();
+
+  // Unified exception handling *******************************************************
+  std::string Scope("CARCHIVER_HMDAnalysisDataWrapper::doOnAnalysisReceived");
+  std::stringstream ExceptionMsg;
+  ExceptionMsg << "Handling event: " << Event.getSender()
+               << ", " << ProductID << ", " << HeatID
+               << ", " << TreatID   << ", " << DataKey;
+  //***********************************************************************************
+
+  try
+  {
+                              // here is slag anylysis only
+    seqAnalysisData SeqAnalysisData;
+    seqGasData SeqGasData;
+
+    // collect data from event data interface
+    setpDM_Interface(Event.getSender(),DM::EVENT);
+
+    SeqAnalysisData = CIntfData::ToCORBAType(m_pDM_Interface->getAnalysisData(DataKey.c_str(),DATA::SlagMeasAnalysis));
+
+    // write into PD_ANL_ENTRY, PD_LADLE_ANL, update sampleid and sampleno in PD_LADLE_DATA
+//SS     writeAnalysis(Event, SeqAnalysisData, SeqGasData);
+
+  }
+  catch (cCBS_DBExc &e)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+      Scope.c_str(), ExceptionMsg.str().c_str()); 
+    RetValue = false;
+    handleDBConnectionError();
+  }
+  catch(CORBA::SystemException& sExc) 
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,sExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(CORBA::Exception& cExc) 
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,cExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(...)
+  {
+    std::string Msg("Unknown exception:");
+    Msg += ExceptionMsg.str();
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, "",
+      Scope.c_str(), Msg.c_str()); 
+    RetValue = false;
+  }
+  return RetValue;
+}
+
+//##ModelId=45D31AD402C7
+bool CARCHIVER_HMDAnalysisDataWrapper::doOnSampleTaken(CEventMessage& Event)
+{
+  bool RetValue = false;
+
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();
+  std::string PlantID   = Event.getPlantID();
+  std::string ActPlant  = m_pGC_Plant_Container->getPlant(PlantID);
+  long ActPlantNo       = m_pGC_Plant_Container->getPlantNo(PlantID);
+  std::string ProdOrderID = Event.getOrderID();
+
+  // Unified exception handling *******************************************************
+  std::string Scope("CARCHIVER_HMDAnalysisDataWrapper::doOnSampleTaken");
+  std::stringstream ExceptionMsg;
+  ExceptionMsg << "Handling event: " << Event.getSender()
+               << ", " << ProductID << ", " << HeatID
+               << ", " << TreatID   << ", " << DataKey;
+  //***********************************************************************************
+
+  try
+  {
+                              // here is slag sample only
+    seqGasData SeqGasData;
+    std::string LadleType;
+    std::string LadleNo;
+    seqSampleData SeqSampleData;
+
+    // collect data from event data interface
+    setpDM_Interface(Event.getSender(),DM::EVENT);
+
+    LadleNo    = CIntfData::ToStdString(m_pDM_Interface->getString(DataKey.c_str(),DATA::LadleNo));
+    LadleType  = CIntfData::ToStdString(m_pDM_Interface->getString(DataKey.c_str(),DATA::LadleType));
+    if (LadleNo == DEF::Inv_String)
+      LadleNo = "";
+    if (LadleType == DEF::Inv_String)
+      LadleType = "";
+
+    SeqSampleData = CIntfData::ToCORBAType(m_pDM_Interface->getSampleData(DataKey.c_str(), DATA::SampleData));
+
+    // write into PD_ANL
+//SS     writeSample(Event, false, SeqSampleData, SeqGasData);
+
+    // fill PD_LADLE_DATA
+    sSampleData sSmpData;
+    CDateTime   SampleTime;
+    std::string SampleID;
+    long SampleCounter;
+    if (CIntfData::getAt(sSmpData, SeqSampleData, 0))
+    {
+    SampleTime.SetTime(sSmpData.SampleTime);
+    SampleID = sSmpData.SampleId;
+    SampleCounter = sSmpData.SampleNo;
+
+    if (!LadleType.empty() && !LadleNo.empty())
+    {
+      bool transaction = false;
+//SS       m_pPD_Ladle_Data->switchLastToPrev(LadleType, LadleNo);
+      // update LASTANLTIME in ladle data
+//SS       m_pPD_Ladle_Data->setLASTANLTIME(SampleTime);  
+//SS       m_pPD_Ladle_Data->setLASTTEMPTIME(SampleTime);
+//SS       m_pPD_Ladle_Data->setPRODORDERID(ProdOrderID);
+//SS       m_pPD_Ladle_Data->setSAMPLNO(SampleCounter);
+//SS       m_pPD_Ladle_Data->setSAMPLEID(SampleID);
+//SS       m_pPD_Ladle_Data->setHEATID(HeatID);
+//SS       m_pPD_Ladle_Data->setTREATID(TreatID);
+//SS       if (m_pPD_Ladle_Data->select(LadleType, LadleNo, "LAST"))
+//SS         transaction = m_pPD_Ladle_Data->update();
+//SS      else
+//SS      {
+//SS         m_pPD_Ladle_Data->setHISTTYPE("LAST");
+//SS         m_pPD_Ladle_Data->setLADLETYPE(LadleType);
+//SS         m_pPD_Ladle_Data->setLADLENO(LadleNo);
+//SS         transaction = m_pPD_Ladle_Data->insert();
+//SS      }
+//SS      if (transaction)
+//SS         m_pPD_Ladle_Data->commit();
+    }
+   }
+  }
+  catch (cCBS_DBExc &e)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+      Scope.c_str(), ExceptionMsg.str().c_str()); 
+    RetValue = false;
+    handleDBConnectionError();
+  }
+  catch(CORBA::SystemException& sExc) 
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,sExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(CORBA::Exception& cExc) 
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,cExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(...)
+  {
+    std::string Msg("Unknown exception:");
+    Msg += ExceptionMsg.str();
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, "",
+      Scope.c_str(), Msg.c_str()); 
+    RetValue = false;
+  }
+  return RetValue;
+}
+
+//##ModelId=45DAB55202CD
+void CARCHIVER_HMDAnalysisDataWrapper::deleteDBClasses()
+{
+  CARCHIVER_AnalysisDataWrapper::deleteDBClasses();
+}
+
+//##ModelId=45DAB5530170
+void CARCHIVER_HMDAnalysisDataWrapper::initDBClasses()
+{
+  CARCHIVER_AnalysisDataWrapper::initDBClasses();
+}
+

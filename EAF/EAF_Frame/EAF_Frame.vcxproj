@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5DFDB5A5-95F8-4EF9-A449-053630F01117}</ProjectGuid>
+    <RootNamespace>EAF_Frame</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Keyword>Win32Proj</Keyword>
+    <SccAuxPath>
+    </SccAuxPath>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:/SMC/$(Configuration)/lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:/SMC/$(Configuration)/lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\EAF_Frame;..\..\SMM_Frame;..\..\CBS_StdFrame;..\..\Data_Provider;..\..\SMC_Frame;..\..\SMC_EventLogSystem;..\..\SMC_DBClasses;$(X-Pact)/packages/models/SMM/include/General_Events;$(X-Pact)/packages/models/SMM/include/DB_Access;$(X-Pact)/packages/models/SMM/include/CustomerConfig;$(X-Pact)/packages/models/SMM/include/Utilities;$(X-Pact)/packages/models/SMM/include/General_Model;$(X-Pact)/packages/models/SMM/include/General_Manager;$(X-Pact)/packages/models/SMM/include/Manager_Interface;$(X-Pact)/packages/models/SMM/include/General_Interface;$(X-Pact)/packages/models/SMM/include/EAF_Interface;$(X-Pact)/packages/models/SMM/include/EAF_Model;$(X-Pact)/packages/models/SMM/include/EventLogSystem;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_CorbaLibV2;$(CBSDIR)\include\CBS_EventLog;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\CBS_DB_Classes;$(CBSDIR)\include\CBS_Lib;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_fevsWrapper;$(CBSDIR)\include\FRIES_EventService;$(OMNIDIR)\include;$(OMNIDIR)\include\omniORB4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;__WIN32__;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;__x86__;__OSVERSION__=4;__NT__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\EAF_Frame;..\..\SMM_Frame;..\..\CBS_StdFrame;..\..\Data_Provider;..\..\SMC_Frame;..\..\SMC_EventLogSystem;..\..\SMC_DBClasses;$(X-Pact)/packages/models/SMM/include/General_Events;$(X-Pact)/packages/models/SMM/include/DB_Access;$(X-Pact)/packages/models/SMM/include/CustomerConfig;$(X-Pact)/packages/models/SMM/include/Utilities;$(X-Pact)/packages/models/SMM/include/General_Model;$(X-Pact)/packages/models/SMM/include/General_Manager;$(X-Pact)/packages/models/SMM/include/Manager_Interface;$(X-Pact)/packages/models/SMM/include/General_Interface;$(X-Pact)/packages/models/SMM/include/EAF_Interface;$(X-Pact)/packages/models/SMM/include/EAF_Model;$(X-Pact)/packages/models/SMM/include/EventLogSystem;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_CorbaLibV2;$(CBSDIR)\include\CBS_EventLog;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\CBS_DB_Classes;$(CBSDIR)\include\CBS_Lib;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_fevsWrapper;$(CBSDIR)\include\FRIES_EventService;$(OMNIDIR)\include;$(OMNIDIR)\include\omniORB4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;__WIN32__;__x86__;__OSVERSION__=4;__NT__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CEAFAnalysisEventHandler.cpp" />
+    <ClCompile Include="CEAFAnalysisHandlingWrapper.cpp" />
+    <ClCompile Include="CEAFBasketMaterialHandlingWrapper.cpp" />
+    <ClCompile Include="CEAFBurnerWrapper.cpp" />
+    <ClCompile Include="CEAFCeloxMeasurementWrapper.cpp" />
+    <ClCompile Include="CEAFChangePhysicalMaterialAvailibilityWrapper.cpp" />
+    <ClCompile Include="CEAFComputerModeWrapper.cpp" />
+    <ClCompile Include="CEAFCyclicMeasurementWrapper.cpp" />
+    <ClCompile Include="CEAFDeslaggingWrapper.cpp" />
+    <ClCompile Include="CEAFElectricSignalsWrapper.cpp" />
+    <ClCompile Include="CEAFEventHandler.cpp" />
+    <ClCompile Include="CEAFFeedingMaterialHandlingWrapper.cpp" />
+    <ClCompile Include="CEAFInjectionMaterialHandlingWrapper.cpp" />
+    <ClCompile Include="CEAFJetModuleWrapper.cpp" />
+    <ClCompile Include="CEAFLanceManipWrapper.cpp" />
+    <ClCompile Include="CEAFLiquidMaterialsHandlingWrapper.cpp" />
+    <ClCompile Include="CEAFManualMaterialBatchWrapper.cpp" />
+    <ClCompile Include="CEAFMaterialHandlingEventHandler.cpp" />
+    <ClCompile Include="CEAFModelResultWrapper.cpp" />
+    <ClCompile Include="CEAFModelTask.cpp" />
+    <ClCompile Include="CEAFModelWrapper.cpp" />
+    <ClCompile Include="CEAFOxygenMeasurementWrapper.cpp" />
+    <ClCompile Include="CEAFOxygenSideLancesWrapper.cpp" />
+    <ClCompile Include="CEAFPurposeEventHandler.cpp" />
+    <ClCompile Include="CEAFPurposeHandlingWrapper.cpp" />
+    <ClCompile Include="CEAFRoofPositionWrapper.cpp" />
+    <ClCompile Include="CEAFSignalAndMeasurementEventHandler.cpp" />
+    <ClCompile Include="CEAFSolidMaterialHandlingWrapper.cpp" />
+    <ClCompile Include="CEAFTappedWeightWrapper.cpp" />
+    <ClCompile Include="CEAFTappingLadleWrapper.cpp" />
+    <ClCompile Include="CEAFTappingWrapper.cpp" />
+    <ClCompile Include="CEAFTemperaturMeasurementWrapper.cpp" />
+    <ClCompile Include="CEAFTreatmentManagerDataWrapper.cpp" />
+    <ClCompile Include="CEAFTreatmentManagerEventHandler.cpp" />
+    <ClCompile Include="iDM_Interface_dynSK.cpp" />
+    <ClCompile Include="iDM_Interface_s.cpp" />
+    <ClCompile Include="iEventMessages_dynSK.cpp" />
+    <ClCompile Include="iEventMessages_s.cpp" />
+    <ClCompile Include="iModelResults_dynSK.cpp" />
+    <ClCompile Include="iModelResults_s.cpp" />
+    <ClCompile Include="iSMC_DataDefinitions_dynSK.cpp" />
+    <ClCompile Include="iSMC_DataDefinitions_s.cpp" />
+    <ClCompile Include="iSMC_DataProvider_dynSK.cpp" />
+    <ClCompile Include="iSMC_DataProvider_s.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CEAFAnalysisEventHandler.h" />
+    <ClInclude Include="CEAFAnalysisHandlingWrapper.h" />
+    <ClInclude Include="CEAFBasketMaterialHandlingWrapper.h" />
+    <ClInclude Include="CEAFBurnerWrapper.h" />
+    <ClInclude Include="CEAFCeloxMeasurementWrapper.h" />
+    <ClInclude Include="CEAFChangePhysicalMaterialAvailibilityWrapper.h" />
+    <ClInclude Include="CEAFComputerModeWrapper.h" />
+    <ClInclude Include="CEAFCyclicMeasurementWrapper.h" />
+    <ClInclude Include="CEAFDeslaggingWrapper.h" />
+    <ClInclude Include="CEAFElectricSignalsWrapper.h" />
+    <ClInclude Include="CEAFEventHandler.h" />
+    <ClInclude Include="CEAFFeedingMaterialHandlingWrapper.h" />
+    <ClInclude Include="CEAFInjectionMaterialHandlingWrapper.h" />
+    <ClInclude Include="CEAFJetModuleWrapper.h" />
+    <ClInclude Include="CEAFLanceManipWrapper.h" />
+    <ClInclude Include="CEAFLiquidMaterialsHandlingWrapper.h" />
+    <ClInclude Include="CEAFManualMaterialBatchWrapper.h" />
+    <ClInclude Include="CEAFMaterialHandlingEventHandler.h" />
+    <ClInclude Include="CEAFModelResultWrapper.h" />
+    <ClInclude Include="CEAFModelTask.h" />
+    <ClInclude Include="CEAFModelWrapper.h" />
+    <ClInclude Include="CEAFOxygenMeasurementWrapper.h" />
+    <ClInclude Include="CEAFOxygenSideLancesWrapper.h" />
+    <ClInclude Include="CEAFPurposeEventHandler.h" />
+    <ClInclude Include="CEAFPurposeHandlingWrapper.h" />
+    <ClInclude Include="CEAFRoofPositionWrapper.h" />
+    <ClInclude Include="CEAFSignalAndMeasurementEventHandler.h" />
+    <ClInclude Include="CEAFSolidMaterialHandlingWrapper.h" />
+    <ClInclude Include="CEAFTappedWeightWrapper.h" />
+    <ClInclude Include="CEAFTappingLadleWrapper.h" />
+    <ClInclude Include="CEAFTappingWrapper.h" />
+    <ClInclude Include="CEAFTemperaturMeasurementWrapper.h" />
+    <ClInclude Include="CEAFTreatmentManagerDataWrapper.h" />
+    <ClInclude Include="CEAFTreatmentManagerEventHandler.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SMC_DBClasses\SMC_DBClasses.vcxproj">
+      <Project>{72925ed1-44fa-3ae5-ad4a-ff5c37f10886}</Project>
+      <Private>true</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj">
+      <Project>{c4b00e58-c607-4911-9256-e81b366f84c2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SMM_Frame\SMM_Frame.vcxproj">
+      <Project>{a0ed0be9-02b0-4b68-acac-4b420121521e}</Project>
+      <Private>true</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\DM\DM_Interface\iDM_Interface.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\SMC_Frame\iEventMessages.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\SMC_Frame\iModelResults.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\SMC_Frame\iSMC_DataDefinitions.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\SMC_Frame\iSMC_DataProvider.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Tools on %(FullPath) </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iDM_Interface_s.hh" />
+    <None Include="iEventMessages_s.hh" />
+    <None Include="iModelResults_s.hh" />
+    <None Include="iSMC_DataDefinitions_s.hh" />
+    <None Include="iSMC_DataProvider_s.hh" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

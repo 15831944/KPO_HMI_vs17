@@ -1,0 +1,57 @@
+// Copyright (C) 2007 SMS Demag AG
+
+#if defined (_MSC_VER) && (_MSC_VER >= 1000)
+#pragma once
+#endif
+#ifndef _INC_CARCHIVER_HMDEVENTHANDLER_INCLUDED
+#define _INC_CARCHIVER_HMDEVENTHANDLER_INCLUDED
+
+#include "CARCHIVER_EventHandler.h"
+
+#include "CARCHIVER_HMDMaterialHandlingWrapper.h"
+#include "CARCHIVER_HMDModelResultWrapper.h"
+#include "CARCHIVER_HMDSignalsAndMeasurementWrapper.h"
+#include "CARCHIVER_HMDAnalysisDataWrapper.h"
+#include "CARCHIVER_HMDTreatmentWrapper.h"
+#include "CARCHIVER_HMDComputerModeWrapper.h"
+#include "CARCHIVER_HMDPhaseReportingWrapper.h"
+
+
+//##ModelId=45D588A703B8
+class CARCHIVER_HMDEventHandler : public CARCHIVER_EventHandler
+{
+protected:
+	//##ModelId=45E5894601F4
+	CARCHIVER_HMDPhaseReportingWrapper m_PhaseReportWrapper;
+
+	//##ModelId=45E53C7201ED
+	CARCHIVER_HMDComputerModeWrapper m_ComputerModeWrapper;
+
+	//##ModelId=45DAA16302B6
+	CARCHIVER_HMDTreatmentWrapper m_TreatmentWrapper;
+
+	//##ModelId=45D58EAD00C5
+	CARCHIVER_HMDAnalysisDataWrapper m_AnalysisDataWrapper;
+
+	//##ModelId=45D58EC20041
+	CARCHIVER_HMDModelResultWrapper m_ModelResultWrapper;
+
+	//##ModelId=45DAA13100B5
+	CARCHIVER_HMDMaterialHandlingWrapper m_MaterialHandlingWrapper;
+
+	//##ModelId=45D5A73E0258
+	CARCHIVER_HMDSignalsAndMeasurementWrapper m_SignalsAndMeasurementWrapper;
+
+public:
+	//##ModelId=45D5899C008F
+	virtual bool handleEvent(CEventMessage& Event);
+
+	//##ModelId=45D5899C00B7
+	virtual ~CARCHIVER_HMDEventHandler();
+
+	//##ModelId=45D5899C00CB
+	CARCHIVER_HMDEventHandler(CARCHIVER_Task *Task);
+
+};
+
+#endif /* _INC_CARCHIVER_HMDEVENTHANDLER_INCLUDED */

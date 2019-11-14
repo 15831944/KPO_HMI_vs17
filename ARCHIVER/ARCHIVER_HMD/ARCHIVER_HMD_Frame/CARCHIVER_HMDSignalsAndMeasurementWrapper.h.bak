@@ -1,0 +1,60 @@
+// Copyright (C) 2007 SMS Demag AG
+
+#if defined (_MSC_VER) && (_MSC_VER >= 1000)
+#pragma once
+#endif
+#ifndef _INC_CARCHIVER_HMDSIGNALSANDMEASUREMENTWRAPPER_41DACADC0247_INCLUDED
+#define _INC_CARCHIVER_HMDSIGNALSANDMEASUREMENTWRAPPER_41DACADC0247_INCLUDED
+
+
+#include "CARCHIVER_SignalsAndMeasurementWrapper.h"
+#include "CEventMessage.h"
+
+class CPP_HEAT_PLANT;
+
+#include "CPDH_CYCL_MEAS_DATA.h"
+//#include "CPDH_HEAT_DATA.h"
+#include "CGT_MAT_PURP.h"
+#include "CGT_PURP.h"
+
+
+
+//##ModelId=45D5A3D4015D
+class CARCHIVER_HMDSignalsAndMeasurementWrapper 
+: public CARCHIVER_SignalsAndMeasurementWrapper
+{
+public:
+	//##ModelId=45DAFAAA032D
+	bool doOnTempMeasurement(CEventMessage& Event);
+
+	//##ModelId=45D5A3E302C5
+	CARCHIVER_HMDSignalsAndMeasurementWrapper();
+
+	//##ModelId=45D5A3E400AC
+	virtual ~CARCHIVER_HMDSignalsAndMeasurementWrapper();
+
+	//##ModelId=45DAFBE201C2
+	bool doOnCyclicMeasurement(CEventMessage& Event);
+		
+protected:
+	//##ModelId=45DAFD9E0097
+	CPDH_CYCL_MEAS_DATA* m_pPDH_Cycl_Meas_Data;
+
+	//##ModelId=45DAFDA00054
+	CGT_MAT_PURP* m_pGT_Mat_Purp;
+
+	//##ModelId=45DAFD9F0085
+	CGT_PURP* m_pGT_Purp;
+
+	CPP_HEAT_PLANT* m_pPP_Heat_Plant;
+
+
+	//##ModelId=45D5A3EB028B
+	virtual void deleteDBClasses();
+
+	//##ModelId=45D5A3EC01BE
+	virtual void initDBClasses();
+
+};
+
+#endif /* _INC_CARCHIVER_HMDSIGNALSANDMEASUREMENTWRAPPER_41DACADC0247_INCLUDED */

@@ -1,0 +1,22 @@
+/* Source file: X:/SMC/source/DH/DH_L1_AOD_IN/DH_L1_AOD_IN_Frame/iDH_Interface.idl
+ */
+
+#ifndef  __iDH_Interface_DEFINED
+#define  __iDH_Interface_DEFINED
+
+/* CmIdentification
+%X% %Q% %Z% %W% */
+
+#include "SMC_Frame\iSMC_DataProvider.idl"
+
+module DH {
+	
+	/* CORBA interface for internal SMC side of DH */
+	
+	interface iDH_Interface : iSMC_DataProvider {
+	};
+	
+};
+
+#endif
+

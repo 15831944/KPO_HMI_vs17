@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{72C37B58-178B-436C-AAFF-2672E2174153}</ProjectGuid>
+    <RootNamespace>HMISubprovidersManual</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Keyword>ManagedCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:\SMC\$(Configuration)\bin\EmailServer\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:\SMC\$(Configuration)\temp\EmailServer\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:\SMC\$(Configuration)\bin\HMI\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:\SMC\$(Configuration)\temp\HMI\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(OMNIDIR)\Include;$(OMNIDIR)\Include\OmniORB4;$(CBSDIR)\include;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_EventLog;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_fevsWrapper;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_StdAPI;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Lib;$(CBSDIR)\include\CBS_DB_Classes\;$(CBSDIR)\include\Fries_EventService;..\..\Core\HMI.Core.Utils.Interop;..\HMI.SubProviders.Base;$(X-Pact)\source\include;.\;$(X-Pact)\source\;..\CorbaObjects;$(X-Pact)\source\Data_Provider;$(X-Pact)\source\CBS_StdFrame;$(X-Pact)\source\SMC_EventLogSystem;$(X-Pact)\source\SMC_Frame;..\..\..\..\..\EAM\source\ApplicationLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;MSVCNEWDLL_BUG;_EVENTLOG_;__WIN32__;__x86__;_WIN32_WINNT=0x0502;__NT__;__OSVERSION__=4;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedUsingFiles>..\..\..\..\packages\HMI_Framework\bin\Debug\HMIFramework.dll;%(ForcedUsingFiles)</ForcedUsingFiles>
+      <DisableSpecificWarnings>4101;4273;4311;4312;4267;4996;4800;4244;4999;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/ignore:4248 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>winmm.lib;odbc32.lib;odbccp32.lib;wsock32.lib;orasql11.lib;CBS-K_d.lib;omniORB4_rtd.lib;omniDynamic416_rtd.lib;omnithread34_rtd.lib;CorbaObjects.lib;CBSObjects.lib;PCSWrapper.lib;ApplicationLib_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(CBSDIR)\lib;$(OMNIDIR)\lib\x86_win32;$(ORACLE_HOME)\precomp\lib;V:\SMC\$(Configuration)\lib\HMI;$(OutDir);V:\EAM\$(Configuration)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EmbedManagedResourceFile>
+      </EmbedManagedResourceFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(OMNIDIR)\Include;$(OMNIDIR)\Include\OmniORB4;$(CBSDIR)\include;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_EventLog;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_fevsWrapper;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_StdAPI;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Lib;$(CBSDIR)\include\CBS_DB_Classes\;$(CBSDIR)\include\Fries_EventService;..\..\Core\HMI.Core.Utils.Interop;..\HMI.SubProviders.Base;$(X-Pact)\source\include;.\;$(X-Pact)\source\;..\CorbaObjects;$(X-Pact)\source\Data_Provider;$(X-Pact)\source\CBS_StdFrame;$(X-Pact)\source\SMC_EventLogSystem;$(X-Pact)\source\SMC_Frame;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;MSVCNEWDLL_BUG;_EVENTLOG_;__WIN32__;__x86__;_WIN32_WINNT=0x0502;__NT__;__OSVERSION__=4;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4101;4273;4311;4312;4267;4996;4800;4244;4999;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedUsingFiles>..\..\..\..\packages\HMI_Framework\bin\Release\HMIFramework.dll;%(ForcedUsingFiles)</ForcedUsingFiles>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/ignore:4248 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>winmm.lib;odbc32.lib;odbccp32.lib;wsock32.lib;orasql11.lib;CBS-K.lib;omniORB4_rt.lib;omniDynamic416_rt.lib;omnithread34_rt.lib;CorbaObjects.lib;CBSObjects.lib;PCSWrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(CBSDIR)\lib;$(OMNIDIR)\lib\x86_win32;$(ORACLE_HOME)\precomp\lib;V:\SMC\$(Configuration)\lib\HMI;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EmbedManagedResourceFile>
+      </EmbedManagedResourceFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.DataAccess" />
+    <Reference Include="System">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Data">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Xml">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\HMI.Core.DataProvider\HMI.Core.DataProvider.csproj">
+      <Project>{393bb270-b1ab-46b6-a948-7db268cb7144}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SubProviders\HMI.SubProviders.Base\HMI.SubProviders.Base.vcxproj">
+      <Project>{7498b3e1-cd5b-4941-8772-8a65b710f8c0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\XPactBase\XPactCore\XPactCollection\XPactCollection.csproj">
+      <Project>{160500b5-da9b-46c9-95c7-ef9df803bb72}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\XPactBase\XPactCore\XPactSubProviderBase\XPactSubProviderBase.csproj">
+      <Project>{05194c73-bde5-41d6-b687-e256ee22fa74}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\XPactBase\XPactCore\XPactUtilsSQLOracle\XPactUtilsSQLOracle.csproj">
+      <Project>{6199b79c-307e-4109-b31b-52202deb2d3e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\XPactBase\XPactCore\XPactUtilsSQL\XPactUtilsSQL.csproj">
+      <Project>{0a8c867a-8731-4d8e-a4d2-fd8db7c40594}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\HMI.Core.Collection\HMI.Core.Collection.csproj">
+      <Project>{8ff815bc-3f8e-4613-89fd-c33a183d3771}</Project>
+      <Private>true</Private>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\SMC_Frame\iEventData_dynSK.cpp" />
+    <ClCompile Include="..\..\..\SMC_Frame\iEventData_s.cpp" />
+    <ClCompile Include="..\..\..\SMC_Frame\iEventMessages_dynSK.cpp" />
+    <ClCompile Include="..\..\..\SMC_Frame\iEventMessages_s.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="cEmailServer_Comp.cpp" />
+    <ClCompile Include="cEmailServer_EventHandlerTask.cpp" />
+    <ClCompile Include="cEmailServer_Server.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\SMC_Frame\iEventData_s.hh" />
+    <None Include="..\..\..\SMC_Frame\iEventMessages_s.hh" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cEmailServer_Comp.h" />
+    <ClInclude Include="cEmailServer_EventHandlerTask.h" />
+    <ClInclude Include="cEmailServer_Server.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

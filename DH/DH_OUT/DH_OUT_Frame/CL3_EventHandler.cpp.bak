@@ -1,0 +1,1969 @@
+
+#include "iSMC_DataDefinitions_s.hh"
+#include "iEventMessages_s.hh"
+#include "Telcom_Out_s.hh"
+#include "iDH_Interface_s.hh"      // to access DH_L3_IN 
+
+#include "cCBS_StdInitBase.h"
+
+#include "CEventMessage.h"
+#include "CDateTime.h"
+#include "CIntfData.h"
+#include "CDataConversion.h"
+#include "CTreatIDCust.h"
+#include "CHeatIDCust.h"
+
+
+#include "CDH_OUT_Task.h"
+
+#include "DEF_GC_ACTION_DEF.h"
+#include "DEF_GC_COUNTER_TYPE.h"
+#include "DEF_GC_STATUS.h"
+#include "DEF_GC_HEAT_STATUS.h"
+#include "DEF_GC_MEASUREMENT_NAME.h"
+#include "DEF_GC_MEASUREMENT_TYPE.h"
+#include "DEF_GC_LADLE_PARTS.h"
+#include "DEF_GC_PLANT_DEF.h"
+#include "DEF_GD_EQUIP_TYPE.h"
+#include "DEF_GC_RECIPE_STATUS.h"
+#include "CL3_EventHandler.h"
+#include "CPP_HM.h"
+
+//##ModelId=4582C0AF01AE
+CL3_EventHandler::CL3_EventHandler()
+: m_pDM_Interface(0)
+{
+  m_pTelcom_Interface = CDH_OUT_Task::getInstance()->getpInterface_OUT();
+
+  m_SenderName = cCBS_StdInitBase::getInstance()->m_ServerName;
+
+
+  cCBS_StdConnection* pConnection = CDH_OUT_Task::getInstance()->getStdConnection();
+
+  if (pConnection)
+  {
+    m_pGC_Plant_Container = new CGC_Plant_Container(pConnection);
+    m_pHeatDataConverter  = new CHeatDataConverter(pConnection);
+    m_pEquipmentData      = new CEquipmentData(pConnection);
+
+    m_pPD_HEAT_DATA       = new CPD_HEAT_DATA(pConnection);
+    m_pPD_HEAT_DATA_STIRR = new CPD_HEAT_DATA_STIRR(pConnection);
+
+    m_pPD_RECIPE          = new CPD_RECIPE(pConnection);
+    m_pPD_RECIPE_ENTRY    = new CPD_RECIPE_ENTRY(pConnection);
+
+
+    m_pPD_LADLE_LIFE_DATA = new CPD_LADLE_LIFE_DATA(pConnection);
+    m_pHD_RECIPE          = new CHD_RECIPE(pConnection);
+    m_pHD_RECIPE_ENTRY    = new CHD_RECIPE_ENTRY(pConnection);
+    m_pHD_SAMPLE          = new CHD_SAMPLE( pConnection );
+    m_pHD_SAMPLE_ENTRY    = new CHD_SAMPLE_ENTRY(pConnection);
+    m_pHD_SAMPLE_REF      = new CHD_SAMPLE_REF(pConnection);
+    m_pGC_STATUS          = new CGC_STATUS(pConnection);
+    m_pGC_HEAT_STATUS     = new CGC_HEAT_STATUS(pConnection);
+    m_pPD_HEAT_PLANT_REF  = new CPD_HEAT_PLANT_REF(pConnection);
+    m_pPD_HEAT_REF        = new CPD_HEAT_REF(pConnection);
+    m_pPD_DELAYS          = new CPD_DELAYS(pConnection);
+    m_pGT_DELAY_CODE      = new CGT_DELAY_CODE(pConnection);
+    m_pPP_HEAT            = new CPP_HEAT(pConnection);
+    m_pPP_HEAT_PLANT      = new CPP_HEAT_PLANT(pConnection);
+    m_pPD_ACTION          = new CPD_ACTION(pConnection);
+    m_pPD_SAMPLE          = new CPD_SAMPLE(pConnection);
+    m_pPD_SAMPLE_ENTRY    = new CPD_SAMPLE_ENTRY(pConnection);
+    m_pPD_SAMPLE_REF      = new CPD_SAMPLE_REF(pConnection);
+    m_pGC_SAMPLELOC       = new CGC_SAMPLELOC(pConnection);
+
+    m_pPDE_HEAT_DATA      = new CPDE_HEAT_DATA(pConnection);
+
+    //m_pPDA_HEAT_DATA      = new CPDA_HEAT_DATA(pConnection);
+
+    m_pPDL_HEAT_DATA      = new CPDL_HEAT_DATA(pConnection);
+
+    m_pPDL_ACTIVITY_RES   = new CPDL_ACTIVITY_RES(pConnection);
+
+  }
+  else
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,"", "CL3_EventHandler","No database connection");
+
+    // to guaranty EL_ExceptionCaught to be sent to CBS service
+    Sleep(3000);
+
+    // terminate programm in case of starting up without getting connection to database
+    exit(EXIT_FAILURE);
+  }
+
+}
+
+//##ModelId=4582C0AF0322
+CL3_EventHandler::~CL3_EventHandler()
+{
+	if(m_pGC_Plant_Container)   {delete m_pGC_Plant_Container;  m_pGC_Plant_Container = 0; }
+
+	if(m_pPD_HEAT_DATA)         {delete m_pPD_HEAT_DATA;        m_pPD_HEAT_DATA = 0;}
+	if(m_pPD_HEAT_DATA_STIRR)   {delete m_pPD_HEAT_DATA_STIRR;  m_pPD_HEAT_DATA_STIRR = 0;}
+
+	if(m_pPD_LADLE_LIFE_DATA)   {delete m_pPD_LADLE_LIFE_DATA;  m_pPD_LADLE_LIFE_DATA = 0;}
+	if(m_pHD_RECIPE)            {delete m_pHD_RECIPE;           m_pHD_RECIPE = 0;}
+	if(m_pHD_RECIPE_ENTRY)      {delete m_pHD_RECIPE_ENTRY;     m_pHD_RECIPE_ENTRY = 0;}
+	if(m_pHD_SAMPLE_ENTRY)      {delete m_pHD_SAMPLE_ENTRY;     m_pHD_SAMPLE_ENTRY = 0;}
+	if(m_pHD_SAMPLE_REF)        {delete m_pHD_SAMPLE_REF;       m_pHD_SAMPLE_REF = 0;}
+	if(m_pHD_SAMPLE)            {delete m_pHD_SAMPLE;           m_pHD_SAMPLE = 0;}
+	if(m_pGC_STATUS)            {delete m_pGC_STATUS;           m_pGC_STATUS = 0;}
+	if(m_pGC_HEAT_STATUS)       {delete m_pGC_HEAT_STATUS;      m_pGC_HEAT_STATUS = 0;}
+	if(m_pPD_HEAT_PLANT_REF)    {delete m_pPD_HEAT_PLANT_REF;   m_pPD_HEAT_PLANT_REF = 0;}
+	if(m_pPD_HEAT_REF)          {delete m_pPD_HEAT_REF;         m_pPD_HEAT_REF = 0;}
+	if(m_pPD_DELAYS )           {delete m_pPD_DELAYS;           m_pPD_DELAYS = 0;}
+	if(m_pGT_DELAY_CODE )       {delete m_pGT_DELAY_CODE;       m_pGT_DELAY_CODE = 0;}
+	if(m_pPP_HEAT )             {delete m_pPP_HEAT;             m_pPP_HEAT = 0;}
+  if(m_pPP_HEAT_PLANT)        {delete m_pPP_HEAT_PLANT;       m_pPP_HEAT_PLANT = 0;}
+	if(m_pPD_ACTION)            {delete m_pPD_ACTION;           m_pPD_ACTION = 0;}
+	if(m_pPD_SAMPLE)            {delete m_pPD_SAMPLE;           m_pPD_SAMPLE = 0;}
+	if(m_pPD_SAMPLE_ENTRY)      {delete m_pPD_SAMPLE_ENTRY;     m_pPD_SAMPLE_ENTRY = 0;}
+	if(m_pPD_SAMPLE_REF)        {delete m_pPD_SAMPLE_REF;       m_pPD_SAMPLE_REF = 0;}
+	if(m_pGC_SAMPLELOC)         {delete m_pGC_SAMPLELOC;        m_pGC_SAMPLELOC = 0;}
+	if(m_pPDE_HEAT_DATA)        {delete m_pPDE_HEAT_DATA;       m_pPDE_HEAT_DATA = 0;}
+	//if(m_pPDA_HEAT_DATA)        {delete m_pPDA_HEAT_DATA;       m_pPDA_HEAT_DATA = 0;}
+	if(m_pPDL_HEAT_DATA)        {delete m_pPDL_HEAT_DATA;       m_pPDL_HEAT_DATA = 0;}
+	if(m_pPDL_ACTIVITY_RES)     {delete m_pPDL_ACTIVITY_RES;    m_pPDL_ACTIVITY_RES = 0;}
+	
+}
+
+void CL3_EventHandler::getSlagAnalysisStream(DEF::seqString& SlagAnalysisDB)
+{  
+  CIntfData::insert(SlagAnalysisDB, "CaO");
+  CIntfData::insert(SlagAnalysisDB, "SiO2");
+  CIntfData::insert(SlagAnalysisDB, "P2O5");
+  CIntfData::insert(SlagAnalysisDB, "FeO");
+  CIntfData::insert(SlagAnalysisDB, "Fe2O3");
+  CIntfData::insert(SlagAnalysisDB, "Fe3O4");
+  CIntfData::insert(SlagAnalysisDB, "S");
+  CIntfData::insert(SlagAnalysisDB, "Al2O3");
+  CIntfData::insert(SlagAnalysisDB, "MgO");
+  CIntfData::insert(SlagAnalysisDB, "MnO");
+  CIntfData::insert(SlagAnalysisDB, "Cr2O3");
+  CIntfData::insert(SlagAnalysisDB, "MoO");
+  CIntfData::insert(SlagAnalysisDB, "NiO");
+  CIntfData::insert(SlagAnalysisDB, "V2O5");
+  CIntfData::insert(SlagAnalysisDB, "TiO2");
+  CIntfData::insert(SlagAnalysisDB, "TiFe");
+  CIntfData::insert(SlagAnalysisDB, "CaC2");
+  CIntfData::insert(SlagAnalysisDB, "CaF2");
+  CIntfData::insert(SlagAnalysisDB, "CaS");
+  CIntfData::insert(SlagAnalysisDB, "Fe_X");  
+  CIntfData::insert(SlagAnalysisDB, "Spare1");  
+  CIntfData::insert(SlagAnalysisDB, "Spare2");  
+  CIntfData::insert(SlagAnalysisDB, "Spare3");  
+  CIntfData::insert(SlagAnalysisDB, "Spare4");  
+  CIntfData::insert(SlagAnalysisDB, "Spare5");  
+  CIntfData::insert(SlagAnalysisDB, "Spare6");  
+  CIntfData::insert(SlagAnalysisDB, "Spare7");  
+  CIntfData::insert(SlagAnalysisDB, "Spare8");  
+  CIntfData::insert(SlagAnalysisDB, "Spare9");  
+  CIntfData::insert(SlagAnalysisDB, "Spare10");  
+  CIntfData::insert(SlagAnalysisDB, "Spare11");  
+  CIntfData::insert(SlagAnalysisDB, "Spare12");  
+  CIntfData::insert(SlagAnalysisDB, "Spare13");  
+  CIntfData::insert(SlagAnalysisDB, "Spare14");  
+  CIntfData::insert(SlagAnalysisDB, "Spare15");  
+  CIntfData::insert(SlagAnalysisDB, "Spare16");  
+  CIntfData::insert(SlagAnalysisDB, "Spare17");  
+  CIntfData::insert(SlagAnalysisDB, "Spare18");  
+  CIntfData::insert(SlagAnalysisDB, "Spare19");  
+  CIntfData::insert(SlagAnalysisDB, "Spare20"); 
+}
+
+void CL3_EventHandler::getSteelAnalysisStream(DEF::seqString& SteelAnalysisDB)
+{
+  CIntfData::insert(SteelAnalysisDB, "C");
+  CIntfData::insert(SteelAnalysisDB, "Si");
+  CIntfData::insert(SteelAnalysisDB, "Mn");
+  CIntfData::insert(SteelAnalysisDB, "P");
+  CIntfData::insert(SteelAnalysisDB, "S");
+  CIntfData::insert(SteelAnalysisDB, "Al");
+  CIntfData::insert(SteelAnalysisDB, "Al_S");  
+  CIntfData::insert(SteelAnalysisDB, "Cu");
+  CIntfData::insert(SteelAnalysisDB, "Cr");
+  CIntfData::insert(SteelAnalysisDB, "Mo");
+  CIntfData::insert(SteelAnalysisDB, "Ni");
+  CIntfData::insert(SteelAnalysisDB, "V");
+  CIntfData::insert(SteelAnalysisDB, "Ti");
+  CIntfData::insert(SteelAnalysisDB, "Nb");
+  CIntfData::insert(SteelAnalysisDB, "Ca");
+  CIntfData::insert(SteelAnalysisDB, "Co");
+  CIntfData::insert(SteelAnalysisDB, "Pb");
+  CIntfData::insert(SteelAnalysisDB, "W");
+  CIntfData::insert(SteelAnalysisDB, "Mg");
+  CIntfData::insert(SteelAnalysisDB, "Ce");
+  CIntfData::insert(SteelAnalysisDB, "B");
+  CIntfData::insert(SteelAnalysisDB, "As");
+  CIntfData::insert(SteelAnalysisDB, "Sn"); 
+  CIntfData::insert(SteelAnalysisDB, "Bi");
+  CIntfData::insert(SteelAnalysisDB, "Sb");
+  CIntfData::insert(SteelAnalysisDB, "Zr");
+  CIntfData::insert(SteelAnalysisDB, "O2");
+  CIntfData::insert(SteelAnalysisDB, "N2");
+  CIntfData::insert(SteelAnalysisDB, "H2");
+  CIntfData::insert(SteelAnalysisDB, "Al_I");
+  CIntfData::insert(SteelAnalysisDB, "Zn");
+  CIntfData::insert(SteelAnalysisDB, "Fe");
+  CIntfData::insert(SteelAnalysisDB, "Spare1");
+  CIntfData::insert(SteelAnalysisDB, "Spare2");
+  CIntfData::insert(SteelAnalysisDB, "Spare3");
+  CIntfData::insert(SteelAnalysisDB, "Spare4");
+  CIntfData::insert(SteelAnalysisDB, "Spare5");
+  CIntfData::insert(SteelAnalysisDB, "Spare6");
+  CIntfData::insert(SteelAnalysisDB, "Spare7");
+  CIntfData::insert(SteelAnalysisDB, "Spare8");
+  //CIntfData::insert(SteelAnalysisDB, "Spare9");
+}
+
+//##ModelId=4587AB5503E4
+bool CL3_EventHandler::handleEvent(CEventMessage& evMessage)
+{
+  bool RetValue = false;
+  std::string ActMessage = evMessage.getMessage();
+
+  if ( ActMessage == L3_EvMsg::evL3HeatScheduleUpdate )
+  {
+    RetValue = provideData_ScheduleResponse(evMessage);
+  }
+  else if(ActMessage == EAF_EvMsg::evEAFDelayStatus  || LF_EvMsg::evLFDelayStatus || ActMessage == HMD_EvMsg::evHMDDelayStatus ) 
+  {
+    RetValue = provideData_DelayReport (evMessage);
+  }
+
+  else if(ActMessage == EAF_EvMsg::evEAFMaterialHandlingReport || ActMessage == LF_EvMsg::evLFMaterialHandlingReport || ActMessage == HMD_EvMsg::evHMDHMIMaterialDischarged) 
+  {
+    RetValue = provideData_HeatReportMaterial (evMessage);
+  }
+  else if (ActMessage == HMI_EvMsg::evHMISteelGradeDataUpdate)
+  {
+    RetValue = provideData_S1MS40SteelGradeDataUpdate(evMessage);
+  }
+  else if (ActMessage == EAF_EvMsg::evEAFProductionReport)
+  {
+    RetValue = provideData_ProductionDataEAF(evMessage); 
+  }
+  else if (ActMessage == LF_EvMsg::evLFProductionReport)
+  {
+    RetValue = provideData_ProductionDataLF(evMessage); 
+  }
+  else if (ActMessage == HMD_EvMsg::evHMDProductionReport)
+  {
+    RetValue = provideData_ProductionDataHMD(evMessage); 
+  }
+  else if ( ActMessage == EAF_EvMsg::evEAFHeatAnnouncement  ||
+            ActMessage == EAF_EvMsg::evEAFHeatStart         ||
+            ActMessage == EAF_EvMsg::evEAFTappingStart      ||
+            ActMessage == EAF_EvMsg::evEAFHeatEnd           ||
+            ActMessage == EAF_EvMsg::evEAFHeatDeparture     ||
+            ActMessage == LF_EvMsg::evLFHeatAnnouncement    ||
+            ActMessage == LF_EvMsg::evLFHeatStart           ||
+            ActMessage == LF_EvMsg::evLFHeatEnd             ||
+            ActMessage == LF_EvMsg::evLFHeatDeparture       ||
+            ActMessage == HMD_EvMsg::evHMDHeatAnnouncement  ||
+            ActMessage == HMD_EvMsg::evHMDHeatStart         ||
+            ActMessage == HMD_EvMsg::evHMDHeatEnd           ||
+            ActMessage == HMD_EvMsg::evHMDHeatDeparture     )
+  {
+    RetValue = RetValue && provideData_HeatStatus(evMessage);
+  }
+  else if ( ActMessage == EAF_EvMsg::evEAFHandleBasketDischarged  ||
+            ActMessage == EAF_EvMsg::evEAFPowerOn                 ||
+            ActMessage == EAF_EvMsg::evEAFTappingStart            ||
+            ActMessage == EAF_EvMsg::evEAFTappingEnd              ||
+            ActMessage == AOD_EvMsg::evAODLiquidAdditionCharged   ||
+            ActMessage == AOD_EvMsg::evAODHotMetalCharged         ||    //is in reality the premetal from EAF 
+            ActMessage == AOD_EvMsg::evAODTopLanceBlowingStart    ||
+            ActMessage == AOD_EvMsg::evAODTappingStart            ||
+            ActMessage == AOD_EvMsg::evAODTappingEnd              )
+  {
+    RetValue = provideData_S1MS05HeatStatus(evMessage);
+  }
+  else if( ActMessage ==  EAF_EvMsg::evEAFPlantStatusRequest || 
+           ActMessage ==  LF_EvMsg::evLFPlantStatusRequest   ) 
+  {
+  }
+  else if(ActMessage == L3_EvMsg::evL3CurrentHeatStatusRequest)//request coming from L3 
+  {
+    RetValue = provideData_S1MS05HeatStatus(evMessage);
+  }
+
+  else if   (ActMessage == EAF_EvMsg::evEAFTempMeasurement   ||
+             ActMessage == LF_EvMsg::evLFTempMeasurement)
+  {
+    RetValue = provideData_S1MS07TemperatureMeasData(evMessage);
+  }
+
+  else if(ActMessage == GEN_EvMsg::evGenAnalysisData)
+  {
+    RetValue = provideData_S1MS10SteelAnalysisData(evMessage);
+    RetValue = RetValue && provideData_S1MS11SlagAnalysisData(evMessage);
+  }
+  else if(ActMessage == LF_EvMsg::evLFSteelAnalysisReceived   ||
+          ActMessage == EAF_EvMsg::evEAFSteelAnalysisReceived )
+  {
+    RetValue = provideData_S1MS10SteelAnalysisData(evMessage);
+  }
+  else if(ActMessage == LF_EvMsg::evLFSlagAnalysisReceived    ||
+          ActMessage == EAF_EvMsg::evEAFSlagAnalysisReceived  )
+  {
+    RetValue = provideData_S1MS11SlagAnalysisData(evMessage);
+  }
+  else if(ActMessage == LF_EvMsg::evLFRecipeMatDischarged         ||
+          ActMessage == EAF_EvMsg::evEAFRecipeMaterialDischarged  )
+  {
+    RetValue = provideData_S1MS08MaterialAdditionData(evMessage);
+  }
+
+  if ( RetValue )
+  {
+    log(ActMessage, 3);
+  }
+
+
+  return RetValue;
+}
+
+
+bool CL3_EventHandler::provideData_ProductionDataEAF(CEventMessage& Event) 
+{
+	string exceMsg = "CL3_EventHandler::provideData_ProductionDataEAF";
+  bool RetValue = true; 
+
+  std::string CustHeatID, CustTreatID;
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();     
+  std::string OrderId   = Event.getOrderID();
+	std::string PlantID   = Event.getPlantID();
+	std::string Plant  = m_pGC_Plant_Container->getPlant(PlantID);
+	long PlantNo       = m_pGC_Plant_Container->getPlantNo(PlantID); 
+
+  try
+  {
+    m_pDM_Interface = CDH_OUT_Task::getInstance()->getpDM_Interface(Event.getSender(),DM::EVENT);
+    m_pHeatDataConverter->getCustHeatData( HeatID, TreatID, CustHeatID, CustTreatID, Plant);
+
+    if (m_pTelcom_Interface && m_pDM_Interface)
+    {
+			std::string tlgName  = "L2_EAF_HEAT_REPORT";
+			std::string DataKeyOut = m_pTelcom_Interface->generateDataKey(tlgName);
+			CDateTime now;
+
+      m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::CreateTime,now.assDate() );
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::PlantUnit,Plant.substr(0,1) + CDataConversion::LongToString(PlantNo));
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::HeatId,CustHeatID);
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::TreatId,CustTreatID);
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::MsgStatus,1);
+
+      if ( m_pPD_HEAT_DATA->select(HeatID, TreatID, Plant) )
+      { 
+				m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::ProdOrderNo,m_pPD_HEAT_DATA->getPRODORDERID_ACT(1));
+				m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::SteelGrade,m_pPD_HEAT_DATA->getSTEELGRADECODE_ACT(1));
+				m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::RouteCode,m_pPD_HEAT_DATA->getROUTECODE_ACT(1));
+				m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::LadleNo,m_pPD_HEAT_DATA->getLADLENO(1));
+				m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::ShiftCode,m_pPD_HEAT_DATA->getSHIFT_ID(1));
+				m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::CrewCode,m_pPD_HEAT_DATA->getCREW_ID(1));
+				m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::DepartureTime,m_pPD_HEAT_DATA->getHEATDEPARTURE_ACT(1).assDate() );
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::TapSteelWeight,m_pPD_HEAT_DATA->getSTEELMASS(1));
+
+				std::string DateTimeFormat = "%Y%m%d%H%M%S";
+				CDateTime ScrapChargeStartTime  = m_pPD_ACTION->GetFirstEventRevTime(HeatID, TreatID, Plant, DEF_GC_ACTION_DEF::ScrapAddition).asString(DateTimeFormat);
+        CDateTime TapStartTime          = m_pPD_ACTION->GetFirstEventRevTime(HeatID, TreatID, Plant, DEF_GC_ACTION_DEF::TappingStart).asString(DateTimeFormat);
+        CDateTime TapEndTime            = m_pPD_ACTION->GetFirstEventRevTime(HeatID, TreatID, Plant, DEF_GC_ACTION_DEF::TappingEnd).asString(DateTimeFormat);
+	      m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::ScrapChargeStartTime,ScrapChargeStartTime.assDate() );
+	      m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::TapStartTime,TapStartTime.assDate() );
+	      m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::TapEndTime,TapEndTime.assDate() );
+
+				//@TODO ??
+				//ReturnHeatId 
+				//ReturnTreatId 
+				//ReturnSteelWeight
+			}
+      if ( m_pPDE_HEAT_DATA->select(HeatID, TreatID, Plant) )
+      { 
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::PowerOnDur,m_pPDE_HEAT_DATA->getPOWER_ON_DUR(1));	
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::OxygenCons,m_pPDE_HEAT_DATA->getSPECIFIC_O2_CONS(1));						
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::BurnerGasCons,m_pPDE_HEAT_DATA->getBURNER_TOTALGAS(1));						
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::ArgonCons,m_pPDE_HEAT_DATA->getSPECIFIC_AR_CONS(1));						
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::NitrogenCons,m_pPDE_HEAT_DATA->getSPECIFIC_N2_CONS(1));						
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::CarbonCons,m_pPDE_HEAT_DATA->getINJ_CARBON(1));		
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_EAF_HEAT_REPORT::ElecEgyCons,m_pPDE_HEAT_DATA->getTOTAL_ELEC_EGY(1));
+      }
+
+                                                                                                                                           
+      m_pTelcom_Interface->showContent(DataKeyOut, 4);
+
+      CEventMessage message(m_SenderName, 
+                            m_DestinationName, 
+                            "TELEGRAM_" + tlgName,
+                            PlantID,
+                            "",
+                            std::string ("UNUSED"),
+                            false, 
+                            HeatID,
+                            TreatID, 
+                            DataKeyOut);
+        message.setOrderID(OrderId);
+        RetValue = CDH_EventHandler::dispatchEvent("", "", message);
+
+      }
+
+  }
+  catch (cCBS_DBExc &e)
+  {
+    CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),exceMsg.c_str(), ""); 
+  }
+  catch (...)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, "",exceMsg.c_str(), ""  );    
+  } 
+
+  return RetValue;
+  
+}//end function
+
+
+
+
+
+bool CL3_EventHandler::provideData_ProductionDataLF(CEventMessage& Event) 
+{
+	string exceMsg = "CL3_EventHandler::provideData_ProductionDataLF";
+  bool RetValue = true; 
+
+  std::string CustHeatID, CustTreatID;
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();     
+  std::string OrderId   = Event.getOrderID();
+	std::string PlantID   = Event.getPlantID();
+	std::string Plant  = m_pGC_Plant_Container->getPlant(PlantID);
+	long PlantNo       = m_pGC_Plant_Container->getPlantNo(PlantID); 
+
+  try
+  {
+    m_pDM_Interface = CDH_OUT_Task::getInstance()->getpDM_Interface(Event.getSender(),DM::EVENT);
+    m_pHeatDataConverter->getCustHeatData( HeatID, TreatID, CustHeatID, CustTreatID, Plant);
+
+    if (m_pTelcom_Interface && m_pDM_Interface)
+    {
+			std::string tlgName  = "L2_LF_HEAT_REPORT";
+			std::string DataKeyOut = m_pTelcom_Interface->generateDataKey(tlgName);
+			CDateTime now;
+
+      m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::CreateTime,now.assDate() );
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::PlantUnit,Plant.substr(0,1) + CDataConversion::LongToString(PlantNo));
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::HeatId,CustHeatID);
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::TreatId,CustTreatID);
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::MsgStatus,1);
+
+      if ( m_pPD_HEAT_DATA->select(HeatID, TreatID, Plant) )
+      { 
+				m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::ProdOrderNo,m_pPD_HEAT_DATA->getPRODORDERID_ACT(1));
+				m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::SteelGrade,m_pPD_HEAT_DATA->getSTEELGRADECODE_ACT(1));
+				m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::RouteCode,m_pPD_HEAT_DATA->getROUTECODE_ACT(1));
+				m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::LadleNo,m_pPD_HEAT_DATA->getLADLENO(1));
+				m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::ShiftCode,m_pPD_HEAT_DATA->getSHIFT_ID(1));
+				m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::CrewCode,m_pPD_HEAT_DATA->getCREW_ID(1));
+				m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::TreatStart,m_pPD_HEAT_DATA->getTREATSTART_ACT(1).assDate() );
+				m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::TreatEnd,m_pPD_HEAT_DATA->getTREATEND_ACT(1).assDate() );
+				m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::LadleDepartTime,m_pPD_HEAT_DATA->getHEATDEPARTURE_ACT(1).assDate() );
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::SteelWeight,m_pPD_HEAT_DATA->getSTEELMASS(1));
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::SlagWeight,m_pPD_HEAT_DATA->getSLAGMASS(1));
+			}
+      if ( m_pPDL_HEAT_DATA->select(HeatID, TreatID, Plant) )
+      { 
+				m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::LadleArrivalTime,m_pPDL_HEAT_DATA->getLADLE_ARRTIME(1).assDate() );
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::ElecEgyCons,m_pPDL_HEAT_DATA->getELEC_CONS(1));
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::N_Cons,m_pPDL_HEAT_DATA->getSTIRR_N2_CONS(1));
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::AR_Cons,m_pPDL_HEAT_DATA->getSTIRR_AR_CONS(1));
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::StirrDur_Ar,m_pPDL_HEAT_DATA->getSTIRR_AR_DUR(1));
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::StirrDur_N,m_pPDL_HEAT_DATA->getSTIRR_N2_DUR(1));
+				m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::ARC_Dur,m_pPDL_HEAT_DATA->getPOWER_ON_DUR(1));						
+      }
+
+			if(m_pPD_SAMPLE->selectHeatSample(HeatID,TreatID,Plant,PlantNo,DEF_GC_MEASUREMENT_TYPE::Temp,CSMC_DBData::unspecLong) && m_pPD_SAMPLE->getLastRow() > 0)
+			{
+				if(m_pPD_SAMPLE_ENTRY->select(m_pPD_SAMPLE->getSAMPLE_COUNTER(m_pPD_SAMPLE->getLastRow()),DEF_GC_MEASUREMENT_NAME::Temp) && m_pPD_SAMPLE_ENTRY->getLastRow() > 0)
+				{
+					m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::TempLast,m_pPD_SAMPLE_ENTRY->getMEASVALUE(1));	
+				}
+			}
+                                                                                                                                            
+      m_pTelcom_Interface->showContent(DataKeyOut, 4);
+
+      CEventMessage message(m_SenderName, 
+                            m_DestinationName, 
+                            "TELEGRAM_" + tlgName,
+                            PlantID,
+                            "",
+                            std::string ("UNUSED"),
+                            false, 
+                            HeatID,
+                            TreatID, 
+                            DataKeyOut);
+        message.setOrderID(OrderId);
+        RetValue = CDH_EventHandler::dispatchEvent("", "", message);
+
+      }
+
+  }
+  catch (cCBS_DBExc &e)
+  {
+    CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),exceMsg.c_str(), ""); 
+  }
+  catch (...)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, "",exceMsg.c_str(), ""  );    
+  } 
+
+  return RetValue;
+
+}//end function
+
+
+
+bool CL3_EventHandler::provideData_S1MS05HeatStatus(CEventMessage& Event)//Heat Status   
+{
+  //==============       H E A T   S T A T U S   D A T A      ==========================
+  bool RetValue = true; // assume success
+  ////read the data from Event
+  //std::string HeatID    = Event.getHeatID();
+  //std::string TreatID   = Event.getTreatID();
+  //std::string ProductID = Event.getProductID();
+  //std::string OrderID   = Event.getOrderID();
+  //std::string DataKey   = Event.getDataKey();
+  //std::string PlantID   = Event.getPlantID();
+  //std::string L3PlantID = m_pGC_Plant_Container->getL3PlantID(PlantID);
+  //std::string Plant     = m_pGC_Plant_Container->getPlant(PlantID); 
+  //long PlantNo          = m_pGC_Plant_Container->getPlantNo(PlantID);
+
+  //// truncate string data to fit telegram length
+  //OrderID   = CDataConversion::CheckLengthAndTruncate(OrderID,10);
+
+  //std::string CustHeatID;
+  //std::string CustTreatID;
+  //std::string DataKeyL3;
+  //CDateTime Now;
+  //DEF::seqLong seqSpare;
+  //std::string L3EndingFlag ; 
+  //L3EndingFlag = (char) 10;
+
+  //std::string TimeFormat     = "%H%M%S";
+  //std::string DateFormat     = "%Y%m%d";
+  //std::string DateTimeFormat = "%Y%m%d%H%M%S";
+
+  //std::string Action    = "Reading DM interface data from ";
+  //Action +=  Event.getSender();
+  //Action +=  "ProductID:";
+  //Action +=  Event.getProductID();
+  //Action +=  " - ";
+  //Action +=  "Key:";
+  //Action +=  Event.getDataKey();
+
+  //std::string TlgName  = "S1MS05";
+  //std::string Function = "CL3_EventHandler::provideData_S1MS05HeatStatus";
+
+  //try
+  //{
+  //  //DM::iDM_Interface_var pDM_Interface = CDH_OUT_Task::getInstance()->getpDM_Interface(Event.getSender(),DM::EVENT);
+
+  //  CSMC_DataProvider_Impl* pTelcom_Interface = CDH_OUT_Task::getInstance()->getpInterface_OUT();
+
+  //  //if ( pDM_Interface && pTelcom_Interface )
+  //  if (pTelcom_Interface )
+  //  {
+  //    //********    preset data  ************************************************************************
+  //    
+
+  //    log("****************************************************************************************", 3);
+  //    log( TlgName + ": Start", 3);
+  //    log("****************************************************************************************", 3);
+
+  //    if ( checkInternalData(TlgName, HeatID, TreatID, Plant, CustHeatID, CustTreatID) )
+  //    {
+  //      DataKeyL3 = pTelcom_Interface->generateDataKey(TlgName);
+
+  //      //********    preset data  ************************************************************************
+
+  //      std::string L3DateOfSending = Now.asString(DateFormat);
+  //      std::string L3TimeOfSending = Now.asString(TimeFormat);
+  //      std::string L3SenderDC      = "S1";
+  //      std::string L3ReceiverDC    = "M1";
+  //      std::string L3FunctionCode  = "D";
+
+  //      cCBS_StdInitBase::getInstance()->replaceWithEntry("COMMUNICATION", "Sender", L3SenderDC);
+  //      cCBS_StdInitBase::getInstance()->replaceWithEntry("COMMUNICATION", "Receiver", L3ReceiverDC);
+  //      cCBS_StdInitBase::getInstance()->replaceWithEntry("COMMUNICATION", "FunctionCode", L3FunctionCode);
+
+
+  //      std::string L3HeatId                  ;
+  //      long        L3TreatmentSeq            = 0;
+  //      std::string L3TreatID                 ;
+  //      std::string L3ProdOrderNo             ;
+  //      std::string L3SteelGradeCode          ;
+  //      std::string L3LadleId                 ;
+  //      std::string L3Plant                   ;
+  //      long        L3PlantNo                 = 0;
+  //      std::string L3HeatStatus              = "000";
+  //      std::string L3ChangeTime              ;
+
+  //      //********    Read event related data  ************************************************************************
+
+  //      // read heat status and convert to L3 values
+  //      std::string StatusDescr = CSMC_DBData::unspecString;
+  //      
+  //      long StatusNo = m_pPD_HEAT_PLANT_REF->getStatusNo(HeatID, TreatID, Plant);
+
+  //      if ( StatusNo != CSMC_DBData::unspecLong )
+  //      {
+  //      //StatusDescr = m_pGC_STATUS->getStatusDescr(StatusNo);                                     //In StatusDescr is still the prefix (like "AOD","EAF" and "LF" 
+  //        if (m_pGC_STATUS->select(StatusNo)) StatusDescr = m_pGC_STATUS->getSTATUSNAME(1);         //In StatusName is the Status like we compare it with DEF_GC_STATUS::x
+  //      }
+
+  //      if ( StatusDescr != CSMC_DBData::unspecString )
+  //      {
+  //        if ( StatusDescr == DEF_GC_STATUS::ScrapDischStart )
+  //        {
+  //          if ( Plant == DEF_GC_PLANT_DEF::EAF )
+  //          {
+  //            L3HeatStatus = "101"; // EAF charged
+  //          }
+  //          else if ( Plant == DEF_GC_PLANT_DEF::AOD )
+  //          {
+  //            L3HeatStatus = "201"; //  AOD charged
+  //          }
+  //        }
+  //        else if ( (StatusDescr == DEF_GC_STATUS::HMDischgStart) 
+  //               || (StatusDescr == DEF_GC_STATUS::TreatmentStart ))  //when premetal was charged, AOD has still this status
+  //        {
+  //          if ( Plant == DEF_GC_PLANT_DEF::AOD )
+  //          {
+  //            L3HeatStatus = "201"; //  AOD charged
+  //          }
+  //        }
+  //        else if ( StatusDescr == DEF_GC_STATUS::Melting )
+  //        {
+  //          if ( Plant == DEF_GC_PLANT_DEF::EAF )
+  //          {
+  //            L3HeatStatus = "102"; // EAF power on
+  //          }
+  //        }
+  //        else if ( StatusDescr == DEF_GC_STATUS::Blowing )
+  //        {
+  //          if ( Plant == DEF_GC_PLANT_DEF::AOD )
+  //          {
+  //            L3HeatStatus = "202"; // AOD start of main blow
+  //          }
+  //        }
+  //        else if ( StatusDescr == DEF_GC_STATUS::Tapping )
+  //        {
+  //          if ( Plant == DEF_GC_PLANT_DEF::EAF )
+  //          {
+  //            L3HeatStatus = "103"; // EAF tapping start
+  //          }
+  //          else if ( Plant == DEF_GC_PLANT_DEF::AOD )
+  //          {
+  //            L3HeatStatus = "203"; // AOD tapping start
+  //          }
+  //        }
+  //        else if ( StatusDescr == DEF_GC_STATUS::TappingEnd )
+  //        {
+  //          if ( Plant == DEF_GC_PLANT_DEF::EAF )
+  //          {
+  //            L3HeatStatus = "104"; // EAF tapping end
+  //          }
+  //          else if ( Plant == DEF_GC_PLANT_DEF::AOD )
+  //          {
+  //            L3HeatStatus = "204"; // AOD tapping end
+  //          }
+  //        }
+  //        else if ( StatusDescr == DEF_GC_STATUS::HeatAnnounced )
+  //        {
+  //          if ( Plant == DEF_GC_PLANT_DEF::LF )
+  //          {
+  //            L3HeatStatus = "301"; // LF ladle arrived
+  //          }
+  //        }
+  //        else if ( StatusDescr == DEF_GC_STATUS::TreatmentStart )
+  //        {
+  //          if ( Plant == DEF_GC_PLANT_DEF::LF )
+  //          {
+  //            L3HeatStatus = "302"; // LF start of production
+  //          }
+  //        }
+  //        else if ( StatusDescr == DEF_GC_STATUS::TreatmentEnd )
+  //        {
+  //          if ( Plant == DEF_GC_PLANT_DEF::LF )
+  //          {
+  //            L3HeatStatus = "303"; // LF end of production
+  //          }
+  //        }
+  //        else
+  //        {
+  //          L3HeatStatus = "000";
+  //        }
+
+  //        if ( m_pPD_HEAT_DATA->select(HeatID, TreatID, Plant) )
+  //        { 
+  //          CTreatIDCust TreatSeq; 
+  //          CHeatIDCust HeatSequence; 
+  //                    
+  //          // no of produces heats taken from equipment data by equipment 
+  //          long HeatsOfPlant = (long)m_pEquipmentData->getEquipmentAge(Plant, PlantNo, Plant, DEF_GC_COUNTER_TYPE::HEATS);
+
+  //          L3HeatId                    = CustHeatID;
+  //          L3TreatmentSeq              = TreatSeq.getCounter(CustTreatID);
+
+  //          // L3TreatID means total no of heats at respective plant
+  //          L3TreatID                   = HeatSequence.getHeatIDCust(L3PlantID,HeatsOfPlant);
+  //          
+  //          L3ProdOrderNo               = m_pPD_HEAT_DATA->getPRODORDERID_ACT(1);          
+  //          L3SteelGradeCode            = m_pPD_HEAT_DATA->getSTEELGRADECODE_ACT(1);       
+
+  //        // L3LadleId is a composite of two DB Data items, each of them can go wild. But below it is checked against
+  //        // unspecString. Beware! unspecString+LongToString(unspecLong) != unspecString.
+  //          std::string ldType = m_pPD_HEAT_DATA->getLADLETYPE(1);
+  //          long        ldNo   = m_pPD_HEAT_DATA->getLADLENO(1);
+  //          if   (ldType != CSMC_DBData::unspecString && ldNo != CSMC_DBData::unspecLong)   // Both are good
+  //          {
+  //            L3LadleId = ldType + CDataConversion::LongToString(ldNo);                     // then composite is good
+  //          }
+  //          else    
+  //          {
+  //            L3LadleId = CSMC_DBData::unspecString;                                        // otherwise composite is rubbish.
+  //          }
+
+
+  //          L3Plant                     = L3PlantID;
+  //          L3PlantNo                   = 1;
+  //          L3ChangeTime                = Now.asString(DateTimeFormat);
+  //        }
+  //        else
+  //        {
+  //          CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+  //          sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+  //          pEventLog->EL_DBReadError(sMessage, "HEATID - TREATID","PP_HEAT","");
+  //        }
+
+  //        //********    Log event data ***********************************************************************
+
+  //        //********    Convert and check event data  ***********************************************************
+
+  //        // setting defaults if invalid data have been detected
+  //        L3HeatId                  = CDataConversion::SetInvalidToDefault(L3HeatId                   ,"" ,CSMC_DBData::unspecString);
+  //        L3TreatID                 = CDataConversion::SetInvalidToDefault(L3TreatID                  ,"" ,CSMC_DBData::unspecString);
+  //        L3ProdOrderNo             = CDataConversion::SetInvalidToDefault(L3ProdOrderNo              ,"" ,CSMC_DBData::unspecString);
+  //        L3SteelGradeCode          = CDataConversion::SetInvalidToDefault(L3SteelGradeCode           ,"" ,CSMC_DBData::unspecString);
+  //        L3LadleId                 = CDataConversion::SetInvalidToDefault(L3LadleId                  ,"" ,CSMC_DBData::unspecString);
+  //        L3HeatStatus              = CDataConversion::SetInvalidToDefault(L3HeatStatus               ,"" ,CSMC_DBData::unspecString);
+  //        L3Plant                   = CDataConversion::SetInvalidToDefault(L3Plant                    ,"" ,CSMC_DBData::unspecString);
+  //                                                                                                                                  
+  //        L3PlantNo                 = CDataConversion::SetInvalidToDefault(L3PlantNo                  ,0 ,CSMC_DBData::unspecLong);   
+  //        L3TreatmentSeq            = CDataConversion::SetInvalidToDefault(L3TreatmentSeq             ,0 ,CSMC_DBData::unspecLong);   
+
+  //        // truncate string data to fit telegram length
+
+  //        L3HeatId                    = CDataConversion::CheckLengthAndTruncate(L3HeatId                ,7 , false);                
+  //        L3TreatID                   = CDataConversion::CheckLengthAndTruncate(L3TreatID               ,8 , false);                
+  //        L3ProdOrderNo               = CDataConversion::CheckLengthAndTruncate(L3ProdOrderNo           ,7 , false);                
+  //        L3SteelGradeCode            = CDataConversion::CheckLengthAndTruncate(L3SteelGradeCode        ,8 , false);                
+  //        L3LadleId                   = CDataConversion::CheckLengthAndTruncate(L3LadleId               ,4 , false);                
+  //        L3HeatStatus                = CDataConversion::CheckLengthAndTruncate(L3HeatStatus            ,3 , false);                
+  //        L3ChangeTime                = CDataConversion::CheckLengthAndTruncate(L3ChangeTime            ,14, false);                
+  //        L3Plant                     = CDataConversion::CheckLengthAndTruncate(L3Plant                 ,2,  false);                
+
+  //        //********    Write telegram data header ***********************************************************************
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::DateOfSending,   L3DateOfSending);
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::TimeOfSending,   L3TimeOfSending);
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::SenderDC,        L3SenderDC);
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::ReceiverDC,      L3ReceiverDC);
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::FunctionCode,    L3FunctionCode);
+
+  //        //********    Write telegram data body ***********************************************************************
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::HeatId                  ,L3HeatId                );
+  //        pTelcom_Interface->setLong    (DataKeyL3, Telegram_S1MS05::TreatmentSeq            ,L3TreatmentSeq          );
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::TreatID                 ,L3TreatID               );
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::ProdOrderNo             ,L3ProdOrderNo           );
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::SteelGradeCode          ,L3SteelGradeCode        );
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::LadleId                 ,L3LadleId               );
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::Plant                   ,L3Plant                 );
+  //        pTelcom_Interface->setLong    (DataKeyL3, Telegram_S1MS05::PlantNo                 ,L3PlantNo               );
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::HeatStatus              ,L3HeatStatus            );
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::ChangeTime              ,L3ChangeTime            );
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS05::EndingFlag              ,L3EndingFlag            );
+
+  //        pTelcom_Interface->showContent(DataKeyL3, 4);
+
+  //        //********    Dispatch event ***********************************************************************
+
+  //        CEventMessage MstToL1Sender;
+  //        MstToL1Sender.setMessage(std::string("TELEGRAM_") + TlgName);
+  //        MstToL1Sender.setPlantID(L3PlantID);
+  //        MstToL1Sender.setDataKey(DataKeyL3);
+  //        MstToL1Sender.setOrderID(OrderID);
+  //        dispatchEvent(m_SenderName,"",MstToL1Sender);   
+
+  //        pTelcom_Interface->setAny     (DataKeyL3, "EventMessage",         MstToL1Sender.asCORBAAny());
+
+  //        pTelcom_Interface->showContent(DataKeyL3, 4);
+
+
+  //        //********    End processing data  ***********************************************************************
+  //      } // if ( StatusDescr != CSMC_DBData::unspecString )
+  //      else
+  //      {
+  //        RetValue = false;
+  //      }
+  //    } // if ( checkInternalData(TlgName, HeatID, TreatID, Plant, CustHeatID, CustTreatID) )
+  //    else
+  //    {
+  //      RetValue = false;
+  //    }
+
+  //    log( TlgName + ": End", 3);
+  //  }// if ( pDM_Interface && pTelcom_Interface )
+  //  else
+  //  {
+  //    // EL_
+  //    RetValue=false;
+  //  }
+
+  //  if ( !RetValue )
+  //  {
+  //    CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+  //    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+  //    pEventLog->EL_ErrorHandlingTelegram(sMessage,TlgName.c_str(),Function.c_str());
+  //  }
+  //}
+  //catch(CORBA::SystemException& sExc) 
+  //{
+  //  cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+  //    Function,
+  //    Action,__FILE__,__LINE__);
+  //  RetValue = false;
+  //}
+  //catch(CORBA::Exception& cExc) 
+  //{
+  //  cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+  //    Function,
+  //    Action,__FILE__,__LINE__);
+  //  RetValue = false;
+  //}
+  //catch(...) 
+  //{
+  //  cCBS_StdCORBA_Task::getInstance()->doOnException(Function,
+  //    Action,__FILE__,__LINE__);
+  //  RetValue = false;
+  //}
+  return RetValue;
+}
+
+
+
+
+bool CL3_EventHandler::provideData_S1MS07TemperatureMeasData(CEventMessage& Event)
+{
+  //==============       T E M P   M E A S U R E M E N T   D A T A      ==========================
+  bool RetValue = true; // assume success
+  ////read the data from Event
+  //std::string HeatID    = Event.getHeatID();
+  //std::string TreatID   = Event.getTreatID();
+  //std::string ProductID = Event.getProductID();
+  //std::string OrderID   = Event.getOrderID();
+  //std::string DataKey   = Event.getDataKey();
+  //std::string PlantID   = Event.getPlantID();
+  //std::string L3PlantID = m_pGC_Plant_Container->getL3PlantID(PlantID);
+  //std::string Plant     = m_pGC_Plant_Container->getPlant(PlantID); 
+  //long PlantNo          = m_pGC_Plant_Container->getPlantNo(PlantID);
+
+  //// truncate string data to fit telegram length
+  //OrderID   = CDataConversion::CheckLengthAndTruncate(OrderID,10);
+
+  //std::string CustHeatID;
+  //std::string CustTreatID;
+  //std::string DataKeyL3;
+  //CDateTime Now;
+  //DEF::seqLong seqSpare;
+  //std::string L3EndingFlag ; 
+  //L3EndingFlag = (char) 10;
+
+  //std::string TimeFormat     = "%H%M%S";
+  //std::string DateFormat     = "%Y%m%d";
+  //std::string DateTimeFormat = "%Y%m%d%H%M%S";
+
+  //std::string Action    = "Reading DM interface data from ";
+  //Action +=  Event.getSender();
+  //Action +=  "ProductID:";
+  //Action +=  Event.getProductID();
+  //Action +=  " - ";
+  //Action +=  "Key:";
+  //Action +=  Event.getDataKey();
+
+  //std::string TlgName  = "S1MS07";
+  //std::string Function = "CL3_EventHandler::provideData_S1MS07TemperatureMeasData";
+
+  //try
+  //{
+  //  DM::iDM_Interface_var pDM_Interface = CDH_OUT_Task::getInstance()->getpDM_Interface(Event.getSender(),DM::EVENT);
+
+  //  CSMC_DataProvider_Impl* pTelcom_Interface = CDH_OUT_Task::getInstance()->getpInterface_OUT();
+
+  //  if ( pDM_Interface && pTelcom_Interface )
+  //  {
+  //    //********    preset data  ************************************************************************
+  //    
+
+  //    log("****************************************************************************************", 3);
+  //    log( TlgName + ": Start", 3);
+  //    log("****************************************************************************************", 3);
+
+  //    if ( checkInternalData(TlgName, HeatID, TreatID, Plant, CustHeatID, CustTreatID) )
+  //    {
+  //      DataKeyL3 = pTelcom_Interface->generateDataKey(TlgName);
+
+  //      //********    preset data  ************************************************************************
+
+  //      std::string L3DateOfSending = Now.asString(DateFormat);
+  //      std::string L3TimeOfSending = Now.asString(TimeFormat);
+  //      std::string L3SenderDC      = "S1";
+  //      std::string L3ReceiverDC    = "M1";
+  //      std::string L3FunctionCode  = "D";
+
+  //      cCBS_StdInitBase::getInstance()->replaceWithEntry("COMMUNICATION", "Sender", L3SenderDC);
+  //      cCBS_StdInitBase::getInstance()->replaceWithEntry("COMMUNICATION", "Receiver", L3ReceiverDC);
+  //      cCBS_StdInitBase::getInstance()->replaceWithEntry("COMMUNICATION", "FunctionCode", L3FunctionCode);
+
+
+  //      std::string L3HeatId                  ;
+  //      long        L3TreatmentSeq            = 0;
+  //      std::string L3TreatID                 ;
+  //      std::string L3ProdOrderNo             ;
+  //      std::string L3Plant                   ;
+  //      long        L3PlantNo                 = 0;
+  //      std::string L3TempMeasLocation        ;
+  //      long        L3TempMeasCounter         = 0;
+  //      std::string L3TempMeasTime            ;
+  //      long        L3Temperature	            = 0;
+
+
+  //      //********    Read event related data  ************************************************************************
+
+  //      if ( m_pPD_HEAT_DATA->select(HeatID, TreatID, Plant) )
+  //      { 
+  //        CTreatIDCust TreatSeq; 
+  //        CHeatIDCust HeatSequence; 
+  //        
+  //        // no of produces heats taken from equipment data by equipment 
+  //        long HeatsOfPlant = (long)m_pEquipmentData->getEquipmentAge(Plant, PlantNo, Plant, DEF_GC_COUNTER_TYPE::HEATS);
+
+  //        L3HeatId                    = CustHeatID;
+  //        L3TreatmentSeq              = TreatSeq.getCounter(CustTreatID);
+
+  //        // L3TreatID means total no of heats at respective plant
+  //        L3TreatID                   = HeatSequence.getHeatIDCust(L3PlantID,HeatsOfPlant);
+  //        L3ProdOrderNo               = m_pPD_HEAT_DATA->getPRODORDERID_ACT(1);          
+  //        L3Plant                     = L3PlantID;
+  //        L3PlantNo                   = 1;
+
+  //        long SAMPLE_REF             = m_pPD_HEAT_DATA->getSAMPLE_REF(1);
+
+  //        long SAMPLE_COUNTER         = m_pPD_SAMPLE_REF->getSampleCounter(SAMPLE_REF, DEF_GC_MEASUREMENT_TYPE::Temp);
+
+  //        if ( m_pPD_SAMPLE->select(SAMPLE_COUNTER) )
+  //        {
+  //          L3TempMeasLocation          = m_pGC_SAMPLELOC->getSampleLocDescr(m_pPD_SAMPLE->getSAMPLELOC(1));
+  //          L3TempMeasCounter           = m_pPD_SAMPLE->getSAMPLENO(1);
+  //          L3TempMeasTime              = m_pPD_SAMPLE->getSAMPLETIME(1).asString(DateTimeFormat);
+  //          L3Temperature               = (long)m_pPD_SAMPLE->getSampleMeasValue(SAMPLE_COUNTER, DEF_GC_MEASUREMENT_NAME::Temp);
+  //        }
+  //      }
+  //      else
+  //      {
+  //        CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+  //        sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+  //        pEventLog->EL_DBReadError(sMessage, "HEATID - TREATID","PP_HEAT","");
+  //      }
+
+  //      //********    Log event data ***********************************************************************
+
+  //      //********    Convert and check event data  ***********************************************************
+
+  //      // setting defaults if invalid data have been detected
+  //      L3HeatId                  = CDataConversion::SetInvalidToDefault(L3HeatId                   ,"" ,CSMC_DBData::unspecString);
+  //      L3TreatID                 = CDataConversion::SetInvalidToDefault(L3TreatID                  ,"" ,CSMC_DBData::unspecString);
+  //      L3ProdOrderNo             = CDataConversion::SetInvalidToDefault(L3ProdOrderNo              ,"" ,CSMC_DBData::unspecString);
+  //      L3Plant                   = CDataConversion::SetInvalidToDefault(L3Plant                    ,"" ,CSMC_DBData::unspecString);
+  //      L3TempMeasLocation        = CDataConversion::SetInvalidToDefault(L3TempMeasLocation         ,"" ,CSMC_DBData::unspecString);
+  //                                                                                                                                  
+  //      L3PlantNo                 = CDataConversion::SetInvalidToDefault(L3PlantNo                  ,0 ,CSMC_DBData::unspecLong);   
+  //      L3TreatmentSeq            = CDataConversion::SetInvalidToDefault(L3TreatmentSeq             ,0 ,CSMC_DBData::unspecLong);   
+  //      L3TempMeasCounter         = CDataConversion::SetInvalidToDefault(L3TempMeasCounter          ,0 ,CSMC_DBData::unspecLong);   
+  //      L3Temperature             = CDataConversion::SetInvalidToDefault(L3Temperature              ,0 ,CSMC_DBData::unspecLong);   
+
+  //      // truncate string data to fit telegram length
+
+  //      L3HeatId                    = CDataConversion::CheckLengthAndTruncate(L3HeatId                ,7 , false);                
+  //      L3TreatID                   = CDataConversion::CheckLengthAndTruncate(L3TreatID               ,8 , false);                
+  //      L3ProdOrderNo               = CDataConversion::CheckLengthAndTruncate(L3ProdOrderNo           ,7 , false);                
+  //      L3Plant                     = CDataConversion::CheckLengthAndTruncate(L3Plant                 ,2 , false);                
+  //      L3TempMeasLocation          = CDataConversion::CheckLengthAndTruncate(L3TempMeasLocation      ,20, false);                
+
+
+  //      //********    Write telegram data header ***********************************************************************
+  //      pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS07::DateOfSending,   L3DateOfSending);
+  //      pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS07::TimeOfSending,   L3TimeOfSending);
+  //      pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS07::SenderDC,        L3SenderDC);
+  //      pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS07::ReceiverDC,      L3ReceiverDC);
+  //      pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS07::FunctionCode,    L3FunctionCode);
+
+  //      //********    Write telegram data body ***********************************************************************
+  //      pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS07::HeatId                  ,L3HeatId                );
+  //      pTelcom_Interface->setLong    (DataKeyL3, Telegram_S1MS07::TreatmentSeq            ,L3TreatmentSeq          );
+  //      pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS07::TreatID                 ,L3TreatID               );
+  //      pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS07::ProdOrderNo             ,L3ProdOrderNo           );
+  //      pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS07::Plant                   ,L3Plant                 );
+  //      pTelcom_Interface->setLong    (DataKeyL3, Telegram_S1MS07::PlantNo                 ,L3PlantNo               );
+  //      pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS07::EndingFlag              ,L3EndingFlag            );
+
+  //      pTelcom_Interface->setString (DataKeyL3, Telegram_S1MS07::TempMeasLocation, L3TempMeasLocation);
+  //      pTelcom_Interface->setLong   (DataKeyL3, Telegram_S1MS07::TempMeasCounter, L3TempMeasCounter);
+  //      pTelcom_Interface->setString (DataKeyL3, Telegram_S1MS07::TempMeasTime, L3TempMeasTime);
+  //      pTelcom_Interface->setLong   (DataKeyL3, Telegram_S1MS07::Temperature, L3Temperature);
+  //      
+  //      pTelcom_Interface->showContent(DataKeyL3, 4);
+
+  //      //********    Dispatch event ***********************************************************************
+
+  //      CEventMessage MstToL1Sender;
+  //      MstToL1Sender.setMessage(std::string("TELEGRAM_") + TlgName);
+  //      MstToL1Sender.setPlantID(L3PlantID);
+  //      MstToL1Sender.setDataKey(DataKeyL3);
+  //      MstToL1Sender.setOrderID(OrderID);
+  //      dispatchEvent(m_SenderName,"",MstToL1Sender);   
+
+  //      pTelcom_Interface->setAny     (DataKeyL3, "EventMessage",         MstToL1Sender.asCORBAAny());
+
+  //      pTelcom_Interface->showContent(DataKeyL3, 4);
+
+
+  //      //********    End processing data  ***********************************************************************
+  //    } // if ( checkInternalData(TlgName, HeatID, TreatID, Plant, CustHeatID, CustTreatID) )
+  //    else
+  //    {
+  //      RetValue = false;
+  //    }
+
+  //    log( TlgName + ": End", 3);
+  //  }// if ( pDM_Interface && pTelcom_Interface )
+  //  else
+  //  {
+  //    // EL_
+  //    RetValue=false;
+  //  }
+
+  //  if ( !RetValue )
+  //  {
+  //    CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+  //    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+  //    pEventLog->EL_ErrorHandlingTelegram(sMessage,TlgName.c_str(),Function.c_str());
+  //  }
+  //}
+  //catch(CORBA::SystemException& sExc) 
+  //{
+  //  cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+  //    Function,
+  //    Action,__FILE__,__LINE__);
+  //  RetValue = false;
+  //}
+  //catch(CORBA::Exception& cExc) 
+  //{
+  //  cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+  //    Function,
+  //    Action,__FILE__,__LINE__);
+  //  RetValue = false;
+  //}
+  //catch(...) 
+  //{
+  //  cCBS_StdCORBA_Task::getInstance()->doOnException(Function,
+  //    Action,__FILE__,__LINE__);
+  //  RetValue = false;
+  //}
+  return RetValue;
+
+}//end function
+
+
+bool CL3_EventHandler::provideData_S1MS08MaterialAdditionData(CEventMessage& Event)
+{
+  // =================== M A T E R I A L   H A N D L I N G   R E P O R T =========================
+  //
+  bool RetValue = true; // assume success
+  ////read the data from Event
+  //std::string HeatID    = Event.getHeatID();
+  //std::string TreatID   = Event.getTreatID();
+  //std::string ProductID = Event.getProductID();
+  //std::string OrderID   = Event.getOrderID();
+  //std::string DataKey   = Event.getDataKey();
+  //std::string PlantID   = Event.getPlantID();
+  //std::string L3PlantID = m_pGC_Plant_Container->getL3PlantID(PlantID);
+  //std::string Plant     = m_pGC_Plant_Container->getPlant(PlantID); 
+  //long PlantNo          = m_pGC_Plant_Container->getPlantNo(PlantID);
+
+  //// truncate string data to fit telegram length
+  //OrderID   = CDataConversion::CheckLengthAndTruncate(OrderID,10);
+
+  //std::string CustHeatID;
+  //std::string CustTreatID;
+  //std::string DataKeyL3;
+  //CDateTime Now;
+  //DEF::seqLong seqSpare;
+  //std::string L3EndingFlag ; 
+  //L3EndingFlag = (char) 10;
+
+  //std::string TimeFormat     = "%H%M%S";
+  //std::string DateFormat     = "%Y%m%d";
+  //std::string DateTimeFormat = "%Y%m%d%H%M%S";
+
+  //std::string Action    = "Reading DM interface data from ";
+  //Action +=  Event.getSender();
+  //Action +=  "ProductID:";
+  //Action +=  Event.getProductID();
+  //Action +=  " - ";
+  //Action +=  "Key:";
+  //Action +=  Event.getDataKey();
+
+  //std::string TlgName  = "S1MS08";
+  //std::string Function = "CL3_EventHandler::provideData_S1MS08MaterialAdditionData";
+
+  //try
+  //{
+  //  DM::iDM_Interface_var pDM_Interface = CDH_OUT_Task::getInstance()->getpDM_Interface(Event.getSender(),DM::EVENT);
+
+  //  CSMC_DataProvider_Impl* pTelcom_Interface = CDH_OUT_Task::getInstance()->getpInterface_OUT();
+
+  //  if ( pDM_Interface && pTelcom_Interface )
+  //  {
+  //    //********    preset data  ************************************************************************
+  //    
+
+  //    log("****************************************************************************************", 3);
+  //    log( TlgName + ": Start", 3);
+  //    log("****************************************************************************************", 3);
+
+  //    if ( checkInternalData(TlgName, HeatID, TreatID, Plant, CustHeatID, CustTreatID) )
+  //    {
+  //      bool        doSendEvent = false;
+
+  //      DataKeyL3 = pTelcom_Interface->generateDataKey(TlgName);
+
+  //      //********    preset data  ************************************************************************
+
+  //      std::string L3DateOfSending = Now.asString(DateFormat);
+  //      std::string L3TimeOfSending = Now.asString(TimeFormat);
+  //      std::string L3SenderDC      = "S1";
+  //      std::string L3ReceiverDC    = "M1";
+  //      std::string L3FunctionCode  = "D";
+
+  //      cCBS_StdInitBase::getInstance()->replaceWithEntry("COMMUNICATION", "Sender", L3SenderDC);
+  //      cCBS_StdInitBase::getInstance()->replaceWithEntry("COMMUNICATION", "Receiver", L3ReceiverDC);
+  //      cCBS_StdInitBase::getInstance()->replaceWithEntry("COMMUNICATION", "FunctionCode", L3FunctionCode);
+
+
+  //      std::string L3HeatId                  ;
+  //      long        L3TreatmentSeq            = 0;
+  //      std::string L3TreatID                 ;
+  //      std::string L3ProdOrderNo             ;
+  //      std::string L3Plant                   ;
+  //      long        L3PlantNo                 = 0;
+  //      std::string L3TempMeasLocation        ;
+  //      long        L3TempMeasCounter         = 0;
+  //      std::string L3TempMeasTime            ;
+  //      long        L3Temperature	            = 0;
+
+  //      CORBA::Any AnyMaterialAdditions;
+
+  //      //********    Read event related data  ************************************************************************
+
+  //      if ( m_pPD_HEAT_DATA->select(HeatID, TreatID, Plant) )
+  //      { 
+  //        CTreatIDCust TreatSeq; 
+  //        CHeatIDCust HeatSequence; 
+  //        
+  //        // no of produces heats taken from equipment data by equipment 
+  //        long HeatsOfPlant = (long)m_pEquipmentData->getEquipmentAge(Plant, PlantNo, Plant, DEF_GC_COUNTER_TYPE::HEATS);
+  //        
+  //        L3HeatId                    = CustHeatID;
+  //        L3TreatmentSeq              = TreatSeq.getCounter(CustTreatID);
+
+  //        // L3TreatID means total no of heats at respective plant
+  //        L3TreatID                   = HeatSequence.getHeatIDCust(L3PlantID,HeatsOfPlant);
+  //        L3ProdOrderNo               = m_pPD_HEAT_DATA->getPRODORDERID_ACT(1);          
+  //        L3Plant                     = L3PlantID;
+  //        L3PlantNo                   = 1;
+
+  //        // Beware! The generated streuct in the IDL file is uttrly wrong when it comes to ASCII transport of
+  //        // numeric types. Apparently the generator sees "Ascii" and generates IDL in which all TE are strings,
+  //        // such as "string ChargedMateWeight;", which is not what Telcom expects. 
+  //        //
+  //
+  //        Telegram_S1MS08::t_MaterialAdditions seq_MaterialAdditions;
+  //        struct Telegram_S1MS08::sMaterialAdditions M;
+  //        
+
+
+  //        // Loop over All Charged Recipe-Entries for this heat/treatment/Plant
+  //        //       For each Entry:
+  //        //         Fill Charged Material record into Tlg
+  //        // Finally:
+  //        //   Create the event to motivate Telcom to actually send the telegram.
+  //        //
+  //        // --------------------------------------------------------------------
+
+  //        // Give names and "unused" values to unused arguments for select() function call
+  //        std::string noRecipeName    = CSMC_DBData::unspecString;
+  //        long        noRecipeNo      = CSMC_DBData::unspecLong;
+  //        std::string noSource        = CSMC_DBData::unspecString;
+  //        std::string noMatcode    = CSMC_DBData::unspecString;
+  //         
+  //        // Selecting "Discharged" for Charged materials...
+  //        long        ChargedBatchStatusno = DEF_GC_RECIPE_STATUS::Discharged;
+  //        
+  //        
+  //        if   (m_pPD_RECIPE->select (HeatID, TreatID, Plant, noRecipeName, 
+  //          noRecipeNo, noSource, ChargedBatchStatusno))
+  //        {
+  //          long nrec = m_pPD_RECIPE->getLastRow();
+  //          for   (long iRec=1; iRec<= nrec; ++iRec)
+  //          {
+  //            std::string RecipeName = m_pPD_RECIPE->getRECIPENAME(iRec);
+  //            long        RecipeNo   = m_pPD_RECIPE->getRECIPENO(iRec);
+
+  //            CDateTime ChargeTime = m_pPD_RECIPE->getDISCHARGESTARTTIME(iRec);
+  //            std::string strChargeTime;
+
+  //            if   (ChargeTime != CDateTime::InvalidDateTime())
+  //            {
+  //              strChargeTime = ChargeTime.asString(DateTimeFormat);
+  //            }
+  //            // else leave it empty, that's OK.
+
+  //            if   (m_pPD_RECIPE_ENTRY->select(HeatID, TreatID, Plant, RecipeName, 
+  //              RecipeNo, noSource, ChargedBatchStatusno, noMatcode) )
+  //            {
+  //              // set switch for sending event
+  //              doSendEvent = true;
+
+  //              // See what we got
+  //              long nRows = m_pPD_RECIPE_ENTRY->getLastRow();
+  //              for (long imat=1; imat <= nRows; ++imat)
+  //              {
+  //                M.ChargedMatCode    = m_pPD_RECIPE_ENTRY->getMAT_CODE(imat).c_str();
+  //                M.ChargedMateWeight = static_cast<long> (m_pPD_RECIPE_ENTRY->getMATWEIGHT(imat));  // cast to avoid warning. 
+  //                M.ChargedMatOrigin  = m_pPD_RECIPE_ENTRY->getSOURCE(imat).c_str();
+  //                M.ChargeSeq         = CSMC_DBData::unspecLong;              // no idea what this should really be....
+  //                M.ChargeTime        = strChargeTime.c_str();
+
+  //                // Memorize for later transmission in the telegram
+  //                // 
+  //                if   (seq_MaterialAdditions.length() <= 50)       // Here some magic: maximum allowed size of the sequence
+  //                CIntfData::insert(seq_MaterialAdditions, M);
+  //              }
+  //            }
+  //            else
+  //            {
+  //              // could not read any part of this Recipe
+  //            }
+  //          } // Loop all charged recipes
+  //        } // Select Recipes OK
+  //        else
+  //        {
+  //          // Could not read any Recipe 
+  //        }
+
+  //        // Now we have a nice Sequence of Records, we need to fill it with empty records if the sequence has too few entries
+
+  //        unsigned long unusedPartOfArray = 50 - seq_MaterialAdditions.length();
+  //        if   (unusedPartOfArray > 0)
+  //        {
+  //          // Create one empty record
+  //          M.ChargedMatCode    = "";
+  //          M.ChargedMateWeight = 0; 
+  //          M.ChargedMatOrigin  = "";
+  //          M.ChargeSeq         = 0;              
+  //          M.ChargeTime        = "";
+  //          for (unsigned long ii=0; ii<unusedPartOfArray ; ii++)
+  //          {
+  //             CIntfData::insert(seq_MaterialAdditions, M);
+  //          }
+  //        }// else nothing to do, array is completely filled already
+  //        AnyMaterialAdditions = CIntfData::ToAny(seq_MaterialAdditions);
+
+
+  //      }
+  //      else
+  //      {
+  //        CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+  //        sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+  //        pEventLog->EL_DBReadError(sMessage, "HEATID - TREATID","PP_HEAT","");
+  //      }
+
+  //      //********    Log event data ***********************************************************************
+
+  //      //********    Convert and check event data  ***********************************************************
+
+  //      if ( doSendEvent )
+  //      {
+  //        // setting defaults if invalid data have been detected
+  //        L3HeatId                  = CDataConversion::SetInvalidToDefault(L3HeatId                   ,"" ,CSMC_DBData::unspecString);
+  //        L3TreatID                 = CDataConversion::SetInvalidToDefault(L3TreatID                  ,"" ,CSMC_DBData::unspecString);
+  //        L3ProdOrderNo             = CDataConversion::SetInvalidToDefault(L3ProdOrderNo              ,"" ,CSMC_DBData::unspecString);
+  //        L3Plant                   = CDataConversion::SetInvalidToDefault(L3Plant                    ,"" ,CSMC_DBData::unspecString);
+  //                                                                                                                                  
+  //        L3PlantNo                 = CDataConversion::SetInvalidToDefault(L3PlantNo                  ,0 ,CSMC_DBData::unspecLong);   
+  //        L3TreatmentSeq            = CDataConversion::SetInvalidToDefault(L3TreatmentSeq             ,0 ,CSMC_DBData::unspecLong);   
+
+  //        // truncate string data to fit telegram length
+
+  //        L3HeatId                    = CDataConversion::CheckLengthAndTruncate(L3HeatId                ,7 , false);                
+  //        L3TreatID                   = CDataConversion::CheckLengthAndTruncate(L3TreatID               ,8 , false);                
+  //        L3ProdOrderNo               = CDataConversion::CheckLengthAndTruncate(L3ProdOrderNo           ,7 , false);                
+  //        L3Plant                     = CDataConversion::CheckLengthAndTruncate(L3Plant                 ,2 , false);                
+
+
+  //        //********    Write telegram data header ***********************************************************************
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS08::DateOfSending,   L3DateOfSending);
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS08::TimeOfSending,   L3TimeOfSending);
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS08::SenderDC,        L3SenderDC);
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS08::ReceiverDC,      L3ReceiverDC);
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS08::FunctionCode,    L3FunctionCode);
+
+  //        //********    Write telegram data body ***********************************************************************
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS08::HeatId                  ,L3HeatId                );
+  //        pTelcom_Interface->setLong    (DataKeyL3, Telegram_S1MS08::TreatmentSeq            ,L3TreatmentSeq          );
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS08::TreatID                 ,L3TreatID               );
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS08::ProdOrderNo             ,L3ProdOrderNo           );
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS08::Plant                   ,L3Plant                 );
+  //        pTelcom_Interface->setLong    (DataKeyL3, Telegram_S1MS08::PlantNo                 ,L3PlantNo               );
+  //     
+  //        pTelcom_Interface->setAny     (DataKeyL3, Telegram_S1MS08::MaterialAdditions,  AnyMaterialAdditions);
+
+  //        pTelcom_Interface->setString  (DataKeyL3, Telegram_S1MS08::EndingFlag              ,L3EndingFlag            );
+
+
+  //        //********    Dispatch event ***********************************************************************
+
+  //        CEventMessage MstToL1Sender;
+  //        MstToL1Sender.setMessage(std::string("TELEGRAM_") + TlgName);
+  //        MstToL1Sender.setPlantID(L3PlantID);
+  //        MstToL1Sender.setDataKey(DataKeyL3);
+  //        MstToL1Sender.setOrderID(OrderID);
+  //        dispatchEvent(m_SenderName,"",MstToL1Sender);   
+
+  //        pTelcom_Interface->setAny     (DataKeyL3, "EventMessage",         MstToL1Sender.asCORBAAny());
+
+  //        pTelcom_Interface->showContent(DataKeyL3, 4);
+  //      } // if ( doSendEvent )
+
+  //      //********    End processing data  ***********************************************************************
+  //    } // if ( checkInternalData(TlgName, HeatID, TreatID, Plant, CustHeatID, CustTreatID) )
+  //    else
+  //    {
+  //      RetValue = false;
+  //    }
+
+  //    log( TlgName + ": End", 3);
+  //  }// if ( pDM_Interface && pTelcom_Interface )
+  //  else
+  //  {
+  //    // EL_
+  //    RetValue=false;
+  //  }
+
+  //  if ( !RetValue )
+  //  {
+  //    CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+  //    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+  //    pEventLog->EL_ErrorHandlingTelegram(sMessage,TlgName.c_str(),Function.c_str());
+  //  }
+  //}
+  //catch(CORBA::SystemException& sExc) 
+  //{
+  //  cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+  //    Function,
+  //    Action,__FILE__,__LINE__);
+  //  RetValue = false;
+  //}
+  //catch(CORBA::Exception& cExc) 
+  //{
+  //  cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+  //    Function,
+  //    Action,__FILE__,__LINE__);
+  //  RetValue = false;
+  //}
+  //catch(...) 
+  //{
+  //  cCBS_StdCORBA_Task::getInstance()->doOnException(Function,
+  //    Action,__FILE__,__LINE__);
+  //  RetValue = false;
+  //}
+  return RetValue;
+
+}//end function
+
+
+
+
+//deb modified 
+bool CL3_EventHandler::provideData_S1MS10SteelAnalysisData(CEventMessage& Event)//Analysis Steel
+{
+  bool retval = false;
+
+  return retval;
+
+}//end function
+
+bool CL3_EventHandler::provideData_S1MS11SlagAnalysisData(CEventMessage& Event)//Analysis Slag
+{
+  bool retval = false;
+	return  retval;
+}
+
+
+//deb grade data
+bool CL3_EventHandler::provideData_S1MS40SteelGradeDataUpdate(CEventMessage& Event)   
+{
+  bool retval = false;
+  return  retval;
+}
+
+bool CL3_EventHandler::provideData_ScheduleResponse(CEventMessage &Event)
+{
+  string exceMsg = "CL3_EventHandler::provideData_ScheduleResponse()";
+
+  bool retval = true; 
+
+  std::string CustHeatID, CustTreatID;
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();     
+  std::string OrderId   = Event.getOrderID();
+	std::string L2PlantID   = Event.getPlantID();
+	std::string L3PlantID   = "1";
+	std::string Plant  = m_pGC_Plant_Container->getPlant(L2PlantID);
+	long PlantNo       = m_pGC_Plant_Container->getPlantNo(L2PlantID); 
+
+  try
+  {
+    m_pDM_Interface = CDH_OUT_Task::getInstance()->getpDM_Interface(Event.getSender(),DM::EVENT);
+    m_pHeatDataConverter->getCustHeatData( HeatID, TreatID, CustHeatID, CustTreatID,Plant);
+
+    if (m_pTelcom_Interface && m_pDM_Interface) 
+    {
+      string tlgName = "L2_SCHEDULE_RESPONSE";
+      std::string DataKeyOut = m_pTelcom_Interface->generateDataKey(tlgName);
+
+      CDateTime now;
+
+      string L3HeatId = m_pDM_Interface->getString(DataKey.c_str(), DATA::L3HeatId);
+      string L3OrderId = m_pDM_Interface->getString(DataKey.c_str(), DATA::L3OrderId);
+      long AckCode = m_pDM_Interface->getLong(DataKey.c_str(), DATA::AckCode);
+
+      m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_SCHEDULE_RESPONSE::CreateTime,now.assDate() );
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_SCHEDULE_RESPONSE::L3_HeatId,L3HeatId ); 
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_SCHEDULE_RESPONSE::L3_ProdOrder,L3OrderId ); 
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_SCHEDULE_RESPONSE::AcceptCode,AckCode );
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_SCHEDULE_RESPONSE::MsgStatus,1 );
+    	  
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_SCHEDULE_RESPONSE::Spare1,0 );
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_SCHEDULE_RESPONSE::Spare2,0 );
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_SCHEDULE_RESPONSE::Spare3,0 );
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_SCHEDULE_RESPONSE::Spare4,0 );
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_SCHEDULE_RESPONSE::Spare5,0 );
+
+      m_pTelcom_Interface->showContent(DataKeyOut, 4);
+
+      CEventMessage message(m_SenderName, 
+                            m_DestinationName, 
+                            "TELEGRAM_" + tlgName,
+                            L3PlantID,
+                            "",
+                            std::string ("UNUSED"),
+                            false, 
+                            HeatID,
+                            TreatID, 
+                            DataKeyOut);
+        message.setOrderID(OrderId);
+        retval = CDH_EventHandler::dispatchEvent("", "", message);
+
+    }
+
+  }
+  catch (cCBS_DBExc &e)
+  {
+    CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),exceMsg.c_str(), ""); 
+  }
+  catch (...)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, "",exceMsg.c_str(), ""  );    
+  } 
+
+  return retval;
+}
+
+bool CL3_EventHandler::provideData_DelayReport(CEventMessage &Event)
+{
+  string exceMsg = "CL3_EventHandler::provideData_DelayReport()";
+
+  bool retval = true; 
+
+  std::string CustHeatID, CustTreatID;
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();     
+  std::string OrderId   = Event.getOrderID();
+	std::string PlantID   = Event.getPlantID();
+	std::string Plant  = m_pGC_Plant_Container->getPlant(PlantID);
+	long PlantNo       = m_pGC_Plant_Container->getPlantNo(PlantID); 
+
+  try
+  {
+    m_pDM_Interface = CDH_OUT_Task::getInstance()->getpDM_Interface(Event.getSender(),DM::EVENT);
+    //m_pHeatDataConverter->getCustHeatData( HeatID, TreatID, CustHeatID, CustTreatID, Plant);
+
+    if (m_pTelcom_Interface && m_pDM_Interface)
+    {
+      string tlgName = "L2_DELAY_REPORT";
+      std::string DataKeyOut = m_pTelcom_Interface->generateDataKey(tlgName);
+
+      CDateTime now;
+      long ActionFlag,DelayGroup;
+      string DelayCode,DelayPlant,DelayDescr ;
+      sDate DelayStart,DelayEnd;
+      std::string OperatorComment;
+
+      ActionFlag = m_pDM_Interface->getLong(DataKey.c_str(), DATA::Status); //@TODO: checck from HMI 1:new, 2:update,3:delete
+
+      DelayCode = m_pDM_Interface->getString(DataKey.c_str(), DATA::DelayCode);
+      OperatorComment = m_pDM_Interface->getString(DataKey.c_str(), DATA::OperatorComment);
+      DelayStart = m_pDM_Interface->getDate(DataKey.c_str(), DATA::DelayStartDate );
+      DelayEnd = m_pDM_Interface->getDate(DataKey.c_str(), DATA::DelayEndDate );
+     
+      m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_DELAY_REPORT::CreateTime,now.assDate() );
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_DELAY_REPORT::PlantUnit,Plant.substr(0,1) + CDataConversion::LongToString(PlantNo));
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_DELAY_REPORT::ActionFlag,ActionFlag);
+
+      if(m_pGT_DELAY_CODE->select(Plant,DelayCode) && m_pGT_DELAY_CODE->getLastRow() > 0)
+      {
+        DelayGroup = m_pGT_DELAY_CODE->getGROUPNO(1); 
+        m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_DELAY_REPORT::DelayGroup,DelayGroup);
+      }
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_DELAY_REPORT::DelayCode,DelayCode);
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_DELAY_REPORT::DelayComments,OperatorComment);
+      m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_DELAY_REPORT::StartTime,DelayStart);
+      m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_DELAY_REPORT::EndTime,DelayEnd);
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_DELAY_REPORT::MsgStatus,1 );
+	  
+      m_pTelcom_Interface->showContent(DataKeyOut, 4);
+
+      CEventMessage message(m_SenderName, 
+                            m_DestinationName, 
+                            "TELEGRAM_" + tlgName,
+                            PlantID,
+                            "",
+                            std::string ("UNUSED"),
+                            false, 
+                            HeatID,
+                            TreatID, 
+                            DataKeyOut);
+        message.setOrderID(OrderId);
+        retval = CDH_EventHandler::dispatchEvent("", "", message);
+
+    }
+
+  }
+  catch (cCBS_DBExc &e)
+  {
+    CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),exceMsg.c_str(), ""); 
+  }
+  catch (...)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, "",exceMsg.c_str(), ""  );    
+  } 
+
+  return retval;
+}
+
+bool CL3_EventHandler::provideData_HeatStatus(CEventMessage &Event)
+{
+  string exceMsg = "CL3_EventHandler::provideData_HeatStatus()";
+
+  bool retval = true; 
+
+  std::string CustHeatID, CustTreatID;
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();     
+  std::string OrderId   = Event.getOrderID();
+	std::string PlantID   = Event.getPlantID();
+	std::string Plant  = m_pGC_Plant_Container->getPlant(PlantID);
+	long PlantNo       = m_pGC_Plant_Container->getPlantNo(PlantID); 
+
+  try
+  {
+    m_pDM_Interface = CDH_OUT_Task::getInstance()->getpDM_Interface(Event.getSender(),DM::EVENT);
+
+		CPP_HM PP_HM(CDH_OUT_Task::getInstance()->getStdConnection());		
+		if(Plant == DEF_GC_PLANT_DEF::HMD && PP_HM.select(HeatID))
+		{
+			CustHeatID = PP_HM.getHM_ID_CUST_PLAN(1);
+			CustTreatID = "01";
+		}
+		else
+		{
+	    m_pHeatDataConverter->getCustHeatData( HeatID, TreatID, CustHeatID, CustTreatID,Plant);
+		}
+		
+    if (m_pTelcom_Interface && m_pDM_Interface)
+    {
+      string tlgName = "L2_HEAT_STATUS";
+      std::string DataKeyOut = m_pTelcom_Interface->generateDataKey(tlgName);
+
+      CDateTime now;
+      string SteelGrade,ProdOrder;
+      long LadleNo,HeatStatus;
+      sDate ExpectedTreatmentEnd;
+
+      m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::CreateTime,now.assDate() );
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::PlantUnit,Plant.substr(0,1) + CDataConversion::LongToString(PlantNo));
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::HeatId,CustHeatID);
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::TreatId,CustTreatID);
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::MsgStatus,1 );
+
+			if(Plant == DEF_GC_PLANT_DEF::HMD && PP_HM.select(HeatID))
+			{
+        m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::ProdOrderNo,PP_HM.getPRODORDERID(1) );
+        m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::ExpectedEndTime,PP_HM.getTREATEND_PLAN(1).assDate() );    
+				//m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::LadleNo,LadleNo ); ??? how to enter
+			}
+			else if(m_pPD_HEAT_DATA->select(HeatID,TreatID,Plant) && m_pPD_HEAT_DATA->getLastRow() > 0)
+      {
+        ProdOrder = m_pPD_HEAT_DATA->getPRODORDERID_ACT(1);
+        SteelGrade = m_pPD_HEAT_DATA->getSTEELGRADECODE_ACT(1);
+        LadleNo = m_pPD_HEAT_DATA->getLADLENO(1);
+
+        if(m_pPD_HEAT_DATA->isNull("TREATEND_ACT",1))
+          ExpectedTreatmentEnd = m_pPD_HEAT_DATA->getTREATEND_MOD(1).assDate();
+        else
+          ExpectedTreatmentEnd = m_pPD_HEAT_DATA->getTREATEND_ACT(1).assDate();
+
+        m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::ProdOrderNo,ProdOrder );
+        m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::SteelGrade,SteelGrade) ;
+				m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::LadleNo,LadleNo );
+        m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::ExpectedEndTime,ExpectedTreatmentEnd );       
+      }
+      
+			if(Plant == DEF_GC_PLANT_DEF::HMD)
+			{
+          //m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::HeatStatus,HeatStatus );		??? how to enter      
+			}
+			else if ( m_pPD_HEAT_PLANT_REF->select(HeatID,TreatID,Plant) )
+      {
+        HeatStatus = m_pPD_HEAT_PLANT_REF->getSTATUSNO(1);
+        CGC_HEAT_STATUS GC_HEAT_STATUS(CDH_OUT_Task::getInstance()->getStdConnection());
+        if ( CSMC_DBData::unspecLong != HeatStatus  && GC_HEAT_STATUS.select(HeatStatus)  )
+        {
+          HeatStatus = GC_HEAT_STATUS.getHEATSTATNO_L3(1);
+          m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_HEAT_STATUS::HeatStatus,HeatStatus );		      
+        }
+      }
+
+
+      m_pTelcom_Interface->showContent(DataKeyOut, 4);
+
+      CEventMessage message(m_SenderName, 
+                            m_DestinationName, 
+                            "TELEGRAM_" + tlgName,
+                            PlantID,
+                            "",
+                            std::string ("UNUSED"),
+                            false, 
+                            HeatID,
+                            TreatID, 
+                            DataKeyOut);
+        message.setOrderID(OrderId);
+        retval = CDH_EventHandler::dispatchEvent("", "", message);
+    }
+
+  }
+  catch (cCBS_DBExc &e)
+  {
+    CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),exceMsg.c_str(), ""); 
+  }
+  catch (...)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, "",exceMsg.c_str(), ""  );    
+  } 
+
+  return retval;
+}
+
+bool CL3_EventHandler::provideData_HeatReportMaterial(CEventMessage &Event)
+{
+  string exceMsg = "CL3_EventHandler::provideData_HeatReportMaterial()";
+
+  bool retval = true; 
+
+  std::string CustHeatID, CustTreatID;
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();     
+  std::string OrderId   = Event.getOrderID();
+	std::string PlantID   = Event.getPlantID();
+	std::string Plant  = m_pGC_Plant_Container->getPlant(PlantID);
+	long PlantNo       = m_pGC_Plant_Container->getPlantNo(PlantID); 
+
+
+  try
+  {
+    m_pDM_Interface = CDH_OUT_Task::getInstance()->getpDM_Interface(Event.getSender(),DM::EVENT);
+
+		CPP_HM PP_HM(CDH_OUT_Task::getInstance()->getStdConnection());		
+		if(Plant == DEF_GC_PLANT_DEF::HMD && PP_HM.select(HeatID))
+		{
+			CustHeatID = PP_HM.getHM_ID_CUST_PLAN(1);
+			CustTreatID = "01";
+		}
+		else
+		{
+	    m_pHeatDataConverter->getCustHeatData( HeatID, TreatID, CustHeatID, CustTreatID,Plant);
+		}
+
+    if (m_pTelcom_Interface && m_pDM_Interface)
+    {
+      string tlgName = "L2_HEAT_REPORT_MATERIAL";
+      std::string DataKeyOut = m_pTelcom_Interface->generateDataKey(tlgName);
+
+      CDateTime now;
+
+			m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_HEAT_REPORT_MATERIAL::CreateTime,now.assDate() );
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HEAT_REPORT_MATERIAL::PlantUnit,Plant.substr(0,1) + CDataConversion::LongToString(PlantNo));
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HEAT_REPORT_MATERIAL::HeatId,CustHeatID);
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HEAT_REPORT_MATERIAL::TreatId,CustTreatID);
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_HEAT_REPORT_MATERIAL::MsgStatus,1 );
+
+
+      string RecipeSource = m_pDM_Interface->getString(DataKey.c_str(), DATA::RecipeSource);	  
+      long BatchStatus = m_pDM_Interface->getLong(DataKey.c_str(), DATA::RecipeStatus);	  
+      seqBatch RecipeBatch = CIntfData::ToCORBAType(m_pDM_Interface->getBatch(DataKey.c_str(), DATA::RecipeContent));
+      long seqLength = CIntfData::getLength(RecipeBatch);
+
+			if(Plant == DEF_GC_PLANT_DEF::HMD)
+			{
+			    //m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HEAT_REPORT_MATERIAL::MatCode,MatCode);
+			    //m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_HEAT_REPORT_MATERIAL::MatWeight,MatMass);
+			    //m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_HEAT_REPORT_MATERIAL::MatTime,now.assDate()); 
+					//m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HEAT_REPORT_MATERIAL::MatOrgin,RecipeSource);
+
+			    m_pTelcom_Interface->showContent(DataKeyOut,4);
+
+			    CEventMessage message(m_SenderName, 
+									    m_DestinationName, 
+									    "TELEGRAM_" + tlgName,
+									    PlantID,
+									    "",
+									    std::string ("UNUSED"),
+									    false, 
+									    HeatID,
+									    TreatID, 
+									    DataKeyOut);
+			    message.setOrderID(OrderId);
+			    retval = CDH_EventHandler::dispatchEvent("", "", message);    
+			} 
+			else if(DEF_GC_RECIPE_STATUS::Discharged == BatchStatus) //discharged
+	    {
+		    for(int i=0;i< seqLength;i++)
+		    {
+			    sBatch sRecipeElement;
+			    CIntfData::getAt(sRecipeElement, RecipeBatch,i);
+			    string MatCode = sRecipeElement.MatCode;
+			    double MatMass = sRecipeElement.Mass;
+
+			    m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HEAT_REPORT_MATERIAL::MatCode,MatCode);
+			    m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_HEAT_REPORT_MATERIAL::MatWeight,MatMass);
+			    m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_HEAT_REPORT_MATERIAL::MatTime,now.assDate()); 
+					m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HEAT_REPORT_MATERIAL::MatOrgin,RecipeSource);
+    		
+			    m_pTelcom_Interface->showContent(DataKeyOut,4);
+
+			    CEventMessage message(m_SenderName, 
+									    m_DestinationName, 
+									    "TELEGRAM_" + tlgName,
+									    PlantID,
+									    "",
+									    std::string ("UNUSED"),
+									    false, 
+									    HeatID,
+									    TreatID, 
+									    DataKeyOut);
+			    message.setOrderID(OrderId);
+			    retval = CDH_EventHandler::dispatchEvent("", "", message);         
+		    }
+
+	  }
+
+    }//if (m_pTelcom_Interface && m_pDM_Interface)
+
+  }
+  catch (cCBS_DBExc &e)
+  {
+    CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),exceMsg.c_str(), ""); 
+  }
+  catch (...)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, "",exceMsg.c_str(), ""  );    
+  } 
+
+  return retval;
+}
+
+
+bool CL3_EventHandler::provideData_ProductionDataHMD(CEventMessage& Event) 
+{
+	string exceMsg = "CL3_EventHandler::provideData_ProductionDataHMD";
+  bool RetValue = true; 
+
+  std::string CustHeatID, CustTreatID;
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();     
+  std::string OrderId   = Event.getOrderID();
+	std::string PlantID   = Event.getPlantID();
+	std::string Plant  = m_pGC_Plant_Container->getPlant(PlantID);
+	long PlantNo       = m_pGC_Plant_Container->getPlantNo(PlantID); 
+
+  try
+  {
+    m_pDM_Interface = CDH_OUT_Task::getInstance()->getpDM_Interface(Event.getSender(),DM::EVENT);
+		CPP_HM PP_HM(CDH_OUT_Task::getInstance()->getStdConnection());		
+		if(PP_HM.select(HeatID))
+		{
+			CustHeatID = PP_HM.getHM_ID_CUST_PLAN(1);
+			CustTreatID = "01";
+		}
+
+    if (m_pTelcom_Interface && m_pDM_Interface)
+    {
+			std::string tlgName  = "L2_HMD_HEAT_REPORT";
+			std::string DataKeyOut = m_pTelcom_Interface->generateDataKey(tlgName);
+			CDateTime now;
+
+      m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_HMD_HEAT_REPORT::CreateTime,now.assDate() );
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HMD_HEAT_REPORT::PlantUnit,Plant.substr(0,1) + CDataConversion::LongToString(PlantNo));
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HMD_HEAT_REPORT::HeatId,CustHeatID);
+      m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_HMD_HEAT_REPORT::TreatId,CustTreatID);
+      m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_HMD_HEAT_REPORT::MsgStatus,1);
+
+   //   if ( m_pPD_HEAT_DATA->select(HeatID, TreatID, Plant) )
+   //   { 
+			//	m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::ProdOrderNo,m_pPD_HEAT_DATA->getPRODORDERID_ACT(1));
+			//	m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::SteelGrade,m_pPD_HEAT_DATA->getSTEELGRADECODE_ACT(1));
+			//	m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::RouteCode,m_pPD_HEAT_DATA->getROUTECODE_ACT(1));
+			//	m_pTelcom_Interface->setLong(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::LadleNo,m_pPD_HEAT_DATA->getLADLENO(1));
+			//	m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::ShiftCode,m_pPD_HEAT_DATA->getSHIFT_ID(1));
+			//	m_pTelcom_Interface->setString(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::CrewCode,m_pPD_HEAT_DATA->getCREW_ID(1));
+			//	m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::TreatStart,m_pPD_HEAT_DATA->getTREATSTART_ACT(1).assDate() );
+			//	m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::TreatEnd,m_pPD_HEAT_DATA->getTREATEND_ACT(1).assDate() );
+			//	m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::LadleDepartTime,m_pPD_HEAT_DATA->getHEATDEPARTURE_ACT(1).assDate() );
+			//	m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::SteelWeight,m_pPD_HEAT_DATA->getSTEELMASS(1));
+			//	m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::SlagWeight,m_pPD_HEAT_DATA->getSLAGMASS(1));
+			//}
+   //   if ( m_pPDL_HEAT_DATA->select(HeatID, TreatID, Plant) )
+   //   { 
+			//	m_pTelcom_Interface->setDate(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::LadleArrivalTime,m_pPDL_HEAT_DATA->getLADLE_ARRTIME(1).assDate() );
+			//	m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::ElecEgyCons,m_pPDL_HEAT_DATA->getELEC_CONS(1));
+			//	m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::N_Cons,m_pPDL_HEAT_DATA->getSTIRR_N2_CONS(1));
+			//	m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::AR_Cons,m_pPDL_HEAT_DATA->getSTIRR_AR_CONS(1));
+			//	m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::StirrDur_Ar,m_pPDL_HEAT_DATA->getSTIRR_AR_DUR(1));
+			//	m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::StirrDur_N,m_pPDL_HEAT_DATA->getSTIRR_N2_DUR(1));
+			//	m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_LF_HEAT_REPORT::ARC_Dur,m_pPDL_HEAT_DATA->getPOWER_ON_DUR(1));						
+   //   }
+
+			//if(m_pPD_SAMPLE->selectHeatSample(HeatID,TreatID,Plant,PlantNo,DEF_GC_MEASUREMENT_TYPE::Temp,CSMC_DBData::unspecLong) && m_pPD_SAMPLE->getLastRow() > 0)
+			//{
+			//	if(m_pPD_SAMPLE_ENTRY->select(m_pPD_SAMPLE->getSAMPLE_COUNTER(m_pPD_SAMPLE->getLastRow()),DEF_GC_MEASUREMENT_NAME::Temp) && m_pPD_SAMPLE_ENTRY->getLastRow() > 0)
+			//	{
+			//		m_pTelcom_Interface->setDouble(DataKeyOut.c_str(),Telegram_L2_HMD_HEAT_REPORT::TempLast,m_pPD_SAMPLE_ENTRY->getMEASVALUE(1));	
+			//	}
+			//}
+                                                                                                                                            
+      m_pTelcom_Interface->showContent(DataKeyOut, 4);
+
+      CEventMessage message(m_SenderName, 
+                            m_DestinationName, 
+                            "TELEGRAM_" + tlgName,
+                            PlantID,
+                            "",
+                            std::string ("UNUSED"),
+                            false, 
+                            HeatID,
+                            TreatID, 
+                            DataKeyOut);
+        message.setOrderID(OrderId);
+        RetValue = CDH_EventHandler::dispatchEvent("", "", message);
+
+      }
+
+  }
+  catch (cCBS_DBExc &e)
+  {
+    CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),exceMsg.c_str(), ""); 
+  }
+  catch (...)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage, "",exceMsg.c_str(), ""  );    
+  } 
+
+  return RetValue;
+
+}//end function

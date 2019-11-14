@@ -1,0 +1,24 @@
+#ifndef    __IEVENTDATA_DEFINED
+#define    __IEVENTDATA_DEFINED
+/* Source file: X:/SMC/source/Application_Frame/iEventData.idl */
+
+/* CmIdentification
+%X% %Q% %Z% %W% */
+
+struct sEventData {
+    string m_Sender;
+    string m_Receiver;
+    string m_Message;
+    string m_PlantID;
+    string m_PlantLocation;
+    string m_ProductID;
+    string m_RelatedInformation;
+    boolean m_isPlantEvent;
+    string m_HeatID;
+    string m_TreatID;
+    string m_OrderID;
+    string m_DataKey;
+};
+
+#endif
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ComaniV2">
+</Property><Property Name="Solution File" Value="C:\JSW-SMS-3\SMC\source\Tools\ComaniV2\ComaniV2.sln">
+</Property><Property Name="Date" Value="Saturday, March 01, 2014">
+</Property><Property Name="Time" Value="14:05 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="ComaniV2.sln" Description="File successfully backed up as C:\JSW-SMS-3\SMC\source\Tools\ComaniV2\ComaniV2.sln.old">
+</Event><Event ErrorLevel="0" Project="Comani" Source="Comani\Comani.csproj" Description="Project file successfully backed up as C:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\Comani.csproj.old">
+</Event><Event ErrorLevel="1" Project="Comani" Source="Comani\Comani.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="Comani" Source="Comani\Comani.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Comani" Source="Comani\Comani.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="LibTelcom" Source="LibTelcom\LibTelcom.csproj" Description="Project file successfully backed up as C:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\LibTelcom.csproj.old">
+</Event><Event ErrorLevel="0" Project="LibTelcom" Source="LibTelcom\LibTelcom.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="LibTelcom" Source="LibTelcom\LibTelcom.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Converting project file 'C:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Meltshop\Meltshop.vcproj'.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="This application has been updated to include settings related to the User Account Control (UAC) feature of Windows Vista. By default, when run on Windows Vista with UAC enabled, this application is marked to run with the same privileges as the process that launched it. This marking also disables the application from running with virtualization. You can change UAC related settings from the Property Pages of the project.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Web deployment to the local IIS server is no longer supported. The Web Deployment build tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'CopyLocalDependencies' of 'AssemblyReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'UseDependenciesInBuild' of 'AssemblyReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'CopyLocalDependencies' of 'AssemblyReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'UseDependenciesInBuild' of 'AssemblyReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'CopyLocalDependencies' of 'AssemblyReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'UseDependenciesInBuild' of 'AssemblyReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'CopyLocalDependencies' of 'ProjectReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'UseDependenciesInBuild' of 'ProjectReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'CopyLocalDependencies' of 'ProjectReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'UseDependenciesInBuild' of 'ProjectReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'CopyLocalDependencies' of 'AssemblyReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'UseDependenciesInBuild' of 'AssemblyReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'CopyLocalDependencies' of 'AssemblyReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Attribute 'UseDependenciesInBuild' of 'AssemblyReference' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="MSB8012: $(TargetPath) ('C:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Meltshop\..\Comani\bin\Debug\Meltshop.dll') does not match the Linker's OutputFile property value '..\Comani\bin\Debug\Meltshop.dll' ('C:\JSW-SMS-3\SMC\source\Tools\Comani\bin\Debug\Meltshop.dll') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="0" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Done converting to new project file 'C:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Meltshop\Meltshop.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="Meltshop" Source="Meltshop\Meltshop.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="ComaniV2.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="ComaniV2.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Comani" Source="Comani\Comani.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="LibTelcom" Source="LibTelcom\LibTelcom.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

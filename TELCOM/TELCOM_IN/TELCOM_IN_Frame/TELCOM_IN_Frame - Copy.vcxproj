@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3DD3C441-6445-42BC-B9B7-2FA61B89D14E}</ProjectGuid>
+    <RootNamespace>Tcpreceiver</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <SccAuxPath>
+    </SccAuxPath>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:/SMC/$(Configuration)/lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:/SMC/$(Configuration)/lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>V:\JIS\l2\debug\temp\telcom_L3\Receiver/tcpreceiver.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm150  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\TELCOM_IN_Frame;$(BASE_HOME)\base4cpp\include;$(BASE_HOME)\eaidbtab\include;$(BASE_HOME)\eaidbtab\src\cpp\shared;$(CBSDIR)\include;$(CBSDIR)\include\CBS_EventLog;$(CBSDIR)\include\CBS_FevsWrapper;$(CBSDIR)\include\CBS_CorbaLibV2;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\Fries_EventService;$(OMNIDIR)\include\Omniorb4;$(CBSDIR)\include\CBS_DB_Classes;$(OMNIDIR)\include;$(ORACLE_HOME)\precomp\public;$(TELCOMDIR)\include;$(TELCOMDIR)\include\transport;$(TELCOMDIR)\include\Tam;$(TELCOMDIR)\include\TcOra;$(TELCOMDIR)\INCLUDE\UTIL;..\..\TELCOM_GEN;..\..\..\CBS_CORBA;..\..\..\CBS_StdFrame;..\..\..\SMC_EventLogSystem;..\..\..\Data_Provider;..\..\..\SMC_Frame;$(ORACLE_HOME)\jdk\include;$(ORACLE_HOME)\jdk\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__WIN32__;_DEBUG;_WINDOWS;_MBCS;MSVCNEWDLL_BUG;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__;__x86__;__NT__;_EVENTLOG_;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4290;4183;4786;4503;4018;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>V:\JIS\l2\Release\temp\telcom_LAB\Receiver/tcpreceiver.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm150  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\TELCOM_IN_Frame;$(BASE_HOME)\base4cpp\include;$(BASE_HOME)\eaidbtab\include;$(BASE_HOME)\eaidbtab\src\cpp\shared;$(CBSDIR)\include;$(CBSDIR)\include\CBS_EventLog;$(CBSDIR)\include\CBS_FevsWrapper;$(CBSDIR)\include\CBS_CorbaLibV2;$(CBSDIR)\include\CBS_CorbaLib;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\Fries_EventService;$(OMNIDIR)\include\Omniorb4;$(CBSDIR)\include\CBS_DB_Classes;$(OMNIDIR)\include;$(ORACLE_HOME)\precomp\public;$(TELCOMDIR)\include;$(TELCOMDIR)\include\transport;$(TELCOMDIR)\include\Tam;$(TELCOMDIR)\include\TcOra;$(TELCOMDIR)\INCLUDE\UTIL;..\..\TELCOM_GEN;..\..\..\CBS_CORBA;..\..\..\CBS_StdFrame;..\..\..\SMC_EventLogSystem;..\..\..\Data_Provider;..\..\..\SMC_Frame;$(ORACLE_HOME)\jdk\include;$(ORACLE_HOME)\jdk\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__WIN32__;NDEBUG;_WINDOWS;_MBCS;MSVCNEWDLL_BUG;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__;__x86__;__NT__;_EVENTLOG_;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_dynSK.cpp" />
+    <ClCompile Include="..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_s.cpp" />
+    <ClCompile Include="CTelcom_InAppCommunication.cpp" />
+    <ClCompile Include="CTelcom_InDbWriterTransport.cpp" />
+    <ClCompile Include="CTelcom_InMsgTypeTranslator.cpp" />
+    <ClCompile Include="CTelcom_InOracleTransport.cpp" />
+    <ClCompile Include="CTelcom_InProt.cpp" />
+    <ClCompile Include="CTelcom_InTask.cpp" />
+    <ClCompile Include="CTelcom_InTcpipTransport.cpp" />
+    <ClCompile Include="iData_Provider_dynSK.cpp" />
+    <ClCompile Include="iData_Provider_s.cpp" />
+    <ClCompile Include="iDH_Telcom_dynSK.cpp" />
+    <ClCompile Include="iDH_Telcom_s.cpp" />
+    <ClCompile Include="Telcom_In.cpp" />
+    <ClCompile Include="Telcom_In_dynSK.cpp" />
+    <ClCompile Include="Telcom_In_factory.cpp" />
+    <ClCompile Include="Telcom_In_s.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CTelcom_InAppCommunication.h" />
+    <ClInclude Include="CTelcom_InDbWriterTransport.h" />
+    <ClInclude Include="CTelcom_InMsgTypeTranslator.h" />
+    <ClInclude Include="CTelcom_InOracleTransport.h" />
+    <ClInclude Include="CTelcom_InProt.h" />
+    <ClInclude Include="CTelcom_InTask.h" />
+    <ClInclude Include="CTelcom_InTcpipTransport.h" />
+    <ClInclude Include="Telcom_In.h" />
+    <ClInclude Include="Telcom_In_factory.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Telcom_In.xls">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Step on %(FullPath)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">set PRJDIR=$(ProjectDir)
+set TELCOMFILE=%(FullPath)
+..\..\Macros\generate_telcom.bat &gt; ..\..\Macros\generate_telcom_In.log
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).xml;$(ProjectDir)%(Filename).cpp;$(ProjectDir)%(Filename).h;$(ProjectDir)%(Filename)_factory.cpp;$(ProjectDir)%(Filename)_factory.h;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Step on %(FullPath)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">set PRJDIR=$(ProjectDir)
+set TELCOMFILE=%(FullPath)
+..\..\Macros\generate_telcom.bat
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).xml;$(ProjectDir)%(Filename).cpp;$(ProjectDir)%(Filename).h;$(ProjectDir)%(Filename)_factory.cpp;$(ProjectDir)%(Filename)_factory.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_s.hh" />
+    <None Include="..\..\Macros\CreateTelcomInOut.xla" />
+    <None Include="iData_Provider_s.hh" />
+    <None Include="iDH_Telcom_s.hh" />
+    <None Include="Telcom_In_s.hh" />
+    <None Include="UsedInterfaces.txt" />
+    <CustomBuild Include="Telcom_In.xml">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Step on %(FullPath)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(X-Pact)\source\Tools\TELCOM_IdlGenerator\GenerateIDL.exe %(FullPath) $(X-Pact)\source\DH\DH_Telcom_Interface\Telcom_In.idl
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).xls;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(X-Pact)\source\DH\DH_Telcom_Interface\Telcom_In.idl;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Step on %(FullPath)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(X-Pact)\source\Tools\TELCOM_IdlGenerator\GenerateIDL.exe %(FullPath) $(X-Pact)\source\DH\DH_Telcom_Interface\Telcom_In.idl
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).xls;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(X-Pact)\source\DH\DH_Telcom_Interface\Telcom_In.idl;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\DH\DH_Telcom_Interface\Telcom_In.idl">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Step on %(FullPath)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).xml;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Step on %(FullPath)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).xml;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TELCOM_GEN\TELCOM_GEN.vcxproj">
+      <Project>{cd1520af-c888-42a6-bc3c-6603b0cfbed0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\Data_Provider\iData_Provider.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Step on %(FullPath)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Step on %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\DH\DH_Telcom_Interface\iDH_Telcom.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(X-Pact)\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Step on %(FullPath)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Step on %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf.idl">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OMNIDIR)\bin\x86_win32\omniidl -I$(CBSDIR)\include -I$(OMNIDIR)\IDL -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh %(FullPath) </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Tools on %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename)_s.hh;$(ProjectDir)%(Filename)_s.cpp;$(ProjectDir)%(Filename)_dynSK.cpp</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

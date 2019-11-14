@@ -1,0 +1,13 @@
+/.cvsignore///1370606863////
+/CEventChannelListenerEventHandler.cpp///1370606863////
+/CEventChannelListenerEventHandler.h///1370606863////
+/CEventChannelListenerTask.cpp///1370606863////
+/CEventChannelListenerTask.h///1370606863////
+/CEventChannelProtocol.cpp///1370606863////
+/CEventChannelProtocol.h///1370606863////
+/CEventChannelProtocolRule.cpp///1370606863////
+/CEventChannelProtocolRule.h///1370606863////
+/EventChannelListener.sln///1370606863////
+/EventChannelListener.vcxproj.filters///1370606863////
+/Main.cpp///1370606863////
+/EventChannelListener.vcxproj///1382326498////

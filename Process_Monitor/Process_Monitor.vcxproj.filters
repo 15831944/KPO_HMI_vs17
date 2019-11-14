@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{76192ec2-29b1-4959-bb32-f3d329cf6937}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{16f4fc66-acc5-42d1-aaec-5aa59b5f2ce6}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{90cb90de-1ec1-4dd0-9274-882c220e1d1a}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="IDL Files">
+      <UniqueIdentifier>{1b3fe0ac-5bfa-4aa4-a146-bf339ed67bb0}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{ac938f88-da68-4480-9285-281624c20cc1}</UniqueIdentifier>
+      <Extensions>moc</Extensions>
+    </Filter>
+    <Filter Include="INI Files">
+      <UniqueIdentifier>{def57741-c3db-485d-a578-18315b75c342}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CProcess_Monitor_Check_Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CProcess_Monitor_EventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CProcess_Monitor_Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CProcess_Monitor_TelcomIntf_Impl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iDH_Telcom_dynSK.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iDH_Telcom_s.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iDM_Interface_dynSK.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iDM_Interface_s.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iProcess_Monitor_dynSK.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iProcess_Monitor_s.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_Out_dynSK.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_Out_s.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CProcess_Monitor_Check_Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CProcess_Monitor_EventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CProcess_Monitor_Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CProcess_Monitor_TelcomIntf_Impl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iDH_Telcom_s.hh">
+      <Filter>Generated Files</Filter>
+    </None>
+    <None Include="iDM_Interface_s.hh">
+      <Filter>Generated Files</Filter>
+    </None>
+    <None Include="iProcess_Monitor_s.hh">
+      <Filter>Generated Files</Filter>
+    </None>
+    <None Include="Telcom_Out_s.hh">
+      <Filter>Generated Files</Filter>
+    </None>
+    <None Include="..\..\cfg\Process_Monitor\Process_Monitor.ini">
+      <Filter>INI Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Dh\DH_Telcom_Interface\Telcom_Out.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Dh\DH_Telcom_Interface\iDH_Telcom.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Dm\DM_Interface\iDM_Interface.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="iProcess_Monitor.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

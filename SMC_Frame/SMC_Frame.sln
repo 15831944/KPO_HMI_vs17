@@ -1,0 +1,33 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SMC_Frame", "SMC_Frame.vcproj", "{23A5C643-E15A-418C-BAB7-39AA77D75407}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectName0 = SAK
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:ClearCase
+		CanCheckoutShared = true
+		SolutionUniqueID = {1BDBDB83-4B03-43DE-A3D4-2AEFE61E3221}
+		SccProjectUniqueName1 = SMC_Frame.vcproj
+		SccProjectName1 = SMC_Frame
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{23A5C643-E15A-418C-BAB7-39AA77D75407}.Debug.ActiveCfg = Debug|Win32
+		{23A5C643-E15A-418C-BAB7-39AA77D75407}.Debug.Build.0 = Debug|Win32
+		{23A5C643-E15A-418C-BAB7-39AA77D75407}.Release.ActiveCfg = Release|Win32
+		{23A5C643-E15A-418C-BAB7-39AA77D75407}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

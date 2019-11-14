@@ -1,0 +1,278 @@
+// Copyright (C) 2007 SMS Siemag AG
+
+#include "CTelcom_OutTask.h"
+
+#include "CTelcom_OutEventHandler.h"
+#include "CTelcom_OutAppCommunication.h"
+#include "CTelcom_OutTcpipTransport.h"
+
+#include "CTelcom_QueueManager.h"
+#include "Telcom_Out_factory.h"
+
+#include "cCBS_StdFrame_Component.h"
+#include "cCBS_StdLog_Task.h"
+#include "cCBS_StdEvent_Task.h"
+
+
+CTelcom_OutTask* CTelcom_OutTask::m_Instance = 0;
+
+CTelcom_OutTask::CTelcom_OutTask()
+: m_pWatchdog_Thread(0)
+{
+  m_pDHProxyManager = new CProxyManager<DH_Telcom::iDH_Telcom>();
+}
+
+CTelcom_OutTask::~CTelcom_OutTask()
+{
+  if ( m_pWatchdog_Thread )
+  {
+    // terminates thread
+    m_pWatchdog_Thread->setTerminateThread();
+    m_pWatchdog_Thread->join();
+
+    //delete m_pWatchdog_Thread;
+  }
+
+  if (m_pOutAppCommunication)
+    delete m_pOutAppCommunication;
+}
+
+void CTelcom_OutTask::setCORBAConnections()
+{
+  //Proxy names under "DataHandler" in ini-file will be read 
+  //and object references to these proxies will be fetched 
+  //from nameservice.
+  m_pDHProxyManager->registerProxies("DataHandler");
+}
+
+void CTelcom_OutTask::ownRunDown()
+{
+  setWorking(false);
+
+  if (!getTerminateThread())
+  {
+    if ( m_pOutAppCommunication )
+    {
+      m_pOutAppCommunication->stopComm();
+    }
+    forceTerminate();
+    join();
+  }
+}
+
+CTelcom_OutTask* CTelcom_OutTask::getInstance()
+{
+  if (! m_Instance)
+  {
+    m_Instance = new CTelcom_OutTask();
+  }
+	return m_Instance;
+}
+
+bool CTelcom_OutTask::initialize()
+{
+  // must be called first
+	bool ret = CTelcom_Task::initialize();
+
+  m_pOutAppCommunication = new CTelcom_OutAppCommunication();
+  m_pOutAppCommunication->initComm();
+
+  m_evHandler = new CTelcom_OutEventHandler();
+  // set QueueManager to store telegrams and protocol to switch connection
+  m_evHandler->setQueueManager(m_pOutAppCommunication->getQueueManager());
+  m_evHandler->setProtocol(m_pOutAppCommunication->getOutProt());
+  // activate the event handler
+  cCBS_StdEvent_Task::getInstance()->registerEventHandler(m_evHandler);
+
+  return ret;
+}
+
+void CTelcom_OutTask::ownStartUp()
+{
+  setWorking(false);
+
+  if (!running())
+  {
+    run();
+    runWatchdogThread();
+  }
+}
+
+CTelcom_OutAppCommunication* CTelcom_OutTask::getpOutAppCommunication()
+{
+  return m_pOutAppCommunication;
+}
+
+void CTelcom_OutTask::performWatchDog()
+{
+  try
+  {
+    std::string ConnectInfo = m_pOutAppCommunication->getOutProt()->getTransport()->getConnectInfo();
+
+    if ( !m_WatchdogType.empty() && !ConnectInfo.empty()  )
+    {
+      // not working because ini file wachtdogtime is not set
+      //TCMessage tofillWdMsg;
+
+      //m_pOutAppCommunication->getOutProt()->doMakeWatchdog(tofillWdMsg);
+      //m_pOutAppCommunication->getOutProt()->doSendWatchdog(tofillWdMsg);
+
+      // if more than one connection (redundant CPUs)
+      // check which is actual
+
+      std::string Message;
+
+      std::vector<std::string>::iterator it ;
+      for ( it = m_UnitNoList.begin() ; it != m_UnitNoList.end() ; ++it)
+      {
+        std::string UnitNo = (*it);
+
+        CEventMessage evMessage;
+        evMessage.setMessage(m_WatchdogType);
+        evMessage.setSender("");
+        evMessage.setPlantID(UnitNo);
+
+        
+        Message = "Making a watchdog message for plant unit " + UnitNo + "...";
+
+        if ( !m_evHandler->handleEvent(evMessage) )
+        {
+          Message += "failed";
+        }
+      }
+
+      cCBS_StdLog_Task::getInstance()->log(Message,2);
+    }
+  }
+  catch (...)
+  {
+    cCBS_StdLog_Task::getInstance()->log("CTelcom_OutTask::performWatchDog... sending of a Watch Dog failed.", 1);
+  }
+}
+
+void CTelcom_OutTask::performWorkingStep()
+{
+  if (m_pOutAppCommunication)
+  {
+    m_pOutAppCommunication->startComm();
+    // Here if something is wrong in Telcom Communication.
+    cCBS_StdLog_Task::getInstance()->log("performWorkingStep: Trying to re-establish", 3);
+  }
+  Sleep (10000);
+}
+
+void CTelcom_OutTask::getOwnStateDetails(CORBA::String_out details)
+{
+  std::stringstream msg;
+ /* CORBA::String_var baseDetails;*///ffra31102018
+  std::string baseDetails;
+  cCBS_StdFrame_Task::getOwnStateDetails(baseDetails);
+
+  if (m_pOutAppCommunication)
+  {
+    msg << baseDetails << std::endl;
+
+    std::string status;
+    if (m_pOutAppCommunication->getStatus(status))
+    {
+      msg << "Current status: " << status;
+    }
+    else
+    {
+      msg << "Current status not available: " << status;
+    }
+    details = CORBA::string_dup(msg.str().c_str());
+  }
+}
+
+void CTelcom_OutTask::runWatchdogThread()
+{
+  // if time > 0 is set in ini file, control is active
+  long WatchdogTime = 0; 
+
+  // first check general entries 
+  // usable value is at least 10 secs
+  cCBS_StdInitBase::getInstance()->replaceWithEntry("WatchdogThread","WatchdogTime",WatchdogTime);
+
+  // overwrite with task specific entries 
+  std::string TaskName = getTaskName();
+  cCBS_StdInitBase::getInstance()->replaceWithEntry(getTaskName(),"WatchdogTime",WatchdogTime);
+
+  WatchdogTime *= 1000;
+
+  cCBS_StdInitBase::getInstance()->replaceWithEntry("WatchdogThread","UnitNo",m_UnitNoList);
+
+  if ( m_UnitNoList.empty() )
+  {
+    m_UnitNoList.push_back("1");
+  }
+
+  m_WatchdogType = "";
+  cCBS_StdInitBase::getInstance()->replaceWithEntry("WatchdogThread","WatchdogType",m_WatchdogType);
+
+  if ( !m_WatchdogType.empty() && WatchdogTime > 0 && ! m_pWatchdog_Thread  )
+  {
+    std::stringstream Message;
+
+    Message << "Starting watchdog thread for Task " 
+            << TaskName 
+            << " using watchdog time " 
+            << WatchdogTime 
+            << " (msecs) ";
+    
+    log(Message.str(),3);
+
+    m_pWatchdog_Thread = new CTelcom_OutTask::CTelcom_OutTask_Watchdog_Thread(this,WatchdogTime);
+    m_pWatchdog_Thread->setFreeOnTerminate(true);
+    m_pWatchdog_Thread->run();
+  }
+  else
+  {
+    cCBS_StdLog_Task::getInstance()->log("CTelcom_OutTask::runWatchdogThread(). The watchdog from task not used.",3);
+  }
+}
+
+// ******************************************************************
+// ******************************************************************
+// Thread handling
+// ******************************************************************
+// ******************************************************************
+
+CTelcom_OutTask::CTelcom_OutTask_Watchdog_Thread::CTelcom_OutTask_Watchdog_Thread(CTelcom_OutTask* pTask , long WatchdogTime)
+: m_WatchdogTime(WatchdogTime)
+, m_pTask(pTask)
+{
+}
+
+CTelcom_OutTask::CTelcom_OutTask_Watchdog_Thread::~CTelcom_OutTask_Watchdog_Thread()
+{
+}
+
+void CTelcom_OutTask::CTelcom_OutTask_Watchdog_Thread::work()
+{
+  try
+  {
+    long SleepTime = 0;
+    while( !getTerminateThread() )
+    {
+      if ( SleepTime >= m_WatchdogTime )
+      {
+        m_pTask->performWatchDog();
+        SleepTime = 0;
+      }
+      sleep(100);
+      SleepTime = SleepTime + 100;
+    }
+  }
+  catch(...)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,"","CTelcom_OutTask::CTelcom_OutTask_Watchdog_Thread::work()","performing Working Step");
+  }
+}
+
+void CTelcom_OutTask::CTelcom_OutTask_Watchdog_Thread::terminate()
+{
+  setTerminateThread();
+}

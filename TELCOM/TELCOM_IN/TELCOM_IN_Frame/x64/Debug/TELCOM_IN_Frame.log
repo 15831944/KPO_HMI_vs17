@@ -1,0 +1,423 @@
+﻿Build started 8/10/2018 18:15:49.
+     1>Project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" on node 4 (Build target(s)).
+     1>Building with tools version "15.0".
+       Target "EnableIntermediateOutputPathMismatchWarning" skipped, due to false condition; ('$(RestoreProjectStyle)' == 'PackageReference') was evaluated as ('' == 'PackageReference').
+     1>Target "_CheckForInvalidConfigurationAndPlatform" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "SetTelemetryEnvironmentVariables" depends on it):
+       Task "Error" skipped, due to false condition; ( '$(_InvalidConfigurationError)' == 'true' ) was evaluated as ( '' == 'true' ).
+       Task "Warning" skipped, due to false condition; ( '$(_InvalidConfigurationWarning)' == 'true' ) was evaluated as ( '' == 'true' ).
+       Task "Message"
+         Configuration=Debug
+       Done executing task "Message".
+       Task "Message"
+         Platform=x64
+       Done executing task "Message".
+       Task "Error" skipped, due to false condition; ('$(OutDir)' != '' and !HasTrailingSlash('$(OutDir)')) was evaluated as ('X:\SMC\source\XPACT_SMC_BUILD\x64\Debug\' != '' and !HasTrailingSlash('X:\SMC\source\XPACT_SMC_BUILD\x64\Debug\')).
+       Task "Error" skipped, due to false condition; ('$(BaseIntermediateOutputPath)' != '' and !HasTrailingSlash('$(BaseIntermediateOutputPath)')) was evaluated as ('obj\' != '' and !HasTrailingSlash('obj\')).
+       Task "Error" skipped, due to false condition; ('$(IntermediateOutputPath)' != '' and !HasTrailingSlash('$(IntermediateOutputPath)')) was evaluated as ('x64\Debug\' != '' and !HasTrailingSlash('x64\Debug\')).
+       Task "Error" skipped, due to false condition; ( '$(_InitialMSBuildProjectExtensionsPath)' != '' And '$(MSBuildProjectExtensionsPath)' != '$(_InitialMSBuildProjectExtensionsPath)' ) was evaluated as ( 'X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\obj\' != '' And 'X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\obj\' != 'X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\obj\' ).
+       Task "Warning" skipped, due to false condition; ( '$(EnableBaseIntermediateOutputPathMismatchWarning)' == 'true' And '$(_InitialBaseIntermediateOutputPath)' != '$(BaseIntermediateOutputPath)' And '$(BaseIntermediateOutputPath)' != '$(MSBuildProjectExtensionsPath)' ) was evaluated as ( '' == 'true' And 'obj\' != 'obj\' And 'obj\' != 'X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\obj\' ).
+     1>Done building target "_CheckForInvalidConfigurationAndPlatform" in project "TELCOM_IN_Frame.vcxproj".
+       Target "_CheckForInvalidConfigurationAndPlatform" skipped. Previously built successfully.
+     1>Target "SetTelemetryEnvironmentVariables" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Cpp.DesignTime.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "Build" depends on it):
+       Using "SetEnv" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "SetEnv"
+         VSTEL_SolutionSessionID={9A5FB50D-7423-4F1D-AF48-24E610182833}
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         VSTEL_CurrentSolutionBuildID=456006226
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         VSTEL_ProjectID={3DD3C441-6445-42BC-B9B7-2FA61B89D14E}
+       Done executing task "SetEnv".
+     1>Done building target "SetTelemetryEnvironmentVariables" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "_PrepareForBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "Build" depends on it):
+       Task "CreateItem" skipped, due to false condition; ('%(CustomBuild.IncludeFileToTool)'!='') was evaluated as (''!='').
+     1>Done building target "_PrepareForBuild" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "_PrepareForReferenceResolution" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveReferences" depends on it):
+       Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
+     1>Done building target "_PrepareForReferenceResolution" in project "TELCOM_IN_Frame.vcxproj".
+       Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_dynSK.cpp;..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_s.cpp;CTelcom_InAppCommunication.cpp;CTelcom_InDbWriterTransport.cpp;CTelcom_InMsgTypeTranslator.cpp;CTelcom_InOracleTransport.cpp;CTelcom_InProt.cpp;CTelcom_InTask.cpp;CTelcom_InTcpipTransport.cpp;iData_Provider_dynSK.cpp;iData_Provider_s.cpp;iDH_Telcom_dynSK.cpp;iDH_Telcom_s.cpp;Telcom_In.cpp;Telcom_In_dynSK.cpp;Telcom_In_factory.cpp;Telcom_In_s.cpp'!='' and 'false'=='true' and '' != 'false').
+     1>Target "BeforeResolveReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveReferences" depends on it):
+     1>Done building target "BeforeResolveReferences" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "AssignProjectConfiguration" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveReferences" depends on it):
+       Task "AssignProjectConfiguration"
+         Project reference "..\..\TELCOM_GEN\TELCOM_GEN.vcxproj" has been assigned the "Debug|x64" configuration.
+       Done executing task "AssignProjectConfiguration".
+     1>Done building target "AssignProjectConfiguration" in project "TELCOM_IN_Frame.vcxproj".
+       Target "AssignProjectConfiguration" skipped. Previously built successfully.
+     1>Target "_SplitProjectReferencesByFileExistence" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "PrepareProjectReferences" depends on it):
+       Using "ResolveNonMSBuildProjectOutput" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "ResolveNonMSBuildProjectOutput"
+         Resolving project reference "..\..\TELCOM_GEN\TELCOM_GEN.vcxproj".
+         Project reference "..\..\TELCOM_GEN\TELCOM_GEN.vcxproj" has not been resolved.
+       Done executing task "ResolveNonMSBuildProjectOutput".
+     1>Done building target "_SplitProjectReferencesByFileExistence" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "_GetProjectReferenceTargetFrameworkProperties" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "PrepareProjectReferences" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.SkipGetTargetFrameworkProperties)' != 'true') was evaluated as ('true' != 'true').
+       Task "GetReferenceNearestTargetFrameworkTask" skipped, due to false condition; ('@(_ProjectReferenceTargetFrameworkPossibilities->Count())' != '0' and '$(ReferringTargetFrameworkForProjectReferences)' != '') was evaluated as ('0' != '0' and '.NETFramework,Version=v4.0' != '').
+     1>Done building target "_GetProjectReferenceTargetFrameworkProperties" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "PrepareProjectReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveProjectReferences" depends on it):
+     1>Done building target "PrepareProjectReferences" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "_RemoveNameMetadataFromProjectReferenceItems" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveProjectReferences" depends on it):
+     1>Done building target "_RemoveNameMetadataFromProjectReferenceItems" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "ResolveProjectReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveReferences" depends on it):
+       Task "MSBuild"
+         Global Properties:
+           Configuration=Debug
+           Platform=x64
+     1>Project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (1) is building "X:\SMC\source\TELCOM\TELCOM_GEN\TELCOM_GEN.vcxproj" (2) on node 2 (GetTargetPath target(s)).
+     2>Building with tools version "15.0".
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "GetResolvedWinMD" skipped. Previously built successfully.
+     2>Target "GetTargetPath" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_GEN\TELCOM_GEN.vcxproj" (entry point):
+     2>Done building target "GetTargetPath" in project "TELCOM_GEN.vcxproj".
+     2>Done Building Project "X:\SMC\source\TELCOM\TELCOM_GEN\TELCOM_GEN.vcxproj" (GetTargetPath target(s)) -- FAILED.
+     1>Done executing task "MSBuild".
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and ('$(BuildingInsideVisualStudio)' == 'true' or '$(BuildProjectReferences)' != 'true') and '$(VisualStudioVersion)' == '10.0' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('true' == 'true' and '..\..\TELCOM_GEN\TELCOM_GEN.vcxproj' != '' and ('true' == 'true' or 'true' != 'true') and '15.0' == '10.0' and '..\..\TELCOM_GEN\TELCOM_GEN.vcxproj' != '').
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '$(BuildingInsideVisualStudio)' != 'true' and '$(BuildProjectReferences)' == 'true' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('true' == 'true' and '..\..\TELCOM_GEN\TELCOM_GEN.vcxproj' != '' and 'true' != 'true' and 'true' == 'true' and '..\..\TELCOM_GEN\TELCOM_GEN.vcxproj' != '').
+       Task "MSBuild"
+         Global Properties:
+           Configuration=Debug
+           Platform=x64
+     1>Project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (1) is building "X:\SMC\source\TELCOM\TELCOM_GEN\TELCOM_GEN.vcxproj" (2:2) on node 2 (GetNativeManifest target(s)).
+   2:2>Building with tools version "15.0".
+   2:2>Target "GetNativeManifest" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\TELCOM\TELCOM_GEN\TELCOM_GEN.vcxproj" (entry point):
+   2:2>Done building target "GetNativeManifest" in project "TELCOM_GEN.vcxproj".
+   2:2>Done Building Project "X:\SMC\source\TELCOM\TELCOM_GEN\TELCOM_GEN.vcxproj" (GetNativeManifest target(s)) -- FAILED.
+     1>Done executing task "MSBuild".
+       Task "Warning" skipped, due to false condition; ('@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceNonexistent)' != '') was evaluated as ('..\..\TELCOM_GEN\TELCOM_GEN.vcxproj' != '' and '' != '').
+     1>Done building target "ResolveProjectReferences" in project "TELCOM_IN_Frame.vcxproj".
+       Target "FindInvalidProjectReferences" skipped, due to false condition; ('$(FindInvalidProjectReferences)' == 'true') was evaluated as ('' == 'true').
+       Target "ResolveNativeReferences" skipped, due to false condition; ('@(NativeReference)'!='') was evaluated as (''!='').
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "ResolveProjectReferences" skipped. Previously built successfully.
+       Target "FindInvalidProjectReferences" skipped, due to false condition; ('$(FindInvalidProjectReferences)' == 'true') was evaluated as ('' == 'true').
+     1>Target "GetFrameworkPaths" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.NETFramework.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+     1>Done building target "GetFrameworkPaths" in project "TELCOM_IN_Frame.vcxproj".
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "GetWinFXPath" skipped, due to false condition; (('@(Page)' != '' or '@(ApplicationDefinition)' != '' or '@(Resource)' != '') and ('$(GetWinFXNativePath)' != '' or '$(GetWinFXWoWPath)' != '' )) was evaluated as (('' != '' or '' != '' or '' != '') and ('' != '' or '' != '' )).
+       Target "GetFrameworkPaths" skipped. Previously built successfully.
+     1>Target "GetReferenceAssemblyPaths" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "GetReferenceAssemblyPaths" skipped, due to false condition; ('$(TargetFrameworkMoniker)' != '' and ('$(_TargetFrameworkDirectories)' == '' or '$(_FullFrameworkReferenceAssemblyPaths)' == '')) was evaluated as ('' != '' and ('C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0' == '' or 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0' == '')).
+     1>Done building target "GetReferenceAssemblyPaths" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "SetBuildDefaultEnvironmentVariables" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Current.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "SetEnv"
+         PATH=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86;C:\Program Files (x86)\Windows Kits\10\bin\10.0.17134.0\x86;;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\tools;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\ide;C:\Program Files (x86)\HTML Help Workshop;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin;C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\;;D:\Oracle\product\12.1.0\client_1\bin;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Common Files\SEAL Systems\Lib\;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\WINDOWS\CCM;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Microsoft SQL Server Migration Assistant for Oracle\bin\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Bin\;C:\Program Files\Java\jdk1.8.0_151\bin;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;c:\Program Files\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files\Microsoft SQL Server\110\DTS\Binn\;c:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;c:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\GitExtensions\;X:\SMC\packages\CBS\bin;X:\SMC\packages\omniORB\bin\x64;C:\Program Files (x86)\Enterprise Vault\EVClient\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Program Files (x86)\IncrediBuild;C:\Users\ffra\AppData\Local\Programs\Git\cmd;C:\oraclexe\app\oracle\product\11.2.0\server\bin;D:\Oracle\product\11.2.0\client_1\BIN;C:\Program Files (x86)\Google\Chrome\Application;C:\Program Files\Microsoft VS Code\bin;
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         LIB=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\lib\x64;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\atlmfc\lib\x64;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\VS\lib\x64;;C:\Program Files (x86)\Windows Kits\10\lib\10.0.17134.0\ucrt\x64;;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\VS\UnitTest\lib;C:\Program Files (x86)\Windows Kits\10\lib\10.0.17134.0\um\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\lib\um\x64;;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\Lib\um\x64
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         LIBPATH=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\atlmfc\lib\x64;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\lib\x64;
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\include;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\atlmfc\include;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\VS\include;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\ucrt;;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\VS\UnitTest\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\Include\um;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\Include\um;
+       Done executing task "SetEnv".
+     1>Done building target "SetBuildDefaultEnvironmentVariables" in project "TELCOM_IN_Frame.vcxproj".
+       Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '' and '$(DesignTimeBuild)' != 'true') was evaluated as ('' != '' and '' != 'true').
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+     1>Target "GetResolvedWinMD" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "PrepareForBuild" depends on it):
+     1>Done building target "GetResolvedWinMD" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "PlatformPrepareForBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Platform.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('$(_Error64bitToolsNotInstalled)' == 'true') was evaluated as ('' == 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == '') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == '').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v110') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == 'v110').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v100') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == 'v100').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v90') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == 'v90').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' != 'v90' and '$(PlatformToolset)' != 'v100' and '$(PlatformToolset)' != 'v110') was evaluated as (''!='true' and 'true' != 'true' and 'v141' != 'v90' and 'v141' != 'v100' and 'v141' != 'v110').
+     1>Done building target "PlatformPrepareForBuild" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "_CheckWindowsSDKInstalled" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Cpp.WindowsSDK.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('$(WindowsSDKInstalled)' != 'true') was evaluated as ('true' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(PlatformShortName)' == 'ARM' and '$(WindowsAppContainer)' != 'true' and '$(WindowsSDKDesktopARMSupport)' != 'true') was evaluated as ('x64' == 'ARM' and 'false' != 'true' and '' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(PlatformShortName)' == 'ARM64' and '$(WindowsAppContainer)' != 'true' and '$(WindowsSDKDesktopARM64Support)' != 'true') was evaluated as ('x64' == 'ARM64' and 'false' != 'true' and '' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(WindowsAppContainer)' != 'true' and '$(WindowsSDK_Desktop_Support)' != true) was evaluated as ('false' != 'true' and 'true' != true).
+     1>Done building target "_CheckWindowsSDKInstalled" in project "TELCOM_IN_Frame.vcxproj".
+       Target "GetFrameworkPaths" skipped. Previously built successfully.
+       Target "GetReferenceAssemblyPaths" skipped. Previously built successfully.
+       Target "AssignLinkMetadata" skipped, due to false condition; ( '$(SynthesizeLinkMetadata)' == 'true' ) was evaluated as ( '' == 'true' ).
+     1>Target "SetCABuildNativeEnvironmentVariables" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\Microsoft\VisualStudio\v15.0\CodeAnalysis\Microsoft.CodeAnalysis.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "SetEnv"
+         CAExcludePath=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\atlmfc\include;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\ucrt;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\Include\um;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\Include\um;
+       Done executing task "SetEnv".
+     1>Done building target "SetCABuildNativeEnvironmentVariables" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "PrepareForBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)' != 'true' and '$(ConfigurationPlatformExists)' != 'true') was evaluated as ('' != 'true' and 'true' != 'true').
+       Task "MakeDir"
+       Done executing task "MakeDir".
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(WindowsAppContainer)'=='true' and '$(ConfigurationType)'!='Application' and '$(ConfigurationType)'!='DynamicLibrary' and '$(ConfigurationType)'!='StaticLibrary') was evaluated as (''!='true' and 'false'=='true' and 'StaticLibrary'!='Application' and 'StaticLibrary'!='DynamicLibrary' and 'StaticLibrary'!='StaticLibrary').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(VCToolsInstallDir)'=='' and '$(UseEnv)' != 'true' and ('$(TargetFrameworkVersion)'=='v3.5' or '$(TargetFrameworkVersion)'=='v3.0' or '$(TargetFrameworkVersion)'=='v2.0' )) was evaluated as (''!='true' and 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\'=='' and '' != 'true' and ('v4.0'=='v3.5' or 'v4.0'=='v3.0' or 'v4.0'=='v2.0' )).
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(VCToolsInstallDir)'=='' and '$(UseEnv)' != 'true' and '$(PlatformToolset)'=='v90') was evaluated as (''!='true' and 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\'=='' and '' != 'true' and 'v141'=='v90').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(VCToolsInstallDir)'=='' and '$(UseEnv)' != 'true') was evaluated as (''!='true' and 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\'=='' and '' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(WindowsSDKDir)'=='' and '$(UseEnv)' != 'true') was evaluated as (''!='true' and 'C:\Program Files (x86)\Windows Kits\10\'=='' and '' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(IntDirTrailingSlashWarning)'=='true') was evaluated as (''!='true' and ''=='true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(OutDirTrailingSlashWarning)'=='true') was evaluated as (''!='true' and ''=='true').
+       Task "VCMessage" skipped, due to false condition; ('%(CompatibilityIssues.Identity)' != '' and '$(DesignTimeBuild)'!='true') was evaluated as ('' != '' and ''!='true').
+       Task "VCMessage" skipped, due to false condition; ('$(IgnoreWarnIntDirSharingDetected)' != 'true' and '$(IntDirSharingDetected)' == 'true') was evaluated as ('' != 'true' and '' == 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(IgnoreWarnIntDirInTempDetected)' != 'true' and ('$(_IntDirFullpath.StartsWith($(Tmp), true, null))' == 'true' or '$(_IntDirFullpath.StartsWith($(Temp), true, null))' == 'true' or '$(_OutDirFullpath.StartsWith($(Tmp), true, null))' == 'true' or '$(_OutDirFullpath.StartsWith($(Temp), true, null))' == 'true')) was evaluated as (''!='true' and '' != 'true' and ('False' == 'true' or 'False' == 'true' or 'False' == 'true' or 'False' == 'true')).
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)' != 'true' and '$(SpectreMitigation)' != '' and '$(SpectreMitigation)' != 'false' and (('$(_VC_Target_Library_Platform)' == 'OneCore' and !Exists('$(VC_LibraryPath_VC_x86_OneCore)')) or ('$(_VC_Target_Library_Platform)' == 'Desktop' and !Exists('$(VC_LibraryPath_VC_x86_Desktop)')))) was evaluated as ('' != 'true' and 'false' != '' and 'false' != 'false' and (('Desktop' == 'OneCore' and !Exists('C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\lib\onecore\x86')) or ('Desktop' == 'Desktop' and !Exists('C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\lib\x86')))).
+       Task "MakeDir"
+         Creating directory "x64\Debug\TELCOM_IN_Frame.tlog\".
+       Done executing task "MakeDir".
+     1>Done building target "PrepareForBuild" in project "TELCOM_IN_Frame.vcxproj".
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_dynSK.cpp;..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_s.cpp;CTelcom_InAppCommunication.cpp;CTelcom_InDbWriterTransport.cpp;CTelcom_InMsgTypeTranslator.cpp;CTelcom_InOracleTransport.cpp;CTelcom_InProt.cpp;CTelcom_InTask.cpp;CTelcom_InTcpipTransport.cpp;iData_Provider_dynSK.cpp;iData_Provider_s.cpp;iDH_Telcom_dynSK.cpp;iDH_Telcom_s.cpp;Telcom_In.cpp;Telcom_In_dynSK.cpp;Telcom_In_factory.cpp;Telcom_In_s.cpp'!='' and 'false'=='true' and '' != 'false').
+       Target "GetInstalledSDKLocations" skipped, due to false condition; ('@(SDKReference)' != '') was evaluated as ('' != '').
+     1>Target "ResolveSDKReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "ResolveSDKReference" skipped, due to false condition; ('@(SDKReference)'!='') was evaluated as (''!='').
+     1>Done building target "ResolveSDKReferences" in project "TELCOM_IN_Frame.vcxproj".
+       Target "ResolveSDKReferences" skipped. Previously built successfully.
+     1>Target "ExpandSDKReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "GetSDKReferenceFiles" skipped, due to false condition; ('@(ResolvedSDKReference)'!='') was evaluated as (''!='').
+     1>Done building target "ExpandSDKReferences" in project "TELCOM_IN_Frame.vcxproj".
+       Target "ResolveNuGetPackageAssets" skipped, due to false condition; ('$(ResolveNuGetPackages)' == 'true' and exists('$(ProjectLockFile)')) was evaluated as ('true' == 'true' and exists('obj\project.assets.json')).
+       Target "ImplicitlyExpandNETStandardFacades" skipped, due to false condition; ('$(ImplicitlyExpandNETStandardFacades)' == 'true') was evaluated as ('' == 'true').
+       Target "GetReferenceAssemblyPaths" skipped. Previously built successfully.
+       Target "ImplicitlyExpandNETStandardFacades" skipped, due to false condition; ('$(ImplicitlyExpandNETStandardFacades)' == 'true') was evaluated as ('' == 'true').
+     1>Target "_HandlePackageFileConflicts" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\Microsoft.NET.Build.Extensions.ConflictResolution.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Using "ResolvePackageFileConflicts" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\\tools\net46\Microsoft.NET.Build.Extensions.Tasks.dll".
+       Task "ResolvePackageFileConflicts"
+       Done executing task "ResolvePackageFileConflicts".
+     1>Done building target "_HandlePackageFileConflicts" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "ResolveAssemblyReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveReferences" depends on it):
+       Task "ResolveAssemblyReference" skipped, due to false condition; ('@(Reference)'!='' or '@(_ResolvedProjectReferencePaths)'!='' or '@(_ExplicitReference)' != '') was evaluated as (''!='' or ''!='' or '' != '').
+     1>Done building target "ResolveAssemblyReferences" in project "TELCOM_IN_Frame.vcxproj".
+       Target "GenerateBindingRedirects" skipped, due to false condition; ('$(AutoGenerateBindingRedirects)' == 'true' and '$(GenerateBindingRedirectsOutputType)' == 'true') was evaluated as ('' == 'true' and '' == 'true').
+       Target "_RemoveZipFileSuggestedRedirect" skipped, due to false condition; ('$(_TargetFrameworkVersionWithoutV)' >= '4.7.1' And '$(AllowZipFileRedirect)' != 'true') was evaluated as ('4.0' >= '4.7.1' And '' != 'true').
+       Target "GenerateBindingRedirectsUpdateAppConfig" skipped, due to false condition; ('$(AutoGenerateBindingRedirects)' == 'true' and '$(GenerateBindingRedirectsOutputType)' == 'true' and Exists('$(_GenerateBindingRedirectsIntermediateAppConfig)')) was evaluated as ('' == 'true' and '' == 'true' and Exists('x64\Debug\TELCOM_IN_Frame_d.lib.config')).
+       Target "ResolveComReferences" skipped, due to false condition; ('@(COMReference)'!='' or '@(COMFileReference)'!='') was evaluated as (''!='' or ''!='').
+     1>Target "AfterResolveReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ResolveReferences" depends on it):
+     1>Done building target "AfterResolveReferences" in project "TELCOM_IN_Frame.vcxproj".
+       Target "ImplicitlyExpandDesignTimeFacades" skipped, due to false condition; ('$(ImplicitlyExpandDesignTimeFacades)' == 'true') was evaluated as ('' == 'true').
+       Target "ResolveTestReferences" skipped, due to false condition; ('@(Shadow)'!='') was evaluated as (''!='').
+     1>Target "ResolveReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "Build" depends on it):
+     1>Done building target "ResolveReferences" in project "TELCOM_IN_Frame.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "PrepareForBuild" skipped. Previously built successfully.
+     1>Target "InitializeBuildStatus" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "Build" depends on it):
+       Task "ReadLinesFromFile"
+       Done executing task "ReadLinesFromFile".
+       Task "WriteLinesToFile"
+       Done executing task "WriteLinesToFile".
+       Task "Touch"
+         Creating "x64\Debug\TELCOM_IN_Frame.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+       Done executing task "Touch".
+     1>Done building target "InitializeBuildStatus" in project "TELCOM_IN_Frame.vcxproj".
+       Target "PrepareProjectReferences" skipped. Previously built successfully.
+     1>Target "BuildGenerateSourcesTraverse" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "BuildGenerateSources" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '' and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '..\..\TELCOM_GEN\TELCOM_GEN.vcxproj' != '' and '..\..\TELCOM_GEN\TELCOM_GEN.vcxproj' != '' and 'true' == 'true').
+     1>Done building target "BuildGenerateSourcesTraverse" in project "TELCOM_IN_Frame.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "BeforeBuildGenerateSources" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "BeforeBuildGenerateSources" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "PreBuildEvent" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+       Task "Message" skipped, due to false condition; ('%(PreBuildEvent.Message)' != '' and '%(PreBuildEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
+       Task "Exec" skipped, due to false condition; ('%(PreBuildEvent.Command)' != '') was evaluated as ('' != '').
+     1>Done building target "PreBuildEvent" in project "TELCOM_IN_Frame.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "InitializeBuildStatus" skipped. Previously built successfully.
+       Target "SetBuildDefaultEnvironmentVariables" skipped. Previously built successfully.
+       Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '' and '$(DesignTimeBuild)' != 'true') was evaluated as ('' != '' and '' != 'true').
+     1>Target "_SelectedFiles" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "SelectCustomBuild" depends on it):
+     1>Done building target "_SelectedFiles" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "SelectCustomBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "CustomBuild" depends on it):
+     1>Done building target "SelectCustomBuild" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "ComputeCustomBuildOutput" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "CustomBuild" depends on it):
+       Task "CreateItem" skipped, due to false condition; ('%(CustomBuildOutputs.OutputItemType)'!='') was evaluated as (''!='').
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "ComputeCustomBuildOutput" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "CustomBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+       Using "GetOutOfDateItems" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "GetOutOfDateItems"
+       Done executing task "GetOutOfDateItems".
+       Task "ParallelCustomBuild" skipped, due to false condition; ('@(_ParallelCustomBuild)' != '') was evaluated as ('' != '').
+       Using "CustomBuild" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "CustomBuild"
+         All source files are not up-to-date: missing command TLog "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\x64\Debug\TELCOM_IN_Frame.tlog\custombuild.command.1.tlog".
+         set PRJDIR=X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\
+         set TELCOMFILE=X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\Telcom_In.xls
+         ..\..\Macros\generate_telcom.bat > ..\..\Macros\generate_telcom_In.log
+         X:\SMC\packages\omniORB\bin\x86_win32\omniidl -IX:\SMC\packages\CBS\include -IX:\SMC\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh X:\SMC\source\Data_Provider\iData_Provider.idl
+         X:\SMC\packages\omniORB\bin\x86_win32\omniidl -IX:\SMC\packages\CBS\include -IX:\SMC\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh X:\SMC\source\DH\DH_Telcom_Interface\iDH_Telcom.idl
+         X:\SMC\packages\omniORB\bin\x86_win32\omniidl -IX:\SMC\packages\CBS\include -IX:\SMC\packages\omniORB\IDL -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh X:\SMC\source\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf.idl
+         X:\SMC\source\Tools\TELCOM_IdlGenerator\GenerateIDL.exe X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\Telcom_In.xml X:\SMC\source\DH\DH_Telcom_Interface\Telcom_In.idl
+         X:\SMC\packages\omniORB\bin\x86_win32\omniidl -IX:\SMC\packages\CBS\include -IX:\SMC\source -bcxx -k -K -Wba -Wbs=_s.cpp -Wbd=_dynSK.cpp -Wbh=_s.hh X:\SMC\source\DH\DH_Telcom_Interface\Telcom_In.idl
+         Performing Custom Build Step on X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\Telcom_In.xls
+         Could Not Find C:\Users\ffra\AppData\Roaming\Microsoft\Office\Recent\*.xla.LNK
+         Access is denied.
+         Could Not Find C:\Program Files (x86)\Microsoft Office\Office14\XLStart\GenerateTelcomFiles.xla
+         Could Not Find X:\SMC\packages\telcom_EAI\telcom\tdl\bin\autogen.bat
+       Done executing task "CustomBuild".
+     1>Done building target "CustomBuild" in project "TELCOM_IN_Frame.vcxproj".
+       Target "FxExport" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
+       Target "FxCompile" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
+       Target "_CreateCopyFileItems" skipped, due to false condition; ('@(CopyFileToFolders)' != '') was evaluated as ('' != '').
+       Target "_SelectedFiles" skipped. Previously built successfully.
+     1>Target "CopyFileToFolders" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+       Task "GetOutOfDateItems"
+       Done executing task "GetOutOfDateItems".
+       Task "Copy" skipped, due to false condition; ('@(_OutOfDateCopyFile)' != '') was evaluated as ('' != '').
+     1>Done building target "CopyFileToFolders" in project "TELCOM_IN_Frame.vcxproj".
+       Target "Xsd" skipped, due to false condition; ('@(Xsd)' != '') was evaluated as ('' != '').
+     1>Target "_Xsd" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "_Xsd" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "MakeDirsForMidl" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_Midl" depends on it):
+       Task "Makedir"
+       Done executing task "Makedir".
+     1>Done building target "MakeDirsForMidl" in project "TELCOM_IN_Frame.vcxproj".
+       Target "Midl" skipped, due to false condition; ('@(Midl)' != '') was evaluated as ('' != '').
+       Target "FxExport" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
+       Target "FxCompile" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
+     1>Target "ComputeMIDLGeneratedCompileInputs" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_Midl" depends on it):
+     1>Done building target "ComputeMIDLGeneratedCompileInputs" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "AfterMidl" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_Midl" depends on it):
+     1>Done building target "AfterMidl" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "_Midl" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "_Midl" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "AfterBuildGenerateSources" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "AfterBuildGenerateSources" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "AfterBuildGenerateSourcesEvent" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "AfterBuildGenerateSourcesEvent" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "_BuildGenerateSourcesAction" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "BuildGenerateSources" depends on it):
+     1>Done building target "_BuildGenerateSourcesAction" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "BuildGenerateSources" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "Build" depends on it):
+     1>Done building target "BuildGenerateSources" in project "TELCOM_IN_Frame.vcxproj".
+       Target "PrepareProjectReferences" skipped. Previously built successfully.
+     1>Target "BuildCompileTraverse" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "BuildCompile" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != ''  and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '..\..\TELCOM_GEN\TELCOM_GEN.vcxproj' != '' and '..\..\TELCOM_GEN\TELCOM_GEN.vcxproj' != ''  and 'true' == 'true').
+     1>Done building target "BuildCompileTraverse" in project "TELCOM_IN_Frame.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "BeforeClCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "BeforeClCompile" in project "TELCOM_IN_Frame.vcxproj".
+       Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
+     1>Target "ComputeCLInputPDBName" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "ComputeCLInputPDBName" in project "TELCOM_IN_Frame.vcxproj".
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "ComputeReferenceCLInput" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_ClCompile" depends on it):
+       Task "WriteLinesToFile" skipped, due to false condition; (('@(_ReferenceCopyLocalPaths)'!='') and '$(DesignTimeBuild)' != 'true') was evaluated as ((''!='') and '' != 'true').
+       Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
+     1>Done building target "ComputeReferenceCLInput" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "WarnCompileDuplicatedFilename" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_ClCompile" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'BASIntrf_dynSK.cpp' != 'BASIntrf_dynSK.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'BASIntrf_s.cpp' != 'BASIntrf_s.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CTelcom_InAppCommunication.cpp' != 'CTelcom_InAppCommunication.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CTelcom_InDbWriterTransport.cpp' != 'CTelcom_InDbWriterTransport.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CTelcom_InMsgTypeTranslator.cpp' != 'CTelcom_InMsgTypeTranslator.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CTelcom_InOracleTransport.cpp' != 'CTelcom_InOracleTransport.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CTelcom_InProt.cpp' != 'CTelcom_InProt.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CTelcom_InTask.cpp' != 'CTelcom_InTask.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'CTelcom_InTcpipTransport.cpp' != 'CTelcom_InTcpipTransport.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iData_Provider_dynSK.cpp' != 'iData_Provider_dynSK.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iData_Provider_s.cpp' != 'iData_Provider_s.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iDH_Telcom_dynSK.cpp' != 'iDH_Telcom_dynSK.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'iDH_Telcom_s.cpp' != 'iDH_Telcom_s.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'Telcom_In.cpp' != 'Telcom_In.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'Telcom_In_dynSK.cpp' != 'Telcom_In_dynSK.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'Telcom_In_factory.cpp' != 'Telcom_In_factory.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'Telcom_In_s.cpp' != 'Telcom_In_s.cpp' and 'x64\Debug\' == 'x64\Debug\').
+     1>Done building target "WarnCompileDuplicatedFilename" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "FixupCLCompileOptions" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "FixupCLCompileOptions" in project "TELCOM_IN_Frame.vcxproj".
+     1>Target "MakeDirsForCl" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_ClCompile" depends on it):
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "MakeDirsForCl" in project "TELCOM_IN_Frame.vcxproj".
+       Target "_SelectedFiles" skipped. Previously built successfully.
+       Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
+       Target "ComputeCLInputPDBName" skipped. Previously built successfully.
+       Target "ComputeReferenceCLInput" skipped. Previously built successfully.
+       Target "WarnCompileDuplicatedFilename" skipped. Previously built successfully.
+       Target "FixupCLCompileOptions" skipped. Previously built successfully.
+       Target "SelectCustomBuild" skipped. Previously built successfully.
+     1>Target "SelectClCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "ClCompile" depends on it):
+     1>Done building target "SelectClCompile" in project "TELCOM_IN_Frame.vcxproj".
+       Target "GenerateTargetFrameworkMonikerAttribute" skipped, due to false condition; ('$(GenerateTargetFrameworkAttribute)' == 'true') was evaluated as ('false' == 'true').
+       Target "ManagedIncrementalBuildPreProcessDependencyGraph" skipped, due to false condition; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_dynSK.cpp;..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_s.cpp;CTelcom_InAppCommunication.cpp;CTelcom_InDbWriterTransport.cpp;CTelcom_InMsgTypeTranslator.cpp;CTelcom_InOracleTransport.cpp;CTelcom_InProt.cpp;CTelcom_InTask.cpp;CTelcom_InTcpipTransport.cpp;iData_Provider_dynSK.cpp;iData_Provider_s.cpp;iDH_Telcom_dynSK.cpp;iDH_Telcom_s.cpp;Telcom_In.cpp;Telcom_In_dynSK.cpp;Telcom_In_factory.cpp;Telcom_In_s.cpp' != '' and 'false' == 'True').
+     1>Target "ClCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (target "_ClCompile" depends on it):
+       Task "Delete"
+       Done executing task "Delete".
+       Task "CL" skipped, due to false condition; ('%(ClCompile.PrecompiledHeader)' == 'Create' and '%(ClCompile.ExcludedFromBuild)'!='true' and '%(ClCompile.CompilerIteration)' == '') was evaluated as ('' == 'Create' and ''!='true' and '' == '').
+       Using "CL" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "CL"
+         Forcing recompile of all source files due to missing PDB "x64\Debug\TELCOM_IN_Frame.pdb".
+         Environment Variables passed to tool:
+           VS_UNICODE_OUTPUT=1480
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe /c /I..\TELCOM_IN_Frame /IX:\SMC\packages\telcom_EAI\base4cpp\include /IX:\SMC\packages\telcom_EAI\eaidbtab\include /IX:\SMC\packages\telcom_EAI\eaidbtab\src\cpp\shared /IX:\SMC\packages\CBS\include /IX:\SMC\packages\CBS\include\CBS_EventLog /IX:\SMC\packages\CBS\include\CBS_FevsWrapper /IX:\SMC\packages\CBS\include\CBS_CorbaLibV2 /IX:\SMC\packages\CBS\include\CBS_CorbaLib /IX:\SMC\packages\CBS\include\CBS_Exception /IX:\SMC\packages\CBS\include\CBS_Utilities /IX:\SMC\packages\CBS\include\CBS_Utilities\CBS_Files /IX:\SMC\packages\CBS\include\CBS_Threads /IX:\SMC\packages\CBS\include\CBS_Persi\CBS_PersiLib /IX:\SMC\packages\CBS\include\CBS_Tasks /IX:\SMC\packages\CBS\include\Fries_EventService /IX:\SMC\packages\omniORB\include\Omniorb4 /IX:\SMC\packages\CBS\include\CBS_DB_Classes /IX:\SMC\packages\omniORB\include /ID:\Oracle\product\12.1.0\client_1\precomp\public /IX:\SMC\packages\telcom_EAI\telcom\include /IX:\SMC\packages\telcom_EAI\telcom\include\transport /IX:\SMC\packages\telcom_EAI\telcom\include\Tam /IX:\SMC\packages\telcom_EAI\telcom\include\TcOra /IX:\SMC\packages\telcom_EAI\telcom\INCLUDE\UTIL /I..\..\TELCOM_GEN /I..\..\..\CBS_CORBA /I..\..\..\CBS_StdFrame /I..\..\..\SMC_EventLogSystem /I..\..\..\Data_Provider /I..\..\..\SMC_Frame /ID:\Oracle\product\12.1.0\client_1\jdk\include /ID:\Oracle\product\12.1.0\client_1\jdk\include\win32 /Zi /nologo /W3 /WX- /diagnostics:classic /Od /D WIN32 /D __WIN32__ /D _DEBUG /D _WINDOWS /D _MBCS /D MSVCNEWDLL_BUG /D _OMNIORB_ /D _CRT_SECURE_NO_DEPRECATE /D __OSVERSION__ /D __x86__ /D __NT__ /D _EVENTLOG_ /D QT_THREAD_SUPPORT /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"x64\Debug\\" /Fd"x64\Debug\TELCOM_IN_Frame.pdb" /FR"x64\Debug\\" /Gd /TP /wd4290 /wd4183 /wd4786 /wd4503 /wd4018 /FC /errorReport:prompt -Zm150  ..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_dynSK.cpp ..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_s.cpp CTelcom_InAppCommunication.cpp CTelcom_InDbWriterTransport.cpp CTelcom_InMsgTypeTranslator.cpp CTelcom_InOracleTransport.cpp CTelcom_InProt.cpp CTelcom_InTask.cpp CTelcom_InTcpipTransport.cpp iData_Provider_dynSK.cpp iData_Provider_s.cpp iDH_Telcom_dynSK.cpp iDH_Telcom_s.cpp Telcom_In.cpp Telcom_In_dynSK.cpp Telcom_In_factory.cpp Telcom_In_s.cpp
+         Tracking command:
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\x64\Debug\TELCOM_IN_Frame.tlog /r "X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\CTELCOM_INAPPCOMMUNICATION.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\CTELCOM_INDBWRITERTRANSPORT.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\CTELCOM_INMSGTYPETRANSLATOR.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\CTELCOM_INORACLETRANSPORT.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\CTELCOM_INPROT.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\CTELCOM_INTASK.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\CTELCOM_INTCPIPTRANSPORT.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\IDATA_PROVIDER_DYNSK.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\IDATA_PROVIDER_S.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\IDH_TELCOM_DYNSK.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\IDH_TELCOM_S.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\TELCOM_IN.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\TELCOM_IN_DYNSK.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\TELCOM_IN_FACTORY.CPP|X:\SMC\SOURCE\TELCOM\TELCOM_IN\TELCOM_IN_FRAME\TELCOM_IN_S.CPP|X:\SMC\SOURCE\TOOLS\IBAS_SERVER\IBAS_SERVER_FRAME\BASINTRF_DYNSK.CPP|X:\SMC\SOURCE\TOOLS\IBAS_SERVER\IBAS_SERVER_FRAME\BASINTRF_S.CPP" /b MSBuildConsole_CancelEvent3c78d6273439425b837c41598e3c7665  /c "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.15.26726\bin\HostX86\x64\CL.exe"  /c /I..\TELCOM_IN_Frame /IX:\SMC\packages\telcom_EAI\base4cpp\include /IX:\SMC\packages\telcom_EAI\eaidbtab\include /IX:\SMC\packages\telcom_EAI\eaidbtab\src\cpp\shared /IX:\SMC\packages\CBS\include /IX:\SMC\packages\CBS\include\CBS_EventLog /IX:\SMC\packages\CBS\include\CBS_FevsWrapper /IX:\SMC\packages\CBS\include\CBS_CorbaLibV2 /IX:\SMC\packages\CBS\include\CBS_CorbaLib /IX:\SMC\packages\CBS\include\CBS_Exception /IX:\SMC\packages\CBS\include\CBS_Utilities /IX:\SMC\packages\CBS\include\CBS_Utilities\CBS_Files /IX:\SMC\packages\CBS\include\CBS_Threads /IX:\SMC\packages\CBS\include\CBS_Persi\CBS_PersiLib /IX:\SMC\packages\CBS\include\CBS_Tasks /IX:\SMC\packages\CBS\include\Fries_EventService /IX:\SMC\packages\omniORB\include\Omniorb4 /IX:\SMC\packages\CBS\include\CBS_DB_Classes /IX:\SMC\packages\omniORB\include /ID:\Oracle\product\12.1.0\client_1\precomp\public /IX:\SMC\packages\telcom_EAI\telcom\include /IX:\SMC\packages\telcom_EAI\telcom\include\transport /IX:\SMC\packages\telcom_EAI\telcom\include\Tam /IX:\SMC\packages\telcom_EAI\telcom\include\TcOra /IX:\SMC\packages\telcom_EAI\telcom\INCLUDE\UTIL /I..\..\TELCOM_GEN /I..\..\..\CBS_CORBA /I..\..\..\CBS_StdFrame /I..\..\..\SMC_EventLogSystem /I..\..\..\Data_Provider /I..\..\..\SMC_Frame /ID:\Oracle\product\12.1.0\client_1\jdk\include /ID:\Oracle\product\12.1.0\client_1\jdk\include\win32 /Zi /nologo /W3 /WX- /diagnostics:classic /Od /D WIN32 /D __WIN32__ /D _DEBUG /D _WINDOWS /D _MBCS /D MSVCNEWDLL_BUG /D _OMNIORB_ /D _CRT_SECURE_NO_DEPRECATE /D __OSVERSION__ /D __x86__ /D __NT__ /D _EVENTLOG_ /D QT_THREAD_SUPPORT /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"x64\Debug\\" /Fd"x64\Debug\TELCOM_IN_Frame.pdb" /FR"x64\Debug\\" /Gd /TP /wd4290 /wd4183 /wd4786 /wd4503 /wd4018 /FC /errorReport:prompt -Zm150  ..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_dynSK.cpp ..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_s.cpp CTelcom_InAppCommunication.cpp CTelcom_InDbWriterTransport.cpp CTelcom_InMsgTypeTranslator.cpp CTelcom_InOracleTransport.cpp CTelcom_InProt.cpp CTelcom_InTask.cpp CTelcom_InTcpipTransport.cpp iData_Provider_dynSK.cpp iData_Provider_s.cpp iDH_Telcom_dynSK.cpp iDH_Telcom_s.cpp Telcom_In.cpp Telcom_In_dynSK.cpp Telcom_In_factory.cpp Telcom_In_s.cpp
+         BASIntrf_dynSK.cpp
+         BASIntrf_s.cpp
+         CTelcom_InAppCommunication.cpp
+     1>x:\smc\packages\telcom_eai\base4cpp\include\bascli.h(170): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>x:\smc\source\telcom\telcom_gen\idh_telcom_s.hh(31): fatal error C1083: Cannot open include file: 'CBS_s.hh': No such file or directory
+         CTelcom_InDbWriterTransport.cpp
+     1>x:\smc\packages\telcom_eai\base4cpp\include\bascli.h(170): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         CTelcom_InMsgTypeTranslator.cpp
+     1>x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+     1>x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+     1>x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+     1>x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+         CTelcom_InOracleTransport.cpp
+     1>x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         CTelcom_InProt.cpp
+     1>x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+     1>x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+     1>x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+     1>x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+     1>x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         CTelcom_InTask.cpp
+     1>x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         CTelcom_InTcpipTransport.cpp
+     1>x:\smc\packages\telcom_eai\base4cpp\include\bascli.h(170): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         iData_Provider_dynSK.cpp
+         iData_Provider_s.cpp
+         iDH_Telcom_dynSK.cpp
+     1>x:\smc\source\telcom\telcom_in\telcom_in_frame\idh_telcom_s.hh(31): fatal error C1083: Cannot open include file: 'CBS_s.hh': No such file or directory
+         iDH_Telcom_s.cpp
+     1>x:\smc\source\telcom\telcom_in\telcom_in_frame\idh_telcom_s.hh(31): fatal error C1083: Cannot open include file: 'CBS_s.hh': No such file or directory
+         Telcom_In.cpp
+         Telcom_In_dynSK.cpp
+         Telcom_In_factory.cpp
+         Telcom_In_s.cpp
+         Generating Code...
+         The command exited with code 2.
+       Done executing task "CL" -- FAILED.
+     1>Done building target "ClCompile" in project "TELCOM_IN_Frame.vcxproj" -- FAILED.
+     1>Done Building Project "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+       "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (Build target) (1) ->
+       (ClCompile target) -> 
+         x:\smc\packages\telcom_eai\base4cpp\include\bascli.h(170): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+         x:\smc\packages\telcom_eai\base4cpp\include\bascli.h(170): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+         x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+         x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+         x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+         x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+         x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+         x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+         x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+         x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+         x:\smc\packages\telcom_eai\base4cpp\include\bascli.h(170): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+
+
+       "X:\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\TELCOM_IN_Frame.vcxproj" (Build target) (1) ->
+       (ClCompile target) -> 
+         x:\smc\source\telcom\telcom_gen\idh_telcom_s.hh(31): fatal error C1083: Cannot open include file: 'CBS_s.hh': No such file or directory
+         x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         x:\smc\source\cbs_stdframe\ccbs_stdcorba_task.h(9): fatal error C1083: Cannot open include file: 'cCBSServerTask.h': No such file or directory
+         x:\smc\source\telcom\telcom_in\telcom_in_frame\idh_telcom_s.hh(31): fatal error C1083: Cannot open include file: 'CBS_s.hh': No such file or directory
+         x:\smc\source\telcom\telcom_in\telcom_in_frame\idh_telcom_s.hh(31): fatal error C1083: Cannot open include file: 'CBS_s.hh': No such file or directory
+
+    11 Warning(s)
+    8 Error(s)
+
+Time Elapsed 00:05:09.19

@@ -1,0 +1,23 @@
+/.cvsignore/1.1/Fri Jun  7 12:07:38 2013//
+/CTelcom_OutAppCommunication.h/1.1/Fri Jun  7 12:07:38 2013/-ko/
+/CTelcom_OutDbWriterTransport.cpp/1.1/Fri Jun  7 12:07:38 2013/-ko/
+/CTelcom_OutDbWriterTransport.h/1.1/Fri Jun  7 12:07:38 2013/-ko/
+/CTelcom_OutEventHandler.cpp/1.1/Fri Jun  7 12:07:38 2013/-ko/
+/CTelcom_OutEventHandler.h/1.1/Fri Jun  7 12:07:38 2013/-ko/
+/CTelcom_OutMsgTypeTranslator.h/1.1/Fri Jun  7 12:07:38 2013/-ko/
+/CTelcom_OutProt.cpp/1.1/Fri Jun  7 12:07:38 2013/-ko/
+/CTelcom_OutProt.h/1.1/Fri Jun  7 12:07:38 2013/-ko/
+/CTelcom_OutTask.cpp/1.1/Fri Jun  7 12:07:38 2013/-ko/
+/CTelcom_OutTask.h/1.1/Fri Jun  7 12:07:38 2013/-ko/
+/CTelcom_OutTcpipTransport.cpp/1.1/Fri Jun  7 12:07:38 2013/-ko/
+/CTelcom_OutTcpipTransport.h/1.1/Fri Jun  7 12:07:38 2013/-ko/
+/HowToUseThis.txt/1.1/Fri Jun  7 12:07:38 2013/-ko/
+/TELCOM_OUT_Frame.vcxproj.filters/1.1/Fri Jun  7 12:07:39 2013/-ko/
+/UsedInterfaces.txt/1.1/Fri Jun  7 12:07:39 2013/-ko/
+/CTelcom_OutAppCommunication.cpp/1.1/Mon Aug 12 11:26:40 2013/-ko/
+/CTelcom_OutOracleTransport.h/1.1/Mon Aug 12 11:28:34 2013/-ko/
+/CTelcom_OutOracleTransport.cpp/1.1/Mon Aug 12 11:29:39 2013/-ko/
+/CTelcom_OutMsgTypeTranslator.cpp/1.2/Mon Aug 12 11:22:41 2013/-ko/
+/Telcom_Out.xls/1.3/Fri Aug 16 11:11:19 2013/-kb/
+/TELCOM_OUT_Frame.vcxproj/1.2/Fri Sep 27 11:18:43 2013/-ko/
+D

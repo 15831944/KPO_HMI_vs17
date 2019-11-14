@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{d5aba176-13f4-45c3-9cc6-028cc2eaae9c}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{ab95aec7-97ed-4dc3-9cce-5e5fb1f611eb}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{9159ada6-6be3-4d18-9253-7bc5ce6d7150}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Excel-Sheets">
+      <UniqueIdentifier>{23db2a9f-0f1d-47ac-bb1c-97509efd7a00}</UniqueIdentifier>
+      <Extensions>idl</Extensions>
+    </Filter>
+    <Filter Include="XML">
+      <UniqueIdentifier>{06b8c5ab-ae2d-478a-8e06-398c41be6b54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IDL">
+      <UniqueIdentifier>{3ed5ebbf-a30d-466e-942e-dc9a25fb45fb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CTelcom_OutAppCommunication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTelcom_OutEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTelcom_OutMsgTypeTranslator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTelcom_OutProt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTelcom_OutTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTelcom_OutTcpipTransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_Out.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_Out_factory.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iDH_Telcom_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iDH_Telcom_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iData_Provider_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iData_Provider_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_Out_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_Out_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="CTelcom_OutDbWriterTransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTelcom_OutOracleTransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CTelcom_OutAppCommunication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTelcom_OutEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTelcom_OutMsgTypeTranslator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTelcom_OutProt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTelcom_OutTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTelcom_OutTcpipTransport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Telcom_Out.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+    <ClInclude Include="Telcom_Out_factory.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+    <ClInclude Include="CTelcom_OutDbWriterTransport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTelcom_OutOracleTransport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UsedInterfaces.txt">
+      <Filter>Excel-Sheets</Filter>
+    </None>
+    <None Include="iDH_Telcom_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="iData_Provider_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="Telcom_Out_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Telcom_Out.xls">
+      <Filter>Excel-Sheets</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Telcom_Out.xml">
+      <Filter>XML</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\DH\DH_Telcom_Interface\Telcom_Out.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\DH\DH_Telcom_Interface\iDH_Telcom.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Data_Provider\iData_Provider.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

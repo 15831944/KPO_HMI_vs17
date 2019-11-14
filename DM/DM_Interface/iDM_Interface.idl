@@ -1,0 +1,29 @@
+//Source file: X:/SMC/source/DM/DM_Interface/iDM_Interface.idl
+
+#ifndef __IDM_INTERFACE_DEFINED
+#define __IDM_INTERFACE_DEFINED
+
+/* CmIdentification
+  %X% %Q% %Z% %W% */
+
+#include "SMC_Frame\iSMC_DataProvider.idl"
+#include "SMC_Frame\iEventData.idl"
+
+module DM {
+	
+	interface iDM_Interface : iSMC_DataProvider {
+	  boolean setProductFromTreatmentPos(in string TreatmentPosition, out sEventData EventData);
+	};
+	
+	/* used for assigning DM_PlantManagementInterface */
+	
+	const string PLANT = "PLANT";
+	/* used for assigning DM_ProductManagementInterface */
+	
+	const string PRODUCT = "PRODUCT";
+	/* used for assigning DM_DataManagementInterface */
+	
+	const string EVENT = "EVENT";
+};
+
+#endif

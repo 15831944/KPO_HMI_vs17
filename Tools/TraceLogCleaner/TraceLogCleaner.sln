@@ -1,0 +1,66 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TraceLogCleaner", "TraceLogCleaner.vcproj", "{3AA41FCD-7F65-4F9D-BAFF-6DCF14D90A97}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA} = {9BF0B144-3239-3CC9-A42C-BAF0926401AA}
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885} = {72925ED1-44FA-3AE5-AD4A-FF5C37F10885}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CBS_StdFrame", "..\..\CBS_StdFrame\CBS_StdFrame.vcproj", "{9BF0B144-3239-3CC9-A42C-BAF0926401AA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SMC_Frame", "..\..\SMC_Frame\SMC_Frame.vcproj", "{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8} = {FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Data_Provider", "..\..\Data_Provider\Data_Provider.vcproj", "{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 5
+		SccProjectName0 = TraceLogCleaner
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:ClearCase
+		CanCheckoutShared = true
+		SccProjectUniqueName1 = TraceLogCleaner.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\..\\CBS_StdFrame\\CBS_StdFrame.vcproj
+		SccProjectName2 = CBS_StdFrame
+		SccLocalPath2 = ..\\..\\CBS_StdFrame
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\..\\SMC_Frame\\SMC_Frame.vcproj
+		SccProjectName3 = SAK
+		SccLocalPath3 = ..\\..\\SMC_Frame
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = ..\\..\\Data_Provider\\Data_Provider.vcproj
+		SccProjectName4 = Data_Provider
+		SccLocalPath4 = ..\\..\\Data_Provider
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AA41FCD-7F65-4F9D-BAFF-6DCF14D90A97}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3AA41FCD-7F65-4F9D-BAFF-6DCF14D90A97}.Debug|Win32.Build.0 = Debug|Win32
+		{3AA41FCD-7F65-4F9D-BAFF-6DCF14D90A97}.Release|Win32.ActiveCfg = Release|Win32
+		{3AA41FCD-7F65-4F9D-BAFF-6DCF14D90A97}.Release|Win32.Build.0 = Release|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Debug|Win32.Build.0 = Debug|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Release|Win32.ActiveCfg = Release|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Release|Win32.Build.0 = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Debug|Win32.ActiveCfg = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Debug|Win32.Build.0 = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Release|Win32.ActiveCfg = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Release|Win32.Build.0 = Release|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Debug|Win32.Build.0 = Debug|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Release|Win32.ActiveCfg = Release|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

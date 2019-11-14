@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{a4827d19-1f34-4b4c-9fd7-717dec3e6f6b}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Event Log Handler">
+      <UniqueIdentifier>{9b11e4d3-7009-4091-962d-50039a5a5c50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{aa5219ff-c3e2-4f3a-af37-4f9c67f13129}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Event Log Handler">
+      <UniqueIdentifier>{ec4fafb7-c11f-42e5-81aa-2b4f9ffb5f9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{e42ae530-e00a-4a43-b4a4-459adb1e8e7a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CDM_EAFAnalysisEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFDBManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFDBManagerTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFMaterialEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFModelResultEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFModesAndAvailabilitiesEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFPlantManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFProductManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFPurposeEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFSignalsAndMeasurementsEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFTreatmentManagementEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFEventLogHandler.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFEventLogHandlerAnalysis.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFEventLogHandlerMaterial.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFEventLogHandlerModelResults.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFEventLogHandlerModesAndAvailabilities.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFEventLogHandlerPurpose.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFEventLogHandlerSignalsAndMeasurements.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_EAFEventLogHandlerTreatmentManagement.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CDM_EAFAnalysisEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFDBManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFDBManagerTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFMaterialEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFModelResultEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFModesAndAvailabilitiesEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFPlantManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFProductManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFPurposeEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFSignalsAndMeasurementsEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFTreatmentManagementEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFEventLogHandler.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFEventLogHandlerAnalysis.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFEventLogHandlerMaterial.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFEventLogHandlerModelResults.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFEventLogHandlerModesAndAvailabilities.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFEventLogHandlerPurpose.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFEventLogHandlerSignalsAndMeasurements.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_EAFEventLogHandlerTreatmentManagement.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,2391 @@
+/*        Source file: $SMCDIR/source/SMC_Frame/iSMC_DataDefinitions.idl
+        Definition of general states 
+ */
+
+#ifndef         __ISMC_DATADEFINITIONS_DEFINED
+#define         __ISMC_DATADEFINITIONS_DEFINED
+#endif
+
+/* CmIdentification
+%X% %Q% %Z% %W% */
+
+#include "SMC_Frame\iSMC_DataProvider.idl"
+
+module DATA {
+  /* ErrorCode : long */
+  const string ErrorCode = "ErrorCode";
+
+  /* ErrorDescription : string */
+  const string ErrorDescription = "ErrorDescription";
+
+  /* LadleArrivalTime : sDate */
+  const string LadleArrivalTime = "LadleArrivalTime";
+
+  /* CasterNo : long */
+  const string CasterNo = "CasterNo";
+
+  /* Casting speed : double in meter per minute */
+  const string CastSpeed = "CastSpeed";
+
+  /* Mould width : double in meter */
+  const string MouldWidth = "MouldWidth";
+
+  /* TreatmentMode : long */
+  const string TreatmentMode = "TreatmentMode";
+
+  /* MatCode : string */
+  const string MatCode = "MatCode";
+
+  /* string: L2 recipe name */
+  const string RecipeName = "RecipeName";
+
+  /* RecipeNo : long */
+  const string RecipeNo = "RecipeNo";
+
+  /* seqBatch: */
+  const string RecipeContent = "RecipeContent";
+
+  /* string: L2 recipe source */
+  const string RecipeSource = "Source";
+  /* string */
+  
+  const string RecipeTarget = "RecipeTarget";
+  /* long */
+  
+  const string RecipeStatus = "RecipeStatus";
+
+  /* RestrictionName is used if restriction are split into several groups like Scrap/Furnace/Tapping */
+  const string RestrictionName = "RestrictionName";
+
+  /* BatchId : string */
+  const string BatchId = "BatchId";
+  /* string */
+  
+  const string RecipePrio = "RecipePrio";
+  /* WasteGasConc:seqWasteGas */
+  
+  const string WasteGasConc = "WasteGasConc";
+  /* double */
+  
+  const string WasteGasFlow = "WasteGasFlow";
+  /* double */
+  
+  const string WasteGasTemp = "WasteGasTemp";
+  /* double */
+  
+  const string MeasTemp = "MeasTemp";
+  /* double */
+  
+  const string MeasO2Conc = "MeasO2Conc";
+  /* MeasCarbonConc:double */
+  
+  const string MeasCarbonConc = "MeasCarbonConc";
+  /* MeasAlConc:double */
+  
+  const string MeasAlConc = "MeasAlConc";
+  /* boolean */
+  
+  const string TempMeasReq = "TempMeasReq";
+  /* double */
+  
+  const string TempLoss = "TempLoss";
+  /* MeasHydrisConc : string */
+  
+  const string MeasHydrisConc = "MeasHydrisConc";
+  /* String */
+  
+  const string DelayCode = "DelayCode";
+  /* DelayStartDate: sDate */
+  
+  const string DelayStartDate = "DelayStartDate";
+  /* DelayEndDate: sDate */
+  
+  const string DelayEndDate = "DelayEndDate";
+  /* DelayDescription:string */
+  
+  const string DelayDescription = "DelayDescription";
+  const string DelayPlant = "DelayPlant";
+  /* SteelMeasAnalysis : seqAnalysisData */
+  
+  const string SteelMeasAnalysis = "SteelMeasAnalysis";
+  /* SlagMeasAnalysis:seqAnalysisData */
+  
+  const string SlagMeasAnalysis = "SlagMeasAnalysis";
+  /* SteelSampleTime:sDate */
+  
+  const string SteelSampleTime = "SteelSampleTime";
+  /* SlagSampleTime: sDate */
+  
+  const string SlagSampleTime = "SlagSampleTime";
+  /* Steel Sample Id for next Steel Sample taken */
+  
+  const string NextSteelSampleCode = "NextSteelSampleCode";
+  /* Slag Sample Id for next slag sample taken */
+  
+  const string NextSlagSampleCode = "NextSlagSampleCode";
+  /* SampleLocation:string
+  1 = Before Mixer
+  2 = After Mixer
+  5 = Before Charging into EAF
+  Melt shop Codes: 10-100
+  15 = EAF
+  20 = Deslagging Station EAF
+  30 = AOD
+  40 = Deslagging Station after AOD
+  50 = LF
+  60 = LTS
+  90 = CCS Tundish
+  95 = CCS after casting */
+  
+  const string SampleLocation = "SampleLocation";
+  /* SampleUsable:long
+  0 = False
+  1 = true */
+  
+  const string SampleUsable = "SampleUsable";
+  /* ClearOldSampleData:long
+  1 = delete existing Sample Data for Sample Code
+  0 = Use Sample Entries as Update of Sampe Data */
+  
+  const string ClearOldSampleData = "ClearOldSampleData";
+  /* SampleMode:long
+  used to characterized if sample has been taken automatically or manually */
+  
+  const string SampleMode = "SampleMode";
+
+  /* SampleOrigin:long
+  used to characterized if sample data are coming from LAB, operator or other systems */
+  
+  const string SampleOrigin = "SampleOrigin";
+
+  /* Actual flag for steel sample request : boolean */
+  
+  const string SteelSampleReq = "SteelSampleReq";
+  /* string */
+  
+  const string SampleId = "SampleId";
+  /* long:
+  -before process,
+  -in process,
+  -after process. */
+  
+  const string ProcessStage = "ProcessStage";
+  /* HMMeasAnalysis : seqAnalysisData */
+  
+  const string HMMeasAnalysis = "HMMeasAnalysis";
+  /* long */
+  
+  const string SampleNo = "SampleNo";
+  /* HMSampleTime: sDate */
+  
+  const string HMSampleTime = "HMSampleTime";
+  /* SampleCode : string
+  This is the full Sample Code ase used for the cusomer according customer specification
+  The SampleCode consists out of a SampleId + a SampleNo
+  
+  Comment:
+  
+  The sampleId can contain information as
+  Type of Sample (Steel,Slag,Temperature or a combination of this Types if Temp and Sample are taken simultaniosly)
+  Process Stage (e.g. Sample taken during Preparation of after Blowing
+  Plant (like AOD1,AOD2...)
+  
+  The Sample Counter is 1,2,3... */
+  
+  const string SampleCode = "SampleCode";
+  /* SampleData . seqSampleData */
+  
+  const string SampleData = "SampleData";
+  /* SampleType:long */
+  
+  const string SampleType = "SampleType";
+  /* UpdatedPurpose: sStringList */
+  
+  const string UpdatedPurpose = "UpdatedPurpose";
+  /* HeatID : string */
+  
+  const string HeatID = "HeatID";
+  /* TreatID : string */
+  
+  const string TreatID = "TreatID";
+  /* OrderId : string */
+  
+  const string OrderId = "OrderId";
+  /* DateTime : sDate */
+  
+  const string DateTime = "DateTime";
+  /* SteelGradeCode : string */
+  
+  const string SteelGradeCode = "SteelGradeCode";
+  /* ProductID : string */
+  
+  const string ProductID = "ProductID";
+  /* TreatNo : long */
+  
+  const string TreatNo = "TreatNo";
+  /* PlantId : string */
+  
+  const string PlantID = "PlantId";
+  /* HeatCyclCalcNo:long
+  Number of current Cyclcal Calculation */
+  
+  const string HeatCyclCalcNo = "HeatCyclCalcNo";
+  /* HeatPredCalcNo:long
+  Number of current prediction */
+  
+  const string HeatPredCalcNo = "HeatPredCalcNo";
+  /* EventNameLastCyclCalc:string
+  EventName which forced the last cyclical calc */
+  
+  const string EventNameLastCyclCalc = "EventNameLastCyclCalc";
+  /* EventNameLastPredCalc:string
+  EventName which forces the last prediction */
+  
+  const string EventNameLastPredCalc = "EventNameLastPredCalc";
+  /* PhaseEndDateTime:sDate */
+  
+  const string PhaseEndDateTime = "PhaseEndDateTime";
+  /* Status : long */
+  
+  const string Status = "Status";
+  /* external heat id */
+  
+  const string CustHeatID = "CustHeatID";
+  /* external treat id */
+  
+  const string CustTreatID = "CustTreatID";
+  /* Indicates type of steel grade change inserted, deleted, changed */
+  
+  const string ChangeType = "ChangeType";
+  /* temporary use by djx */
+  
+  const string L3HeatId = "L3HeatId";
+  /* temporary use by djx */
+  
+  const string L3OrderId = "L3OrderId";
+  /* temporary use by djx */
+  
+  const string ResponseType = "ResponseType";
+  /* temporary use by djx */
+  
+  const string AcknowCode = "AcknowCode";
+  const string BurnerStatus = "BurnerStatus";
+  /* UserCode : string */
+  
+  const string UserCode = "UserCode";
+  /* CoolingWaterData: seqCoolWaterData */
+  
+  const string CoolingWaterData = "CoolingWaterData";
+  /* seqMaterials */
+  
+  const string MatAvailable = "MatAvailable";
+  /* bool : true if all materials are affected */
+  
+  const string AllMaterials = "AllMaterials";
+  /* seqComputerModes: Availability from L2 */
+  
+  const string ComputerModeAvail = "ComputerModeAvail";
+  /* seqComputerModes: computer modes used in L1 */
+  
+  const string ComputerModes = "ComputerModes";
+  /* double: calculated model temperature*/
+	
+	const string TempAct = "TempAct";
+  /* double */
+  
+  const string TempAim = "TempAim";
+  /* TreatStartAim:sDate */
+  
+  const string TreatStartAim = "TreatStartAim";
+  /* TreatEndAim:sDate */
+  
+  const string TreatEndAim = "TreatEndAim";
+  /* double: Aim heel weight after tapping */
+  
+  const string HotHeelWgtAim = "HotHeelWgtAim";
+  /* double: updated aim steel weight */
+  
+  const string SteelWgtAim = "SteelWgtAim";
+  /* long: DEF_GANTRY_POS::Maintenance/Position1/Position2
+
+  Value = Maintenance Gantry in maintenance position
+  Value = Position1   Gantry in ladle car position 1
+  Value = Position2   Gantry in ladle car position 2 */
+  
+  const string GantryPosIn = "GantryPosIn";
+  /* long: DEF_GEN_STATES::Yes/No
+  
+  Value = Yes Inhibit
+  Value = No  Release */
+  
+  const string ElecInhibit = "ElecInhibit";
+
+  /* long:DEF_GEN_STATES::Yes/No
+  
+  Value = Yes Roof Position Up
+  Value = No  Roof Position Down */
+  
+  const string RoofPosUp = "RoofPosUp";
+  /* long:DEF_GEN_STATES::Yes/No
+  
+  Value = Yes Slag Door Open
+  Value = No  Slag Door Closed */
+  
+  const string SlagDoorOpen = "SlagDoorOpen";
+  /* long */
+  
+  const string VoltTapNo = "VoltTapNo";
+  /* DEF_GEN_STATES::OperationPosition/OutOfOperationPosition */
+  
+  const string ElecPosUp = "ElecPosUp";
+  /* long */
+  
+  const string ElectrodRegCurve = "ElectrodRegCurve";
+  /* long: DEF_GEN_STATES::On/Off */
+  
+  const string FurnBreakOn = "FurnBreakOn";
+  /* double: Power in kw */
+	
+  const string ElecPower = "ElecPower";
+  /* long: DEF_GEN_STATES::On/Off */
+  
+  const string PowerOn = "PowerOn";
+  /* long: DEF_GEN_STATES::On/Off */
+  
+  const string FurnTapChangOn = "FurnTapChangOn";
+  /* double: Electrical Consumption in kwh */
+  
+  const string ElecCons = "ElecCons";
+  /* double: Electrical Consumption in kwh */
+  
+  const string ElecConsLast = "ElecConsLast";
+  /* ElecPullReq:long */
+  
+  const string ElecPullReq = "ElecPullReq";
+  /* ElecInhibitReq:long */
+  
+  const string ElecInhibitReq = "ElecInhibitReq";
+  /* FurnBreakOffRequest:long
+  1 = Furnace Breaker off request
+  0 = Furnace Breaker off not requested */
+  
+  const string FurnBreakOffRequest = "FurnBreakOffRequest";
+  /* RemElecEgy:double */
+  
+  const string TotalRemElecEgy = "TotalRemElecEgy";
+  /* PowerOnDur:double
+  Duration in Minutes */
+  
+  const string PowerOnDur = "PowerOnDur";
+  /* PowerOffDur:double
+  Duration in Minutes */
+  
+  const string PowerOffDur = "PowerOffDur";
+  /* VoltTapNoAim:long */
+  
+  const string VoltTapNoAim = "VoltTapNoAim";
+  /* ElectrodRegCurveAim:long */
+  
+  const string ElectrodRegCurveAim = "ElectrodRegCurveAim";
+  /* TotalRemElecDur:double
+  Duration in minutes */
+  
+  const string TotalRemElecDur = "TotalRemElecDur";
+  /* Last Electrical Consumption in kwh
+  ElecConsPhaseStart : double */
+  
+  const string ElecConsPhaseStart = "ElecConsPhaseStart";
+  /* Last Electrical Consumption in kwh
+  ElecConsPhase : double */
+  
+  const string ElecConsPhase = "ElecConsPhase";
+  /* ElecPhaseData:seqElecPhaseData */
+  
+  const string ElecPhaseData = "ElecPhaseData";
+  /* ElecPhaseNo:long */
+  
+  const string ElecPhaseNo = "ElecPhaseNo";
+  /* ElecPhaseNameModel:string */
+	
+	const string ElecPhaseNameModel = "ElecPhaseNameModel";
+  /* ElecPhaseName:string */
+  
+  const string ElecPhaseName = "ElecPhaseName";
+  /* long */
+  
+  const string ReactTapNoAim = "ReactTapNoAim";
+  /* long */
+  
+  const string ReactTapNo = "ReactTapNo";
+  /* SlagQuality : long */
+  
+  const string SlagQuality = "SlagQuality";
+  /* PowerOnTime : sDate */
+  
+  const string PowerOnTime = "PowerOnTime";
+  /* PowerOnElecCons : double */
+  
+  const string PowerOnElecCons = "PowerOnElecCons";
+  /* PowerOffTime : sDate */
+  
+  const string PowerOffTime = "PowerOffTime";
+  /* Date: sDate */
+  
+  const string DeslagEndTime = "DeslagEndTime";
+  /* Date: sDate */
+  
+  const string DeslagStartTime = "DeslagStartTime";
+  /* LadleNo: long */
+  
+  const string LadleNo = "LadleNo";
+  /* LadleDeslagged:long
+  1 = Deslagged
+  0 = Not deslaged */
+  
+  const string LadleDeslagged = "LadleDeslagged";
+  /* LadleStatus : string */
+  
+  const string LadleStatus = "LadleStatus";
+  /* Location in plant: string */
+  
+  const string LadleLocation = "LadleLocation";
+  /* LadleType : string */
+  
+  const string LadleType = "LadleType";
+  /* long
+  
+  2 = Hot
+  1 = Medium
+  0 = cold */
+  
+  const string TapLadleStatus = "TapLadleStatus";
+  /* long
+  1 = stirring On
+  0 = stirring Off */
+  
+  const string TapLadleStirringStat = "TapLadleStirringStat";
+  /* seqStirringData: */
+
+  const string TapLadleStirringLastStartEndAmount = "TapLadleStirringLastStartEndAmount";
+  /* seqStirringData: */
+  
+  const string TapLadleStirringAmount = "TapLadleStirringAmount";
+  /* seqStirringData: */
+  
+  const string TapLadleStirringFlow = "TapLadleStirringFlow";
+  /* sDate: ladle stirring start time */
+  
+  const string TapLadleStirringStartTime = "TapLadleStirringStartTime";
+  /* sDate: ladle stirring stop time */
+  
+  const string TapLadleStirringStopTime = "TapLadleStirringStopTime";
+  /* long */
+  
+  const string TapLadleStirringDevice = "TapLadleStirringDevice";
+  /* seqStatus : DEF_GEN_STATES::OK/NotOK */
+  
+  const string TapLadleStirringFlowPressure = "TapLadleStirringFlowPressure";
+  /* string: DEF_GAS */
+  
+  const string TapLadleStirringGasType = "TapLadleStirringGasType";
+  /* HeatSchedule:sHeatSchedule */
+  
+  const string HeatSchedule = "HeatSchedule";
+  /* ProdOrderSchedule:sOrderData */
+  
+  const string ProdOrderSchedule = "ProdOrderSchedule";
+  /* HeatAnnounceTime:sDate */
+  
+  const string HeatAnnounceTime = "HeatAnnounceTime";
+  /* HeatStartTime:sDate */
+  
+  const string HeatStartTime = "HeatStartTime";
+  /* DurSinceHeatAnnounce:double
+  Unit in Minutes */
+  
+  const string DurSinceHeatAnnounce = "DurSinceHeatAnnounce";
+  /* DurSinceHeatStart:double
+  
+  Duration in minutes */
+  
+  const string DurSinceHeatStart = "DurSinceHeatStart";
+  /* PhaseAct : string */
+  
+  const string PhaseAct = "PhaseAct";
+  /* PhaseNoAct : long */
+  
+  const string PhaseNoAct = "PhaseNoAct";
+  /* PhaseModel : string */
+  
+  const string PhaseModel = "PhaseModel";
+  /* PhaseNoModel : long */
+  
+  const string PhaseNoModel = "PhaseNoModel";
+  /* PhaseTracker : string */
+  
+  const string PhaseTracker = "PhaseTracker";
+  /* PhaseNoTracker : long */
+  
+  const string PhaseNoTracker = "PhaseNoTracker";
+  /* PhaseProcess : string */
+  
+  const string PhaseProcess = "PhaseProcess";
+  /* PhaseNoProcess : string */
+  
+  const string PhaseNoProcess = "PhaseNoProcess";
+  /* HeatStatus : string */
+  
+  const string HeatStatus = "HeatStatus";
+  /* OrderStatus : string */
+  
+  const string OrderStatus = "OrderStatus";
+  /* SlagMassAct: double */
+  
+  const string SlagMassAct = "SlagMassAct";
+  /* SteelMassAct:double */
+  
+  const string SteelMassAct = "SteelMassAct";
+  /* HeatStarted: long
+  = 0 if Heat is not started
+  = 1 if Heat is started */
+  
+  const string HeatStarted = "HeatStarted";
+  /* double */
+  
+  const string TappingMass = "TappingMass";
+  /* TappingStartTime : sDate */
+  
+  const string TappingStartTime = "TappingStartTime";
+  /* TappingEndTime : sDate */
+  
+  const string TappingEndTime = "TappingEndTime";
+  /* Remaining Treatment Duration:double in minutes */
+  
+  const string RemTreatDur = "RemTreatDur";
+  /* Remaining Steel Weight :double in kg */
+  
+  const string RemSteelWeightLadle = "RemSteelWeightLadle";
+  /* Remaining Steel Weight :double in kg */
+  
+  const string RemSteelWeightTundish = "RemSteelWeightTundish";
+  /* Required set in turret time :long in minutes*/
+  
+  const string ReqSetInTurretTime = "ReqSetInTurretTime";
+  /* HeatAnnounceTimeOffline : sDate */
+  
+  const string HeatAnnounceTimeOffline = "HeatAnnounceTimeOffline";
+  /* long : actual treatment step received from L1 */
+  
+  const string ActTreatStepL1 = "ActTreatStepL1";
+  /* sDate */
+  
+  const string HeatDepartureTime = "HeatDepartureTime";
+  /* ActPlantLocation : string */
+  
+  const string ActPlantLocation = "ActPlantLocation";
+  /* string: model assigned to a product */
+  
+  const string ActModel = "ActModel";
+  /* sDate: tapping time of previous heat */
+  
+  const string PrevTappingEndTime = "PrevTappingEndTime";
+  /* seqStatus: states of all used devices in a plant managed by tracker */
+  
+  const string DeviceStatus = "DeviceStatus";
+  /* seqStatus: availability of devices in plant managed by tracker */
+  
+  const string DeviceAvail = "DeviceAvail";
+  /* seqGasData: Complete consumptions of gasses since campaign start */
+  
+  const string TotalAmount = "TotalAmount";
+  /* seqGasData: Metallurgical (gas has contact to steel) consumptions of gasses. */
+  
+  const string TotalMetAmount = "TotalMetAmount";
+  /* FurnaceLife: long */
+  
+  const string FurnaceLife = "FurnaceLife";
+  /* ParaArea:long */
+  
+  const string ParaArea = "ParaArea";
+  /* HeatSetup:sHeatSetup */
+  
+  const string HeatSetup = "HeatSetup";
+  /* FlagHeatRelated:long */
+  
+  const string FlagHeatRelated = "FlagHeatRelated";
+  /* LiqAddNo:long */
+  
+  const string LiqAddNo = "LiqAddNo";
+  /* LiqAddType:string */
+  
+  const string LiqAddType = "LiqAddType";
+  /* MeasWeight: double */
+  
+  const string MeasWeight = "MeasWeight";
+  /* WeighingType: long */
+  
+  const string WeighingType = "WeighingType";
+  /* LadlePlugNo : DEF_PLUG_NO */
+  
+  const string LadlePlugNo = "LadlePlugNo";
+  /* MinBinWeight: seqMaterials */
+  
+  const string MinBinWeight = "MinBinWeight";
+  /* TempMeasTime:sDate */
+  
+  const string TempMeasTime = "TempMeasTime";
+  /* BasketId:long */
+  
+  const string BasketId = "BasketId";
+  /* Discharg_BasketInSeq:long
+  Number of basket in sequence */
+  
+  const string Discharg_BasketInSeq = "Discharg_BasketInSeq";
+  /* 1 = Last Basket
+  0 = Not last basket */
+  
+  const string LastBasket = "LastBasket";
+  /* BasketInSeq:long
+  Number of basket in sequence */
+  
+  const string BasketInSeq = "BasketInSeq";
+  /* LiqMatReport:sLiqMatReport */
+  
+  const string LiqMatReport = "LiqMatReport";
+
+  /* HMLadleInSeq:long
+  Number of hot metal in sequence */
+  const string HMLadleInSeq = "HMLadleInSeq";
+
+  /* Value is double.
+  Distance from Furnace Bottom */
+  const string BathLevel = "BathLevel";
+  
+  const string BathLevelMeasMode = "BathLevelMeasMode";
+  /* BathLevelMeasDevice : string */
+  
+  const string BathLevelMeasDevice = "BathLevelMeasDevice";
+  /* RemO2Tuyeres:double */
+  
+  const string RemO2Tuyeres = "RemO2Tuyeres";
+  /* RemO2Lance:double */
+  
+  const string RemO2Lance = "RemO2Lance";
+  /* DurO2Lance:double
+  Duration in minutes */
+  
+  const string DurO2Lance = "DurO2Lance";
+  /* DurO2Blow:double
+  Duration in minutes */
+  
+  const string DurO2Blow = "DurO2Blow";
+  /* ReblowCode : string */
+  
+  const string ReblowCode = "ReblowCode";
+  /* ReblowCounter : long */
+  
+  const string ReblowCounter = "ReblowCounter";
+  /* double : mm */
+  
+  const string TopLanceHeight = "TopLanceHeight";
+  /* Lance id: string */
+  
+  const string LanceId = "LanceId";
+
+  /* value is long 
+     used blow lance (1 or 2) */
+  const string LanceInOperation = "LanceInOperation";
+
+  /* DEF_GEN_STATES::OperationPosition/OutOfOperationPosition */
+  const string LancePos = "LancePos";
+
+  /* DEF_GEN_STATES::On/Off */
+  const string TopLanceStat = "TopLanceStat";
+  /* long: DEF_GEN_STATES::On/Off */
+  
+  const string DeslaggingStatus = "DeslaggingStatus";
+  /* long: Yes/No */
+  
+  const string MultiTapping = "MultiTapping";
+  /* string:DEF_THERMAL_STAT::High,Medium,Low */
+  
+  const string VesselStatus = "VesselStatus";
+  /* long : InOperationPosition/OutOfOperationPosition */
+  
+  const string VesselPos = "VesselPos";
+  /* long: DEF_CONVERTER_POS */
+  
+  const string ConverterPosition = "ConverterPosition";
+  /* double */
+  
+  const string ConverterAngle = "ConverterAngle";
+  /* double: current vessel temperature */
+  
+  const string VesselTemp = "VesselTemp";
+  /* long: */
+  
+  const string VesselHeight = "VesselHeight";
+  /* BOFBlowPredRes : seqBOFBlowPredRes */
+  
+  const string BOFBlowPredRes = "BOFBlowPredRes";
+  /* BOFGlobalSetpoints : sBOFGlobalSetpoints */
+  
+  const string BOFGlobalSetpoints = "BOFGlobalSetpoints";
+  /* Recipe : seqRecipeList */
+  
+  const string BOFMatRecipe = "BOFMatRecipe";
+  /* BOFPredRes : seqPredRes */
+  
+  const string BOFPredRes = "BOFPredRes";
+  /* ResultCode : long */
+  
+  const string BOFResCode = "ResultCode";
+  /* long : PlugUsed
+  Using plugs on tapping */
+  
+  const string PlugUsed = "PlugUsed";
+  /* long : DartUsed
+  Using dart on tapping */
+  
+  const string DartUsed = "DartUsed";
+  /* seqGasData : sGasData
+  Bottom stirring amount for actual heat */
+  
+  const string PorousPlugsAmount = "PorousPlugsAmount";
+  /* seqGasData : sGasData
+  Bottom stirring flow rate */
+  
+  const string PorousPlugsFlow = "PorousPlugsFlow";
+  /* seqGasAvail */
+  
+  const string PorousPlugsGasAvail = "PorousPlugsGasAvail";
+  /* seqGasData : sGasData
+  Mettall. bottom stirring amount */
+  
+  const string PorousPlugsMetAmount = "PorousPlugsMetAmount";
+  /* PorousPlugsMetFlow :sGasData
+  Metalurical Flows consumptions.
+  Converter in up position gas has contact to steel */
+  
+  const string PorousPlugsMetFlow = "PorousPlugsMetFlow";
+  /* seqGasData : sGasData
+  Total bottom stirring amount since campaign start */
+  
+  const string PorousPlugsTotAmount = "PorousPlugsTotAmount";
+  /* AODBlowPredRes : sAODBlowPredRes */
+  
+  const string AODBlowPredRes = "AODBlowPredRes";
+  /* AODGlobalSetpoints : sAODGlobalSetpoints */
+  
+  const string AODGlobalSetpoints = "AODGlobalSetpoints";
+  /* Recipe : sRecipeList */
+  
+  const string AODMatRecipe = "AODMatRecipe";
+  /* AODPredRes : sPredRes */
+  
+  const string AODPredRes = "AODPredRes";
+  /* ResultCode : long */
+  
+  const string AODResCode = "ResultCode";
+  /* AODPhaseStatus:sPhaseStatus */
+  
+  const string AODPhaseStatus = "AODPhaseStatus";
+  /* AODPhaseReportName:string */
+  
+  const string AODPhaseReportName = "AODPhaseReportName";
+  /* AODPhaseDur: double */
+  
+  const string AODPhaseDur = "AODPhaseDur";
+  /* AODPhaseReportNo:long */
+  
+  const string AODPhaseReportNo = "AODPhaseReportNo";
+  /* seqInjectLanceData: */
+  
+  const string EAFInjectLanceAmount = "EAFInjectLanceAmount";
+  /* EAFBurnerAmount:seqGasLanceData */
+  
+  const string EAFBurnerAmount = "EAFBurnerAmount";
+  /* EAFGasLanceAmount:seqGasLanceData */
+  
+  const string EAFGasLanceAmount = "EAFGasLanceAmount";
+  /* EAFBurnerPredResLength : long */
+  
+  const string EAFBurnerPredResLength = "EAFBurnerPredResLength";
+  /* EAFElecPredResLength : long */
+  
+  const string EAFElecPredResLength = "EAFElecPredResLength";
+  /* EAFGasLancePredResLength : long */
+  
+  const string EAFGasLancePredResLength = "EAFGasLancePredResLength";
+  /* EAFInjectLanceLength : long */
+  
+  const string EAFInjectLanceLength = "EAFInjectLanceLength";
+  /* Recipe : long */
+  
+  const string EAFMatRecipeLength = "EAFMatRecipeLength";
+  /* EAFPredRes : seqPredRes */
+  
+  const string EAFPredResLength = "EAFPredResLength";
+  /* EAFMatFeedPredResLength: long */
+  
+  const string EAFMatFeedPredResLength = "EAFMatFeedPredResLength";
+  /* EAFBurnerPredRes : seqEAFBurnerPredRes */
+  
+  const string EAFBurnerPredRes = "EAFBurnerPredRes";
+  /* EAFElecPredRes : seqEAFElecPredRes */
+
+  const string EAFProcessPredRes = "EAFProcessPredRes";
+  /* EAFProcessPredRes : seqEAFProcessPredRes */
+  //DIRE --> instead used: seqEAFProcessPredRes
+    //const string EAFElecPredRes = "EAFElecPredRes";
+  /* EAFGasLancePredRes : sEAFGasLancePredRes */
+
+  const string EAFGasLancePredRes = "EAFGasLancePredRes";
+  /* EAFBlowPredRes : seqEAFInjectLance */
+  
+  const string EAFInjectLance = "EAFInjectLance";
+  /* EAFMatFeed : seqEAFMatFeed */
+  
+  const string EAFMatFeed = "EAFMatFeed";
+  /* Recipe : sRecipeList */
+  
+  const string EAFMatRecipe = "EAFMatRecipe";
+  /* EAFPredRes : seqPredRes */
+  
+  const string EAFPredRes = "EAFPredRes";
+  /* EAFResultCode : long */
+  
+  const string EAFResCode = "EAFResultCode";
+  /* EAFMatFeedPredRes: seqEAFMatFeedPredRes */
+  
+  const string EAFMatFeedPredRes = "EAFMatFeedPredRes";
+  /* HeatAnnounceStatus: long
+  0     Announcement not successful
+  1     Announcement successfull */
+  
+  const string HeatAnnounceStatus = "HeatAnnounceStatus";
+  /* SlagMass : double */
+  
+  const string SlagMass = "SlagMass";
+  /* LFElecPredRes : long */
+  
+  const string LFElecPredResLength = "LFElecPredResLength";
+  /* LFMatRecipe : sRecipeList */
+  
+  const string LFMatRecipeLength = "LFMatRecipeLength";
+  /* LFPredRes : long */
+  
+  const string LFPredResLength = "LFPredResLength";
+  /* LFStirrPredRes : long */
+  
+  const string LFStirrPredResLength = "LFStirrPredResLength";
+  /* LFElecPredRes : sLFElecPredRes */
+  
+  const string LFElecPredRes = "LFElecPredRes";
+  /* LFMatRecipeLength : long */
+  
+  const string LFMatRecipe = "LFMatRecipe";
+  /* LFPredRes : sPredRes */
+  
+  const string LFPredRes = "LFPredRes";
+  /* LFResultCode : long */
+  
+  const string LFResCode = "LFResultCode";
+  /* LFStirrPredRes : sLFStirrPredRes */
+  
+  const string LFStirrPredRes = "LFStirrPredRes";
+  /* LFActSetPointStirrIntensity:long */
+  
+  const string LFActSetPointStirrIntensity = "LFActSetPointStirrIntensity";
+  /* LFActSetPointStirrFlow:double */
+  
+  const string LFActSetPointStirrFlow = "LFActSetPointStirrFlow";
+  /* LFActSetPointStirrGasType:string */
+  
+  const string LFActSetPointStirrGasType = "LFActSetPointStirrGasType";
+  /* LFActStirrActivity:string */
+  
+  const string LFActStirrActivity = "LFActStirrActivity";
+  /* LTSMatRecipe : sRecipeList */                                          
+
+  const string LTSMatRecipeLength = "LTSMatRecipeLength";                    
+  /* LTSPredRes : long */                                                   
+
+  const string LTSPredResLength = "LTSPredResLength";                        
+  /* LTSStirrPredRes : long */                                              
+
+  const string LTSStirrPredResLength = "LTSStirrPredResLength";              
+  /* LTSMatRecipeLength : long */                                           
+
+  const string LTSMatRecipe = "LTSMatRecipe";                                
+  /* LTSPredRes : sPredRes */                                               
+
+  const string LTSPredRes = "LTSPredRes";                                    
+  /* LTSResultCode : long */                                                
+
+  const string LTSResCode = "LTSResultCode";                                 
+  /* LTSStirrPredRes : sLTSStirrPredRes */                                   
+
+  const string LTSStirrPredRes = "LTSStirrPredRes";                          
+  /* LTSActSetPointStirrIntensity:long */                                   
+
+  const string LTSActSetPointStirrIntensity = "LTSActSetPointStirrIntensity";
+  /* LTSActSetPointStirrFlow:double */                                      
+
+  const string LTSActSetPointStirrFlow = "LTSActSetPointStirrFlow";          
+  /* LTSActSetPointStirrGasType:string */                                   
+
+  const string LTSActSetPointStirrGasType = "LTSActSetPointStirrGasType";    
+  /* LTSActStirrActivity:string */                                          
+
+  const string LTSActStirrActivity = "LTSActStirrActivity";                  
+  /* LTSPhaseElec:string                                                    
+  Electric Phase */                                                        
+
+  const string LTSPhaseElec = "LTSPhaseElec";                                
+
+  const string PhaseStirrAct = "PhaseStirrAct";
+  /* WireFeederData: sWireFeederData */
+  
+  const string WireFeederData = "WireFeederData";
+  /* WireFeederMatCode:string */
+  
+  const string WireFeederMatCode = "WireFeederMatCode";
+  /* WireFeederLineNo:long */
+  
+  const string WireFeederLineNo = "WireFeederLineNo";
+  /* PlatformNo : long */
+  
+  const string PlatformNo = "PlatformNo";
+  /* PlatformStatus : long */
+  
+  const string PlatformStatus = "PlatformStatus";
+  /* RequestType:long */
+  
+  const string RequestType = "RequestType";
+  /* Time period in minutes : long */
+  
+  const string DeltaTime = "DeltaTime";
+  /* RHBlowPredRes : sRHBlowPredRes */
+  
+  const string RHBlowPredRes = "RHBlowPredRes";
+  /* RHMatFeedStruct : sRHMatFeedStruct */
+  
+  const string RHMatFeedStruct = "RHMatFeedStruct";
+  /* RHMatRecipe : sRecipeList */
+  
+  const string RHMatRecipe = "RHMatRecipe";
+  /* RHPredRes : seqRHPredRes */
+  
+  const string RHPredRes = "RHPredRes";
+  /* RHResultCode : long */
+  
+  const string RHResCode = "RHResultCode";
+  /* RHStirrPredRes : sRHStirrPredRes */
+  
+  const string RHStirrPredRes = "RHStirrPredRes";
+  /* RHActSetPointStirrIntensity:long */
+  
+  const string RHActSetPointStirrIntensity = "RHActSetPointStirrIntensity";
+  /* RHActSetPointStirrFlow:double */
+  
+  const string RHActSetPointStirrFlow = "RHActSetPointStirrFlow";
+  /* RHActSetPointStirrGasType:string */
+  
+  const string RHActSetPointStirrGasType = "RHActSetPointStirrGasType";
+  /* RHActStirrActivity:string */
+  
+  const string RHActStirrActivity = "RHActStirrActivity";
+  /* RHPhaseStirr:string
+  Stirring Phase */
+  
+  const string RHPhaseStirr = "RHPhaseStirr";
+  /* long */
+  
+  const string LanceBlowingMode = "LanceBlowingMode";
+  /* seqGasLanceData */
+  
+  const string BurnerAmount = "BurnerAmount";
+  /* seqGasLanceData */
+  
+  const string BurnerFlow = "BurnerFlow";
+  /* long */
+  
+  const string BurnerNo = "BurnerNo";
+  /* seqGasLanceGasAvail */
+  
+  const string BurnerGasAvail = "BurnerGasAvail";
+  /* string */
+  
+  const string RecMsgID = "RecMsgID";
+  /* long */
+  
+  const string RecMsgCounter = "RecMsgCounter";
+  /* long */
+  
+  const string RecMsgLength = "RecMsgLegnth";
+  /* long; */
+  
+  const string AckCode = "AckCode";
+  /* long */
+  
+  const string RecMsgFlag = "RecMsgFlag ";
+  const string MeasurementType = "MeasurementType";
+  /* long */
+  
+  const string HMDBlowType = "HMDBlowType";
+  /* double: kg/min */
+  
+  const string HMDBlowingRateMg = "HMDBlowingRateMg";
+  /* double: kg/min */
+  
+  const string HMDBlowingRateLime = "HMDBlowingRateLime";
+  /* double: kg/min */
+  
+  const string HMDBlowingRateCarbide = "HMDBlowingRateCarbide";
+  /* double : Total lime consumption for a heat */
+  
+  const string LimeAmount = "LimeAmount";
+  /* double : Total carbide consumption for a heat */
+  
+  const string CarbAmount = "CarbAmount";
+  /* double : Total Mg consumption for a heat */
+  
+  const string MagnAmount = "MagnAmount";
+  /* seqHMDPredRes */
+  
+  const string HMDPredRes = "HMDPredRes";
+  /* OperationPosition/OutOfOperationPosition */
+  
+  const string HoodPos = "HoodPos";
+  /* long: 0 - not tilted */
+  
+  const string TiltingFramePos = "TiltingFramePos";
+  /* double : Carbide consumption in actual phase */
+  
+  const string PhaseCarbAmount = "PhaseCarbAmount";
+  /* double : Lime consumption in actual phase */
+  
+  const string PhaseLimeAmount = "PhaseLimeAmount";
+  /* double : Mg consumption in actual phase */
+  
+  const string PhaseMagnAmount = "PhaseMagnAmount";
+  /* double : Amount of carbide at a phase start */
+  
+  const string PhaseStartCarbAmount = "PhaseStartCarbAmount";
+  /* double : Amount of lime at a phase start */
+  
+  const string PhaseStartLimeAmount = "PhaseStartLimeAmount";
+  /* double : Amount of magn at a phase start */
+  
+  const string PhaseStartMagnAmount = "PhaseStartMagnAmount";
+  /* long : used heating mode */
+  
+  const string HeatingMode = "HeatingMode";
+  /* MediaData : seqConArcMediaData */
+  
+  const string ConArcMediaData = "ConArcMediaData";
+  /* ConArcGlobalSetpoints : sConArcGlobalSetpoints */
+  
+  const string ConArcGlobalSetpoints = "ConArcGlobalSetpoints";
+  /* Recipe : seqRecipeList */
+  
+  const string ConArcMatRecipe = "ConArcMatRecipe";
+  /* ResultCode : long */
+  
+  const string ConArcResCode = "ConArcResCode";
+  /* SetptData : seqConArcSetptData */
+  
+  const string ConArcSetptData = "ConArcSetptData";
+  /* ConArcPredRes : seqConArcModelResult */
+  
+  const string ConArcPredRes = "ConArcPredRes";
+  /* ModelType : string DEF_TREATMENT_MODE */
+  
+  const string ModelType = "ModelType";
+  /* MeasData : seqConArcMeasData */
+  
+  const string ConArcMeasData = "ConArcMeasData";
+  /* seqStirringData: consumptions during arcing treatment */
+  
+  const string StirringAmount = "StirringAmount";
+  /* seqStirringData: consumptions during arcing treatment */
+  
+  const string StirringAmountArc = "StirringAmountArc";
+  /* seqStirringData: consumptions during blowing treatment */
+  
+  const string StirringAmountBlow = "StirringAmountBlow";
+  /* seqStirringData: consumptions during treatment */
+  
+  const string StirringAmountAtLastStart = "StirringAmountAtLastStart";
+  /* seqStirringData: consumptions during treatment */
+  
+  const string StirringLastStartEndAmount = "StirringLastStartEndAmount";
+  /* seqStirringData: consumptions during treatment */
+  
+  const string StirringLastStartEndDur = "StirringLastStartEndDur";
+  /* double */
+  
+  const string VacuumPressure = "VacuumPressure";
+  /* Update with cyclical avent after vacuum start.
+  In seconds : double */
+  
+  const string VacuumDuration = "VacuumDuration";
+  /* DEF_GEN_STATES::On/Off */
+  
+  const string VacuumStatus = "VacuumStatus";
+  /* Start of a new vacuum period related to heat announcement. */
+  
+  const string VacuumActStart = "VacuumActStart";
+  /* long: number of pumps */
+  
+  const string VacuumPumps = "VacuumPumps";
+  /* Time, when vacuum pressure is above a defined setpoint, eg 10 bar */
+  
+  const string DeepVacuumStart = "DeepVacuumStart";
+  /* Duration, when vacuum pressure is above a defined setpoint, eg 10 bar */
+  
+  const string DeepVacuumDur = "DeepVacuumDur";
+  /* LiftGasAmount : seqGasData for all gas types */
+  
+  const string LiftGasAmount = "LiftGasAmount";
+  /* LiftGasFlow:seqGasData whith one sGasData struct */
+  
+  const string LiftGasFlow = "LiftGasFlow";
+  /* in seconds : seqGasData duration of all gas types */
+  
+  const string LiftGasDuration = "LiftGasDuration";
+  /* DEF_GEN_STATES::On/Off */
+  
+  const string LiftGasStatus = "LiftGasStatus";
+  /* LifgGasActStartDur : seqGasData
+  Start-time per gas type on lift gas start */
+  
+  const string LifgGasActStartDur = "LifgGasActStartDur";
+  /* long */
+  
+  const string LifgGasCircuit = "LifgGasCircuit";
+  /* string : DEF_GAS::XX */
+  
+  const string LiftGasType = "LiftGasType";
+  /* double */
+  
+  const string SteamConsumption = "SteamConsumption";
+  /* double */
+  
+  const string SteamFlow = "SteamFlow";
+  /* long: On/Off */
+  
+  const string SteamEjectorStat = "SteamEjectorStat";
+  /* long */
+  
+  const string SteamEjectorStage = "SteamEjectorStage";
+  /* SteamPressure : double */
+  
+  const string SteamPressure = "SteamPressure";
+  /* LadleTransferCarInOperatingPosition : string */
+  
+  const string LadleTransferCarInOperatingPosition = "LadleTransferCarInOperatingPosition";
+  /* LadleTransferCarId: string */
+  
+  const string LadleTransferCarId = "LadleTransferCarId";
+  /* LadleCarPosition:long
+  1 = In Operating Position
+  2 = In Deslaging Position
+  0 = Out of Operating Position and Deslagging Position */
+  
+  const string LadleCarPosition = "LadleCarPosition";
+  /* DEF_GEN_STATES::Yes = Ladle Transfer car in operating position
+  DEF_GEN_STATES::No  = Ladle Transfer car out off operating position */
+  
+  const string LadleCarOperPosIn = "LadleCarOperPosIn";
+  /* double */
+  
+  const string PowderFlow = "PowderFlow";
+  /* double */
+  
+  const string PowderConsumption = "PowderConsumption";
+  /* long : DEF_GEN_STATES::On/Off */
+  
+  const string PowderInjectionStatus = "PowderInjectionStatus";
+  /* seqInjectLanceData: */
+  
+  const string InjectLanceAmount = "InjectLanceAmount";
+  /* InjectLanceFlow:seqInjectLanceData */
+  
+  const string InjectLanceFlow = "InjectLanceFlow";
+  /* InjectLanceMat:seqInjectLanceMat */
+  
+  const string InjectLanceMat = "InjectLanceMat";
+  /* seqInjectLanceMat: materials used for injection */
+  
+  const string InjectLanceImage = "InjectLanceImage";
+  /* seqStatus: status of injectiors On/Off */
+  
+  const string InjectStatus = "InjectStatus";
+  /* seqInjectLanceData: amount of last start-stop cycle */
+  
+  const string InjectLanceLastStartStopAmount = "InjectLanceLastStartStopAmount";
+  /* InjectLanceStart : sDate */
+  
+  const string InjectLanceStart = "InjectLanceStart";
+  /* double: duration since HA */
+  
+  const string InjectLanceTimeAtLastStart = "InjectLanceTimeAtLastStart";
+  /* seqInjectLanceData:
+  gas cons at last injection start for every device */
+  
+  const string InjectLanceAmountAtLastStart = "InjectLanceAmountAtLastStart";
+  /* double.
+  Duration since last injection start */
+  
+  const string InjectLanceStartStopDur = "InjectLanceStartStopDur";
+  /* InjectType: string */
+
+  const string InjectType = "InjectType";
+  /* SloppingType: string */
+  
+  const string SloppingType = "SloppingType";
+  /* seqGasLanceData */
+  
+  const string GasLanceFlow = "GasLanceFlow";
+  /* seqGasLanceData */
+  
+  const string GasLanceAmount = "GasLanceAmount";
+  /* long: number of gas lance received from L1 */
+  
+  const string GasLanceNo = "GasLanceNo";
+  /* seqGasLanceData in minutes */
+  
+  const string GasLanceDur = "GasLanceDur";
+  /* seqStatus: Blow status of gas lances On/Off */
+  
+  const string GasLanceStatus = "GasLanceStatus";
+  /* seqStatus: Injector status On/Off */
+  
+  const string InjectorStatus = "InjectorStatus";
+  /* seqGasAvail: Availibility of Gases of the GasLances */
+  
+  const string GasLanceGasAvail = "GasLanceGasAvail";
+  /* seqGasLanceData: last cycle amount */
+  
+  const string GasLanceLastStartStopAmount = "GasLanceLastStartStopAmount";
+  /* BlowingOnTime : sDate */
+  
+  const string BlowingOnTime = "BlowingOnTime";
+  /* BlowingOffTime : sDate */
+  
+  const string BlowingOffTime = "BlowingOffTime";
+  /* double: dur since HA */
+  
+  const string GasLanceTimeAtLastStart = "GasLanceTimeAtLastStart";
+  /* seqGasLanceData */
+  
+  const string GasLanceAmountAtLastStart = "GasLanceAmountAtLastStart";
+  /* seqStatus: On/Off status of stirring devices */
+  
+  const string StirringStatus = "StirringStatus";
+  /* seqStirringData: intensity during treatment */
+  
+  const string StirringIntensity = "StirringIntensity";
+  /* long: intensity during treatment */
+  
+  const string StirringIntensityPlug1 = "StirringIntensityPlug1";
+  /* long: intensity during treatment */
+  
+  const string StirringIntensityPlug2 = "StirringIntensityPlug2";
+  /* seqStirringData: intermediate duration during heat treament */
+  
+  const string StirringTimeAtLastStart = "StirringTimeAtLastStart";
+  /* seqStirringData: total duration during heat treament */
+  
+  const string StirringDur = "StirringDur";
+  /* seqStirringData: intermediate duration during heat treament */
+  
+  const string StirringActStartDur = "StirringActStartDur";
+  /* seqStirringData: intermediate duration during heat treament */
+  
+  const string StirringActStartAmount = "StirringActStartAmount";
+  /* seqStirringData: total amount during heat treament */
+  
+  const string StirringMetAmount = "StirringMetAmount";
+  /* seqStirringData: flow rate */
+  
+  const string StirringFlow = "StirringFlow";
+  /* seqStirringData: flow rate */
+  
+  const string StirringMetFlow = "StirringMetFlow";
+  /* seqStatus: On/Off bypass status of stirring devices */
+  
+  const string StirringBypassStatus = "StirringBypassStatus";
+  /* long: On/Off bypass status of stirring devices */
+  
+  const string StirringBypassStatusPlug1 = "StirringBypassStatusPlug1";
+  /* long: On/Off bypass status of stirring devices */
+  
+  const string StirringBypassStatusPlug2 = "StirringBypassStatusPlug2";
+
+  /* seqStatus: On/Off pressure status of stirring devices */
+  const string StirringPressureStatus = "StirringPressureStatus";
+
+  /* long: On/Off pressure status of stirring devices */
+  const string StirringPressureStatusPlug1 = "StirringPressureStatusPlug1";
+
+  /* long: On/Off pressure  status of stirring devices */
+  const string StirringPressureStatusPlug2 = "StirringPressureStatusPlug2";
+
+  /* seqStirringData */
+  const string StirringPressure = "StirringPressure";
+
+  /* seqStirringData: description of stirring gas types on stirring devices */
+  const string StirringGasType = "StirringGasType";
+
+  /* TuyeresFlow : seqGasData */
+  const string TuyeresFlow = "TuyeresFlow";
+
+  /* TuyeresMetAmount: seqGasData
+  Metalurical consumptions.
+  Converter in up position gas has contact to steel */
+  const string TuyeresMetAmount = "TuyeresMetAmount";
+
+  /* TuyeresMetFlow : seqGasData
+  Metalurical flows.
+  Converter in up position gas has contact to steel */
+  const string TuyeresMetFlow = "TuyeresMetFlow";
+
+  /* double : duration of O2 blowing */
+  const string BlowDur = "BlowDur";
+  /* seqBlowStatus: sequence with states of blow devices */
+  
+  const string BlowStatus = "BlowStatus";
+  /* seqGasData : sGasData
+  Complete Gas Consumptions for actual heat. */
+  
+  const string TopLanceAmount = "TopLanceAmount";
+  /* seqGasData : sGasData
+  Top Lance flow rate */
+  
+  const string TopLanceFlow = "TopLanceFlow";
+  /* seqGasAvail: Availibility of Gases of the TopLance */
+  
+  const string TopLanceGasAvail = "TopLanceGasAvail";
+  /* seqGasData : seqGasData
+  Metalurical Flows consumptions for actual heat.
+  Converter in up position gas has contact to steel */
+  
+  const string TopLanceMetAmount = "TopLanceMetAmount";
+  /* seqGasData : seqGasData
+  Metalurical Flows consumptions for actual heat.
+  Converter in up position gas has contact to steel */
+  
+  const string TopLanceMetAmountOnTotalBlowEnd = "TopLanceMetAmountOnTotalBlowEnd";
+  const string TopLanceMetAmountReblow = "TopLanceMetAmountReblow";
+
+
+  /* TuyeresAmount : seqGasData
+  Complete Gas Consumptions */
+  
+  const string TuyeresAmount = "TuyeresAmount";
+  /* TopLanceMetFlow : seqGasData
+  Metalurical Flows consumptions.
+  Converter in up position gas has contact to steel */
+  
+  const string TopLanceMetFlow = "TopLanceMetFlow";
+  /* long */
+  
+  const string Counter = "Counter";
+  /* seqGasAvail: gas availability at tuyeres */
+  
+  const string TuyeresGasAvail = "TuyeresGasAvail";
+  /* string: blowing type at converter */
+  
+  const string BlowType = "BlowType";
+  /* seqGasData : sGasData
+  Gas Consumptions in last start-stop cycle. */
+  
+  const string TopLanceLastStartStopAmount = "TopLanceLastStartStopAmount";
+  /* Time of current blowing start */
+  
+  const string BlowingActStartDur = "BlowingActStartDur ";
+  /* seqGasData: Amount of lance at a start */
+  
+  const string TopLanceLastStartAmount = "TopLanceLastStartAmount";
+  /* ScrapChuteStatus:string */
+  
+  const string ScrapChuteStatus = "ScrapChuteStatus";
+  /* ScrapChuteLocation: string */
+  
+  const string ScrapChuteLocation = "ScrapChuteLocation";
+  /* ScrapChuteId:string */
+  
+  const string ScrapChuteId = "ScrapChuteId";
+
+  /* long: ScrapChuteNo */
+  const string ScrapChuteNo = "ScrapChuteNo";
+
+  /* ScrapChuteInSeq:long */
+  
+  const string ScrapChuteInSeq = "ScrapChuteInSeq";
+  /* MatFeedingPhase : string */
+  
+  const string MatFeedingPhase = "MatFeedingPhase";
+  /* MatFeeding : seqMatFeeding */
+  
+  const string MatFeeding = "MatFeeding";
+  /* MatFeedingStruct : sMatFeedingStruct */
+  
+  const string MatFeedingStruct = "MatFeedigStruct";
+  /* seqInjectData: flow rate of material feeding */
+  
+  const string MatFeedingFlow = "MatFeedingFlow";
+  /* seqInjectData: flow rate of material feeding */
+  
+  const string MatFeedingPhaseFlow= "MatFeedingPhaseFlow";
+  /* seqInjectData: amount of fed materials */
+  
+  const string MatFeedingAmount = "MatFeedingAmount";
+  /* seqStatus: MatFeedingDataStatus status On/Off */
+	
+	const string MatFeedingDataStatus = "MatFeedingDataStatus";
+  /* seqBatch: material data of feeding */
+  
+  const string MatFeedingData = "MatFeedingData";
+  /* double: actual time in sec on material feeding start */
+  
+  const string MatFeedingDur = "MatFeedingDur";
+  /* double: actual time in sec on material feeding start */
+  
+  const string MatFeedingStartDur = "MatFeedingStartDur";
+  /* seqInjectData: amount of feed for the actual phase */
+  
+  const string MatFeedingAmountActPhase = "MatFeedingAmountActPhase";
+  /* seqInjectData: amount of feed for the previuos phase */
+  
+  const string MatFeedingAmountPrevPhase = "MatFeedingAmountPrevPhase";
+  /* VDActSetPointStirrFlow : double */
+  
+  const string VDActSetPointStirrFlow = "VDActSetPointStirrFlow";
+  /* VDActSetPointStirrGasType : string */
+  
+  const string VDActSetPointStirrGasType = "VDActSetPointStirrGasType";
+  /* VDActSetPointStirrIntensity : string */
+  
+  const string VDActSetPointStirrIntensity = "VDActSetPointStirrIntensity";
+  /* VDBlowPredRes : sVDBlowPredRes */
+  
+  const string VDBlowPredRes = "VDBlowPredRes";
+  /* VDActStirrActivity : string */
+  
+  const string VDActStirrActivity = "VDActStirrActivity";
+  /* VDMatFeedStruct : sVDMatFeedStruct */
+  
+  const string VDMatFeedStruct = "VDMatFeedStruct";
+  /* VDMatRecipe : sRecipeList */
+  
+  const string VDMatRecipe = "VDMatRecipe";
+  /* VDPhaseStirr : string */
+  
+  const string VDPhaseStirr = "VDPhaseStirr";
+  /* VDPredRes : seqVDPredRes */
+  
+  const string VDPredRes = "VDPredRes";
+  /* VDResCode : long */
+  
+  const string VDResCode = "VDResCode";
+  /* VDStirrPredRes : seqVDStriiPredRes */
+  
+  const string VDStirrPredRes = "VDStirrPredRes";
+  /* TankId : string
+  "Tank1"
+  "Tank2" */
+  
+  const string TankId = "TankId";
+  /* long DEF_COVER_POSITION */
+  
+  const string CoverPosition = "CoverPosition";
+  /* Machine cooling water temp: double */
+  
+  const string ShieldTemp = "ShieldTemp";
+  /* Machine cooling water flow in : double */
+  
+  const string ShieldFlowIn = "ShieldFlowIn";
+  /* Machine cooling water flow out : double */
+  
+  const string ShieldFlowOut = "ShieldFlowOut";
+  /* Vacuum pressure pump 1 : double */
+  
+  const string VaccumPressPump1 = "VaccumPressTank1";
+  /* Vaccum pressure pump 2 : double */
+  
+  const string VaccumPressPump2 = "VaccumPressPump2";
+  /* TempOutlet1 : double */
+  
+  const string TempOutlet1 = "TempOutlet1";
+  /* TempOutlet2 : double */
+  
+  const string TempOutlet2 = "TempOutlet2";
+  /* TempOutlet3 : double */
+  
+  const string TempOutlet3 = "TempOutlet3";
+  /* Argon pressure take over point : double */
+  
+  const string ArPress = "ArPress";
+  /* Nitrogen pressure take over point : double */
+  
+  const string N2Press = "N2Press";
+  /* Instrument pressure take over point : double */
+  
+  const string InstPress = "InstPress";
+  /* Machine water pressure at take over point : double */
+  
+  const string MachineWaterPress = "MachineWaterPress";
+  /* Condenser water pressure at take over point : double */
+  
+  const string CondenserWaterPress = "CondenserWaterPress";
+  /* Machine water temperature : double */
+  
+  const string MachineWaterTemp = "MachineWaterTemp";
+  /* Condenser water temperature : double */
+  
+  const string CondenserWaterTemp = "CondenserWaterTemp";
+  
+  /*AimWeightUser: double*/
+  const string AimWeightUser = "AimWeightUser";  
+  
+  /*OrderIdUser: string*/
+  const string OrderIdUser = "OrderIdUser";
+  
+  /*CustHeatIdUser: string*/
+  const string CustHeatIdUser = "CustHeatIdUser";
+  
+  /*CustTreatIUser: string*/
+  const string CustTreatIdUser = "CustTreatIdUser";
+  
+  /*PlanEndTime: sDate*/
+  const string PlanEndTime = "PlanEndTime";
+  
+  /*ProdPracPointer: long*/
+  const string ProdPracPointer = "ProdPracPointer";
+  
+  /*HMIClientId: string*/
+  const string HMIClientId = "HMIClientId";
+  
+  /* MeasFeOConc: double */
+  const string MeasFeOConc = "MeasFeOConc";
+  
+  /* MeasMnOConc: double */
+  const string MeasMnOConc = "MeasMnOConc";
+
+  /* MeasEMF: double */
+  const string MeasEMF = "MeasEMF";
+  /* MeasFreeboard: double */
+  const string MeasFreeboard = "MeasFreeboard";
+
+  /* SourceNo: long */
+  //const string SourceNo = "SourceNo";
+  
+  /* Scale: long */
+  const string Scale = "Scale";
+  
+  /* PhaseStartDateTime: sDate */
+  const string PhaseStartDateTime = "PhaseStartDateTime";
+  
+  /* EventNo: long */
+  const string EventNo = "EventNo";
+  
+  /* AimWeight: long */
+  const string AimWeight = "AimWeight";
+  
+  /* double : Aim carbon after main blow */
+  const string CarbonAimEoB = "CarbonAimEoB";
+
+  /* double : Aim temperature after main blow */
+  const string TempAimEoB = "TempAimEoB";
+  
+  /* double : Aim carbon after tapping */
+  const string CarbonAim = "CarbonAim";
+  
+  /* double : Aim sulphur after tapping */
+  const string SulphurAim = "SulphurAim";
+
+  /* double : duration of a phase */
+  const string PhaseDur = "PhaseDur";
+  
+  /* seqPhaseDataReport : tracked phase data */
+  const string PhaseDataReport = "PhaseDataReport";
+
+  /* Basket weight long*/
+  const string BasketWeight = "BasketWeight";
+
+  /* MomentO2*/
+  const string MomentO2 = "MomentO2";
+  
+  /* MomentElec*/
+  const string MomentElec = "MomentElec";
+
+  /* Furnace Status*/
+  const string FurnaceStatus = "FurnaceStatus";
+
+  /* long : length of EAFBottomStirrPredRes */
+  const string EAFBottomStirrPredResLength = "EAFBottomStirrPredResLength";
+
+  /* seqEAFGasLancePredRes : prediction result for bottom stirring */
+  const string EAFBottomStirrPredRes = "EAFBottomStirrPredRes";
+
+  /* string : actual set point for stirring flow */
+  const string EAFActSetPointStirrFlow = "EAFActSetPointStirrFlow";
+  
+  /* string : actual set point for stirring gas type */
+  const string EAFActSetPointStirrGasType = "EAFActSetPointStirrGasType";
+
+  /* long : Charging sequence of a ladle, basket or chute */
+  const string ChargeSeq = "ChargeSeq";
+
+  /* long : last ladle in the charging sequence */
+  const string LastLadle = "LastLadle";
+
+  /* string : name of changed parameter */
+  const string ParamName = "ParamName";
+
+  /* string : value of changed parameter */
+  const string ParamValue = "ParamValue";
+
+  /* BasketLocation: string */
+  const string BasketLocation = "BasketLocation";
+
+  /* ContainerType: string */
+  const string ContainerType = "ContainerType";
+
+  /* EquipmentId: string */
+  const string EquipmentId = "EquipmentId";
+
+  /* AimBasicity : double */  
+  const string AimBasicity = "AimBasicity"; 
+  /* O2 moment of measurement. seqGasData : sGasData */
+  const string MetMomentMeasurement = "MetMomentMeasurement";
+  /* MgOAim : double */  
+  const string MgOAim = "MgOAim"; 
+  /*seqHeatStack : actual heats in a plant stack */
+  const string HeatStack = "HeatStack";
+  /* TreatmentPosition: long */
+  const string TreatmentPosition = "TreatmentPosition";
+  /* seqComputerModes: is set by L2 HMI user to block computer mode availability to L1 */
+  const string ComputerModeAllowed = "ComputerModeAllowed";
+  /* seqGasData: gas amounts for preheatig */
+  const string GasAmountPreheating = "GasAmountPreheating";
+  /* seqGasData: gas amounts for splashing */
+  const string GasAmountSplashing = "GasAmountSplashing";
+  /* long: Gap between skirt and vessel */
+  const string SkirtGap = "SkirtGap";
+  /* ChargedWeight: double 
+     Used for liquid additions.
+     Before discharge has to handled like plan charge weight
+     After discharge has to be handled like real discharged weight */
+  const string ChargedWeight = "ChargedWeight";
+
+  /* Comment: string */
+  const string Comment = "Comment";
+
+
+  /* seqHMPouringData: Poured hot metal into ladle */
+  const string HMPouringData = "HMPouringData";
+
+  /* string: to provide entered coments in HMI to tracking */
+  const string OperatorComment = "OperatorComment";
+
+  /* string: identifier of hot metal, might be tap id after pouring */
+  const string HotMetalId = "HotMetalId";
+
+  /* long: internal hot metal counter */
+  const string HotMetalCounter = "HotMetalCounter";
+
+  /* double: OxygenCons Consumption in Nm3 */
+
+  const string OxygenCons = "OxygenCons";
+
+  /* long: ReTreatment switch 1/0*/
+
+  const string ReTreatment = "ReTreatment";
+
+	/* HMCounter : long */
+	
+	const string HMCounter = "HMCounter";	
+	/* HMWeight : double */
+	
+	const string HMWeight = "HMWeight";	
+	/* HMTemp : double */
+	
+	const string HMTemp = "HMTemp";		
+
+	/* SulphurAct : double */
+  const string SulphurAct = "SulphurAct";
+
+	/* LadleFreeBoard : long */
+	
+	const string LadleFreeBoard = "LadleFreeBoard";
+
+	const string HMDCalcMode = "HMDCalcMode"; 
+
+	const string HMDTreatType = "HMDTreatType";
+
+	const string ManuallyEntered = "ManuallyEntered";
+
+	//sankar
+	const string CasterStrandNo = "CasterStrandNo";
+	const string CasterHeatInSeq = "CasterHeatInSeq";
+	const string TundishSuperHeat = "TundishSuperHeat";
+	const string MouldThickness = "MouldThickness";
+	const string TundishTemp = "TundishTemp";
+
+};
+
+module DEF_PLANT {
+  /* string: Key in plant interface for tapping ladle */
+  
+  const string Preparation = "Preparation";
+  /* string: Key in plant interface of unit with one furnace */
+  
+  const string Furnace = "Furnace";
+  /* string: Key in plant interface for tapping ladle */
+  
+  const string TappingLadle = "TappingLadle";
+  /* string: Key in plant interface for transfer car 1 */
+  
+  const string TransferCar1 = "TransferCar1";
+  /* string: Key in plant interface for transfer car 2 */
+  
+  const string TransferCar2 = "TransferCar2";
+  /* string: Key in plant interface for furnace 1 in a twin type of unit */
+  
+  const string Furnace1 = "Furnace1";
+  /* string: Key in plant interface for furnace 2 in a twin type of unit */
+  
+  const string Furnace2 = "Furnace2";
+  const string TopLance = "TopLance";
+  /* Key for electrical system */
+  
+  const string ElecSystem = "ElecSystem";
+  /* VD plant, Tank 1 */
+  
+  const string Tank1 = "Tank1";
+  /* VD plant, Tank 2 */
+  
+  const string Tank2 = "Tank2";
+  /* Key in interface for transfer car 3 */
+  
+  const string TransferCar3 = "TransferCar3";
+  /* Key in interface for transfer car 4 */
+  
+  const string TransferCar4 = "TransferCar4";
+  /* string : Key to store actual heat and ladle data being in tapping area */
+  
+  const string TappingArea = "TappingArea";
+
+};
+
+module DEF_GAS {
+  /* Oxygen */
+  
+  const string O2 = "O2";
+  const string N2 = "N2";
+  const string Ar = "Ar";
+  const string CO = "CO";
+  const string H2 = "H2";
+  const string CO2 = "CO2";
+  /* Helium */
+  
+  const string He = "He";
+  /* EAF-Burner -Oxygen ( secondary oxygen) */
+  
+  const string BO = "BO";
+  /* EAF-Burner -Gas */
+  
+  const string BG = "BG";
+  const string Air = "Air";
+};
+
+module DEF_AOD_PRED_PHASES {
+  /* Actual status. */
+  
+  const string Actual = "Act";
+  /* Status end of preparation. */
+  
+  const string Prep = "Prep";
+  /* Status end of reblow after blowing. */
+  
+  const string ReblowAfterBlow = "ReblowAfterBlow";
+  /* Status end of reblow after reduction. */
+  
+  const string ReblowAfterRed = "ReblowAfterRed";
+  /* Status end of dynamic blow, this status is divided into 6 substates. To get results for the status dynamic blow and first substatus use focusOnStatus("DynBlow_No",1). */
+  
+  const string DynBlowNo = "DynBlowNo";
+  /* Status end of AlSi oxidation. */
+  
+  const string AlSiOxid = "AlSiOxid";
+  /* Status end of main blowing. */
+  
+  const string MainBlow = "MainBlow";
+  /* Status end of reduction. */
+  
+  const string Red = "Red";
+  /* Status end of desulphurisation. */
+  
+  const string Desul = "Desul";
+  /* Status end of alloying. */
+  
+  const string Alloy = "Alloy";
+  const string SwitchPtAr = "SwitchPtAr";
+};
+
+module DEF_THERMAL_STATUS {
+  const string High = "High";
+  const string Low = "Low";
+  const string Medium = "Medium";
+};
+
+module DEF_DATAKEY {
+  /* CYCLIC_LADLE used for persistant Data Key */
+  
+  const string CYCLIC_LADLE = "CYCLIC_LADLE";
+  /* CYCLIC_FURNACE used for persistant Data Key */
+  
+  const string CYCLIC_FURNACE = "CYCLIC_FURNACE";
+};
+
+module DEF_OPERMODE_STATUS {
+  /* Manual Mode on Level 1 */
+  const long ManualMode = 0;
+
+  /* Computer Auto Mode on Level 1 */
+  const long AutoMode = 1;
+
+  /* Computer Pattern Mode on Level 1 */
+  const long ComputerPatternMode = 2;
+
+  /* Computer Dynamic Mode on Level 1 */
+  const long ComputerDynamicMode = 3;
+};
+
+
+module DEF_CARPOSITION {
+  /* 1 = In Operating Position
+  2 = In Deslaging Position
+  0 = Out of Operating Position and Deslagging Position */
+  
+  const long OperationPositon = 1;
+  /* 1 = In Operating Position
+  2 = In Deslaging Position
+  0 = Out of Operating Position and Deslagging Position */
+  
+  const long DeslagPosition = 2;
+  /* 1 = In Operating Position
+  2 = In Deslaging Position
+  0 = Out of Operating Position and Deslagging Position */
+  
+  const long OutOfOperatingPosition = 0;
+};
+
+
+module DEF_LF_PHASES {
+  const string Preparation = "Preparation";
+  const string Adjusting = "Adjusting";
+  const string CleanStirring = "CleanStirring";
+  const string Actual = "Actual";
+  const string HeatingTempHold = "TempHold";
+  const string HeatingMain = "Main";
+  const string HeatingFinal = "Final";
+  const string HeatingInitial = "Initial";
+  const string Cooling = "Cooling";
+  const string SoftStirring = "SoftStirring";
+};
+
+module DEF_LIQ_MAT_REPORT {
+  const long EmptyTeemingLadleWeightAfterAODCharging = 58;
+  const long FeCrLadleTareWeightAfterEAFCharge = 8;
+  const long FeCrLadleTareWeightBeforeEAF = 6;
+  const long FeCrWeightGrossforEAF = 7;
+  const long FullTeemingLadleWeightBeforeAODCharging = 57;
+  const long HMLadleGrossWeightAfterConArcCharge = 46;
+  const long HMLadleGrossWeightAfterDesul = 31;
+  const long HMLadleGrossWeightAfterPouring = 40;
+  const long HMLadleGrossWeightBeforBOFCharge = 33;
+  const long HMLadleGrossWeightBeforeConArcCharge = 42;
+  const long HMLadleGrossWeightBeforeDesul = 30;
+  const long HMLadleGrossWeightBeforePouring = 39;
+  const long HMLadleGrossWeightforEAF = 2;
+  const long HMLadleTareWeightAfterBOFCharge = 34;
+  const long HMLadleTareWeightAfterConArcCharge = 47;
+  const long HMLadleTareWeightAtPouringStation = 32;
+  const long HMLadleTareWeightBeforeEAF = 1;
+  const long HMLadleTareweightAfterEAFCharge = 3;
+  const long HMPouredWeightFromTorpedo = 27;
+  const long HMWeightForBOF = 35;
+  const long LadleGrossWeightAfterAODCharging = 53;
+  const long LadleGrossWeightAfterBOFTapping = 29;
+  const long LadleGrossWeightAfterCasting = 38;
+  const long LadleGrossWeightAfterConArcTapping = 44;
+  const long LadleGrossWeightBeforeCasting = 37;
+  const long LadleGrossWeightUpdateAtDesul = 45;
+  const long LadleGrossWeightUpdateAtLF = 41;
+  const long LadleGrossWeightUpdateAtLTS = 52;
+  const long LadleNettWeightAfterAODTapping = 171;
+  const long LadleNettWeightAfterEAFTapping = 17;
+  const long LadleSteelWeightAfterAODDeslagging = 141;
+  const long LadleSteelWeightAfterEAFDeslagging = 14;
+  const long LadleSteelWeightBeforeEAFDeslagging = 13;
+  const long LadleTareWeightAfterAODCharging = 20;
+  const long LadleTareWeightAfterAODTapping = 24;
+  const long LadleTareWeightBeforeAODTapping = 21;
+  const long LadleTareWeightBeforeBOFTapping = 28;
+  const long LadleTareWeightBeforeConArcTapping = 43;
+  const long LadleWeightAfterAODCharging = 1755;
+  const long LadleWeightAfterAODDeslagging = 23;
+  const long LadleWeightAfterAODTapping = 22;
+  const long LadleWeightAfterEAFTapping = 12;
+  const long LadleWeightAfterLF = 26;
+  const long LadleWeightAfterLTS = 50;
+  const long LadleWeightAfterVD = 16;
+  const long LadleWeightBeforeAODCharging = 1744;
+  const long LadleWeightBeforeAODTapping = 1711;
+  const long LadleWeightBeforeEAFTapping = 11;
+  const long LadleWeightBeforeLF = 25;
+  const long LadleWeightBeforeLTS = 51;
+  const long LadleWeightBeforeVD = 15;
+  const long LadleWeightReturnHeat = 36;
+  const long PreMetalLadleEmptyWgtBefEAFTapping_AftAODCharging = 54;
+  const long PreMetalLadleWeightGrossAfterEAFDeslagging = 56;
+  const long PreMetalLadleWeightGrossBeforeEAFDeslagging = 55;
+};
+
+module DEF_BOF_PRED_PHASES {
+  /* Actual status. */
+  
+  const string Actual = "Act";
+  /* Status end of preparation. */
+  
+  const string Prep = "Prep";
+  /* Status end of reblow after blowing. */
+  
+  const string Reblow = "Reblow";
+  /* Status end of dynamic blow, this status is divided into 6 substates. To get results for the status dynamic blow and first substatus use focusOnStatus("DynBlow_No",1). */
+  
+  const string DynBlowNo = "DynBlowNo";
+  /* Status end of AlSi oxidation. */
+  
+  const string AlSiOxid = "AlSiOxid";
+  /* Status end of main blowing. */
+  
+  const string MainBlow = "MainBlow";
+  /* Status end of pretreatment. */
+  
+  const string Prtr = "Prtr";
+  /* Status end of PostStirr. */
+  
+  const string PostStirr = "PostStirr";
+  /* Swicht N2->Ar */
+  
+  const string SwitchPtAr = "SwitchPtAr";
+  /* Tap-phase */
+  
+  const string Tapping = "Tap";
+};
+
+module DEF_GEN_STATES {
+  /* long : 1 */
+  
+  const long On = 1;
+  /* long : 0 */
+  
+  const long Off = 0;
+  /* long : 1 */
+  
+  const long Start = 1;
+  /* long : 2 */
+  
+  const long Stop = 2;
+  /* long : 5 */
+  
+  const long Free = 5;
+  /* long : 6 */
+  
+  const long Taken = 6;
+  /* long : 1 */
+  
+  const long Yes = 1;
+  /* long : 0 */
+  
+  const long No = 0;
+  /* long : 1 */
+  
+  const long New = 1;
+  /* long : 2 */
+  
+  const long Update = 2;
+  /* long : 3 */
+  
+  const long Delete = 3;
+  /* long : 0 */
+  
+  const long End = 0;
+  /* long : 1 */
+  
+  const long OK = 1;
+  /* long : 0 */
+  
+  const long NotOk = 0;
+  /* 1 - in operation position */
+  
+  const long OperationPosition = 1;
+  /* 0 - in operation position */
+  
+  const long OutOfOperationPosition = 0;
+  /* long = 1 = Status available */
+  
+  const long Available = 1;
+  /* long = 0 = Status not available */
+  
+  const long NotAvailable = 0;
+  /* long : 2 */
+  
+  const long Interrupted = 2;
+  /* long: 3 */
+  
+  const long Stopped = 3;
+  /* long : 1 */
+  
+  const long Insert = 1;
+
+  const long Warning = - 1;
+
+  const long Error = - 2;
+  
+  const long Undefined = - 3;
+
+};
+
+module DEF_SUBSYSTEMS {
+  const string DM_BOF = "DM_BOF";
+  const string DM_AOD = "DM_AOD";
+  const string DM_EAF = "DM_EAF";
+  const string DM_LF = "DM_LF";
+  const string DM_LTS = "DM_LTS";
+  const string BOF = "BOF";
+  const string AOD = "AOD";
+  const string LF = "LF";
+  const string LTS = "LTS";
+  const string EAF = "EAF";
+  const string CMC = "CMC";
+  const string DM_GEN = "DM_GEN";
+  const string HMD = "HMD";
+  const string RH = "RH";
+  const string DM_HMD = "DM_HMD";
+  const string DM_RH = "DM_RH";
+  const string ConArc = "ConArc";
+  const string DM_ConArc = "DM_ConArc";
+  const string VD = "VD";
+};
+
+
+module DEF_PROCESS_STAGE {
+  /* string : 1 */
+  
+  const string BeforeProcess = "1";
+  /* string : 2 */
+  
+  const string InProcess = "2";
+  /* string : 3 */
+  
+  const string AfterProcess = "3";
+};
+
+
+module DEF_TORPEDOCAR_POS {
+  /* long : 44 */
+  
+  const long PP11 = 44;
+  /* long : 45 */
+  
+  const long PP12 = 45;
+  /* long : 46 */
+  
+  const long PP21 = 46;
+  /* long : 47 */
+  
+  const long PP22 = 47;
+  /* long : 0 */
+  
+  const long UNDEF = 0;
+};
+
+module DEF_CYCLIC_MEASUREMENT_TYPES {
+  const string Electric = "Electric";
+  const string Stirring = "Stirring";
+  const string CoolingWater = "CoolingWater";
+  const string WasteGas = "WasteGas";
+  const string Blowing = "Blowing";
+  const string Burning = "Burning";
+  const string Injection = "Injection";
+  const string MatFeeding = "MatFeeding";
+  const string TapLadleStirring = "TapLadleStirring";
+};
+
+module DEF_COMP_MODES {
+  /* MatHandleL1Error:long
+  L1 Computer mode swicht off because discharge into unknown destination
+  If new analysis recives it will be reset */
+  
+  const string Process = "Process";
+  /* Process:long Electric + Oxygen Blowing + Material feeding continuous */
+
+  const string MatHandleL1Error = "MatHandleL1Error";
+  /* Level2Error:long Set in case L2 find an Error */
+  
+  const string Level2Error = "Level2Error";
+  /* MatHandle:long Valid Computer Mode L1 & Computer Mode availability for Material Handling in L2 */
+  
+  const string MatHandle = "MatHandle";
+  /* MatHandleModel:long Computer Mode availability L2 Model */
+  
+  const string MatHandleModel = "MatHandleModel";
+  /* RejectHeatL1:long L1 Rejects the heat for which the L2 Availibilities are off. If new analysis recives it will be reset. */
+  
+  const string RejectHeatL1 = "RejectHeatL1";
+  /* Stirring:long Valid Computer Mode L1 & Computer Mode availability for Stirring in L2 */
+  
+  const string Stirring = "Stirring";
+  /* StirringModel:long Computer Mode availability L2 Model */
+  
+  const string StirringModel = "StirringModel";
+  /* Electric:long Valid Computer Mode L1 & Computer Mode availability for Electric in L2 */
+  
+  const string Electric = "Electric";
+  /* ElectricModel:long Computer Mode availability L2 Model */
+  
+  const string ElectricModel = "ElectricModel";
+  /* Blowing:long Valid Computer Mode L1 & Computer Mode availability for Blowing in L2 */
+  
+  const string Blowing = "Blowing";
+  /* BlowingModel:long Computer Mode availability L2 Model */
+  
+  const string BlowingModel = "BlowingModel";
+  /* Injection:long Valid Computer Mode L1 & Computer Mode availability for Injection in L2 */
+  
+  const string Injection = "Injection";
+  /* InjectionModel:long Valid Computer Mode availability L2 Model */
+  
+  const string InjectionModel = "InjectionModel";
+  /* Burner:long Valid Computer Mode L1 & Computer Mode availability for Burner in L2 */
+  
+  const string Burner = "Burner";
+  /* BurnerModel:long Valid Computer Mode availability L2 Model */
+  
+  const string BurnerModel = "BurnerModel";
+  /* GasLance:long Valid Computer Mode L1 & Computer Mode availability for Gas (Door, EBT, etc.) Lance in L2 */
+  
+  const string GasLance = "GasLance";
+  /* GasLanceModel:long Valid Computer Mode availability L2 Model */
+  
+  const string GasLanceModel = "GasLanceModel";
+  /* PatternFeed:long Valid Computer Mode L1 & Computer Mode availability for Cont Feeding Pattern in L2 */
+  
+  const string PatternFeed = "PatternFeed";
+  /* PatternFeedModel:long Valid Computer Model availability L2 Model */
+  
+  const string PatternFeedModel = "PatternFeedModel";
+  /* DynamicFeed:long Valid Computer Mode L1 & Computer Mode availability for Cont Feeding Dynamic in L2 */
+  
+  const string DynamicFeed = "DynamicFeed";
+  /* DynamicFeedModel:long Valid Computer Model availability L2 Model */
+  
+  const string DynamicFeedModel = "DynamicFeedModel";
+  /* Media:long Valid computer mode for Media in L2 */
+  
+  const string Media = "Media";
+  /* MediaModel:long Computer mode from model */
+  
+  const string MediaModel = "MediaModel";
+  /* Pressure:long Valid computer mode for Pressure in L2 */
+  
+  const string Pressure = "Pressure";
+  /* PressureModel:long Computer mode from Model */
+  
+  const string PressureModel = "PressureModel";
+  const string Vacuum = "Vacuum";
+  const string JetModule = "JetModule";
+
+  const string DynamicBlowing = "DynamicBlowing";
+
+  const string TappingBatch = "TappingBatch";
+
+};
+
+
+
+module DEF_DEVICES {
+
+  const string Hoist = "Hoist";
+  const string LanceStandBy = "LanceStandBy";
+  const string SubLance = "SubLance";
+  const string Burner = "Burner";
+  const string TopLance = "TopLance";
+  /* media devices aod */
+  const string Tuyeres = "Tuyeres";
+  /* Top lance for material injection */
+  const string InjectionLance = "InjectionLance";
+  const string Roof = "Roof";
+  const string FurnaceBreaker = "FurnaceBreaker";
+  const string Electrodes = "Electrodes";
+  const string TapChanger = "TapChanger";
+  const string ImpCurve = "ImpCurve";
+  const string Gantry = "Gantry";
+  const string SlagDoor = "SlagDoor";
+  const string InjectorCarbon = "InjectorCarbon";
+  const string InjectorDust = "InjectorDust";
+  const string InjectorLime = "InjectorLime";
+  const string DoorBurner = "DoorBurner";
+  /* Post combustion lance */
+  
+  const string PCLance = "PCLance";
+  /* for device in seqStatus */
+  
+  const string Cover = "Cover";
+  /* for device in seqStatus */
+  
+  const string SteamEjector = "SteamEjector";
+  /* for device in seqStatus */
+  
+  const string Vacuum = "Vacuum";
+  /* for seqInjectLanceData & seqGasLanceData */
+  
+  const string LanceEBT = "LanceEBT";
+  /* for seqInjectLanceData & seqGasLanceData */
+  
+  const string LanceDoor = "LanceDoor";
+  /* for seqInjectLanceData & seqGasLanceData */
+  
+  const string LanceRightFront = "LanceRightFront";
+  /* for seqInjectLanceData & seqGasLanceData */
+  
+  const string LanceRightBack = "LanceRightBack";
+  /* for seqInjectLanceData & seqGasLanceData */
+  
+  const string LanceLeftFront = "LanceLeftFront";
+  /* for seqInjectLanceData & seqGasLanceData */
+  
+  const string LanceLeftBack = "LanceLeftBack";
+  const string InjectorDoor = "InjectorDoor";
+  const string InjectorEBT = "InjectorEBT";
+  const string InjectorSide1 = "InjectorSide1";
+  const string InjectorSide2 = "InjectorSide2";
+  const string GasLanceDoor = "GasLanceDoor";
+  const string GasLanceEBT = "GasLanceEBT";
+  const string GasLance1 = "GasLance1";
+  const string GasLance2 = "GasLance2";
+  const string WasteGas = "WasteGas";
+
+  const string Dedusting = "Dedusting";
+  const string DoorPanel = "DoorPanel";
+  const string LiningLoops = "LiningLoops";
+
+  // states for LF status check
+  const string FurnacePowerOn = "FurnacePowerOn";
+  const string ElectrodeInhibit = "ElectrodeInhibit";
+
+
+};
+
+module DEF_STATUS_NAME {
+
+  const string Stirring = "Stirring";
+  const string Bypass = "Bypass";
+  const string Injection = "Injection";
+  const string Burner = "Burner";
+  const string Plant = "Plant";
+  const string Blowing = "Blowing";
+  const string Electric = "Electric";
+  const string Vacuum = "Vacuum";
+  const string Cooling = "Cooling";
+  const string Oxygen = "Oxygen";
+  const string Nitrogen = "Nitrogen";
+  const string Argon = "Argon";
+  const string Mechanic = "Mechanic";
+};
+
+module DEF_GANTRY_POS {
+  /* long : 0 */
+  
+  const long Maintenance = 0;
+  /* long : 1 */
+  
+  const long Position1 = 1;
+  /* long : 2 */
+  
+  const long Position2 = 2;
+};
+
+
+module DEF_CONVERTER_POS {
+  /* long : 4 */
+  
+  const long TempSamplePosition = 4;
+  /* long : 2 */
+  
+  const long TappingPosition = 2;
+  /* long : 3 */
+  
+  const long ChargingPosition = 3;
+  /* long : 1 */
+  
+  const long BlowingPosition = 1;
+  /* long : 5 */
+  
+  const long DeslaggingPosition = 5;
+};
+
+module DEF_SLOPPING_TYPE {
+  const string HeavySlopping = "HSlop";
+  const string Slopping = "Slop";
+};
+
+module DEF_COVER_POSITION {
+  /* long: 1 */
+  
+  const long Tank1 = 1;
+  /* long: 2 */
+  
+  const long Tank2 = 2;
+  /* long: 3 */
+  
+  const long Parked = 3;
+  /* long: 0 */
+  
+  const long Undefined = 0;
+};
+
+module DEF_EAF_PLANT_TYPE {
+  const string DRI = "DRI";
+  const string FeCr = "FeCr";
+};
+
+module DEF_GC_TRETMENTPOSITION {
+  const long Preparation = 0;
+  const long Furnace = 1;
+  const long TappingArea = 2;
+  const long TransferCar1 = 1;
+  const long TransferCar2 = 2;
+
+};
+
+module DEF_HMD_PHASES {
+	const string Preparation = "Preparation";
+	const string StartMonoLime = "StartMonoLime";
+	const string StartMonoCarb = "StartMonoCarb";
+	const string StartCoMg = "StartCoMg";
+	const string MainPhase = "MainPhase";
+	const string EndCarbide = "EndCarbide";
+	const string EndLime = "EndLime";
+	const string EndCoMg = "EndCoMg";
+	const string Deslagging = "Deslagging";
+};
+

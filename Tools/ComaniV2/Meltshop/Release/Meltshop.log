@@ -1,0 +1,41 @@
+﻿Build started 18/06/2014 4:34:20 PM.
+     1>Project "D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Meltshop\Meltshop.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Release\Meltshop.unsuccessfulbuild".
+       GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       CoreResGen:
+         All outputs are up-to-date.
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\Comani\bin\release\Meltshop.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\JSW-SMS-3\SMC\packages\omniORB\lib\x86_win32" /LIBPATH:"D:\JSW-SMS-3\SMC\packages\CBS\lib" /LIBPATH:C:\oracle\product\11.2.0\client_1\precomp\lib /LIBPATH:V:\SMC\Release\lib\HMI winmm.lib odbc32.lib odbccp32.lib wsock32.lib orasql11.lib "CBS-K.lib" omniORB4_rt.lib omniDynamic416_rt.lib omnithread34_rt.lib CorbaObjects.lib PCSWrapper.lib /ASSEMBLYRESOURCE:Release\Meltshop.DlgConfigureSource.resources /ASSEMBLYRESOURCE:Release\Meltshop.DlgSelectConnection.resources /MANIFEST /ManifestFile:"Release\Meltshop.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\bin\release\Meltshop.pdb" /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /DLL Release\app.res
+         Release\AssemblyInfo.obj
+         Release\DlgConfigureSource.obj
+         Release\DlgSelectConnection.obj
+         Release\IBASConnection.obj
+         Release\Meltshop.obj
+         Release\MeltshopTelegram.obj
+         Release\BASIntrf_dynSK.obj
+         Release\BASIntrf_s.obj
+         "Release\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+     1>BASIntrf_s.obj : warning LNK4248: unresolved typeref token (0100001C) for 'CORBA._objref_IDLType'; image may not run
+     1>BASIntrf_dynSK.obj : warning LNK4248: unresolved typeref token (01000018) for 'CORBA._objref_IDLType'; image may not run
+     1>Meltshop.obj : warning LNK4248: unresolved typeref token (01000030) for 'CORBA._objref_IDLType'; image may not run
+     1>IBASConnection.obj : warning LNK4248: unresolved typeref token (0100001F) for 'CORBA._objref_IDLType'; image may not run
+     1>DlgSelectConnection.obj : warning LNK4248: unresolved typeref token (0100002C) for 'CORBA._objref_IDLType'; image may not run
+     1>BASIntrf_s.obj : warning LNK4248: unresolved typeref token (01000016) for 'omniIdentity'; image may not run
+         Meltshop.vcxproj -> D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Meltshop\..\Comani\bin\release\Meltshop.dll
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"..\Comani\bin\release\Meltshop.dll;#2" /manifest Release\Meltshop.dll.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\Meltshop.unsuccessfulbuild".
+         Touching "Release\Meltshop.lastbuildstate".
+     1>Done Building Project "D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Meltshop\Meltshop.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.10

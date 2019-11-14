@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{dac7c558-ea65-422c-a61f-9ab6f1ac324c}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{d3bbf38e-36e8-41cc-a0a3-84751b53cf16}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Excel-Sheets">
+      <UniqueIdentifier>{0c1e869b-350d-41b2-8bd8-c7f34bc2ebdc}</UniqueIdentifier>
+      <Extensions>idl</Extensions>
+    </Filter>
+    <Filter Include="IDL">
+      <UniqueIdentifier>{fd02b167-bfe9-4638-9b08-2cd0785258a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{11e04081-fd10-490a-b243-3054a6e1c66b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Macros">
+      <UniqueIdentifier>{29ab845f-e7e1-429d-a366-ad7ab68bd9d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XML">
+      <UniqueIdentifier>{aa8dda68-7132-4bac-ac7f-730683f7e899}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CTelcom_InAppCommunication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTelcom_InMsgTypeTranslator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTelcom_InOracleTransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTelcom_InProt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTelcom_InTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTelcom_InTcpipTransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iData_Provider_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iData_Provider_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iDH_Telcom_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iDH_Telcom_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_In.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_In_factory.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_In_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="Telcom_In_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="CTelcom_InDbWriterTransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CTelcom_InAppCommunication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTelcom_InMsgTypeTranslator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTelcom_InOracleTransport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTelcom_InProt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTelcom_InTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTelcom_InTcpipTransport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Telcom_In_factory.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+    <ClInclude Include="Telcom_In.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+    <ClInclude Include="CTelcom_InDbWriterTransport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UsedInterfaces.txt">
+      <Filter>Excel-Sheets</Filter>
+    </None>
+    <None Include="..\..\Macros\CreateTelcomInOut.xla">
+      <Filter>Macros</Filter>
+    </None>
+    <None Include="iData_Provider_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="iDH_Telcom_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="Telcom_In_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Telcom_In.xls">
+      <Filter>Excel-Sheets</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Telcom_In.xml">
+      <Filter>XML</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\DH\DH_Telcom_Interface\Telcom_In.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\DH\DH_Telcom_Interface\iDH_Telcom.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Data_Provider\iData_Provider.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,138 @@
+// Copyright (C) 2007 SMS Demag AG
+
+#include "CTelcom_InTask.h"
+#include "cCBS_StdCORBA_Task.h"
+#include "cCBS_StdLog_Task.h"
+#include "CCBS_StdInitBase.h"
+#include "CEventMessage.h"
+#include "CTelcom_InAppCommunication.h"
+
+//##ModelId=45ACA7B5012F
+CTelcom_InTask* CTelcom_InTask::m_Instance = 0;
+
+
+//##ModelId=45AB96F3026B
+void CTelcom_InTask::setCORBAConnections()
+{
+  m_pDHProxyManager = new CProxyManager<DH_Telcom::iDH_Telcom>();
+  m_pDHProxyManager->registerProxies("DataHandler");
+}
+
+//##ModelId=45AB96F5018F
+CTelcom_InTask::CTelcom_InTask()
+{
+}
+
+//##ModelId=45AB96F50344
+CTelcom_InTask::~CTelcom_InTask()
+{
+  if (m_pInAppCommunication)
+    delete m_pInAppCommunication;
+}
+
+//##ModelId=45AC967B0214
+bool CTelcom_InTask::sendSwitchConnectMessage()
+{
+  // indicate an event for telcom out, so that it can switch connection
+  CEventMessage swEvent;
+  std::string Sender;
+  std::string DestinationName;
+  std::string PlantID;
+
+  cCBS_StdInitBase::getInstance()->getEntry("EventMessage", "SenderName", Sender);
+  cCBS_StdInitBase::getInstance()->getEntry("EventMessage", "DestinationName", DestinationName);
+  cCBS_StdInitBase::getInstance()->getEntry("EventMessage", "PlantId", PlantID);
+
+  swEvent.setPlantEvent(true);
+  swEvent.setSender(Sender);
+  swEvent.setReceiver(DestinationName);
+  swEvent.setPlantID(PlantID);
+  swEvent.setMessage("SWITCH_CONNECTION");
+
+  return swEvent.dispatch(Sender,DestinationName);
+}
+
+//##ModelId=45ACA7DB0181
+CTelcom_InTask* CTelcom_InTask::getInstance()
+{
+  if (! m_Instance)
+  {
+  	m_Instance = new CTelcom_InTask();
+  }
+  return m_Instance;
+}
+
+//##ModelId=45AC967B01A7
+bool CTelcom_InTask::initialize()
+{
+  // must be called first
+  bool ret = CTelcom_Task::initialize();
+
+  m_pInAppCommunication	= new CTelcom_InAppCommunication();
+  m_pInAppCommunication->initComm();
+	return ret;
+}
+
+//##ModelId=45AC967B01C5
+void CTelcom_InTask::ownStartUp()
+{
+  setWorking(false);
+
+  if( !running() )
+    run();
+}
+
+//##ModelId=45AC967B01E3
+void CTelcom_InTask::ownRunDown()
+{
+  setWorking(false);
+
+  if (!getTerminateThread())
+  {
+    if (m_pInAppCommunication)
+    {
+      m_pInAppCommunication->stopComm();
+    }
+    forceTerminate();
+    join();
+  }
+}
+
+//##ModelId=45AC967B01F7
+void CTelcom_InTask::performWorkingStep()
+{
+  if (m_pInAppCommunication)
+  {
+    m_pInAppCommunication->startComm();
+    // Here if something is wrong in Telcom Communication.
+    cCBS_StdLog_Task::getInstance()->log("performWorkingStep: Trying to re-establish", 3);
+
+  }
+
+  sleep(10000);
+
+}
+
+void CTelcom_InTask::getOwnStateDetails(CORBA::String_out details)
+{
+  std::stringstream msg;
+
+  cCBS_StdFrame_Task::getOwnStateDetails(details);
+
+  if (m_pInAppCommunication)
+  {
+    msg << details << '/n';
+
+    std::string status;
+    if (m_pInAppCommunication->getStatus(status))
+    {
+      msg << "Current status: " << status;
+    }
+    else
+    {
+      msg << "Current status not available: " << status;
+    }
+    details = CORBA::string_dup(msg.str().c_str());
+  }
+}
+

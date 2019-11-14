@@ -1,0 +1,128 @@
+//-------------------------------------------------------------------------------------------------
+// 
+//                           S M S  D e m a g  A G 
+// 
+//                            All Rights Reserved 
+// 
+// 
+// project       : Email Server
+// filename      : cEmailServer_EventHandlerTask.cpp 
+// author        : Dominik Terhorst
+// department    : EAM4
+// creation date : 06-JUL-2010 
+// description   : Eventchannel class for receiving of Email events.
+// 
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+// compile test log levels op to #9
+#define _CLOG9
+
+#include <iostream>
+#include "cEmailServer_EventHandlerTask.h"
+#include "cEmailServer_Comp.h"
+
+// some CBS Includes to make compiler happy (need only cCBS_StdEventSenderTask but that requires more)
+#include "cCBS_StdTask.h"
+#include "cCBS_EvChannelSender.h"
+#include "cCBS_StdEventSenderTask.h"
+
+#include "CBS_Utilities\CBS_Clog.h"
+
+#include "iEventData_s.hh"
+#include "iEventMessages_s.hh"
+
+
+using namespace System::Runtime::InteropServices;
+
+
+cEmailServerEventHdlTask::cEmailServerEventHdlTask (const char * channelName, const char * serviceName)	 : cCBS_StdEventHdlTask ()
+{
+}
+
+cEmailServerEventHdlTask::~cEmailServerEventHdlTask(void)
+{
+}
+
+void cEmailServerEventHdlTask::ownStartUp()
+{
+  cCBS_StdEventHdlTask::ownStartUp();
+
+  setWorking(true);
+
+  CLOG6(<< "ownStartUp performed!" << std::endl);
+}
+
+void cEmailServerEventHdlTask::ownRunDown()
+{
+  setWorking(false);
+  cCBS_Task::ownRunDown();
+}
+
+
+
+
+void cEmailServerEventHdlTask::handleEvent(const FRIESEvent& Event)
+{
+
+    try
+    {
+			const sEventData* pData;
+			if(Event.eventData >>= pData)
+			{			
+				String^ sMessage = gcnew String(pData->m_Message);
+				String^ sHeatId = gcnew String(pData->m_HeatID);
+				String^ sTreatId = gcnew String(pData->m_TreatID);
+				String^ reportPlant = gcnew String(pData->m_PlantID);
+				String^ now = System::DateTime::Now.ToString("dd.MM.yyyy HH:mm:ss");
+
+				if (sMessage == gcnew String(HMD_EvMsg::evHMDHeatDeparture))
+				{
+						//m_emailParams = cEmailServer_Comp::getComponent()->ReadConfigParameters("HMD_HEAT_REPORT");
+						//if(m_emailParams != nullptr)
+						//{        
+						//	std::string repFile = ConvertString(cEmailServer_Comp::getComponent()->m_emails->FindReportFile(ConvertString(m_emailParams->name.c_str()))); 
+
+						//	if(!repFile.empty())
+						//	{
+						//		cEmailServer_Comp::getComponent()->m_emails->ProcessHeatReport_HMD
+						//																		(
+						//																			ConvertString(m_emailParams->action.c_str()), 
+						//																			ConvertString(repFile.c_str()), 
+						//																			ConvertString(m_emailParams->filepath.c_str()), 
+						//																			ConvertString(m_emailParams->filename.c_str()),
+						//																			sHeatId,sTreatId,reportPlant
+						//																			);      
+						//	}
+						//}
+
+				}
+
+
+			} //if(Event.eventData >>= pData)
+	  }
+    catch(...)
+    {
+
+    }
+
+	
+ 
+}
+
+
+String^ cEmailServerEventHdlTask::ConvertString(const char* s)
+{
+	if(s == 0)
+		return nullptr;
+	return Marshal::PtrToStringAnsi(IntPtr((void*)s));
+}
+
+std::string cEmailServerEventHdlTask::ConvertString(String^ s)
+{
+	if(s == nullptr)
+		return "";
+	IntPtr p = Marshal::StringToHGlobalAnsi(s);
+	std::string ret((const char*)p.ToPointer());
+	Marshal::FreeHGlobal(p);
+	return ret;
+}

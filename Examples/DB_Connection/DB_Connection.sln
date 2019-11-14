@@ -1,0 +1,58 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DB_Connection", "DB_Connection.vcxproj", "{4C9ED98A-9B02-30C1-AEF7-4FA81A7AA5CD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8} = {FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA} = {9BF0B144-3239-3CC9-A42C-BAF0926401AA}
+		{C4B00E58-C607-4911-9256-E81B366F84C2} = {C4B00E58-C607-4911-9256-E81B366F84C2}
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885} = {72925ED1-44FA-3AE5-AD4A-FF5C37F10885}
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10886} = {72925ED1-44FA-3AE5-AD4A-FF5C37F10886}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SMC_Frame", "..\..\SMC_Frame\SMC_Frame.vcxproj", "{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Data_Provider", "..\..\Data_Provider\Data_Provider.vcxproj", "{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CBS_StdFrame", "..\..\CBS_StdFrame\CBS_StdFrame.vcxproj", "{9BF0B144-3239-3CC9-A42C-BAF0926401AA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SMC_DBClasses", "..\..\SMC_DBClasses\SMC_DBClasses.vcxproj", "{72925ED1-44FA-3AE5-AD4A-FF5C37F10886}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SMC_EventLogSystem", "..\..\SMC_EventLogSystem\SMC_EventLogSystem.vcxproj", "{C4B00E58-C607-4911-9256-E81B366F84C2}"
+EndProject
+Global
+	GlobalSection(RationalClearCase) = preSolution
+		SourceControlProvider = RationalClearCase
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C9ED98A-9B02-30C1-AEF7-4FA81A7AA5CD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4C9ED98A-9B02-30C1-AEF7-4FA81A7AA5CD}.Debug|Win32.Build.0 = Debug|Win32
+		{4C9ED98A-9B02-30C1-AEF7-4FA81A7AA5CD}.Release|Win32.ActiveCfg = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Debug|Win32.ActiveCfg = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Debug|Win32.Build.0 = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Release|Win32.ActiveCfg = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Release|Win32.Build.0 = Release|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Debug|Win32.Build.0 = Debug|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Release|Win32.ActiveCfg = Release|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Release|Win32.Build.0 = Release|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Debug|Win32.Build.0 = Debug|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Release|Win32.ActiveCfg = Release|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Release|Win32.Build.0 = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10886}.Debug|Win32.ActiveCfg = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10886}.Debug|Win32.Build.0 = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10886}.Release|Win32.ActiveCfg = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10886}.Release|Win32.Build.0 = Release|Win32
+		{C4B00E58-C607-4911-9256-E81B366F84C2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C4B00E58-C607-4911-9256-E81B366F84C2}.Debug|Win32.Build.0 = Debug|Win32
+		{C4B00E58-C607-4911-9256-E81B366F84C2}.Release|Win32.ActiveCfg = Release|Win32
+		{C4B00E58-C607-4911-9256-E81B366F84C2}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

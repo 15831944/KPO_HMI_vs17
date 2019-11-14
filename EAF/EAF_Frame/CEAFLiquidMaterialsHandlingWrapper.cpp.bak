@@ -1,0 +1,231 @@
+// Copyright (C) 2011 SMS Siemag AG
+
+#include "iSMC_DataDefinitions_s.hh"
+#include "iEventMessages_s.hh"
+
+// Note: The file CIntfEAF.h includes Config.h with definitions which can be used within the Wrapper
+#include "CSMC_EventLogFrameController.h"
+
+#include "CIntfEAF.h"
+
+#include "CPD_HEAT_DATA_LIQADD.h"
+
+#include "CEAFLiquidMaterialsHandlingWrapper.h"
+#include "DEF_GC_LIQADD_STATUS.h"
+
+#include "CDataConversion.h"
+
+//##ModelId=4151A06B0265
+bool CEAFLiquidMaterialsHandlingWrapper::doOnChangeOfLiquidAdditionData(CEventMessage &Event)
+{
+	bool RetValue = false;
+    
+	CIntfEAF *pIntfEAF = getpModelIntf();
+
+  if (!pIntfEAF && !checkDBConnection() ) 
+  {
+    log("error CCEAFLiquidMaterialsHandlingWrapper::doOnChangeOfLiquidAdditionData, (pIntfEAF && checkDBConnection) == false", 1);
+    return false;
+  }
+
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string PlantID   = Event.getPlantID();
+  std::string ActPlant  = m_pGC_Plant_Container->getPlant(PlantID);
+  long ActPlantNo       = m_pGC_Plant_Container->getPlantNo(PlantID);
+  long TreatNo          = CDataConversion::StringToLong(TreatID); //m_pModelTask->getActTreatNo(Event);
+
+	try 
+	{ 
+	  
+    if (m_pPD_HEAT_DATA_LIQADD->select(HeatID, TreatID, ActPlant, CSMC_DBData::unspecLong))
+	  {   
+      pIntfEAF->indicateChgLiqAddData();
+
+			for (int i = 1; i <= m_pPD_HEAT_DATA_LIQADD->getLastRow(); i++)
+			{
+        if (!sequence_set_liquid_material_data(HeatID, TreatID, TreatNo, i, ActPlant))
+        {
+          std::string SearchKey = HeatID + " " + TreatID;
+          CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+          sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+          pEventLog->EL_ErrorProcessingData(sMessage,"sequence_set_liquid_material_data",SearchKey.c_str());
+        }
+			}//end of for(...)
+
+			pIntfEAF->hndlEvent();
+			RetValue = doModelResult(Event);
+	  }
+	  else
+	  {
+			std::string SearchKey = HeatID + " " + TreatID;
+			CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+			sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+			pEventLog->EL_ErrorSearchingData(sMessage,SearchKey.c_str(),"PD_HEAT_DATA_LIQADD");
+	  }
+	}
+	catch (...)
+	{
+	  handleCORBAConnectionError("CEAFLiquidMaterialHandlingWrapper::doOnChangeOfLiquidAdditionData()", "");
+	} 
+
+
+	return RetValue;
+}
+
+//##ModelId=429F12120040
+bool CEAFLiquidMaterialsHandlingWrapper::doOnLiquidAdditionCharged( CEventMessage & Event )
+{
+	bool RetValue = false;
+
+	CIntfEAF *pIntfEAF = getpModelIntf();
+	if (!pIntfEAF && !checkDBConnection() ) 
+  {
+    return false;
+  }
+
+	std::string HeatID  = Event.getHeatID();
+	std::string TreatID = Event.getTreatID();
+	
+  long TreatNo = CDataConversion::StringToLong(TreatID); //m_pModelTask->getActTreatNo(Event);
+
+	try
+	{
+	  long LiqAddNo = m_pModelTask->getpDM_Interface(Event.getSender(),CModelTask::EVENT)->getLong(Event.getDataKey().c_str(), DATA::LiqAddNo); 
+    
+    if (LiqAddNo == DEF::Inv_Long)
+    {
+      log("Liq AdditionNo not known use 1 as default",1);
+      LiqAddNo = 1; 
+    }
+
+    // mrut 2013-11-06 JSW-SMS-3: at JSW, liquid material is regularly charged via launder.
+    // Then a different call is required : "indicateLiqAddChargedStart".
+    // Handling of both possible charging ways is currently not supported.
+    // questions to clarify are:
+    // 1. How to distinguish this safely? 
+    // 2. Where in wrapper and elsewhere to be coded ?
+    // 3. is a new event required?
+    //
+	  // mrut 2013-11-06 JSW-SMS-3:
+    //pIntfEAF->indicateLiqAddCharged( ); 
+      pIntfEAF->indicateLiqAddChargedStart( ); 
+	  			  
+	  if(Event.getMessage() == EAF_EvMsg::evEAFChargedHotMetal)
+	  {
+		  pIntfEAF->focusOnLiqAddHotMetal(HeatID, TreatNo, LiqAddNo);
+	  }
+
+    if(Event.getMessage() == EAF_EvMsg::evEAFChargedLiquidFeCr)
+	  {
+		  pIntfEAF->focusOnLiqAddFeCr(HeatID, TreatNo, LiqAddNo);
+	  }
+
+    if(Event.getMessage() == EAF_EvMsg::evEAFChargedLiquidSteel)
+	  {
+		  pIntfEAF->focusOnLiqAddSteel(HeatID, TreatNo);
+	  }
+
+	  pIntfEAF->hndlEvent();
+	  RetValue = doModelResult(Event);
+	
+	}
+	catch (...)
+	{
+		handleCORBAConnectionError("CEAFLiquidMaterialHandlingWrapper::doOnLiquidAdditionCharged", "");
+	}
+
+
+	return RetValue;
+}
+
+
+//##ModelId=41527D7D00CD
+bool CEAFLiquidMaterialsHandlingWrapper::doOnHotMetalCharged(CEventMessage &Event)
+{
+  return doOnLiquidAdditionCharged(Event);
+}
+
+
+//##ModelId=41527F390207
+bool CEAFLiquidMaterialsHandlingWrapper::doOnLiquidFeCrCharged(CEventMessage &Event)
+{
+  return doOnLiquidAdditionCharged(Event);
+}
+
+//##ModelId=4152814A03D9
+bool CEAFLiquidMaterialsHandlingWrapper::doOnLiquidSteelCharged(CEventMessage &Event)
+{
+	return doOnLiquidAdditionCharged(Event);
+}
+
+
+//##ModelId=429F12110391
+bool CEAFLiquidMaterialsHandlingWrapper::doOnRemoveLiquidAddition(CEventMessage &Event)
+{
+	bool RetValue = false;
+
+	CIntfEAF *pIntfEAF = getpModelIntf();
+
+  if (!pIntfEAF && !checkDBConnection() ) 
+  {
+    return false;
+  }
+
+	std::string HeatID  = Event.getHeatID();
+	std::string TreatID = Event.getTreatID();
+	
+  //long TreatNo  = m_pModelTask->getpDM_Interface(Event.getSender(),CModelTask::PRODUCT)->getLong(
+	//										Event.getProductID().c_str(), DATA::TreatNo );
+  
+  long TreatNo = CDataConversion::StringToLong(TreatID); //m_pModelTask->getActTreatNo(Event);
+
+	try 
+	{
+		long LiqAddNo = m_pModelTask->getpDM_Interface(Event.getSender(),CModelTask::EVENT)->
+									 getLong(Event.getDataKey().c_str(), DATA::LiqAddNo);
+
+		pIntfEAF->indicateLiqAddDataRemove( ); 
+
+    if(Event.getMessage() == EAF_EvMsg::evEAFRemoveHotMetalData)
+			pIntfEAF->focusOnLiqAddHotMetal(HeatID, TreatNo, LiqAddNo);
+   
+    if(Event.getMessage() == EAF_EvMsg::evEAFRemoveLiquidFeCr)
+	    pIntfEAF->focusOnLiqAddFeCr(HeatID, TreatNo, LiqAddNo);
+
+    if(Event.getMessage() == EAF_EvMsg::evEAFRemoveLiquidSteel)
+	    pIntfEAF->focusOnLiqAddSteel(HeatID, TreatNo);
+     
+
+	  pIntfEAF->hndlEvent();
+	  RetValue = doModelResult(Event);
+	}
+	catch (...)
+	{
+	  handleError("CEAFLiquidMaterialHandlingWrapper", "doOnRemoveLiquidAddition()");
+	}
+
+	return RetValue;
+}
+
+
+//##ModelId=41528366025E
+bool CEAFLiquidMaterialsHandlingWrapper::doOnRemoveHotMetalData(CEventMessage &Event)
+{
+  return doOnRemoveLiquidAddition(Event);
+}
+
+
+//##ModelId=415286740192
+bool CEAFLiquidMaterialsHandlingWrapper::doOnRemoveLiquidFeCrData(CEventMessage &Event)
+{
+  return doOnRemoveLiquidAddition(Event);
+}
+
+
+//##ModelId=415286A60308
+bool CEAFLiquidMaterialsHandlingWrapper::doOnRemoveLiquidSteelData(CEventMessage &Event)
+{
+  return doOnRemoveLiquidAddition(Event);
+}
+

@@ -1,0 +1,12 @@
+D:\JSW-SMS-3\SMC\source\HMI\SendEmailOutlookSmtp\obj\Debug\ResolveAssemblyReference.cache
+D:\JSW-SMS-3\SMC\source\HMI\SendEmailOutlookSmtp\bin\Debug\SendEmailOutlookSmtp.dll
+D:\JSW-SMS-3\SMC\source\HMI\SendEmailOutlookSmtp\bin\Debug\SendEmailOutlookSmtp.pdb
+D:\JSW-SMS-3\SMC\source\HMI\SendEmailOutlookSmtp\obj\Debug\SendEmailOutlookSmtp.dll
+D:\JSW-SMS-3\SMC\source\HMI\SendEmailOutlookSmtp\obj\Debug\SendEmailOutlookSmtp.pdb
+V:\SMC\Debug\bin\HMI\SendEmailOutlookSmtp.dll
+V:\SMC\Debug\bin\HMI\SendEmailOutlookSmtp.pdb
+D:\JSW-SMS-3\SMC\source\EmailServer\SendEmailOutlookSmtp\obj\Debug\ResolveAssemblyReference.cache
+D:\JSW-SMS-3\SMC\source\EmailServer\SendEmailOutlookSmtp\obj\Debug\SendEmailOutlookSmtp.dll
+D:\JSW-SMS-3\SMC\source\EmailServer\SendEmailOutlookSmtp\obj\Debug\SendEmailOutlookSmtp.pdb
+V:\SMC\debug\bin\EmailServer\SendEmailOutlookSmtp.dll
+V:\SMC\debug\bin\EmailServer\SendEmailOutlookSmtp.pdb

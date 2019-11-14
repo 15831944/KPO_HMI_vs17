@@ -1,0 +1,23 @@
+/* Source file: X:/SMC/source/DH/DH_Telcom_Interface/iDH_Telcom.idl
+ */
+
+#ifndef  __IDH_TELCOM_DEFINED
+#define  __IDH_TELCOM_DEFINED
+
+/* CmIdentification
+%X% %Q% %Z% %W% */
+
+#include "SMC_Frame\iSMC_DataProvider.idl"
+
+module DH_Telcom {
+	
+	/* CORBA interface for incoming data from Telecom, used in each DH system */
+	
+	interface iDH_Telcom : iSMC_DataProvider {
+	};
+	
+};
+
+
+#endif
+

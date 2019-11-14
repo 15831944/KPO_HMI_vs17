@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Connection-Info>
+  <Interface name="Telcom_In">
+    <Host>dlth96m2bs</Host>
+    <IP-Addresse>10.182.50.108</IP-Addresse>
+    <Port>18510</Port>
+    <ConnType>Client</ConnType>
+  </Interface>
+</Connection-Info>

@@ -1,0 +1,240 @@
+// Copyright (C) 2007 SMS Demag AG
+
+#include "iSMC_DataDefinitions_s.hh"
+#include "iSMC_DataProvider_S.hh"
+#include "iEventMessages_s.hh"
+#include "iDM_Interface_s.hh"
+
+#include "cCBS_StdInitBase.h"
+#include "cCBS_StdEventLogFrameController.h"
+#include "cCBS_DBExc.h"
+#include "CSMC_EventLogFrameController.h"
+#include "CIntfData.h"
+
+//#include "CPDH_HEAT_DATA_PHASE.h"
+
+#include "CARCHIVER_HMDTask.h"
+#include "CARCHIVER_HMDPhaseReportingWrapper.h"
+
+
+
+CARCHIVER_HMDPhaseReportingWrapper::CARCHIVER_HMDPhaseReportingWrapper() 
+//: m_pPDH_Heat_Data_Phase(0)
+{
+  //m_PlantID = DEF_DB_PLANT::HMD;
+}
+
+CARCHIVER_HMDPhaseReportingWrapper::~CARCHIVER_HMDPhaseReportingWrapper()
+{
+}
+
+bool CARCHIVER_HMDPhaseReportingWrapper::doOnHeatProductionPhaseReport(CEventMessage &Event)
+{
+  bool RetValue = false;
+
+		// DUTM
+////  bool bTransSucceed=false;
+////  
+////  std::string ProductID = Event.getProductID();
+////  std::string HeatID    = Event.getHeatID();
+////  std::string TreatID   = Event.getTreatID();
+////  std::string DataKey   = Event.getDataKey();
+////  std::string PlantID   = Event.getPlantID();
+////  std::string OrderID   = Event.getOrderID();
+////  std::string ActPlant  = m_pPlantID_Interpreter->getPlant(PlantID);
+////  std::string CustHeatID;
+////  //long ActPlantNo = m_pPlantID_Interpreter->getPlantNo(PlantID);
+////  
+////  // Unified exception handling *******************************************************
+////  std::string Scope("CARCHIVER_HMDPhaseReportingWrapper::doOnHeatProductionPhaseReport");
+////  std::stringstream ExceptionMsg;
+////  ExceptionMsg << "Handling event: " << Event.getSender()
+////               << ", " << ProductID << ", " << HeatID
+////               << ", " << TreatID   << ", " << DataKey;
+////  //***********************************************************************************
+////  try
+////  {
+////    if (!m_pConnection)
+////    {
+////      handleDBConnectionError();
+////      if (!m_pConnection) return false;
+////    }
+////    
+////    CDateTime now;
+////    std::string ActPhase;
+////    double Lime_Amount;
+////    double Magn_Amount;
+////    double Carb_Amount;
+////    double Blow_Dur;
+////    long PhaseNo = 0;
+////    
+////    //================ logging ==========================
+////    // get sender PRODUCT interface and log available data
+////    setpDM_Interface(Event.getSender(),DM::PRODUCT);
+////    logInterfaceDataList(m_pDM_Interface,ProductID);
+////    
+////    ActPhase = CIntfData::ToStdString(m_pDM_Interface->getString(ProductID.c_str(),DATA::PhaseAct));
+////    Lime_Amount = m_pDM_Interface->getDouble(ProductID.c_str(),DATA::PhaseLimeAmount);
+////    if (Lime_Amount == DEF::Inv_Double)
+////    {
+////      Lime_Amount = 0;
+////    }
+////    Magn_Amount = m_pDM_Interface->getDouble(ProductID.c_str(),DATA::PhaseMagnAmount);
+////    if (Magn_Amount == DEF::Inv_Double)
+////    {
+////      Magn_Amount = 0;
+////    }
+////    Carb_Amount = m_pDM_Interface->getDouble(ProductID.c_str(),DATA::PhaseCarbAmount);
+////    if (Carb_Amount == DEF::Inv_Double)
+////    {
+////      Carb_Amount = 0;
+////    }
+////    Blow_Dur = m_pDM_Interface->getDouble(ProductID.c_str(),DATA::BlowDur);
+////    if (Blow_Dur == DEF::Inv_Double)
+////    {
+////      Blow_Dur = 0;
+////    }
+////
+////    // get senter PLANT interface and log available data
+////    setpDM_Interface(Event.getSender(),DM::PLANT);
+////    logInterfaceDataList(m_pDM_Interface,DEF_PLANT::Furnace);
+////
+//////SS    if (m_pGC_Phase->select(ActPlant, ActPhase, CSMC_DBData::unspecLong))
+////    int i=1;
+////    if (m_pGC_Phase->select(ActPlant, i))
+////    {
+////      if (!m_pGC_Phase->isNull("L1_PHASE_NO", 1))
+////      {
+//////SS        PhaseNo = m_pGC_Phase->getL1PhaseNo(1);
+////      }
+////      else
+////        log("ERROR: L1_PHASE_NO is not set for this Phase!",0);
+////    }
+////    else
+////    {
+////      log("INFO: Actual phase will be skipped, it is not defined for the actual plant",2);
+////      return true;
+////    }
+////
+////    if (m_pPP_Heat_Plant->select(HeatID,TreatID,m_PlantID))
+////    {
+//////SS       CustHeatID = m_pPP_Heat_Plant->getHEATID_CUST(1);
+////      if(m_pPP_Heat->select(CustHeatID))
+////      {        
+////        if(ActPhase == DEF_HMD_PHASES::StartMonoLime)
+////        {
+//////SS           m_pPP_Heat->doHeatAndOrderStatusChange(CustHeatID, ActPlant, DEF_GC_HEAT_STAT::LimeBlow, CSMC_DBData::unspecString);
+////        }
+////
+////        if(ActPhase == DEF_HMD_PHASES::StartMonoCarb)
+////        {
+//////SS           m_pPP_Heat->doHeatAndOrderStatusChange(CustHeatID, ActPlant, DEF_GC_HEAT_STAT::CarbideBlow, CSMC_DBData::unspecString);
+////        }
+////
+////        if(ActPhase == DEF_HMD_PHASES::MainPhase)
+////        {
+//////SS           m_pPP_Heat->doHeatAndOrderStatusChange(CustHeatID, ActPlant, DEF_GC_HEAT_STAT::MagnesBlow, CSMC_DBData::unspecString);
+////        }
+////      }
+////    }
+////	   //  DUTM
+////    ////if (m_pPDH_Heat_Data_Phase)
+////    ////{
+////    ////  // update data for the last PHASE
+////    ////  if (m_pPDH_Heat_Data_Phase->selectLastPhase(ActPlant,HeatID,TreatID))
+////    ////  {
+////    ////    if (m_pPDH_Heat_Data_Phase->isNull("END_TIME",1))
+////    ////    {
+////    ////      m_pPDH_Heat_Data_Phase->setHEATID(HeatID);
+////    ////      m_pPDH_Heat_Data_Phase->setTREATID(TreatID);
+////    ////      m_pPDH_Heat_Data_Phase->setPLANT(ActPlant);
+////    ////      m_pPDH_Heat_Data_Phase->setDURATION(Blow_Dur);
+////    ////      m_pPDH_Heat_Data_Phase->setEND_TIME(now);
+////    ////      m_pPDH_Heat_Data_Phase->setINJ_CARBIDE(Carb_Amount);
+////    ////      m_pPDH_Heat_Data_Phase->setINJ_LIME(Lime_Amount);
+////    ////      m_pPDH_Heat_Data_Phase->setINJ_MG(Magn_Amount);
+////
+////    ////      if (m_pPDH_Heat_Data_Phase->update())
+////    ////        m_pPDH_Heat_Data_Phase->commit();
+////    ////      else
+////    ////        m_pPDH_Heat_Data_Phase->rollback();
+////    ////    }
+////    ////  }
+////
+////      // insert an antry for a new phase
+////      //if ( ActPhase != DEF_HMD_PHASES::Deslagging )
+////      //{
+////      //  m_pPDH_Heat_Data_Phase->setHEATID(HeatID);
+////      //  m_pPDH_Heat_Data_Phase->setTREATID(TreatID);
+////      //  m_pPDH_Heat_Data_Phase->setPLANT(ActPlant);
+////      //  m_pPDH_Heat_Data_Phase->setSTART_TIME(now);
+////      //  m_pPDH_Heat_Data_Phase->setDURATION(Blow_Dur);
+////      //  m_pPDH_Heat_Data_Phase->setRES_PHASENO(PhaseNo);
+////      //  m_pPDH_Heat_Data_Phase->setINJ_CARBIDE(0);
+////      //  m_pPDH_Heat_Data_Phase->setINJ_LIME(0);
+////      //  m_pPDH_Heat_Data_Phase->setINJ_MG(0);
+////
+////      //  if (m_pPDH_Heat_Data_Phase->insert())
+////      //    m_pPDH_Heat_Data_Phase->commit();
+////      //  else
+////      //    m_pPDH_Heat_Data_Phase->rollback();
+////      //}
+////      //---------------------------------------------
+////    }
+////  }
+////  catch (cCBS_DBExc &e)
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+////      Scope.c_str(), ExceptionMsg.str().c_str()); 
+////    RetValue = false;
+////    handleDBConnectionError();
+////  }
+////  catch(CORBA::SystemException& sExc) 
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage,sExc._name(),
+////      Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////  }
+////  catch(CORBA::Exception& cExc) 
+////  {
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////    pEventLog->EL_ExceptionCaught(sMessage,cExc._name(),
+////      Scope.c_str(), ExceptionMsg.str().c_str());
+////    RetValue = false;
+////  }
+////  catch(...)
+////  {
+////    std::string Msg("Unknown exception:");
+////    Msg += ExceptionMsg.str();
+////    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+////      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+////      pEventLog->EL_ExceptionCaught(sMessage, "",
+////      Scope.c_str(), Msg.c_str()); 
+////    RetValue = false;
+////  }
+  return RetValue;
+}
+
+void CARCHIVER_HMDPhaseReportingWrapper::initDBClasses()
+{
+  CARCHIVER_PhaseReportingWrapper::initDBClasses();
+
+  //m_pPDH_Heat_Data_Phase  = new CPDH_HEAT_DATA_PHASE(m_pConnection);
+  //m_pGC_Phase             = new CGC_PHASE(m_pConnection);
+  //m_pHeatStatusContainer  = new CHeatStatusContainer(m_pConnection);
+}
+
+void CARCHIVER_HMDPhaseReportingWrapper::deleteDBClasses()
+{
+  CARCHIVER_PhaseReportingWrapper::deleteDBClasses();
+
+  //if (m_pPDH_Heat_Data_Phase) { delete m_pPDH_Heat_Data_Phase; m_pPDH_Heat_Data_Phase = 0;}
+  //if (m_pGC_Phase)            { delete m_pGC_Phase; m_pGC_Phase = 0;}
+  //if (m_pHeatStatusContainer) { delete m_pHeatStatusContainer; m_pHeatStatusContainer = 0;} 
+}
+

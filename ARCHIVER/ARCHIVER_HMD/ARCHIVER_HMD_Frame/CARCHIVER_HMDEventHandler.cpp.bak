@@ -1,0 +1,145 @@
+// Copyright (C) 2011 SMS Demag AG
+
+#include "iEventMessages_s.hh"
+#include "cCBS_StdInitBase.h"
+#include "CEventMessage.h"
+#include "CEventMessageReady.h"
+
+#include "CARCHIVER_HMDEventHandler.h"
+
+CARCHIVER_HMDEventHandler::CARCHIVER_HMDEventHandler(CARCHIVER_Task *Task)
+:CARCHIVER_EventHandler(Task)
+{
+  m_MaterialHandlingWrapper.setTaskAndInitDBClasses(Task);
+  m_ModelResultWrapper.setTaskAndInitDBClasses(Task);
+  m_SignalsAndMeasurementWrapper.setTaskAndInitDBClasses(Task);
+  m_AnalysisDataWrapper.setTaskAndInitDBClasses(Task);
+  m_ComputerModeWrapper.setTaskAndInitDBClasses(Task);
+  m_PhaseReportWrapper.setTaskAndInitDBClasses(Task);
+  m_TreatmentWrapper.setTaskAndInitDBClasses(Task);
+
+//SS  m_HMIReceiver = "DH_HMI_HMD";
+//SS  cCBS_StdInitBase::getInstance()->replaceWithEntry("DH_HMI", "DestinationName", m_HMIReceiver);
+}
+
+CARCHIVER_HMDEventHandler::~CARCHIVER_HMDEventHandler()
+{
+}
+
+bool CARCHIVER_HMDEventHandler::handleEvent(CEventMessage& Event)
+{
+  bool RetValue = true;
+  bool SendToHMI = false;
+  std::string Message = Event.getMessage();
+
+  log(Event,3);
+  if (Message == HMD_EvMsg::evHMDCyclicMeasurement )
+  {
+    m_SignalsAndMeasurementWrapper.doOnCyclicMeasurement(Event);
+  }
+  else if (Message == HMD_EvMsg::evHMDModelResult  ||
+           Message == HMD_EvMsg::evHMDModelResultOffline )
+  {
+    m_ModelResultWrapper.doOnModelResult(Event);
+  }
+  else if (Message == HMD_EvMsg::evHMDPowderBlowingStart )
+  {
+    m_MaterialHandlingWrapper.doOnPowderBlowing(Event, true);
+  }
+  else if (Message == HMD_EvMsg::evHMDPowderBlowingEnd )
+  {
+    m_MaterialHandlingWrapper.doOnPowderBlowing(Event, false);
+  }
+  else if (Message == HMD_EvMsg::evHMDHeatAnnouncement ||
+           Message == HMD_EvMsg::evHMDHeatAnnouncementOffline)
+  {
+    m_TreatmentWrapper.doOnHeatAnnouncement(Event);
+    SendToHMI = true;
+  }
+  else if (Message == HMD_EvMsg::evHMDHeatStart )
+  {
+    m_TreatmentWrapper.doOnHeatStart(Event);
+  }
+  else if (Message == HMD_EvMsg::evHMDHeatEnd )
+  {
+    m_TreatmentWrapper.doOnHeatEnd(Event);
+  }
+  else if (Message == HMD_EvMsg::evHMDHeatDeparture )
+  {
+    m_TreatmentWrapper.doOnHeatDeparture(Event);
+    SendToHMI = true;
+  }
+  else if (Message == HMD_EvMsg::evHMDHeatCancellation )
+  {
+    m_TreatmentWrapper.doOnHeatCancel(Event);
+    SendToHMI = true;
+  }
+  else if (Message == HMD_EvMsg::evHMDHotMetalSampleTaken )
+  {
+    m_AnalysisDataWrapper.doOnHotMetalSampleTaken(Event);
+  }
+  else if (Message == HMD_EvMsg::evHMDHotMetalAnalysisReceived )
+  {
+    m_AnalysisDataWrapper.doOnHotMetalAnalysisReceived(Event);
+  }
+  else if (Message == HMD_EvMsg::evHMDSlagSampleTaken )
+  {
+    m_AnalysisDataWrapper.doOnSampleTaken(Event);
+  }
+  else if (Message == HMD_EvMsg::evHMDSlagAnalysisReceived )
+  {
+    m_AnalysisDataWrapper.doOnAnalysisReceived(Event);
+  }
+  else if (Message == HMD_EvMsg::evHMDTempMeasurement) //SS ||
+//SS           Message == HMD_EvMsg::evHMDCeloxMeasurement)
+	 /*else if (Message == HMD_EvMsg::evHMDTempMeasurement  ||
+	          Message == HMD_EvMsg::evHMDCeloxMeasurement)*/
+  {
+    m_SignalsAndMeasurementWrapper.doOnTempMeasurement(Event);
+  }
+  else if (Message == HMD_EvMsg::evHMDSetComputerModeOn ||
+           Message == HMD_EvMsg::evHMDSetComputerModeOff )
+  {
+    m_ComputerModeWrapper.doOnSetComputerMode(Event);
+  }
+  else if (Message == HMD_EvMsg::evHMDPhasePreparation                ||
+           Message == HMD_EvMsg::evHMDPhaseMonoInjectionLimeStart     ||
+           Message == HMD_EvMsg::evHMDPhaseMonoInjectionCarbideStart  ||
+           Message == HMD_EvMsg::evHMDPhaseMonoInjectionContinued     ||
+           Message == HMD_EvMsg::evHMDPhaseMonoInjectionLimeEnd       ||
+           Message == HMD_EvMsg::evHMDPhaseMonoInjectionCarbideEnd    ||
+           Message == HMD_EvMsg::evHMDPhaseDeslagging)
+  {
+    m_PhaseReportWrapper.doOnHeatProductionPhaseReport(Event);
+  }
+  else if (Message == HMD_EvMsg::evHMDUpdateAimDepartureTime)
+  {
+    m_TreatmentWrapper.doOnUpdateAimDepartureTime(Event);
+  }
+  else if (Message == HMD_EvMsg::evHMDChangeAimData)
+  {
+    m_TreatmentWrapper.doOnChangeAimData(Event);
+  }
+  else if (Message == HMD_EvMsg::evHMDMaterialAvailability)
+  {
+    m_MaterialHandlingWrapper.doOnMaterialAvailability(Event);
+  }
+  else
+  {
+    RetValue = false; // The event is for this handler, but the handler doesn't have a do-method
+  }
+
+  log("",3);
+  log("----------------------------------------------------------------------------",3);
+  if (RetValue)
+  {
+    CEventMessageReady EventMessageReady(Event);
+    EventMessageReady.dispatch(EventMessageReady.getSender(),"TEST_HMD_1");
+    if (SendToHMI)
+    {
+//SS      EventMessageReady.dispatch(EventMessageReady.getSender(),m_HMIReceiver);
+    }
+  }
+
+  return RetValue;
+}

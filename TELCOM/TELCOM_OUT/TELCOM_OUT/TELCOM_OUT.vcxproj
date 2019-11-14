@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{469B3A61-A9D9-4F41-9C34-C18155EF120E}</ProjectGuid>
+    <RootNamespace>TELCOM_OUT</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <SccAuxPath>
+    </SccAuxPath>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:/SMC/$(Configuration)/bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:/SMC/$(Configuration)/bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IntDir>V:/SMC/$(Configuration)/temp/$(ProjectName)\</IntDir>
+    <OutDir>V:/SMC/$(Configuration)/bin\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <TypeLibraryName>v:\CCS\L2\Debug\Bin\DataTransfer\Telcom_L3\Sender/tcpsender.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\TELCOM_OUT_Frame;..\..\TELCOM_GEN;$(BASE_HOME)\base4cpp\include;$(CBSDIR)\Include\CBS_EventLog;$(CBSDIR)\Include\CBS_CorbaLibV2;$(CBSDIR)\Include\CBS_CorbaLib;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\Fries_EventService;$(CBSDIR)\Include\CBS_fevsWrapper;$(CBSDIR)\include\CBS_DB_Classes;$(OMNIDIR)\include\Omniorb4;$(OMNIDIR)\include;$(ORACLE_HOME)\precomp\public;$(TELCOMDIR)\include;$(TELCOMDIR)\include\transport;$(TELCOMDIR)\include\Tam;$(TELCOMDIR)\include\TcOra;$(TELCOMDIR)\INCLUDE\UTIL;..\..\..\CBS_CORBA;..\..\..\SMC_Frame;..\..\..\SMC_EventLogSystem;..\..\..\Data_Provider;..\..\..\CBS_StdFrame;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__WIN32__;_DEBUG;_WINDOWS;_MBCS;MSVCNEWDLL_BUG;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__;__x86__;__NT__;_EVENTLOG_;QT_THREAD_SUPPORT;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/FORCE:Multiple %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>TELCOM_OUT_Frame_d.lib;TELCOM_GEN_d.lib;CBS_StdFrame_d.lib;SMC_Frame_d.lib;SMC_EventLogSystem_d.lib;SMC_DBClasses_d.lib;CBS-K_d.lib;omniDynamic422_rtd.lib;omnithread40_rtd.lib;omniORB4_rtd.lib;basem_d.lib;basem2_d.lib;libbtm.lib;libnetcomm.lib;tamm.lib;tcoram.lib;transportm.lib;dbadapterm.lib;jvm.lib;$(ORASQLLIB);kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(ORACLE_HOME)\precomp\lib\msvc;$(ORACLE_HOME)\precomp\lib;$(ORACLE_HOME)\jdk\lib;$(OMNIDIR)\lib\x86_win32;$(CBSDIR)\Lib;$(BASE_HOME)\base4cpp\lib;$(BASE_HOME)\eaidbtab\lib;$(TELCOMDIR)\lib\telcom_lib_debug;V:\SMC\$(Configuration)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TypeLibraryName>v:\CCS\L2\Debug\Bin\DataTransfer\Telcom_L3\Sender/tcpsender.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\TELCOM_OUT_Frame;..\..\TELCOM_GEN;$(BASE_HOME)\base4cpp\include;$(CBSDIR)\Include\CBS_EventLog;$(CBSDIR)\Include\CBS_CorbaLib;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\Fries_EventService;$(CBSDIR)\Include\CBS_fevsWrapper;$(CBSDIR)\include\CBS_DB_Classes;$(OMNIDIR)\include\Omniorb4;$(OMNIDIR)\include;$(ORACLE_HOME)\precomp\public;$(TELCOMDIR)\include;$(TELCOMDIR)\include\transport;$(TELCOMDIR)\include\Tam;$(TELCOMDIR)\include\TcOra;$(TELCOMDIR)\INCLUDE\UTIL;..\..\..\CBS_CORBA;..\..\..\SMC_Frame;..\..\..\SMC_EventLogSystem;..\..\..\Data_Provider;..\..\..\CBS_StdFrame;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__WIN32__;_DEBUG;_WINDOWS;_MBCS;MSVCNEWDLL_BUG;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__;__x86__;__NT__;_EVENTLOG_;QT_THREAD_SUPPORT;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/FORCE:Multiple %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>TELCOM_OUT_Frame_d.lib;TELCOM_GEN_d.lib;CBS_StdFrame_d.lib;SMC_Frame_d.lib;SMC_EventLogSystem_d.lib;SMC_DBClasses_d.lib;CBS-K_d.lib;omniDynamic422_rtd.lib;omnithread40_rtd.lib;omniORB4_rtd.lib;basem_d.lib;basem2_d.lib;libbtm.lib;libnetcomm.lib;tamm.lib;tcoram.lib;transportm.lib;dbadapterm.lib;jvm.lib;$(ORASQLLIB);kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(ORACLE_HOME)\precomp\lib\msvc;$(ORACLE_HOME)\precomp\lib;$(ORACLE_HOME)\jdk\lib;$(OMNIDIR)\lib\x64;$(CBSDIR)\Lib;$(BASE_HOME)\base4cpp\lib;$(BASE_HOME)\eaidbtab\lib;$(TELCOMDIR)\lib\telcom_lib_debug;V:\SMC\$(Configuration)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>v:\CCS\L2\Release\Bin\DataTransfer\Telcom_L3\Sender/tcpsender.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\TELCOM_OUT_Frame;..\..\TELCOM_GEN;$(BASE_HOME)\base4cpp\include;$(CBSDIR)\Include\CBS_EventLog;$(CBSDIR)\Include\CBS_CorbaLibV2;$(CBSDIR)\Include\CBS_CorbaLib;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\Fries_EventService;$(CBSDIR)\Include\CBS_fevsWrapper;$(CBSDIR)\include\CBS_DB_Classes;$(OMNIDIR)\include\Omniorb4;$(OMNIDIR)\include;$(ORACLE_HOME)\precomp\public;$(TELCOMDIR)\include;$(TELCOMDIR)\include\transport;$(TELCOMDIR)\include\Tam;$(TELCOMDIR)\include\TcOra;$(TELCOMDIR)\INCLUDE\UTIL;..\..\..\SMC_Frame;..\..\..\SMC_EventLogSystem;..\..\..\Data_Provider;..\..\..\CBS_StdFrame;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__WIN32__;NDEBUG;_WINDOWS;_MBCS;MSVCNEWDLL_BUG;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__;__x86__;__NT__;_EVENTLOG_;QT_THREAD_SUPPORT;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/FORCE:Multiple %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>TELCOM_OUT_Frame.lib;TELCOM_GEN.lib;CBS_StdFrame.lib;SMC_Frame.lib;SMC_EventLogSystem.lib;SMC_DBClasses.lib;CBS-K.lib;omniDynamic422_rt.lib;omnithread40_rt.lib;omniORB4_rt.lib;basem.lib;basem2.lib;libbtm.lib;libnetcomm.lib;tamm.lib;tcoram.lib;transportm.lib;dbadapterm.lib;jvm.lib;$(ORASQLLIB);kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(ORACLE_HOME)\precomp\lib\msvc;$(ORACLE_HOME)\precomp\lib;$(ORACLE_HOME)\jdk\lib;$(OMNIDIR)\lib\x86_win32;$(CBSDIR)\Lib;$(BASE_HOME)\base4cpp\lib;$(BASE_HOME)\eaidbtab\lib\release;$(TELCOMDIR)\lib\release;V:\SMC\$(Configuration)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapFileName>
+      </MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TypeLibraryName>v:\CCS\L2\Release\Bin\DataTransfer\Telcom_L3\Sender/tcpsender.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\TELCOM_OUT_Frame;..\..\TELCOM_GEN;$(BASE_HOME)\base4cpp\include;$(CBSDIR)\Include\CBS_EventLog;$(CBSDIR)\Include\CBS_CorbaLibV2;$(CBSDIR)\Include\CBS_CorbaLib;$(CBSDIR)\include;$(CBSDIR)\include\CBS_Exception;$(CBSDIR)\include\CBS_Utilities;$(CBSDIR)\include\CBS_Utilities\CBS_Files;$(CBSDIR)\include\CBS_Threads;$(CBSDIR)\include\CBS_Persi\CBS_PersiLib;$(CBSDIR)\include\CBS_Tasks;$(CBSDIR)\include\Fries_EventService;$(CBSDIR)\Include\CBS_fevsWrapper;$(CBSDIR)\include\CBS_DB_Classes;$(OMNIDIR)\include\Omniorb4;$(OMNIDIR)\include;$(ORACLE_HOME)\precomp\public;$(TELCOMDIR)\include;$(TELCOMDIR)\include\transport;$(TELCOMDIR)\include\Tam;$(TELCOMDIR)\include\TcOra;$(TELCOMDIR)\INCLUDE\UTIL;..\..\..\SMC_Frame;..\..\..\SMC_EventLogSystem;..\..\..\Data_Provider;..\..\..\CBS_StdFrame;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__WIN32__;NDEBUG;_WINDOWS;_MBCS;MSVCNEWDLL_BUG;_OMNIORB_;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__;__x86__;__NT__;_EVENTLOG_;QT_THREAD_SUPPORT;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/FORCE:Multiple %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>TELCOM_OUT_Frame.lib;TELCOM_GEN.lib;CBS_StdFrame.lib;SMC_Frame.lib;SMC_EventLogSystem.lib;SMC_DBClasses.lib;CBS-K.lib;omniDynamic422_rt.lib;omnithread40_rt.lib;omniORB4_rt.lib;basem.lib;basem2.lib;libbtm.lib;libnetcomm.lib;tamm.lib;tcoram.lib;transportm.lib;dbadapterm.lib;jvm.lib;$(ORASQLLIB);kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;imm32.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(ORACLE_HOME)\precomp\lib\msvc;$(ORACLE_HOME)\precomp\lib;$(ORACLE_HOME)\jdk\lib;$(OMNIDIR)\lib\x86_win32;$(CBSDIR)\Lib;$(BASE_HOME)\base4cpp\lib;$(BASE_HOME)\eaidbtab\lib\release;$(TELCOMDIR)\lib\release;V:\SMC\$(Configuration)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapFileName>
+      </MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\cfg\TELCOM\log4j.properties" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_CCS_OUT.ini" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_IPQS_OUT.ini" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_AOD_1_MAT_X_COM_OUT.ini" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_AOD_1_MAT_X_COM_OUT.properties" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_AOD_1_OUT.ini" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_AOD_1_X_COM_OUT.ini" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_AOD_1_X_COM_OUT.properties" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_EAF_1_MAT_X_COM_OUT.ini" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_EAF_1_MAT_X_COM_OUT.properties" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_EAF_1_OUT.ini" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_EAF_1_SY_X_COM_OUT.ini" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_EAF_1_SY_X_COM_OUT.properties" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_EAF_1_X_COM_OUT.ini" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_EAF_1_X_COM_OUT.properties" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_LF_1_OUT.ini" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_LF_1_X_COM_OUT.ini" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_L1_LF_1_X_COM_OUT.properties" />
+    <None Include="..\..\..\..\cfg\TELCOM\TELCOM_LAB_OUT.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TELCOM_OUT_Frame\TELCOM_OUT_Frame.vcxproj">
+      <Project>{8bca8589-c12d-443b-9b69-be36e548cec2}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

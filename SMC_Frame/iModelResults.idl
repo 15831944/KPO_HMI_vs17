@@ -1,0 +1,14 @@
+//Source file: X:/SMC/source/SMC_Frame/iModelResults.idl
+
+#ifndef __IMODELRESULTS_DEFINED
+#define __IMODELRESULTS_DEFINED
+
+/* CmIdentification
+  %X% %Q% %Z% %W% */
+
+#include "SMC_Frame\iSMC_DataProvider.idl"
+
+interface iModelResults : iSMC_DataProvider {
+};
+
+#endif

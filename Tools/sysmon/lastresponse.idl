@@ -1,0 +1,25 @@
+//This IDL interface holds overview of communication status with external systems
+//Used by HMI SystemMonitoring
+
+#ifndef __LASTRESPONSE_IDL_
+#define __LASTRESPONSE_IDL_ 
+
+module SMON {
+
+	struct SMON_LastResponse        // this is for the last response time from every system
+	{
+		string	intName;		// name of the system plc1, plc2, plc3, tcs, l3, lab, prm, smc
+		string	lastTime;            	// time of last response in form cCBS_Time::toString(currentTime, timeStr, 25) ;
+		boolean status ;                // interface available = 1, not available = 0
+	};
+
+	typedef sequence <SMON_LastResponse> seq_SMON_LastResponses;
+
+
+	interface SMONIntrf {
+			void getLastResponses(out seq_SMON_LastResponses SMON_LastResponses);
+	};
+
+};
+
+#endif

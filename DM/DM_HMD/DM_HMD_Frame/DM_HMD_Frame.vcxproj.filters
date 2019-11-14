@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4bf4ea60-c27c-4102-99ce-5c4e3a258708}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Event Log Handler">
+      <UniqueIdentifier>{5c9d36b0-f25e-4b6b-a87e-6884004956d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{53127ed1-8c9c-4dd7-9516-76e32d7b0c22}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Event Log Handler">
+      <UniqueIdentifier>{b68fb16b-1683-4e56-b88c-df85533db8f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{d738bd01-1799-4564-8f75-244da37d725d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IDL Files">
+      <UniqueIdentifier>{819e82ba-921f-443c-957b-33ec3fb64773}</UniqueIdentifier>
+      <Extensions>idl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CDM_HMDAnalysisEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDDBManagerTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDMaterialEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDModelResultEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDModesAndAvailabilitiesEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDPlantManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDProductManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDPurposeEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDSampleManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDSignalsAndMeasurementsEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDTreatmentManagementEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDEventLogHandler.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDEventLogHandlerAnalysis.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDEventLogHandlerMaterial.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDEventLogHandlerModelResults.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDEventLogHandlerModesAndAvailabilities.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDEventLogHandlerPurpose.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDEventLogHandlerSignalsAndMeasurements.cpp">
+      <Filter>Source Files\Event Log Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="iData_Provider_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iData_Provider_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iDH_Interface_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iDH_Interface_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iDM_Interface_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iDM_Interface_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iEventData_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iEventData_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iEventMessages_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iEventMessages_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iSMC_DataDefinitions_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iSMC_DataDefinitions_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iSMC_DataProvider_dynSK.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="iSMC_DataProvider_s.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM_HMDDBManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CDM_HMDAnalysisEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDDBManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDDBManagerTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDMaterialEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDModelResultEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDModesAndAvailabilitiesEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDPlantManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDProductManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDPurposeEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDSampleManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDSignalsAndMeasurementsEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDTreatmentManagementEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDEventLogHandler.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDEventLogHandlerAnalysis.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDEventLogHandlerMaterial.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDEventLogHandlerModelResults.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDEventLogHandlerModesAndAvailabilities.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDEventLogHandlerPurpose.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM_HMDEventLogHandlerSignalsAndMeasurements.h">
+      <Filter>Header Files\Event Log Handler</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iData_Provider_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="iDH_Interface_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="iDM_Interface_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="iEventData_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="iEventMessages_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="iSMC_DataDefinitions_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+    <None Include="iSMC_DataProvider_s.hh">
+      <Filter>Generated</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\Data_Provider\iData_Provider.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\Dh\DH_Interface\iDH_Interface.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\DM_Interface\iDM_Interface.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\SMC_Frame\iEventData.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\SMC_Frame\iEventMessages.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\SMC_Frame\iSMC_DataDefinitions.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\SMC_Frame\iSMC_DataProvider.idl">
+      <Filter>IDL Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

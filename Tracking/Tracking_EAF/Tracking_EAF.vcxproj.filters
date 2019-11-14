@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9a41812a-ed84-4af5-bd8e-ca7e4c7d9615}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="INI Files">
+      <UniqueIdentifier>{5f294ba2-e96d-4c50-b7d9-594b1e957b5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TSM Rule Sets">
+      <UniqueIdentifier>{126748d1-3f93-47e9-978b-ff1ad5a107bc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\cfg\Tracking\Tracking_EAF_1.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\cfg\Tracking\Tracking_EAF_2.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\cfg\Tracking\TSM_EAF_RuleSet.asc">
+      <Filter>TSM Rule Sets</Filter>
+    </None>
+  </ItemGroup>
+</Project>

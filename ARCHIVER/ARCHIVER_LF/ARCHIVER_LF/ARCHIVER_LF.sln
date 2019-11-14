@@ -1,0 +1,108 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SMC_Frame", "..\..\..\SMC_Frame\SMC_Frame.vcproj", "{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Data_Provider", "..\..\..\Data_Provider\Data_Provider.vcproj", "{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CBS_StdFrame", "..\..\..\CBS_StdFrame\CBS_StdFrame.vcproj", "{9BF0B144-3239-3CC9-A42C-BAF0926401AA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ARCHIVER_LF", "ARCHIVER_LF.vcproj", "{22777B62-4904-3BDD-84C8-EBA84DF2B619}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8} = {FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA} = {9BF0B144-3239-3CC9-A42C-BAF0926401AA}
+		{B386868C-5CC6-4B80-8E1A-E6229B2B48F9} = {B386868C-5CC6-4B80-8E1A-E6229B2B48F9}
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885} = {72925ED1-44FA-3AE5-AD4A-FF5C37F10885}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ARCHIVER_LF_Frame", "..\ARCHIVER_LF_Frame\ARCHIVER_LF_Frame.vcproj", "{B386868C-5CC6-4B80-8E1A-E6229B2B48F9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SMC_DBClasses", "..\..\..\SMC_DBClasses\SMC_DBClasses.vcproj", "{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ARCHIVER_LF_Test", "unittest\ARCHIVER_LF_Test.vcproj", "{347179A2-E8B1-44B7-A888-384D781ECE51}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 8
+		SccProjectName0 = SAK
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:ClearCase
+		CanCheckoutShared = true
+		SolutionUniqueID = {7627588C-234F-4116-85B0-E7890B6ECD90}
+		SccProjectUniqueName1 = ..\\..\\..\\SMC_Frame\\SMC_Frame.vcproj
+		SccProjectName1 = SMC_Frame
+		SccLocalPath1 = ..\\..\\..\\SMC_Frame
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\..\\..\\Data_Provider\\Data_Provider.vcproj
+		SccProjectName2 = Data_Provider
+		SccLocalPath2 = ..\\..\\..\\Data_Provider
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\..\\..\\CBS_StdFrame\\CBS_StdFrame.vcproj
+		SccProjectName3 = CBS_StdFrame
+		SccLocalPath3 = ..\\..\\..\\CBS_StdFrame
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = ARCHIVER_LF.vcproj
+		SccLocalPath4 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = ..\\ARCHIVER_LF_Frame\\ARCHIVER_LF_Frame.vcproj
+		SccLocalPath5 = ..\\..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection5 = ARCHIVER\\ARCHIVER_LF\\ARCHIVER_LF_Frame\\
+		SccProjectUniqueName6 = ..\\..\\..\\SMC_DBClasses\\SMC_DBClasses.vcproj
+		SccLocalPath6 = ..\\..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection6 = SMC_DBClasses\\
+		SccProjectUniqueName7 = unittest\\ARCHIVER_LF_Test.vcproj
+		SccLocalPath7 = ..\\..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection7 = ARCHIVER\\ARCHIVER_LF\\ARCHIVER_LF\\unittest\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Debug.ActiveCfg = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Debug.Build.0 = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Release.ActiveCfg = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Release.Build.0 = Release|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Debug.ActiveCfg = Debug|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Debug.Build.0 = Debug|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Release.ActiveCfg = Release|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Release.Build.0 = Release|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Debug.ActiveCfg = Debug|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Debug.Build.0 = Debug|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Release.ActiveCfg = Release|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Release.Build.0 = Release|Win32
+		{22777B62-4904-3BDD-84C8-EBA84DF2B619}.Debug.ActiveCfg = Debug|Win32
+		{22777B62-4904-3BDD-84C8-EBA84DF2B619}.Debug.Build.0 = Debug|Win32
+		{22777B62-4904-3BDD-84C8-EBA84DF2B619}.Release.ActiveCfg = Release|Win32
+		{22777B62-4904-3BDD-84C8-EBA84DF2B619}.Release.Build.0 = Release|Win32
+		{B386868C-5CC6-4B80-8E1A-E6229B2B48F9}.Debug.ActiveCfg = Debug|Win32
+		{B386868C-5CC6-4B80-8E1A-E6229B2B48F9}.Debug.Build.0 = Debug|Win32
+		{B386868C-5CC6-4B80-8E1A-E6229B2B48F9}.Release.ActiveCfg = Release|Win32
+		{B386868C-5CC6-4B80-8E1A-E6229B2B48F9}.Release.Build.0 = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Debug.ActiveCfg = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Debug.Build.0 = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Release.ActiveCfg = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Release.Build.0 = Release|Win32
+		{347179A2-E8B1-44B7-A888-384D781ECE51}.Debug.ActiveCfg = Debug|Win32
+		{347179A2-E8B1-44B7-A888-384D781ECE51}.Debug.Build.0 = Debug|Win32
+		{347179A2-E8B1-44B7-A888-384D781ECE51}.Release.ActiveCfg = Release|Win32
+		{347179A2-E8B1-44B7-A888-384D781ECE51}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

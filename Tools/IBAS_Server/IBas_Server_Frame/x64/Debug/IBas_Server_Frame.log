@@ -1,0 +1,24 @@
+﻿  cIbas_Component.cpp
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_component.h(62): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_component.h(62): error C2143: syntax error: missing ',' before '&'
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_component.cpp(40): error C2065: 'm_console': undeclared identifier
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_component.cpp(62): error C2065: 'm_console': undeclared identifier
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_component.cpp(63): error C2065: 'm_console': undeclared identifier
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_component.cpp(69): error C2653: 'MCBS': is not a class or namespace name
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_component.cpp(69): error C2065: 'MCBS_PrioNormal': undeclared identifier
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_component.cpp(82): error C2065: 'RuntimeMode': undeclared identifier
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_component.cpp(113): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_component.cpp(113): error C2143: syntax error: missing ',' before '&'
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_component.cpp(114): error C2511: 'void cIBAS_Component::restore(const CBS_LocalTime &,const int)': overloaded member function not found in 'cIBAS_Component'
+  x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_server.h(31): note: see declaration of 'cIBAS_Component'
+  cIbas_InterfaceTask.cpp
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_interfacetask.cpp(33): error C2039: 'getRootPOA': is not a member of 'CBS'
+  x:\smc\packages\cbs\include\cbs_tasks\cbs.h(37): note: see declaration of 'CBS'
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_interfacetask.cpp(33): error C3861: 'getRootPOA': identifier not found
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_interfacetask.cpp(44): error C2039: 'bindObjectToName': is not a member of 'CBS'
+  x:\smc\packages\cbs\include\cbs_tasks\cbs.h(37): note: see declaration of 'CBS'
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_interfacetask.cpp(44): error C3861: 'bindObjectToName': identifier not found
+  cIbas_Server.cpp
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_component.h(62): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+x:\smc\source\tools\ibas_server\ibas_server_frame\cibas_component.h(62): error C2143: syntax error: missing ',' before '&'
+  Generating Code...

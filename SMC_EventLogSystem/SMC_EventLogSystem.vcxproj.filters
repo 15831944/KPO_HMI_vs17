@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0e5ea1ca-1d47-46f2-a099-5d877d64855f}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{6f06c5f1-2502-41c9-b810-79f6616ff122}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Excel-Sheets">
+      <UniqueIdentifier>{ab2b1bd9-639d-4a08-b105-186ed1269311}</UniqueIdentifier>
+      <Extensions>cpp;c;h;hh</Extensions>
+    </Filter>
+    <Filter Include="Macros">
+      <UniqueIdentifier>{8fb6a3c1-b8d8-4ffb-aa3e-b387bc4f61f7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CSMC_DestCodes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_EventLogEAF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_EventLogEAFController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_EventLogFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_EventLogFrameController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_EventLogLF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_EventLogLFController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_EventLogHMD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMC_EventLogHMDController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CSMC_DestCodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_EventLogEAF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_EventLogEAFController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_EventLogFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_EventLogFrameController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_EventLogLF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_EventLogLFController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_EventLogHMD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMC_EventLogHMDController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CSMC_EventLog.xls">
+      <Filter>Excel-Sheets</Filter>
+    </None>
+    <None Include="Macros.xls" />
+  </ItemGroup>
+</Project>

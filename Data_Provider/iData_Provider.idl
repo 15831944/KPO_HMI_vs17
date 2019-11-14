@@ -1,0 +1,144 @@
+//Source file: X:/SMC/source/Data_Provider/iData_Provider.idl
+
+#ifndef __IDATA_PROVIDER_DEFINED
+#define __IDATA_PROVIDER_DEFINED
+
+/* CmIdentification
+  %X% %Q% %Z% %W% */
+
+module DEF {
+	const double Inv_Double = 2.2250738585072014e-308;
+	const float Inv_Float = 1.175494351e-38;
+	const long Inv_Long = -2147483647;
+  const long long Inv_LongLong = -9223372036854775807;
+	/* Inv_Char is used for telcom interface check only */
+	const string Inv_Char = "^";
+	const string Inv_String = "Invalid!!";
+	const string Undefined = "UNDEFINED!!";
+	
+	/* Here we define sequences of elementary data types in order to
+	have the "<<=" operations to put them into the "Any" data type */
+	
+	typedef sequence <long> seqLong;
+	
+	typedef sequence <double> seqDouble;
+	
+	typedef sequence <boolean> seqBoolean;
+	
+	typedef sequence <string> seqString;
+	
+};
+
+struct sIntfDataList {
+	string Name;
+	string Type;
+};
+
+typedef sequence <sIntfDataList> seqIntfDataList;
+
+interface iData_Provider {
+	/* 
+	@roseuid 40BF1DEF02BF */
+	any getAny (
+		in string Key,
+		in string Name
+		);
+		
+	/* 
+	@roseuid 40BF1DEF0355 */
+	void setAny (
+		in string Key,
+		in string Name,
+		in any NewAny
+		);
+		
+	/* 
+	@roseuid 40BF1DF0003F */
+	long getLong (
+		in string Key,
+		in string Name
+		);
+		
+	/* 
+	@roseuid 40BF1DF000D6 */
+	void setLong (
+		in string Key,
+		in string Name,
+		in long value
+		);
+		
+	/* 
+	@roseuid 40BF1DF001BC */
+	void setDouble (
+		in string Key,
+		in string Name,
+		in double value
+		);
+		
+	/* 
+	@roseuid 40BF1DF00298 */
+	double getDouble (
+		in string Key,
+		in string Name
+		);
+		
+	/* 
+	@roseuid 40BF1DF00343 */
+	string getString (
+		in string Key,
+		in string Name
+		);
+		
+	/* 
+	@roseuid 40BF1DF1000F */
+	void setString (
+		in string Key,
+		in string Name,
+		in string value
+		);
+		
+	/* 
+	@roseuid 40BF1DF10109 */
+	void setBoolean (
+		in string Key,
+		in string Name,
+		in boolean value
+		);
+		
+	/* 
+	@roseuid 40BF1DF1020E */
+	boolean getBoolean (
+		in string Key,
+		in string Name
+		);
+		
+	/* 
+	@roseuid 40BF1DF102CC */
+	void indicate (
+		in string Key
+		);
+		
+	/* 
+	@roseuid 40BF1DF10344 */
+	long complete (
+		in string Key,
+		in string Action
+		);
+		
+	/* 
+	@roseuid 415D8CDD016C */
+	seqIntfDataList getIntfDataList (
+		in string Key
+		);
+
+	string generateDataKey (
+		in string Value
+		);
+
+	string getIntfDataType (		
+		in string Key,
+		in string Name
+		);
+};
+
+#endif

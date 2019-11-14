@@ -1,0 +1,64 @@
+// Copyright (C) 2007 SMS Demag AG
+
+#include <sstream>
+#include "CTelcom_QueueMonitoringTask.h"
+
+
+
+CTelcom_QueueMonitoringTask* CTelcom_QueueMonitoringTask::m_Instance = 0;
+
+CTelcom_QueueMonitoringTask::CTelcom_QueueMonitoringTask()
+{
+  m_QueueSize = 0;
+  m_LostMessages = 0;
+  m_LostMessagesConnect = 0;
+}
+
+CTelcom_QueueMonitoringTask::~CTelcom_QueueMonitoringTask()
+{
+}
+
+CTelcom_QueueMonitoringTask* CTelcom_QueueMonitoringTask::getInstance()
+{
+	if (! m_Instance)
+	  m_Instance = new CTelcom_QueueMonitoringTask();
+	
+	return m_Instance;
+}
+
+void CTelcom_QueueMonitoringTask::getOwnStateDetails(CORBA::String_out details)
+{
+  std::stringstream msg;
+  //CORBA::String_var baseDetails;//ffra 31/10/2018
+  std::string baseDetails;
+  cCBS_StdFrame_Task::getOwnStateDetails(baseDetails);
+
+  msg << baseDetails << std::endl;
+
+  msg << "\n Last sent message: " << m_LastMessage;
+  msg << "\n Current queue size: " << m_QueueSize;
+  msg << "\n Lost telegrams since process is running: " << m_LostMessages;
+  msg << "\n Lost telegrams since connection establishing: " << m_LostMessages - m_LostMessagesConnect;
+  msg << "\n Date/Time when last telegram was lost: " << m_LostMessageTimestamp;
+
+  details = CORBA::string_dup(msg.str().c_str());
+}
+
+void CTelcom_QueueMonitoringTask::resetLostMessagesConnect()
+{
+  m_LostMessagesConnect = m_LostMessages;
+}
+
+void CTelcom_QueueMonitoringTask::setReciver(const std::string& _reciver)
+{
+  m_Reciver = _reciver;
+}
+
+std::string CTelcom_QueueMonitoringTask::getReciver()
+{
+  return m_Reciver;
+}
+
+void CTelcom_QueueMonitoringTask::setCORBAConnections()
+{
+}

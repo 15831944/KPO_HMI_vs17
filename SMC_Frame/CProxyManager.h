@@ -1,0 +1,702 @@
+// Copyright (C) 2004 SMS Demag AG
+
+#if defined (_MSC_VER) && (_MSC_VER >= 1000)
+#pragma once
+#endif
+#ifndef _INC_CPROXYMANAGER_4141B0400129_INCLUDED
+#define _INC_CPROXYMANAGER_4141B0400129_INCLUDED
+
+#include "cCBS_StdInitBase.h"
+#include "cCBS_StdCORBA_Task.h"
+#include "cCBS_StdEventLogFrameController.h"
+#include "CSMC_EventLogFrameController.h"
+
+#include "cCBS_CorbaProxy.h"//ffra30102018
+//#include "cCorbaProxyAdapter.h"//ffra30102018
+
+//##ModelId=4141B0400129
+template<typename T_iCorba>
+class CProxyManager 
+{
+public:
+	//##ModelId=4141B12E0109
+	cCBS_CorbaProxy<T_iCorba>* getProxy(const std::string& ServantName)
+	{
+    std::stringstream Message;
+    Message << "get Proxy Adapter for " << ServantName;
+
+    cCBS_CorbaProxy<T_iCorba>* pProxy = 0;
+
+    try
+    {
+      cCBS_StdCORBA_Task * pCORBA_Task = cCBS_StdCORBA_Task::getInstance();
+
+      if (pCORBA_Task)
+      {
+        cCBS_ProxyBase* pProxyBase = pCORBA_Task->getCorbaProxy(ServantName);
+
+        if ( pProxyBase )
+				  pProxy = static_cast<cCBS_CorbaProxy<T_iCorba>*>(pProxyBase);
+			  else
+				  pProxy = 0;
+      }
+    }
+    catch(CORBA::SystemException& sExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+                                                                  "CProxyManager::getProxy",
+                                                                  Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(CORBA::Exception& cExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+                                                            "CProxyManager::getProxy",
+                                                            Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(...) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnException("CProxyManager::getProxy",
+                                                      Message.str().c_str(),__FILE__,__LINE__);
+	  }
+
+    return pProxy;
+  }
+
+	std::map <std::string,std::string> getProxyList()
+  {
+   return m_ProxyList;
+  }
+
+	//##ModelId=4141B1D30032
+	void registerProxy(const std::string& ServantName, const std::string& TaskName, const std::string& POAName, std::string RegisteredName = "")
+	{
+    std::stringstream Message;
+    Message << "register Proxy for " << ServantName << " " << TaskName << " " << RegisteredName;
+
+    try
+    {
+      cCBS_StdCORBA_Task * pCORBA_Task = cCBS_StdCORBA_Task::getInstance();
+      if (pCORBA_Task)
+      {
+        // reading corba settings from corba client task
+        cCBS_Corba CorbaSettings = pCORBA_Task->getClientCorbaSettings();
+
+        // create new proxa object by name and corba serttings
+        cCBS_CorbaProxy<T_iCorba>* pProxy = new cCBS_CorbaProxy<T_iCorba>(ServantName.c_str(), CorbaSettings);
+
+        // forward object to corba task
+  		  pCORBA_Task->registerProxy(pProxy,ServantName,TaskName,POAName);
+
+        // manage names
+        m_ProxyList.insert(std::pair<std::string,std::string>(RegisteredName,ServantName) );
+        cCBS_StdCORBA_Task::getInstance()->log(Message.str(), 4);
+
+        //we only inserted the proxy into our internal data structure, we are not connected to it and we have not set it to m_ObjRef!!!
+        //long CorbaCallTimeOut = 20000;
+        //cCBS_StdInitBase::getInstance()->replaceWithEntry("CORBA", "CallTimeout", CorbaCallTimeOut);
+        //omniORB::setClientCallTimeout(m_ObjRef,CorbaCallTimeOut);
+      }
+    }
+    catch(CORBA::SystemException& sExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+                                                                  "CProxyManager::registerProxy",
+                                                                  Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(CORBA::Exception& cExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+                                                            "CProxyManager::registerProxy",
+                                                            Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(...) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnException("CProxyManager::registerProxy",
+                                                      Message.str().c_str(),__FILE__,__LINE__);
+	  }
+	}
+
+
+	//##ModelId=41E3B17400FC
+	void registerProxies(const std::string& BlockName, const std::string& EntryName = "ServerName")
+	{
+    std::stringstream Message;
+    Message << "register Proxy for " << BlockName << " " << EntryName;
+
+    std::string ServantName;
+
+    try
+    {
+      std::vector<std::string> ProxyList;
+      std::vector<std::string> InterfaceList;
+      cCBS_StdInitBase *pStdInitBase = cCBS_StdInitBase::getInstance();
+
+      // handle multiple entries
+      if ( cCBS_StdInitBase::getInstance()->getEntryList(BlockName,EntryName,ProxyList) )
+      {
+        std::vector<std::string>::iterator itProxy;
+
+        for ( itProxy = ProxyList.begin(); itProxy != ProxyList.end(); ++itProxy)
+        {
+          std::string Proxy = (*itProxy);
+
+          // set event sender and path to object reference in omninames
+          std::string EventTransmitter = Proxy;
+          std::string ServerTask       = Proxy;
+
+          std::string ServerTaskPOA    = Proxy + "POA";
+
+          bool UseProjectPOA = true;
+          
+          cCBS_StdInitBase::getInstance()->replaceWithEntry("CORBA", "UseProjectPOA", UseProjectPOA);
+
+          if ( UseProjectPOA )
+          {
+            ServerTaskPOA  = cCBS_StdInitBase::getInstance()->m_ProjectName;
+          }
+
+          if (! pStdInitBase->replaceWithEntry(Proxy, "ServerName", EventTransmitter))// to make compatible with old configuration
+          {
+            pStdInitBase->replaceWithEntry(Proxy, "EventTransmitter", EventTransmitter);
+          }
+
+          pStdInitBase->replaceWithEntry(Proxy, "ServerTask", ServerTask);
+          pStdInitBase->replaceWithEntry(Proxy, "ServerTaskPOA", ServerTaskPOA);
+
+          InterfaceList.erase(InterfaceList.begin(),InterfaceList.end());
+
+          // does "ServantName" contain any entry?
+          if ( cCBS_StdInitBase::getInstance()->getEntryList(Proxy,"ServantName",InterfaceList) )
+          {
+            std::vector<std::string>::iterator itServant;
+
+            for ( itServant = InterfaceList.begin(); itServant != InterfaceList.end(); ++itServant)
+            {
+              std::string InterfaceTypeName = (*itServant);
+              std::string RegisteredName;
+
+              // search for respective entries of InterfaceTypeName 
+              if ( pStdInitBase->replaceWithEntry(Proxy, InterfaceTypeName, ServantName) )
+              {
+                // set name as combination of ServerName and InterfaceTypeName
+                RegisteredName = EventTransmitter + InterfaceTypeName;
+              }
+              else
+              {
+                RegisteredName = EventTransmitter;
+                ServantName = InterfaceTypeName;
+              }              
+
+              registerProxy(ServantName,ServerTask,ServerTaskPOA,RegisteredName);
+            } // for ( itServant = InterfaceList.begin(); itServant != InterfaceList.end(); ++itServant)
+          }
+          else
+          {
+            ServantName    = EventTransmitter + "Interface";
+            pStdInitBase->replaceWithEntry(Proxy, "ServantName", ServantName);
+            registerProxy(ServantName,ServerTask,ServerTaskPOA,EventTransmitter);
+          } // if ( cCBS_StdInitBase::getInstance()->getEntryList(ServerName,"ServantName",InterfaceList) )
+        } // for ( itProxy = ProxyNameList.begin(); itProxy != ProxyNameList.end(); ++itProxy)
+      }
+      
+      // handle single entry
+      else if ( cCBS_StdInitBase::getInstance()->getEntry(BlockName,"ServantName",ServantName) )
+      {
+        // set Task and POA values
+        std::string ServerTask; 
+        std::string ServerTaskPOA = pStdInitBase->m_ProjectName;
+
+        pStdInitBase->replaceWithEntry(BlockName, "ServantName", ServantName);
+        pStdInitBase->replaceWithEntry(BlockName, "ServerTask", ServerTask);
+        pStdInitBase->replaceWithEntry(BlockName, "ServerTaskPOA", ServerTaskPOA);
+
+        std::string RegisteredName = ServantName;
+
+        registerProxy(ServantName,ServerTask,ServerTaskPOA,RegisteredName);
+      }
+
+      else
+      {
+        CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+        sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+        pEventLog->EL_ErrorRegisterProxy(sMessage,BlockName.c_str(),"reading config entry at cCBS_CorbaProxy::registerProxies()");
+      } // void registerProxies(const std::string& BlockName)
+    }
+    catch(CORBA::SystemException& sExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+                                                                  "CProxyManager::registerProxies",
+                                                                  Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(CORBA::Exception& cExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+                                                            "CProxyManager::registerProxies",
+                                                            Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(...) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnException("CProxyManager::registerProxies",
+                                                      Message.str().c_str(),__FILE__,__LINE__);
+	  }
+  }
+
+	//##ModelId=41E3B17401BA
+	cCBS_CorbaProxy<T_iCorba>* getProxyByServerName(const std::string& ServerName, const std::string& InterfaceTypeName = "")
+	{
+    std::stringstream Message;
+    Message << "getting Proxy for " << ServantName << " " << InterfaceTypeName;
+
+    cCBS_CorbaProxy<T_iCorba>* pProxy = 0;
+
+    try
+    {
+      std::map<std::string,std::string>::iterator it;
+      std::string RegisteredName = ServerName+InterfaceTypeName;
+
+      it = m_ProxyList.find(RegisteredName);
+      
+      if ( it != m_ProxyList.end() )
+      {
+  		  pProxy = getProxy(it->second);
+      }
+      else
+      {
+        std::string strMsg  = "Proxy not found ! getProxyByServerName()";
+        std::string strName = "ServerName=" + ServerName + "," "InterfaceTypeName=" + InterfaceTypeName;
+
+        CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+        sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+        pEventLog->EL_ErrorRegisterProxy(sMessage,strName.c_str(),strMsg.c_str());
+      }
+    }
+    catch(CORBA::SystemException& sExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+                                                                  "CProxyManager::getProxyByServerName",
+                                                                  Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(CORBA::Exception& cExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+                                                            "CProxyManager::getProxyByServerName",
+                                                            Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(...) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnException("CProxyManager::getProxyByServerName",
+                                                      Message.str().c_str(),__FILE__,__LINE__);
+	  }
+
+    return pProxy;
+	} // getProxyByServerName(std::string ServerName)
+
+
+	//##ModelId=41E3B1740228
+	void bindProxy(const std::string& ServantName, bool reconnect = false)
+	{
+    std::stringstream Message;
+    Message << "connecting Proxy for " << ServantName;
+
+    try
+    {
+	    cCBS_StdCORBA_Task * pCORBA_Task = cCBS_StdCORBA_Task::getInstance();
+      if (pCORBA_Task)
+      {
+		    pCORBA_Task->connectProxy( ServantName , reconnect);
+      }
+    }
+    catch(CORBA::SystemException& sExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+                                                                  "CProxyManager::bindProxy",
+                                                                  Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(CORBA::Exception& cExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+                                                            "CProxyManager::bindProxy",
+                                                            Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(...) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnException("CProxyManager::bindProxy",
+                                                      Message.str().c_str(),__FILE__,__LINE__);
+	  }
+	} // void bindProxy(std::string ServantName)
+
+
+	//##ModelId=41E3B17402A1
+	void bindProxyByServerName(const std::string& ServerName, const std::string& InterfaceTypeName = "")
+	{
+    std::stringstream Message;
+    Message << "binding for for " << ServantName << " " InterfaceTypeName;
+
+    try
+    {
+      std::map<std::string,std::string>::iterator it;
+      std::string RegisteredName = ServerName + InterfaceTypeName;
+
+      it = m_ProxyList.find(RegisteredName);
+      
+      if ( it != m_ProxyList.end() )
+      {
+        bindProxy(it->second);
+      }
+      else
+      {
+        std::string strMsg  = "Proxy not found ! bindProxyByServerName()";
+        std::string strName = "ServerName=" + ServerName + "," "InterfaceTypeName=" + InterfaceTypeName;
+
+        CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+        sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+        pEventLog->EL_ErrorRegisterProxy(sMessage,strName.c_str(),strMsg.c_str());
+      }
+    }
+    catch(CORBA::SystemException& sExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+                                                                  "CProxyManager::bindProxyByServerName",
+                                                                  Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(CORBA::Exception& cExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+                                                            "CProxyManager::bindProxyByServerName",
+                                                            Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(...) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnException("CProxyManager::bindProxyByServerName",
+                                                      Message.str().c_str(),__FILE__,__LINE__);
+	  }
+	} // void bindProxy(std::string ServantName)
+
+
+
+	//##ModelId=41E3B174030F
+  typename T_iCorba::_var_type& getObjRef(const std::string& ServantName)
+	{
+    m_ObjRef = T_iCorba::_nil();
+    bool reconnect = false;
+
+    std::stringstream Message;
+    Message << "checking existing connection for " << ServantName;
+
+    try
+    {
+      cCBS_CorbaProxy<T_iCorba> *pProxyAdapter = getProxy(ServantName);
+
+      if (!pProxyAdapter->isBound()) 
+      {
+        // be sure that Proxy has been bound before getting object reference
+	      cCBS_StdCORBA_Task * pCORBA_Task = cCBS_StdCORBA_Task::getInstance();
+        if (pCORBA_Task)
+        {
+		      pCORBA_Task->connectProxy( ServantName );
+        }
+      }
+
+      if (pProxyAdapter) 
+      {
+        m_ObjRef = pProxyAdapter->getServantPtr();
+      }
+
+//   Please note:
+//   this coding MUST be used in case of reconnection to objectreference that was temporary not available !
+//   objectreference's MUST be fetched from ProxyManager for single use only!
+//   using two or more objectreferences at the same time makes the usage of the proxy manager obsolete !
+
+      try
+      {
+        if ( !CORBA::is_nil(m_ObjRef) )
+        {
+          // speeding up timeout handling for checking existence
+          //omniORB::setClientCallTimeout(m_ObjRef,2000);
+          pProxyAdapter->setCallTimeout(2000);
+
+          if ( m_ObjRef->_non_existent() )
+          {
+            reconnect = true;
+          }
+          else
+          {
+            // resetting to CORBA default value of 20 seconds
+            // this may take effect later after successful reconnect
+            long CorbaCallTimeOut = 20000;
+            cCBS_StdInitBase::getInstance()->replaceWithEntry("CORBA", "CallTimeout", CorbaCallTimeOut);
+            pProxyAdapter->setCallTimeout(CorbaCallTimeOut);
+            //omniORB::setClientCallTimeout(m_ObjRef, CorbaCallTimeOut);
+          }
+
+
+        }
+      }
+      catch(CORBA::SystemException& sExc) 
+      {
+        cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+                                                                    "CProxyManager::getObjRef",
+                                                                    Message.str().c_str(),__FILE__,__LINE__);
+        reconnect = true;
+      }
+      catch(CORBA::Exception& cExc) 
+      {
+        cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+                                                              "CProxyManager::getObjRef",
+                                                              Message.str().c_str(),__FILE__,__LINE__);
+        reconnect = true;
+      }
+      catch(...) 
+      {
+        cCBS_StdCORBA_Task::getInstance()->doOnException("CProxyManager::getObjRef",
+                                                        Message.str().c_str(),__FILE__,__LINE__);
+        reconnect = true;
+	    }
+
+      if ( reconnect )
+      {
+        std::stringstream ReconnectMessage;
+
+        ReconnectMessage << "Trying to reconnect to " << ServantName ;
+
+        CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+        sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+        pEventLog->EL_LogMessage(sMessage,ReconnectMessage.str().c_str());
+
+	      cCBS_StdCORBA_Task * pCORBA_Task = cCBS_StdCORBA_Task::getInstance();
+        if (pCORBA_Task)
+        {
+		      pCORBA_Task->connectProxy( ServantName , true);
+        }
+
+        if (pProxyAdapter) 
+        {
+          m_ObjRef = pProxyAdapter->getServantPtr();
+        }
+
+      }
+
+      // return 0 in case of failure
+      if (CORBA::is_nil(m_ObjRef))
+      {
+        m_ObjRef = 0;
+      }
+      else
+      {
+        // speeding up timeout handling for checking existence
+        pProxyAdapter->setCallTimeout(2000);
+        //omniORB::setClientCallTimeout(m_ObjRef,2000);
+        if (m_ObjRef->_non_existent())
+        {
+          long CorbaCallTimeOut = 20000;
+          cCBS_StdInitBase::getInstance()->replaceWithEntry("CORBA", "CallTimeout", CorbaCallTimeOut);
+          pProxyAdapter->setCallTimeout(CorbaCallTimeOut);
+          //omniORB::setClientCallTimeout(m_ObjRef, CorbaCallTimeOut);
+
+          m_ObjRef = 0;
+        }
+        else
+        {
+          if ( reconnect )
+          {
+            CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+            sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+            pEventLog->EL_CORBAReconnectInfo(sMessage,ServantName.c_str());
+          }
+          
+          long CorbaCallTimeOut = 20000;
+          cCBS_StdInitBase::getInstance()->replaceWithEntry("CORBA", "CallTimeout", CorbaCallTimeOut);
+          pProxyAdapter->setCallTimeout(CorbaCallTimeOut);
+          //omniORB::setClientCallTimeout(m_ObjRef, CorbaCallTimeOut);
+        }
+      }
+// end NOTE
+    }
+    catch(CORBA::SystemException& sExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+                                                                  "CProxyManager::getObjRef",
+                                                                  Message.str().c_str(),__FILE__,__LINE__);
+      m_ObjRef = 0;
+    }
+    catch(CORBA::Exception& cExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+                                                            "CProxyManager::getObjRef",
+                                                            Message.str().c_str(),__FILE__,__LINE__);
+      m_ObjRef = 0;
+    }
+    catch(...) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnException("CProxyManager::getObjRef",
+                                                      Message.str().c_str(),__FILE__,__LINE__);
+      m_ObjRef = 0;
+	  }
+
+    return m_ObjRef;
+	} // void getObjRef(std::string ServantName)
+
+
+	//##ModelId=41E3B1740387
+  typename T_iCorba::_var_type& getObjRefByServerName(const std::string& ServerName, const std::string& InterfaceTypeName = "")
+	{
+    m_ObjRef = T_iCorba::_nil();
+
+    std::stringstream Message;
+    Message << "get object reference for " << ServerName << " " << InterfaceTypeName;
+
+    try
+    {
+      std::map<std::string,std::string>::iterator it;
+      std::string RegisteredName = ServerName + InterfaceTypeName;
+
+      it = m_ProxyList.find(RegisteredName);
+      
+      if ( it != m_ProxyList.end() )
+      {
+        std::string ServantName = it->second;
+        m_ObjRef = getObjRef(ServantName);
+      }
+      else
+      {
+        if ( ServerName != DEF::Inv_String && !ServerName.empty() )
+        {
+          std::string strMsg  = "Proxy not found ! getObjRefByServerName()";
+          std::string strName = "ServerName=" + ServerName + "," "InterfaceTypeName=" + InterfaceTypeName;
+
+          CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+          sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+          pEventLog->EL_ErrorRegisterProxy(sMessage,strName.c_str(),strMsg.c_str());
+        }
+        else
+        {
+          cCBS_StdCORBA_Task::getInstance()->log("ServerName not usable",1);
+        }
+      }
+
+      if ( m_ObjRef == 0 || CORBA::is_nil(m_ObjRef) )
+      {
+        std::string strMsg  = "Proxy reference invalid ! getObjRefByServerName()";
+        std::string strName = "ServerName=" + ServerName + "," "InterfaceTypeName=" + InterfaceTypeName;
+
+        CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+        sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+        pEventLog->EL_ErrorRegisterProxy(sMessage,strName.c_str(),strMsg.c_str());
+
+        m_ObjRef = 0;
+      }
+
+    }
+    catch(CORBA::SystemException& sExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+                                                                  "CProxyManager::getObjRefByServerName",
+                                                                  Message.str().c_str(),__FILE__,__LINE__);
+      m_ObjRef = 0;
+    }
+    catch(CORBA::Exception& cExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+                                                            "CProxyManager::getObjRefByServerName",
+                                                            Message.str().c_str(),__FILE__,__LINE__);
+      m_ObjRef = 0;
+    }
+    catch(...) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnException("CProxyManager::getObjRefByServerName",
+                                                       Message.str().c_str(),__FILE__,__LINE__);
+      m_ObjRef = 0;
+	  }
+
+    return m_ObjRef;
+	} // void getObjRef(std::string ServantName)
+
+
+	//##ModelId=41E3D62C0240
+	void handleConnectionError(const std::string& ServantName)
+	{
+    std::stringstream Message;
+    Message << "binding proxy for " << ServantName;
+    
+    try
+    {
+      bindProxy(ServantName, true);
+    }
+    catch(CORBA::SystemException& sExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+                                                                  "CProxyManager::handleConnectionError",
+                                                                  Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(CORBA::Exception& cExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+                                                            "CProxyManager::handleConnectionError",
+                                                            Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(...) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnException("CProxyManager::handleConnectionError",
+                                                      Message.str().c_str(),__FILE__,__LINE__);
+	  }
+	} // void bindProxy(std::string ServantName)
+
+	//##ModelId=41E3D62C0326
+	void handleConnectionErrorByServerName(const std::string& ServerName, const std::string& InterfaceTypeName = "")
+	{
+    std::stringstream Message;
+    Message << "handling connection error for " << ServerName << " " << InterfaceTypeName;
+
+    try
+    {
+      std::map<std::string,std::string>::iterator it;
+      std::string RegisteredName = ServerName + InterfaceTypeName;
+
+      it = m_ProxyList.find(RegisteredName);
+      
+      if ( it != m_ProxyList.end() )
+      {
+        handleConnectionError(it->second);
+      }
+      else
+      {
+        std::string strMsg = "Proxy not found ! handleConnectionErrorByServerName()";
+        std::string strName = "ServerName=" + ServerName + "," "InterfaceTypeName=" + InterfaceTypeName;
+
+        CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+        sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+        pEventLog->EL_ErrorRegisterProxy(sMessage,strName.c_str(),strMsg.c_str());
+      }
+
+    }
+    catch(CORBA::SystemException& sExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaSystemException(sExc,
+                                                                  "CProxyManager::handleConnectionErrorByServerName",
+                                                                  Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(CORBA::Exception& cExc) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnCorbaException(cExc,
+                                                            "CProxyManager::handleConnectionErrorByServerName",
+                                                            Message.str().c_str(),__FILE__,__LINE__);
+    }
+    catch(...) 
+    {
+      cCBS_StdCORBA_Task::getInstance()->doOnException("CProxyManager::handleConnectionErrorByServerName",
+                                                      Message.str().c_str(),__FILE__,__LINE__);
+	  }
+	} // void bindProxy(std::string ServantName)
+
+
+
+private:
+	//##ModelId=4141B11000A9
+	std::map <std::string,std::string> m_ProxyList;
+
+	//##ModelId=41E3D62D0043
+  typename T_iCorba::_var_type m_ObjRef;
+
+};
+
+#endif /* _INC_CPROXYMANAGER_4141B0400129_INCLUDED */

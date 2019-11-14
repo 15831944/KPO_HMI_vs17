@@ -1,0 +1,13 @@
+﻿  Performing Custom Build Tools on X:\SMC\source\DH\DH_Interface\iDH_Interface.idl 
+  The system cannot find the path specified.
+  Performing Custom Build Tools on X:\SMC\source\DH\DH_Telcom_Interface\iDH_Telcom.idl 
+  The system cannot find the path specified.
+  Performing Custom Build Tools on X:\SMC\source\Data_Provider\iData_Provider.idl 
+  The system cannot find the path specified.
+  Performing Custom Build Tools on X:\SMC\source\SMC_Frame\iSMC_DataDefinitions.idl 
+  The system cannot find the path specified.
+  Performing Custom Build Tools on X:\SMC\source\SMC_Frame\iSMC_DataProvider.idl 
+  The system cannot find the path specified.
+  Performing Custom Build Tools on X:\SMC\source\Tools\IBAS_Server\IBas_Server_Frame\BASIntrf.idl 
+  The system cannot find the path specified.
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets(209,5): error MSB6006: "cmd.exe" exited with code 3.

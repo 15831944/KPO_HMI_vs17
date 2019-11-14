@@ -1,0 +1,2161 @@
+/*    Source file: Z:/SMC/source/SMC_Frame/iSMC_DataProvider.idl
+    */
+
+#ifndef     __ISMC_DATAPROVIDER_DEFINED
+#define     __ISMC_DATAPROVIDER_DEFINED
+
+/* CmIdentification
+%X% %Q% %Z% %W% */
+
+#include "Data_Provider\iData_Provider.idl"
+//#include <CBS_Tasks/CBS.idl> //FFRA:
+#include <CBS_Tasks/CBS_Common.idl> //FFRA:
+
+struct sTlgRecordElem {
+
+  string Name;
+  long Type ;
+  any Value;
+};
+
+typedef sequence <sTlgRecordElem> seqTlgRecordElem;
+
+struct sTlgRecord {
+
+  string Name;
+  seqTlgRecordElem TlgRecordElem;
+};
+
+typedef sequence <sTlgRecord> seqTlgRecord;
+
+
+
+struct sAnalysisString {
+
+  string Element;
+  string Concentration;
+};
+
+
+struct sAnalysis {
+
+  string Element;
+  double Concentration;
+};
+
+struct sBatch {
+  string MatCode;
+  double Mass;
+  /* Only Relevant for Wire feeding. */
+  double MatFeedSpeed;
+  /* FeederNo or Bin or bunker number*/
+  long Source;
+  /* Feeding rate relative to energy for material.*/
+  double FeedingRateRel2Energy;
+  /* Charging sequence for the materials in the container*/
+  long MatLoadingSequence;
+};
+
+typedef MCBS::CBS_LocalTime sDate;
+
+struct sEAFBurnerPredRes {
+  string Phase;
+  long PhaseNo;
+  long Step;
+  string BurnerName;
+  /* Base mass used for specific energy calculation */
+  double BaseMass;
+  /* Duration of step */
+  double DurStep;
+  /* specific energy until end of step */
+  double SpecEgy;
+  /* Total electric Energy until end of step */
+  double ElecEgy;
+  /* Gas type */
+  string Gastype;
+  /* Gas flow */
+  double GasFlow;
+  /* O2 flow */
+  double O2Flow;
+  /* Energy of Step */
+  double ElecEgyStep;
+  /* duration until end of step from heat announcement */
+  double DurUntilEndOfStep;
+  double DurUntilStartOfStep;
+  double SpecEgyStep;
+  /*Flame profile number per burner step for burner of BurnerName*/
+    long FlameProfile_Burner;
+ 
+};
+/*Replaced by sEAFProcessPredRes */
+/* struct sEAFElecPredRes {
+  string Phase;
+  long PhaseNo;
+  long Step;
+  long VoltTap;
+  long ImpCurve;
+  /// Duration of step 
+  double DurStep;
+  double Temp;
+  // duration until end of step from heat announcement 
+  double DurUntilEndOfStep;
+  double DurUntilStartOfStep;
+  double SpecEgyStep;
+  // specific energy until end of step 
+  double SpecEgy;
+  // Energy of Step 
+  double ElecEgyStep;
+  // Total electric Energy until end of step 
+  double ElecEgy;
+  /// Base mass used for specific energy calculation 
+  double BaseMass;
+}; */
+
+struct sEAFProcessPredRes {
+  string Phase;
+  long PhaseNo;
+  long DeviceNo;
+  long Step;
+  long VoltTap;
+  long ImpCurve;
+  long ReactorTap;
+  /* Duration of step */
+  double DurStep;
+  double Temp;
+  /* duration until end of step from heat announcement */
+  double DurUntilEndOfStep;
+  double DurUntilStartOfStep;
+  double SpecEgyStep;
+  /* specific energy until end of step */
+  double SpecEgy;
+  /* Energy of Step */
+  double ElecEgyStep;
+  /* Total electric Energy until end of step */
+  double ElecEgy;
+  /* Total O2 flow required for the step */
+  double O2Flow;
+  /* Total O2 amount required for the step */
+  double O2Amount;
+  /* Base mass used for specific energy calculation */
+  double BaseMass;
+};
+
+struct sLFElecPredRes {
+  long Step;
+  long VoltTap;
+  long ImpCurve;
+  double ElecEgy;
+  double SpecEgy;
+  long StirrIntensity;
+  double StirrFlow;
+  string GasType;
+  long Priority;
+  double DurStep;
+  /* 1 = Enable possible
+  0 = Enable not possible */
+  long Enable;
+  long Order;
+  sDate RevDate;
+  string StirrIntensityCode;
+  string ElecPhase;
+  /* Energy of Step */
+  double ElecEgyStep;
+  /* duration until end of step from heat announcement */
+  double DurUntilEndOfStep;
+  double DurUntilStartOfStep;
+  /* Base mass used for specific energy calculation */
+  double BaseMass;
+};
+
+struct sLFStirrPredRes {
+  string StirrPhase;
+  long StirrIntensity;
+  double StirrFlow;
+  string GasType;
+  long Priority;
+  double DurStep;
+  string StirrIntensityCode;
+  long Enable;
+  long Order;
+  /* '0' -> Pattern
+  '1' -> Activity */
+  long isPatternOrActivity;
+  /* duration until end of step from heat announcement */
+  double DurUntilEndOfStep;
+  double DurUntilStartOfStep;
+  long VoltTap;
+  long ImpCurve;
+  double ElecEgy;
+  double SteelMass;
+  double SlagMass;
+  double Temp;
+};
+
+struct sMetTimeStamp {
+  /* Oxygen Moment (not for EAF,LF) */
+  double O2_Moment;
+  /* Ar Moment (not used for EAF,LF) */
+  double Ar_Moment;
+  /* N2 Moment (not used for EAF,LF) */
+  double N2_Moment;
+  /* Total Electrical Energy (not used for AOD) */
+  double Elec_Moment;
+  double DurSinceHeatAnnouncement;
+  double DurSinceStartOfHeat;
+  /* Date of revision */
+  sDate RevDate;
+  /* Date of related Action */
+  sDate ActionDate;
+};
+
+struct sRecipeProperties {
+  long RecipeStatus;
+  double HomogDuration;
+  double TotalMass;
+  double BulkVolume;
+};
+
+typedef sequence <sAnalysis> seqAnalysis;
+
+typedef sequence <sBatch> seqBatch;
+
+struct sEAFMatFeed {
+  string Phase;
+  long PhaseNo;
+  long Step;
+  double DurStep;
+  double SpecEgy;
+  seqBatch MatFeed;
+};
+
+typedef sequence <sEAFBurnerPredRes> seqEAFBurnerPredRes;
+
+//typedef sequence <sEAFElecPredRes> seqEAFElecPredRes;
+typedef sequence <sEAFProcessPredRes> seqEAFProcessPredRes;
+
+typedef sequence <sEAFMatFeed> seqEAFMatFeed;
+
+typedef sequence <sLFElecPredRes> seqLFElecPredRes;
+
+typedef sequence <sLFStirrPredRes> seqLFStirrPredRes;
+
+struct sAODGlobalSetpoints {
+  /* Requested O2 Charge Moment for MainBlow1 Bin addition */
+  double O2VolStartMatAddn;
+  /* Requested O2 Charge Moment for MainBlow1 Chute addition */
+  double O2VolStartScrapChute;
+  double O2VolSubLance;
+  double O2VolTotal;
+  double O2VolTotalLance;
+  double N2VolTotal;
+  /* Feed rate for Mainblow1 Bin addition */
+  double MatFeedRate;
+  /* Feed rate for Mainblow3 Bin Dynblow addition */
+  double MatDynFeedRate;
+  /* Requested O2 Charge Moment for MainBlow3 Bin addition during dynamic Blow */
+  double O2VolStartMatDynAddn;
+  double AimTapWeightCalc;
+  double DurStartMatAddn;
+  double DurStartMatDynAddn;
+  double DurStartScrapChute;
+  double DurSubLance;
+  /* Requested O2 Charge Moment for MainBlow2 Bin addition */
+  double O2VolStartMat2ndAddn;
+  /* Requested O2 Charge Moment for MainBlow2 Bin addition */
+  double DurStartMat2ndAddn;
+  /* Feed rate for Mainblow2 Bin addition */
+  double MatFeedRate2ndAdd;
+  /* Oxygen Moment switching N2 to Ar */
+  double O2VolSwN2toAr;
+  /* Duration from heat Announcement to switch from Ar to N2 */
+  double DurUntilN2ToAr;
+  /* Total N2 Moment switching N2 to Ar */
+  double N2VolSwN2toAr;
+  double AimSteelMassCalc;
+  double Duration;
+  double LanceO2Flow;
+  double LanceN2Flow;
+  double LanceArFlow;
+  double TuyereO2Flow;
+  double TuyereN2Flow;
+  double TuyereArFlow;
+  double LanceDepth;
+  double CalcSteelWeight;
+  double CalcSlagWeight;
+  double CalcTemp;
+  double DecarbDelta;
+};
+
+typedef sequence <sAODGlobalSetpoints> seqAODGlobalSetpoints;
+
+struct sGenRes {
+  seqAnalysis Analysis;
+  double SteelWeight;
+  double SlagWeight;
+  double Temp;
+  double DurPhase;
+  /* Oxygen Moment End of Phase(not for EAF,LF) */
+  sMetTimeStamp MetTimeStamp;
+};
+
+struct sAODPredBlowRes {
+  /* Is also called status. */
+  string Phase;
+  long PhaseNo;
+  /* Oxygen Moment form begin to end of status */
+  double O2Vol;
+  double TopLanceO2Flow;
+  double TopLanceN2Flow;
+  double TopLanceArFlow;
+  double TopLanceO2Cons;
+  double TopLanceArCons;
+  double TopLanceN2Cons;
+  double TuyerO2Flow;
+  double TuyerN2Flow;
+  double TuyerArFlow;
+  double TuyerO2Cons;
+  double TuyerArCons;
+  double TuyerN2Cons;
+  double DecarbRate;
+  double ChromDeslagRate;
+  double TopLanceHeight;
+  long PhaseActive;
+  sGenRes GenRes;
+};
+
+struct sPredRes {
+  string Phase;
+  long PhaseNo;
+  sGenRes GenRes;
+  /* 1 = true
+  0 = false */
+  long PhaseActive;
+};
+
+typedef sequence <sAODPredBlowRes> seqAODBlowPredRes;
+
+typedef sequence <sPredRes> seqPredRes;
+
+struct sCoolWater {
+  string CircuitName;
+  double WaterFlow;
+  /* Attribute to save Phase from interface */
+  double OutletTemp;
+  double InletTemp;
+};
+
+struct sComputerMode {
+  string Device;
+  /* 1 = selected
+  0 = not selected
+  For AOD values can be
+  2 = Computer Pattern Mode
+  3 = Computer Dynamic Mode */
+  long Status;
+};
+
+struct sCoolWaterDevice {
+  /* If coolwater device is not countable this value is 0
+  else
+  No of loop */
+  long CoolWaterDeviceNo;
+  string CoolWaterDevice;
+  sCoolWater CoolWaterData;
+};
+
+typedef sequence <sCoolWaterDevice> seqCoolWaterData;
+
+typedef sequence <sComputerMode> seqComputerModes;
+
+struct sWireFeeder {
+  long WireFeederLineNo;
+  string WireFeederMatCode;
+  double WireFeedSpeed;
+  double WireFeederAmount;
+};
+
+typedef sequence <sWireFeeder> seqWireFeeder;
+
+typedef sequence <string> seqStringList;
+
+struct sGasData {
+  string GasType;
+  double GasValue;
+};
+
+typedef sequence <sGasData> seqGasData;
+
+struct sGasLanceData {
+  seqGasData LanceData;
+  string Device;
+};
+
+typedef sequence <sGasLanceData> seqGasLanceData;
+
+struct sDeviceGasData {
+  string Device;
+  seqGasData GasData;
+};
+
+typedef sequence <sDeviceGasData> seqDeviceGasData;
+
+
+/*To be used by EAF Wrapper, return data are to be stored in sEAFProcessPredRes (GasFlow and GasAmount only!) */
+struct sEAFGasLancePredRes {
+  string Phase;
+  long PhaseNo;
+  long Step;
+  // Duration of step 
+  double DurStep;
+  seqDeviceGasData GasFlow;  // changed - Prediction results could have more than one gas device with respective gas values per step !
+  // Total electric Energy until end of step 
+  double ElecEgy;
+  // duration until end of step from heat announcement 
+  double DurUntilEndOfStep;
+  double DurUntilStartOfStep;
+  double SpecEgyStep;
+  // Energy of Step 
+  double ElecEgyStep;
+  // specific energy until end of step 
+  double SpecEgy;
+  // Base mass used for specific energy calculation 
+  double BaseMass;
+  seqDeviceGasData GasAmount;
+};
+
+typedef sequence <sEAFGasLancePredRes> seqEAFGasLancePredRes;
+
+struct sGasAvail {
+  string GasType;
+  /* 1 = Avail
+  0 = Not Avail */
+  long GasAvail;
+};
+
+typedef sequence <sGasAvail> seqGasAvail;
+
+struct sWasteGas {
+  string WasteGasType;
+  double WasteGasConc;
+};
+
+typedef sequence <sWasteGas> seqWasteGas;
+
+struct sBlowStatus {
+  string BlowDevice;
+  /* 0 = BlowStatus Off
+  1 = BlowStatus On
+  2 = BlowStatus Interupted
+  3 = BlowStatus Stopped */
+  long BlowStatus;
+  sDate BlowTime;
+};
+
+typedef sequence <sBlowStatus> seqBlowStatus;
+
+struct sStatus {
+  string Device;
+  /* 1 = Status On
+  0 = Status Off */
+  long Status;
+  string StatusName;
+  sDate EndTime;
+  sDate StartTime;
+};
+
+typedef sequence <sStatus> seqStatus;
+
+struct sHeatSchedulePlant {
+  string Plant;
+  string TreatID;
+  sDate TreatStartPlan;
+  sDate TreatEndPlan;
+  long PlantNo;
+};
+
+typedef sequence <sHeatSchedulePlant> seqHeatSchedulePlant;
+
+struct sHeatSchedule {
+  string HeatId;
+  string OrderId;
+  string RouteCode;
+  string CasterSeqId;
+  long CasterSeqNo;
+  long ActionFlag;
+  seqHeatSchedulePlant HeatPlant;
+};
+
+typedef sequence <sHeatSchedule> seqHeatSchedule;
+
+struct sOrderData {
+  string SteelGradeCode;
+  string OrderId;
+  double AimSteelEAF;
+  long ActionFlag;
+  double AimSteelCCS;
+  string SlabDimension;
+};
+
+typedef sequence <sOrderData> seqOrderData;
+
+/* Structure presenting sample data. SampleId in general is build of SampleType, PlantID and ProxcessStage regarding to a respective Format */
+
+struct sSampleData {
+  /* Sample ID from Level1 or HMI. If no sample id will be sent Level2 composes its own sample id from Plant, PlantNo, ProcessStage and SampleNo. */
+  string SampleCode;
+  sDate SampleTime;
+  /* Level 1 sends a counter of the sample Id,s.
+  If sample was taken from Level1 this value is available.
+  If not (Case sample taken from HMI) this value is undefined.
+  Fill it with defaultvalue -1. */
+  long SampleNo;
+  long SampleType;
+  string PlantID;
+  string ProcessStage;
+  string SampleId;
+  long SampleMode;
+  string SampleLocation;
+  long SampleOrigin;
+  long SampleUsable;
+};
+
+typedef sequence<sSampleData> seqSampleData;
+
+struct sAnalysisData {
+  sSampleData SampleData;
+  seqAnalysis Analysis;
+};
+
+/* In this struct the Plant is filled.
+For some Planttypes also a Device information is required.
+Like LF TracfereCar 1/2. */
+
+struct sHeatData {
+  string Plant;
+  string HeatId;
+  string Device;
+  string TreatId;
+};
+
+typedef sequence<sHeatData> seqHeatData;
+
+struct sInjectLanceData {
+  string Device;
+  double Value;
+  string MatCode;
+  string InjectionType;
+  /* To define the belonging to device group (module) if necessary */
+  string ModuleName;
+};
+
+typedef sequence <sInjectLanceData> seqInjectLanceData;
+
+struct sGasLanceGasAvail {
+  string Device;
+  seqGasAvail GasAvail;
+};
+
+typedef sequence <sGasLanceGasAvail> seqGasLanceGasAvail;
+
+/* Feedrate = 0 for Materials which are not used. */
+
+struct sBatchPrio {
+  sBatch BatchData;
+  long ChargPrio;
+};
+
+typedef sequence <sBatchPrio> seqBatchPrio;
+
+typedef sequence<sAnalysisData> seqAnalysisData;
+
+struct LFGlobalSetpoints {
+  string GasType;
+};
+
+struct sLiqMatReport {
+  long WeighingType;
+  string LiqMatType;
+  double LiqMatWeight;
+};
+
+typedef sequence <sLiqMatReport> seqLiqMatReport;
+
+struct sBOFPredBlowRes {
+  /* Actual phase */
+  string Phase;
+  long PhaseNo;
+  /* Active status of phase */
+  long PhaseActive;
+  /* Oxygen moment form begin to end of phase */
+  double O2Vol;
+  /* Flow rate for a step */
+  double TopLanceO2Flow;
+  /* Top lance heignt for a step */
+  double TopLanceHeight;
+  /* Stirring gas flow for a step */
+  double PorousPlugN2Flow;
+  /* Stirring gas flow for a step */
+  double PorousPlugArFlow;
+  /* O2 moment for the next bottom stirring step */
+  double O2MomentPorPlugs;
+  double DecarbRate;
+  /* O2 moment for the next top lance step */
+  double O2MomentTopLance;
+  sGenRes GenRes;
+};
+
+/* Sequence to pass blow and stirring pattern to L1 */
+
+typedef sequence <sBOFPredBlowRes> seqBOFBlowPredRes;
+
+struct sInjectData {
+  /* Material code */
+  string InjectMatCode;
+  /* Can be an amount or a flow */
+  double InjectMatValue;
+  /* Injection type as used in HMI: Carbon | FeSi
+  Relation between HMI names and related purpose name is defined in table GCE_INJECTION_TYPE */
+  string InjectType;
+};
+
+typedef sequence <sInjectData> seqInjectData;
+
+struct sEAFInjectLance {
+  string Phase;
+  long PhaseNo;
+  long Step;
+  double DurStep;
+  double Egy;
+  double RemEgy;
+  /* duration until end of step from heat announcement */
+  double DurUntilEndOfStep;
+  double DurUntilStartOfStep;
+  double SpecEgyStep;
+  /* Energy of Step */
+  double ElecEgyStep;
+  /* specific energy until end of step */
+  double SpecEgy;
+  /* Base mass used for specific energy calculation */
+  double BaseMass;
+  seqInjectLanceData InjectFlow;
+  seqInjectLanceData InjectAmount;
+};
+
+typedef sequence <sEAFInjectLance> seqEAFInjectLance;
+
+struct sHMDCalc {
+  /* treatment duration in sec */
+  DEF::seqDouble Lime;
+  /* Calculated material with priority(bin seq no) */
+  seqBatchPrio Material;
+  /* Analysis at treatment end */
+  seqAnalysis Analysis;
+  /* Aim temp at treatment end in C?*/
+  DEF::seqDouble Carbide;
+  DEF::seqDouble Magnesium;
+};
+
+struct sConArcElecData {
+  long BasketNo;
+  /* reactor tap no */
+  long ReactTapNo;
+  /* transformer tap no (VoltTap) */
+  long TransfTapNo;
+  /* impedance curve no (arc length no) */
+  long ArcLenNo;
+  /* duration until end of step from heat announcement */
+  double DurUntilEndOfStep;
+  /* duration until start of step from heat announcement */
+  double DurUntilStartOfStep;
+  double SpecEgyStep;
+  /* specific energy until end of step */
+  double SpecEgy;
+  /* Energy of Step */
+  double ElecEgyStep;
+  /* Total electric Energy until end of step */
+  double ElecEgy;
+  /* Energy on start of phase */
+  double EnergyStart;
+};
+
+struct sConArcMediaData {
+  /* device name as defined in CDeviceTypeConArc */
+  string DeviceName;
+  /* device no */
+  long DeviceNo;
+  /* media type selection as defined in eMediaDataSelect */
+  long MediaTypeSelect;
+  /* media type as defined in CVG or CPurposeCodesConArc */
+  string MediaType;
+  /* media flow rate */
+  double Flow;
+  /* media consumption */
+  double Cons;
+};
+
+typedef sequence <sConArcElecData> seqConArcElecData;
+
+typedef sequence <sConArcMediaData> seqConArcMediaData;
+
+struct sConArcSetptData {
+  double EgyTotal;
+  /* media data */
+  seqConArcMediaData MediaData;
+  /* elec data */
+  sConArcElecData ElecData;
+  /* total mass of feeding material */
+  seqConArcMediaData MatFeedTotalMass;
+};
+
+struct sConArcMeasData {
+  /* slag quality */
+  double SlagQuality;
+  /* media data */
+  seqConArcMediaData MediaData;
+  /* electric data */
+  sConArcElecData ElecData;
+};
+
+typedef sequence <sConArcSetptData> seqConArcSetptData;
+
+typedef sequence <sConArcMeasData> seqConArcMeasData;
+
+/* EAF data structure for material feeding prediction results (setpoints) */
+
+struct sEAFMatFeedPredRes {
+  /* basket no */
+  long BasketNo;
+  /* step no */
+  long Step;
+  /* duration of step */
+  double DurStep;
+  /* duration until start of step since heat announcement */
+  double DurUntilStartOfStep;
+  /* duration until end of step since heat announcement */
+  double DurUntilEndOfStep;
+  /* total electric energy until end of step */
+  double Egy;
+  /* specific electric energy until end of step */
+  double SpecEgy;
+  /* absolute electric energy of step */
+  double ElecEgyStep;
+  /* base mass used for calculation of specific electric energy */
+  double BaseMass;
+  /* material feeding data sequence (containing rate and amount) */
+  seqBatch MatFeedData;
+  /* name of process phase */
+  string PhaseName;
+  /* specific electric energy of step */
+  double SpecEgyStep;
+};
+
+/* EAF data sequence for material feeding prediction results (setpoints) */
+
+typedef sequence <sEAFMatFeedPredRes> seqEAFMatFeedPredRes;
+
+struct sPhaseStatus {
+  string PhaseName;
+  /* Status = 0 means that this Phase hase not haven until no for the heat
+  Status = 1 means that this Phase started
+  Status = 2 means that this Phase is finished */
+  long Status;
+};
+
+typedef sequence <sPhaseStatus> seqPhaseStatus;
+
+struct sMaterial {
+  string MatCode;
+  double MatWeight;
+  /* Purpose of material */
+  string Purpose;
+  long SourceNo;
+  long Source;
+};
+
+typedef sequence <sMaterial> seqMaterials;
+
+struct sStirringData {
+  string Device;
+  seqGasData GasData;
+};
+
+typedef sequence <sStirringData> seqStirringData;
+
+struct sProductIdentification {
+  string HeatId;
+  string TreatId;
+  string OrderId;
+  string Plant;
+};
+
+/* Recipe and Source Data for all Recipes used for the model.
+Used for Recipe Information comming from level 1 and also from the Model.
+Not al data will be filled in all cases. This is depending on the situation (Result data/measured data). */
+
+struct sRecipe {
+  string RecipeName;
+  long RecipeNo;
+  string RecipeSource;
+  seqBatchPrio RecipeContent;
+  sMetTimeStamp TimeStamp;
+  sProductIdentification Product;
+  sRecipeProperties RecipeData;
+  double MatFeedRate;
+  /* ChargeMoment as e.g. ElecEnergy or O2 value*/
+  double ChargeMoment;
+  string RecipeName_Model;
+  long RecipeNo_Model;
+};
+
+typedef sequence <sRecipe> seqRecipeList;
+
+typedef sequence <sProductIdentification> seqProductIdentification;
+
+typedef sequence<sHMDCalc> seqHMDCalc;
+
+struct sHMDModelResult {
+  long TreatmentKind;
+  seqHMDCalc CalcAmount;
+  seqHMDCalc CalcFlow;
+  DEF::seqDouble SlagAmount;
+  DEF::seqDouble DurationDeslagging;
+  DEF::seqDouble TemperatureAfter;
+  DEF::seqDouble Cost;
+  DEF::seqDouble Duration;
+  long IWarn;
+};
+
+struct sRHModelResult {
+  long PhaseNo;
+  long Res_PhaseNoModel;
+  double TotDurPhase;
+  seqRecipeList Alloy;
+  double TempDiffAlloy;
+  seqAnalysis Analysis;
+  double SlagWeight;
+  double SteelWeight;
+  string PhaseCodeModel;
+  string PhaseName;
+  double HeatTemp;
+  double TempDiffPassive;
+  double OxygenAmount;
+  double OxygenFlow;
+  double PowderFlow;
+  double LanceDist;
+  double DurSinceHeatAnnouncement;
+  double RemDur;
+  double AlHeat;
+  double AlAlloy;
+  double AlDeox;
+  double VacuumPressure;
+  double DNTime;
+  double DHTime;
+  double TempDiffStep;
+  double LiftGasFlow;
+  long VacCurve;
+  long StirrIntensity;
+  double StirrGasFlow;
+  string StirrGasType;
+};
+
+typedef sequence <sRHModelResult> seqRHModelResult;
+
+typedef sequence<sHMDModelResult> seqHMDModelResult;
+
+struct sElecPhaseData {
+  long PhaseNo;
+  string PhaseName;
+  long PhaseType;
+  sDate StartTime;
+  sDate EndTime;
+  double Duration;
+  double ElecCons;
+  double ElecConsStart;
+  seqGasData GasData;
+  seqGasData GasDataStart;
+};
+
+typedef sequence <sElecPhaseData> seqElecPhaseData;
+
+struct sVDModelResult {
+  /* Phase number */
+  long PhaseNo;
+  /* Phase name */
+  string PhaseName;
+  /* Analysis at the end of this step */
+  seqAnalysis Analysis;
+  double SteelWeight;
+  double SlagWeight;
+  double HeatTemp;
+  /* Total duration of this phase */
+  double TotDurPhase;
+  /* Alloy additions */
+  seqRecipeList Alloy;
+  /* Temperature difference due to alloying */
+  double TempDiffAlloy;
+  /* overall temperature difference */
+  double TempDiffStep;
+  /* Temperature difference due to passive losses */
+  double TempDiffPassive;
+  /* Remaining duration of this phase */
+  double RemDur;
+  /* Al for heating */
+  double AlHeat;
+  /* Al for alloying */
+  double AlAlloy;
+  /* Al for deoxidation */
+  double AlDeox;
+  /* Remaining time for decarburisation */
+  double DCTime;
+  double VacuumPressure;
+  /* Remaining time for denitrogenisation */
+  double DNTime;
+  /* Remaining time for dehydrogenisation */
+  double DHTime;
+  /* Setpoint for stirring from database */
+  double StirringFlow;
+};
+
+typedef sequence <sVDModelResult> seqVDModelResult;
+
+struct sConArcBlowData {
+  /* O2 moment until end of step */
+  double O2MomentEndStep;
+  /* O2 flow until end of step */
+  double O2Flow;
+  /* Aim O2 amount for this step */
+  double O2Cons;
+  /* Top lance hight until end of step */
+  long TopLanceHeight;
+  /* Stirring N2 gas flow for a step */
+  double PorousPlugN2Flow;
+  /* Stirring Ar gas flow for a step */
+  double PorousPlugArFlow;
+  /* O2 moment on start of the phase */
+  double O2Start;
+};
+
+struct sConArcModelResult {
+  /* Phase Name */
+  string Phase;
+  /* Phase Number */
+  long PhaseNo;
+  sGenRes GenRes;
+  /* Base mass used for specific energy calculation */
+  double BaseMass;
+  /* 1 = true, 0 = false */
+  long PhaseActive;
+  /* Energy setpoints for electrical steps */
+  sConArcElecData ElectricalData;
+  /* Gas setpopints for blowing steps */
+  sConArcBlowData BlowingData;
+  /* materials used for current phase */
+  seqConArcMediaData MaterialData;
+  /* Step number */
+  long StepNo;
+  double DecarbRate;
+};
+
+struct sConArcMediaPredRes {
+  long StepNo;
+  /* Flows and Amounts for materials during curent step */
+  seqConArcMediaData MediaData;
+};
+
+typedef sequence <sConArcMediaPredRes> seqConArcMediaPredRes;
+
+typedef sequence <sConArcBlowData> seqConArcBlowData;
+
+typedef sequence <sConArcModelResult> seqConArcModelResult;
+
+struct sLTSStirrPredRes {
+  string StirrPhase;
+  long StirrIntensity;
+  double StirrFlow;
+  string GasType;
+  long Priority;
+  double DurStep;
+  string StirrIntensityCode;
+  long Enable;
+  long Order;
+  /* '0' -> Pattern
+  '1' -> Activity */
+  long isPatternOrActivity;
+  /* duration until end of step from heat announcement */
+  double DurUntilEndOfStep;
+  double DurUntilStartOfStep;
+  long VoltTap;
+  long ImpCurve;
+  double ElecEgy;
+  double SteelMass;
+  double SlagMass;
+  double Temp;
+};
+
+typedef sequence <sLTSStirrPredRes> seqLTSStirrPredRes;
+
+struct sBOFGlobalSetpoints {
+  /* Requested O2 Charge Moment for MainBlow1 Bin addition */
+  double O2VolStartMatAddn;
+  /* Requested O2 Charge Moment for MainBlow3 Bin addition during dynamic Blow */
+  double O2VolSartMatDynAddn;
+  /* Requested O2 Charge Moment for MainBlow1 Chute addition */
+  double O2VolStartScrapChute;
+  double O2VolSubLance;
+  double O2VolTotal;
+  double O2VolTotalLance;
+  double N2VolTotal;
+  /* Feed rate for Mainblow1 Bin addition */
+  double MatFeedRate;
+  /* Feed rate for Mainblow3 Bin Dynblow addition */
+  double MatDynFeedRate;
+  double AimTapWeightCalc;
+  double DurStartMatAddn;
+  double DurStartMatDynAddn;
+  double DurStartScrapChute;
+  double DurSubLance;
+  /* Requested O2 Charge Moment for MainBlow2 Bin addition */
+  double O2VolStartMat2ndAddn;
+  /* Requested O2 Charge Moment for MainBlow2 Bin addition */
+  double DurStartMat2ndAddn;
+  /* Feed rate for Mainblow2 Bin addition */
+  double MatFeedRate2ndAdd;
+  double AimSteelMassCalc;
+  /* ReblowCode : 0 = noReblow, 1 = carbon high, 2 = temperature low */
+  long ReblowCode;
+};
+
+typedef sequence <sBOFGlobalSetpoints> seqBOFGlobalSetpoints;
+
+struct sConArcGlobalSetpoints {
+  /* Requested O2 Charge Moment for MainBlow1 Bin addition */
+  double O2VolStartMatAddn;
+  /* Requested O2 Charge Moment for MainBlow3 Bin addition during dynamic Blow */
+  double O2VolSartMatDynAddn;
+  /* Requested O2 Charge Moment for MainBlow1 Chute addition */
+  double O2VolStartScrapChute;
+  double O2VolSubLance;
+  double O2VolTotal;
+  double O2VolTotalLance;
+  double N2VolTotal;
+  double ArVolTotal;
+  /* Feed rate for Mainblow1 Bin addition */
+  double MatFeedRate;
+  /* Feed rate for Mainblow3 Bin Dynblow addition */
+  double MatDynFeedRate;
+  double AimTapWeightCalc;
+  double AimSteelMassCalc;
+  double DurStartMatAddn;
+  double DurStartMatDynAddn;
+  double DurStartScrapChute;
+  double DurSubLance;
+  /* Requested O2 Charge Moment for MainBlow2 Bin addition */
+  double O2VolStartMat2ndAddn;
+  /* Requested O2 Charge Moment for MainBlow2 Bin addition */
+  double DurStartMat2ndAddn;
+  /* Feed rate for Mainblow2 Bin addition */
+  double MatFeedRate2ndAdd;
+  /* ReblowCode : 0 = noReblow, 1 = carbon high, 2 = temperature low */
+  long ReblowCode;
+  double DRICons;
+  double LimeCons;
+  double DoloCons;
+  double CoalCons;
+  double EgyTotal;
+};
+
+typedef sequence <sConArcGlobalSetpoints> seqConArcGlobalSetpoints;
+
+// for usage at PD_SAMPLE table
+struct sSample {
+  string MeasName;
+  double MeasValue;
+};
+
+typedef sequence <sSample> seqSample;
+
+// for usage of TorpedoData
+struct sTorpedoData {
+  long TorpedoNo;
+  double Weight;
+};
+
+typedef sequence <sTorpedoData> seqTorpedoData;
+
+//structure for saving Samle Ref
+typedef struct strSampleRef
+{
+  long mSteel;
+  long mSteelCalc;
+  long mSlag;
+  long mSlagCalc;
+  long mCarbon;
+  long mOxygen; 
+  long mHydrogen; 
+  long mCelogSlag;
+  long mAluminium; 
+  long mEMF;
+  long mTemp;
+  long mTempCalc;
+}sSampleRef;
+
+/* structure to handle tracked phase consumptions and durations */
+struct sPhaseDataReport {
+  string PhaseName;
+  long PhaseNo;
+  sDate StartTime;
+  sDate EndTime;
+  double Duration;
+  double ElecCons;
+  double ElecConsStart;
+  /* any gas type consumtion of a device */
+  seqDeviceGasData GasCons;
+  seqDeviceGasData GasConsStart;
+};
+
+/* sequence to keep and transport tracked phase data */
+typedef sequence <sPhaseDataReport> seqPhaseDataReport;
+
+/* structure to handle Equipment Life data */
+struct sEquipmentLifeData {
+  long EquipID;
+  long EquipPartID;
+  long EquipCounter1Life;
+  long EquipCounter2Life;
+  sDate ChangeTime;
+  double Weight;
+};
+/* sequence to keep and transport Equipment Life data */
+typedef sequence <sEquipmentLifeData> seqEquipmentLifeData;
+
+/* structure to transport restriction practice pointer(s) */
+struct sPPRestriction {
+  string PPDescription;
+  long PPNumber;
+};
+
+typedef sequence <sPPRestriction> seqPPRestriction;
+
+/* This structure describes heat in heat stack of a plant. */
+struct sHeatStack {
+  string ExternalHeatID;
+  string ExternalTreatID;
+  string HeatId;
+  string TreatId;
+  string OrderId;
+  string Plant;
+  long PlantNo;
+  /* actual heat status */
+  long HeatStatus;
+  /* scrap order status accordant to data base */
+  long ScrapOrderStatus;
+  /* hot metal order status accordant to data base */
+  long HotMetalOrderStatus;
+};
+
+/* Sequence contains heats which are currently in treatment 
+   or have „charge material calculated” status. 
+   Position in sequence is heat order 1,2,3... */
+typedef sequence <sHeatStack> seqHeatStack;
+
+struct sMediaConsumed {            
+  string ConsumerUnit ;                              
+  double N2Cons       ;
+  double O2Cons       ;
+  double WaterCons    ;
+  double AirCons      ;
+  double N2Flow       ;
+  double O2Flow       ;
+  double WaterFlow    ;
+  double AirFlow      ;
+};    
+typedef sequence <sMediaConsumed> seqMediaConsumed;
+
+struct sEnergyConsumed {            
+  string ConsumerUnit  ;                              
+  double Voltage       ;
+  double ElecCurrent   ;
+  double ActivePower   ;
+  double ReactivePower ;
+  double ApparentPower ;
+  double ActiveEnergy  ;
+};    
+typedef sequence <sEnergyConsumed> seqEnergyConsumed;
+
+struct sSAF_Bin {            
+  string FurnaceBinID  ;                              
+  string RecipeCode    ;
+  double Amount        ;
+};    
+typedef sequence <sSAF_Bin> seqSAF_Bin;
+
+struct sHarmonics { 
+  double Harmonics ;
+};    
+typedef sequence <sHarmonics> seqHarmonics;
+
+struct sWallTemp {
+  string Name;
+  double Temp;
+};
+typedef sequence <sWallTemp> seqWallTemp;
+
+/* structure describes one sourse of hot metal
+   poured into a ladle at pouring station */
+struct sHMPouringData {
+  /* Number of the torpedo car 
+     or -1 in case of remaining weight in ladle */
+  long SourceNo;
+  /* Poured weight from torpedo to ladle 
+     or rest weight in the ladle */
+  double Weight;
+  /* Hot metal temperature in torpedo 
+     or of rest in the ladle */
+  double Temperature;
+  /* Time of temperature measurement in torpedo 
+     or in ladle */
+  sDate TempTime;
+  /* Analysis of hot metal in torpedo or in ladle */
+  seqAnalysis Analysis;
+  /* Sample taken time in torpedo or in ladle */
+  sDate SampleTime;
+};
+
+/* Information of poured hot metal into ladle */
+typedef sequence <sHMPouringData> seqHMPouringData;
+
+
+interface iSMC_DataProvider : iData_Provider {
+  /* 
+  @roseuid 49EF3AB00282 */
+  seqAnalysis getAnalysis (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB0036D */
+  seqAnalysisData getAnalysisData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB1007F */
+  seqAODBlowPredRes getAODBlowPredRes (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB1016A */
+  seqAODGlobalSetpoints getAODGlobalSetpoints (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB10265 */
+  seqBatch getBatch (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB10350 */
+  seqBlowStatus getBlowStatus (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB20062 */
+  seqBOFBlowPredRes getBOFBlowPredRes (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB2015D */
+  seqBOFGlobalSetpoints getBOFGlobalSetpoints (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB20257 */
+  seqComputerModes getComputerModes (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB20352 */
+  seqConArcBlowData getConArcBlowData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB30065 */
+  seqConArcElecData getConArcElecData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB3015F */
+  seqConArcModelResult getConArcModelResult (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB3026A */
+  seqConArcMeasData getConArcMeasData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB30364 */
+  seqConArcMediaData getConArcMediaData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB40086 */
+  seqConArcSetptData getConArcSetptData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB40181 */
+  seqCoolWaterData getCoolWaterData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB4027C */
+  sDate getDate (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB40386 */
+  seqEAFBurnerPredRes getEAFBurnerPredRes (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB50099 */
+  //seqEAFElecPredRes getEAFElecPredRes (
+  //  in string Key,
+  //  in string Name
+  //  );
+    
+  /* 
+  @roseuid 49EF3AB501A3 */
+  seqEAFGasLancePredRes getEAFGasLancePredRes (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB502AD */
+  seqEAFProcessPredRes getEAFProcessPredRes (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB503B7 */
+  seqEAFMatFeed getEAFMatFeed (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB600DA */
+  seqEAFMatFeedPredRes getEAFMatFeedPredRes (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB601E4 */
+  seqElecPhaseData getElecPhaseData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB602EE */
+  seqGasAvail getGasAvail (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB70010 */
+  seqGasData getGasData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB7011B */
+  seqGasLanceData getGasLanceData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB70235 */
+  seqGasLanceGasAvail getGasLanceGasAvail (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB7034F */
+  seqHeatData getHeatData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB80071 */
+  seqHeatSchedule getHeatSchedule (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB8018B */
+  seqHeatSchedulePlant getHeatSchedulePlant (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB802A5 */
+  seqHMDModelResult getHMDModelResult (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB803AF */
+  seqInjectData getInjectData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB900E1 */
+  seqInjectLanceData getInjectLanceData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AB901FB */
+  seqEAFInjectLance getEAFInjectLance (
+    in string Key,
+    in string Name
+    );
+  
+    
+  /* 
+  @roseuid 49EF3AB90315 */
+  seqLFElecPredRes getLFElecPredRes (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABA0047 */
+  seqLFStirrPredRes getLFStirrPredRes (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABA0170 */
+  seqLiqMatReport getLiqMatReport (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABA028A */
+  seqMaterials getMaterials (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABA03A4 */
+  seqOrderData getOrderData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABB00E6 */
+  seqPhaseStatus getPhaseStatus (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABB020F */
+  seqPredRes getPredRes (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABB0339 */
+  seqProductIdentification getProductIdentification (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABC006B */
+  seqRecipeList getRecipeList (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABC0194 */
+  seqRHModelResult getRHModelResult (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABC02BE */
+  seqVDModelResult getVDModelResult (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABD0000 */
+  seqSampleData getSampleData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABD0129 */
+  seqStatus getStatus (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABD0253 */
+  seqStirringData getStirringData (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABD038C */
+  seqStringList getStringList (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABE00CE */
+  seqWasteGas getWasteGas (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABE0207 */
+  seqWireFeeder getWireFeeder (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3ABE0302 */
+  void setAnalysis (
+    in string Key,
+    in string Name,
+    in seqAnalysis NewData
+    );
+    
+  /* 
+  @roseuid 49EF3ABF00A1 */
+  void setAnalysisData (
+    in string Key,
+    in string Name,
+    in seqAnalysisData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3ABF0229 */
+  void setAODBlowPredRes (
+    in string Key,
+    in string Name,
+    in seqAODBlowPredRes NewData
+    );
+    
+  /* 
+  @roseuid 49EF3ABF03C0 */
+  void setAODGlobalSetpoints (
+    in string Key,
+    in string Name,
+    in seqAODGlobalSetpoints NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC0016F */
+  void setBatch (
+    in string Key,
+    in string Name,
+    in seqBatch NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC00316 */
+  void setBlowStatus (
+    in string Key,
+    in string Name,
+    in seqBlowStatus NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC100D5 */
+  void setBOFBlowPredRes (
+    in string Key,
+    in string Name,
+    in seqBOFBlowPredRes NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC1026C */
+  void setBOFGlobalSetpoints (
+    in string Key,
+    in string Name,
+    in seqBOFGlobalSetpoints NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC2002B */
+  void setComputerModes (
+    in string Key,
+    in string Name,
+    in seqComputerModes NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC201D2 */
+  void setConArcBlowData (
+    in string Key,
+    in string Name,
+    in seqConArcBlowData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC20379 */
+  void setConArcElecData (
+    in string Key,
+    in string Name,
+    in seqConArcElecData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC30147 */
+  void setConArcModelResult (
+    in string Key,
+    in string Name,
+    in seqConArcModelResult NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC302EE */
+  void setConArcMeasData (
+    in string Key,
+    in string Name,
+    in seqConArcMeasData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC400BD */
+  void setConArcMediaData (
+    in string Key,
+    in string Name,
+    in seqConArcMediaData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC40273 */
+  void setConArcSetptData (
+    in string Key,
+    in string Name,
+    in seqConArcSetptData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC50042 */
+  void setCoolWaterData (
+    in string Key,
+    in string Name,
+    in seqCoolWaterData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC501F9 */
+  void setDate (
+    in string Key,
+    in string Name,
+    in sDate NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC503BF */
+  void setEAFBurnerPredRes (
+    in string Key,
+    in string Name,
+    in seqEAFBurnerPredRes NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC6018D */
+  //void setEAFElecPredRes (
+  //  in string Key,
+  //  in string Name,
+  //  in seqEAFElecPredRes NewData
+  //  );
+    
+  /* 
+  @roseuid 49EF3AC60363 */
+  void setEAFGasLancePredRes (
+    in string Key,
+    in string Name,
+    in seqEAFGasLancePredRes NewData
+    );
+
+  void setEAFProcessPredRes (
+    in string Key,
+    in string Name,
+    in seqEAFProcessPredRes NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC70132 */
+  void setEAFInjectLance (
+    in string Key,
+    in string Name,
+    in seqEAFInjectLance NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC702E8 */
+  void setEAFMatFeed (
+    in string Key,
+    in string Name,
+    in seqEAFMatFeed NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC800B7 */
+  void setEAFMatFeedPredRes (
+    in string Key,
+    in string Name,
+    in seqEAFMatFeedPredRes NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC8026E */
+  void setElecPhaseData (
+    in string Key,
+    in string Name,
+    in seqElecPhaseData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC9003C */
+  void setGasAvail (
+    in string Key,
+    in string Name,
+    in seqGasAvail NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC90212 */
+  void setGasData (
+    in string Key,
+    in string Name,
+    in seqGasData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AC903D8 */
+  void setGasLanceData (
+    in string Key,
+    in string Name,
+    in seqGasLanceData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3ACA01B6 */
+  void setGasLanceGasAvail (
+    in string Key,
+    in string Name,
+    in seqGasLanceGasAvail NewData
+    );
+    
+  /* 
+  @roseuid 49EF3ACA037D */
+  void setHeatData (
+    in string Key,
+    in string Name,
+    in seqHeatData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3ACB016B */
+  void setHeatSchedule (
+    in string Key,
+    in string Name,
+    in seqHeatSchedule NewData
+    );
+    
+  /* 
+  @roseuid 49EF3ACB0340 */
+  void setHeatSchedulePlant (
+    in string Key,
+    in string Name,
+    in seqHeatSchedulePlant NewData
+    );
+    
+  /* 
+  @roseuid 49EF3ACC013E */
+  void setHMDModelResult (
+    in string Key,
+    in string Name,
+    in seqHMDModelResult NewData
+    );
+    
+  /* 
+  @roseuid 49EF3ACC0343 */
+  void setInjectData (
+    in string Key,
+    in string Name,
+    in seqInjectData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3ACD0140 */
+  void setInjectLanceData (
+    in string Key,
+    in string Name,
+    in seqInjectLanceData NewData
+    );
+  
+    
+  /* 
+  @roseuid 49EF3ACE0124 */
+  void setLFElecPredRes (
+    in string Key,
+    in string Name,
+    in seqLFElecPredRes NewData
+    );
+    
+  /* 
+  @roseuid 49EF3ACE0309 */
+  void setLFStirrPredRes (
+    in string Key,
+    in string Name,
+    in seqLFStirrPredRes NewData
+    );
+    
+  /* 
+  @roseuid 49EF3ACF0107 */
+  void setLiqMatReport (
+    in string Key,
+    in string Name,
+    in seqLiqMatReport NewData
+    );
+    
+  /* 
+  @roseuid 49EF3ACF02EC */
+  void setMaterials (
+    in string Key,
+    in string Name,
+    in seqMaterials NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD000EA */
+  void setOrderData (
+    in string Key,
+    in string Name,
+    in seqOrderData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD002CF */
+  void setPhaseStatus (
+    in string Key,
+    in string Name,
+    in seqPhaseStatus NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD100DC */
+  void setPredRes (
+    in string Key,
+    in string Name,
+    in seqPredRes NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD102D2 */
+  void setProductIdentification (
+    in string Key,
+    in string Name,
+    in seqProductIdentification NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD200DF */
+  void setRecipeList (
+    in string Key,
+    in string Name,
+    in seqRecipeList NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD202C4 */
+  void setRHModelResult (
+    in string Key,
+    in string Name,
+    in seqRHModelResult NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD300D2 */
+  void setVDModelResult (
+    in string Key,
+    in string Name,
+    in seqVDModelResult NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD302C7 */
+  void setSampleData (
+    in string Key,
+    in string Name,
+    in seqSampleData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD400E4 */
+  void setStatus (
+    in string Key,
+    in string Name,
+    in seqStatus NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD402F8 */
+  void setStirringData (
+    in string Key,
+    in string Name,
+    in seqStirringData NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD50105 */
+  void setStringList (
+    in string Key,
+    in string Name,
+    in seqStringList NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD5030A */
+  void setWasteGas (
+    in string Key,
+    in string Name,
+    in seqWasteGas NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD60127 */
+  void setWireFeeder (
+    in string Key,
+    in string Name,
+    in seqWireFeeder NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD6036B */
+  seqLTSStirrPredRes getLTSStirrPredRes (
+    in string Key,
+    in string Name
+    );
+    
+  /* 
+  @roseuid 49EF3AD700DB */
+  void setLTSStirrPredRes (
+    in string Key,
+    in string Name,
+    in seqLTSStirrPredRes NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD702F0 */
+  void setConArcGlobalSetpoints (
+    in string Key,
+    in string Name,
+    in seqConArcGlobalSetpoints NewData
+    );
+    
+  /* 
+  @roseuid 49EF3AD8015B */
+  seqConArcGlobalSetpoints getConArcGlobalSetpoints (
+    in string Key,
+    in string Name
+    );
+
+  void setSample (
+    in string Key,
+    in string Name,
+    in seqSample NewData
+    );
+    
+  seqSample getSample (
+    in string Key,
+    in string Name
+    );
+
+  void setPhaseDataReport (
+    in string Key,
+    in string Name,
+    in seqPhaseDataReport NewData
+    );
+    
+  seqPhaseDataReport getPhaseDataReport (
+    in string Key,
+    in string Name
+    );
+
+  void setTorpedoData (
+    in string Key,
+    in string Name,
+    in seqTorpedoData NewData
+    );
+
+  seqTorpedoData getTorpedoData (
+    in string Key,
+    in string Name
+    );
+
+  void setMediaConsumed (
+    in string Key,
+    in string Name,
+    in seqMediaConsumed NewData
+    );
+
+  seqMediaConsumed getMediaConsumed (
+    in string Key,
+    in string Name
+    );
+
+  void setEnergyConsumed (
+    in string Key,
+    in string Name,
+    in seqEnergyConsumed NewData
+    );
+
+  seqEnergyConsumed getEnergyConsumed (
+    in string Key,
+    in string Name
+    );
+
+  void setSAFBinData (
+    in string Key,
+    in string Name,
+    in seqSAF_Bin NewData
+    );
+
+  seqSAF_Bin getSAFBinData (
+    in string Key,
+    in string Name
+    );
+  void setHarmonics (
+    in string Key,
+    in string Name,
+    in seqHarmonics NewData
+    );
+
+  seqHarmonics getHarmonics (
+    in string Key,
+    in string Name
+    );
+
+  void setWallTemp (
+    in string Key,
+    in string Name,
+    in seqWallTemp NewData
+    );
+
+  seqWallTemp getWallTemp (
+    in string Key,
+    in string Name
+    );
+
+  void setPPRestriction (
+    in string Key,
+    in string Name,
+    in seqPPRestriction NewData
+    );
+    
+  seqPPRestriction getPPRestriction (
+    in string Key,
+    in string Name
+    );
+
+  void setHeatStack (
+    in string Key,
+    in string Name,
+    in seqHeatStack NewData
+    );
+
+  seqHeatStack getHeatStack (
+    in string Key,
+    in string Name
+    );
+
+  void setHMPouringData (
+    in string Key,
+    in string Name,
+    in seqHMPouringData MewData
+    );
+
+  seqHMPouringData getHMPouringData (
+    in string Key,
+    in string Name
+    );
+};
+
+#endif
+

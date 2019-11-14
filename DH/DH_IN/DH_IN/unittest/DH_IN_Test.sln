@@ -1,0 +1,111 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DH_IN_Test", "DH_IN_Test.vcproj", "{9B45FB68-2BFB-4B71-8725-21D08BAA8D79}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8} = {FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA} = {9BF0B144-3239-3CC9-A42C-BAF0926401AA}
+		{C4B00E58-C607-4911-9256-E81B366F84C2} = {C4B00E58-C607-4911-9256-E81B366F84C2}
+		{883C7874-DEB0-4881-95EE-E4B2E8DD840B} = {883C7874-DEB0-4881-95EE-E4B2E8DD840B}
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885} = {72925ED1-44FA-3AE5-AD4A-FF5C37F10885}
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10886} = {72925ED1-44FA-3AE5-AD4A-FF5C37F10886}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CBS_StdFrame", "..\..\..\..\CBS_StdFrame\CBS_StdFrame.vcproj", "{9BF0B144-3239-3CC9-A42C-BAF0926401AA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Data_Provider", "..\..\..\..\Data_Provider\Data_Provider.vcproj", "{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DH_General", "..\..\..\DH_General\DH_General.vcproj", "{883C7874-DEB0-4881-95EE-E4B2E8DD840B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SMC_DBClasses", "..\..\..\..\SMC_DBClasses\SMC_DBClasses.vcproj", "{72925ED1-44FA-3AE5-AD4A-FF5C37F10886}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SMC_Frame", "..\..\..\..\SMC_Frame\SMC_Frame.vcproj", "{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SMC_EventLogSystem", "..\..\..\..\SMC_EventLogSystem\SMC_EventLogSystem.vcproj", "{C4B00E58-C607-4911-9256-E81B366F84C2}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 8
+		SccProjectName0 = SAK
+		SccLocalPath0 = ..\\..\\..\\..
+		SccProvider0 = MSSCCI:ClearCase
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection0 = DH\\DH_IN\\DH_IN\\unittest\\
+		SolutionUniqueID = {39948782-193A-4C6C-A64D-7F1DA92EF0D0}
+		SccProjectUniqueName1 = DH_IN_Test.vcproj
+		SccLocalPath1 = ..\\..\\..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection1 = DH\\DH_IN\\DH_IN\\unittest\\
+		SccProjectUniqueName2 = ..\\..\\..\\..\\CBS_StdFrame\\CBS_StdFrame.vcproj
+		SccProjectName2 = CBS_StdFrame
+		SccLocalPath2 = ..\\..\\..\\..\\CBS_StdFrame
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\..\\..\\..\\Data_Provider\\Data_Provider.vcproj
+		SccProjectName3 = Data_Provider
+		SccLocalPath3 = ..\\..\\..\\..\\Data_Provider
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = ..\\..\\..\\DH_General\\DH_General.vcproj
+		SccLocalPath4 = ..\\..\\..\\DH_General
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = ..\\..\\..\\..\\SMC_DBClasses\\SMC_DBClasses.vcproj
+		SccLocalPath5 = ..\\..\\..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection5 = SMC_DBClasses\\
+		SccProjectUniqueName6 = ..\\..\\..\\..\\SMC_Frame\\SMC_Frame.vcproj
+		SccProjectName6 = SMC_Frame
+		SccLocalPath6 = ..\\..\\..\\..\\SMC_Frame
+		CanCheckoutShared = true
+		SccProjectUniqueName7 = ..\\..\\..\\..\\SMC_EventLogSystem\\SMC_EventLogSystem.vcproj
+		SccProjectName7 = SMC_EventLogSystem
+		SccLocalPath7 = ..\\..\\..\\..\\SMC_EventLogSystem
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{9B45FB68-2BFB-4B71-8725-21D08BAA8D79}.Debug.ActiveCfg = Debug|Win32
+		{9B45FB68-2BFB-4B71-8725-21D08BAA8D79}.Debug.Build.0 = Debug|Win32
+		{9B45FB68-2BFB-4B71-8725-21D08BAA8D79}.Release.ActiveCfg = Release|Win32
+		{9B45FB68-2BFB-4B71-8725-21D08BAA8D79}.Release.Build.0 = Release|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Debug.ActiveCfg = Debug|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Debug.Build.0 = Debug|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Release.ActiveCfg = Release|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Release.Build.0 = Release|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Debug.ActiveCfg = Debug|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Debug.Build.0 = Debug|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Release.ActiveCfg = Release|Win32
+		{FFBBA00E-3CC9-4B18-9DC6-578076F72CE8}.Release.Build.0 = Release|Win32
+		{883C7874-DEB0-4881-95EE-E4B2E8DD840B}.Debug.ActiveCfg = Debug|Win32
+		{883C7874-DEB0-4881-95EE-E4B2E8DD840B}.Debug.Build.0 = Debug|Win32
+		{883C7874-DEB0-4881-95EE-E4B2E8DD840B}.Release.ActiveCfg = Release|Win32
+		{883C7874-DEB0-4881-95EE-E4B2E8DD840B}.Release.Build.0 = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10886}.Debug.ActiveCfg = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10886}.Debug.Build.0 = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10886}.Release.ActiveCfg = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10886}.Release.Build.0 = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Debug.ActiveCfg = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Debug.Build.0 = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Release.ActiveCfg = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Release.Build.0 = Release|Win32
+		{C4B00E58-C607-4911-9256-E81B366F84C2}.Debug.ActiveCfg = Debug|Win32
+		{C4B00E58-C607-4911-9256-E81B366F84C2}.Debug.Build.0 = Debug|Win32
+		{C4B00E58-C607-4911-9256-E81B366F84C2}.Release.ActiveCfg = Release|Win32
+		{C4B00E58-C607-4911-9256-E81B366F84C2}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

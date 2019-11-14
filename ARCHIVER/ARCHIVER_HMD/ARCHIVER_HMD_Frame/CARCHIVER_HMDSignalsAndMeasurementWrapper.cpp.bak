@@ -1,0 +1,292 @@
+// Copyright (C) 2007 SMS Demag AG
+
+#include "iSMC_DataDefinitions_s.hh"
+#include "iSMC_DataProvider_S.hh"
+#include "cCBS_StdInitBase.h"
+#include "cCBS_StdEventLogFrameController.h"
+#include "cCBS_DBExc.h"
+#include "CSMC_EventLogFrameController.h"
+#include "CIntfData.h"
+#include "CPP_HEAT_PLANT.h"
+
+#include "CARCHIVER_HMDTask.h"
+#include "CARCHIVER_HMDSignalsAndMeasurementWrapper.h"
+
+//##ModelId=45D5A3E302C5
+CARCHIVER_HMDSignalsAndMeasurementWrapper::CARCHIVER_HMDSignalsAndMeasurementWrapper()
+:m_pGT_Mat_Purp(0)
+,m_pGT_Purp(0)
+,m_pPDH_Cycl_Meas_Data(0)
+
+{
+  // for cyclic codes
+  m_PurpList.insert("Carbide");
+  m_PurpList.insert("Lime");
+  m_PurpList.insert("Magnesium");
+
+  //m_PlantID = DEF_DB_PLANT::HMD;
+}
+
+//##ModelId=45D5A3E400AC
+CARCHIVER_HMDSignalsAndMeasurementWrapper::~CARCHIVER_HMDSignalsAndMeasurementWrapper()
+{
+}
+
+//##ModelId=45DAFAAA032D
+bool CARCHIVER_HMDSignalsAndMeasurementWrapper::doOnTempMeasurement(CEventMessage& Event)
+{
+  bool RetValue = false;
+
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();
+  std::string PlantID   = Event.getPlantID();
+  std::string OrderID   = Event.getOrderID();
+  std::string ActPlant  = m_pGC_Plant_Container->getPlant(PlantID);
+  long ActPlantNo = m_pGC_Plant_Container->getPlantNo(PlantID);
+
+  // Unified exception handling *******************************************************
+  std::string Scope("CARCHIVER_SignalsAndMeasurementWrapper::doOnTempMeasurement");
+  std::stringstream ExceptionMsg;
+  ExceptionMsg << "Handling event: " << Event.getSender()
+               << ", " << ProductID << ", " << HeatID
+               << ", " << TreatID   << ", " << DataKey;
+  //***********************************************************************************
+
+  try
+  {
+
+    seqGasData SeqGasData;
+    seqSampleData SeqSampleData;
+    // collect data from event data interface
+    setpDM_Interface(Event.getSender(),DM::EVENT);
+
+    SeqSampleData = CIntfData::ToCORBAType(m_pDM_Interface->getSampleData(DataKey.c_str(), DATA::SampleData));
+
+    // gas data are not available yet at DM
+//SS     handleTempOxyMeasurement(Event, SeqSampleData, SeqGasData);
+
+  }
+  catch (cCBS_DBExc &e)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+      Scope.c_str(), ExceptionMsg.str().c_str()); 
+    RetValue = false;
+    handleDBConnectionError();
+  }
+  catch(CORBA::SystemException& sExc) 
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,sExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(CORBA::Exception& cExc) 
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,cExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(...)
+  {
+    std::string Msg("Unknown exception:");
+    Msg += ExceptionMsg.str();
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, "",
+      Scope.c_str(), Msg.c_str()); 
+    RetValue = false;
+  }
+  return RetValue;
+}
+
+//##ModelId=45DAFBE201C2
+bool CARCHIVER_HMDSignalsAndMeasurementWrapper::doOnCyclicMeasurement(CEventMessage& Event)
+{
+  bool RetValue = false;
+
+  std::string ProductID = Event.getProductID();
+  std::string HeatID    = Event.getHeatID();
+  std::string TreatID   = Event.getTreatID();
+  std::string DataKey   = Event.getDataKey();
+  std::string Sender    = Event.getSender();
+  std::string PlantID   = Event.getPlantID();
+  std::string ActPlant  = m_pGC_Plant_Container->getPlant(PlantID);
+  long ActPlantNo = m_pGC_Plant_Container->getPlantNo(PlantID);
+
+  // Unified exception handling *******************************************************
+  std::string Scope("CARCHIVER_HMDSignalsAndMeasurementWrapper::doOnCyclicMeasurement");
+  std::stringstream ExceptionMsg;
+  ExceptionMsg << "Handling event: " << Event.getSender()
+               << ", " << ProductID << ", " << HeatID
+               << ", " << TreatID   << ", " << DataKey;
+  //***********************************************************************************
+  
+  try
+  {
+
+    log("Begin HMD Cyclical Measured Data ",3);
+    
+    setpDM_Interface(Sender,DM::PRODUCT);
+    double durSA = getDurationSince(m_pDM_Interface, ProductID.c_str(), DATA::HeatAnnounceTime);
+    double durSS = getDurationSince(m_pDM_Interface, ProductID.c_str(), DATA::HeatStartTime);
+    double AmountMagn    = m_pDM_Interface->getDouble(ProductID.c_str(), DATA::MagnAmount);
+    double AmountLime    = m_pDM_Interface->getDouble(ProductID.c_str(), DATA::LimeAmount);
+    double AmountCarb    = m_pDM_Interface->getDouble(ProductID.c_str(), DATA::CarbAmount);
+
+    setpDM_Interface(Sender,DM::PLANT);
+
+    log("*********************************",2);
+    log("showData from DM PlantInterface",2);
+//    log(CIntfData::getIntfDataContent(m_pDM_Interface,DEF_PLANT::Furnace),2);
+    log("*********************************",2);
+
+    long LanceHeight     = m_pDM_Interface->getLong(DEF_PLANT::Furnace, DATA::TopLanceHeight);
+    long BlowType        = m_pDM_Interface->getLong(DEF_PLANT::Furnace, DATA::HMDBlowType);
+    double FlowMagn      = m_pDM_Interface->getDouble(DEF_PLANT::Furnace, DATA::HMDBlowingRateMg);
+    double FlowLime      = m_pDM_Interface->getDouble(DEF_PLANT::Furnace, DATA::HMDBlowingRateLime);
+    double FlowCarb      = m_pDM_Interface->getDouble(DEF_PLANT::Furnace, DATA::HMDBlowingRateCarbide);
+    CDateTime now;
+
+    std::string CodeCarb;
+    std::string CodeLime;
+    std::string CodeMagn;
+
+    if ( m_pPP_Heat_Plant->select(HeatID, TreatID, ActPlant) )
+    {
+      std::set<std::string>::iterator it_purp;
+      for (it_purp = m_PurpList.begin(); it_purp != m_PurpList.end(); it_purp++)
+      {
+        std::string PurpCode = *it_purp;
+//SS         if (m_pGT_Purp->select(PurpCode, ActPlant, ActPlantNo))
+//SS         {
+//SS           if (m_pGT_Purp->getLastRow() == 1)
+//SS           {
+//SS             if (PurpCode == "Carbide")
+//SS               CodeCarb = m_pGT_Mat_Purp->getRelatedMatCode(PurpCode,m_pGT_Purp->getUNITGROUPNO(1));
+//SS             else if (PurpCode == "Lime")
+//SS               CodeLime = m_pGT_Mat_Purp->getRelatedMatCode(PurpCode,m_pGT_Purp->getUNITGROUPNO(1));
+//SS             else if (PurpCode == "Magnesium")
+//SS               CodeMagn = m_pGT_Mat_Purp->getRelatedMatCode(PurpCode,m_pGT_Purp->getUNITGROUPNO(1));
+//SS           }
+//SS           else
+//SS           {
+//SS             std::stringstream mes;
+//SS             mes << "ERORR: Multiple PurpCode definition " << PurpCode << " at Plant HMD " << ActPlantNo;
+//SS             log(mes.str(),1);
+//SS           }
+//SS         }
+//SS         else
+//SS         {
+//SS           std::stringstream SearchKey;
+//SS           SearchKey  <<  PurpCode << " " << ActPlant << " " << ActPlantNo;
+//SS           CSMC_EventLogFrame *pEventLog = CSMC_EventLogFrameController::getInstance()->getpEventLog();
+//SS           sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+//SS           pEventLog->EL_ErrorSearchingData(sMessage,SearchKey.str().c_str(),"GT_PURP");
+//SS         }
+       }// end for
+
+      m_pPDH_Cycl_Meas_Data->setHM_ID(HeatID);
+      m_pPDH_Cycl_Meas_Data->setTREATID(TreatID);
+      m_pPDH_Cycl_Meas_Data->setPLANT(ActPlant);
+	  m_pPDH_Cycl_Meas_Data->setREVTIME(now.toDBString());
+      m_pPDH_Cycl_Meas_Data->setDURSINCEHEATANNOUNCE(durSA);
+      m_pPDH_Cycl_Meas_Data->setDURSINCESTARTOFHEAT(durSS);
+//      m_pPDH_Cycl_Meas_Data->setLANCE_POSITION(LanceHeight);
+      m_pPDH_Cycl_Meas_Data->setTREATTYPE(BlowType);
+      m_pPDH_Cycl_Meas_Data->setFLOW_LIME(FlowLime);
+      m_pPDH_Cycl_Meas_Data->setFLOW_MG(FlowMagn);
+      m_pPDH_Cycl_Meas_Data->setFLOW_CARBIDE(FlowCarb);
+      m_pPDH_Cycl_Meas_Data->setCONS_LIME(AmountLime);
+      m_pPDH_Cycl_Meas_Data->setCONS_MG(AmountMagn);
+      m_pPDH_Cycl_Meas_Data->setCONS_CARBIDE(AmountCarb);
+      
+      if (m_pPDH_Cycl_Meas_Data->insert())
+      {
+        RetValue = true;
+        m_pPDH_Cycl_Meas_Data->commit();
+      }
+      else
+     {
+      m_pPDH_Cycl_Meas_Data->rollback();
+      log("ERROR: insert/update in PDH_Cycl_Meas_Data failed!",3);
+      RetValue = false;
+     }
+      
+    }
+    else
+    {
+      log("WARNING: Cannot write to m_pPDH_Cycl_Meas_Data because heat, treat and plant not available at m_pPP_Heat_Plant",2);
+    }
+
+
+    log("End HMD Cyclical Measured Data ",3);
+
+  } 
+  catch (cCBS_DBExc &e)
+  {
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, (e.getText()).c_str(),
+      Scope.c_str(), ExceptionMsg.str().c_str()); 
+    RetValue = false;
+    handleDBConnectionError();
+  }
+  catch(CORBA::SystemException& sExc) 
+  {
+	  cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,sExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(CORBA::Exception& cExc) 
+  {
+	  cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+    sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+    pEventLog->EL_ExceptionCaught(sMessage,cExc._name(),
+      Scope.c_str(), ExceptionMsg.str().c_str());
+    RetValue = false;
+  }
+  catch(...)
+  {
+    std::string Msg("Unknown exception:");
+    Msg += ExceptionMsg.str();
+    cCBS_StdEventLogFrame *pEventLog = cCBS_StdEventLogFrameController::getInstance()->getpEventLog();
+      sEventLogMessage sMessage = cCBS_StdEventLog::initMessage(__FILE__,__LINE__);
+      pEventLog->EL_ExceptionCaught(sMessage, "",
+      Scope.c_str(), Msg.c_str()); 
+    RetValue = false;
+  }
+  return RetValue;
+}
+
+//##ModelId=45D5A3EC01BE
+void CARCHIVER_HMDSignalsAndMeasurementWrapper::initDBClasses()
+{
+  CARCHIVER_SignalsAndMeasurementWrapper::initDBClasses();
+
+  cCBS_StdConnection *pConnection = getStdConnection();
+
+  m_pPDH_Cycl_Meas_Data    = new CPDH_CYCL_MEAS_DATA(pConnection);
+  m_pGT_Mat_Purp           = new CGT_MAT_PURP(pConnection);
+  m_pGT_Purp               = new CGT_PURP(pConnection);
+	m_pPP_Heat_Plant         = new CPP_HEAT_PLANT(pConnection);
+}
+
+//##ModelId=45D5A3EB028B
+void CARCHIVER_HMDSignalsAndMeasurementWrapper::deleteDBClasses()
+{
+  CARCHIVER_SignalsAndMeasurementWrapper::deleteDBClasses();
+
+  if (m_pPDH_Cycl_Meas_Data)    { delete m_pPDH_Cycl_Meas_Data; m_pPDH_Cycl_Meas_Data = 0; } 
+  if (m_pGT_Mat_Purp)           { delete m_pGT_Mat_Purp; m_pGT_Mat_Purp = 0; } 
+  if (m_pGT_Purp)               { delete m_pGT_Purp; m_pGT_Purp = 0; } 
+	 if (m_pPP_Heat_Plant)               { delete m_pPP_Heat_Plant; m_pPP_Heat_Plant = 0; } 
+}

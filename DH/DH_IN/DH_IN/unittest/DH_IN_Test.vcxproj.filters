@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9cc9e995-ed60-4380-92f4-a7a9ba1b378f}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{a0803d2e-6686-4d46-ae1f-a8d8bc453960}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{8ae7a768-6c06-4bf6-9253-b96c90537bcf}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{9ef3a088-0916-4342-9d5b-d82609d6d811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="INI Files">
+      <UniqueIdentifier>{2ed164ee-7e8c-4d3d-9183-e966200e8e9c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\cfg\DH\DH_L1_AOD_IN_Test.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\..\..\cfg\DH\DH_L1_EAF_IN_Test.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\..\..\cfg\DH\DH_L1_LF_IN_Test.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\..\..\cfg\DH\DH_LAB_IN_Test.ini">
+      <Filter>INI Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

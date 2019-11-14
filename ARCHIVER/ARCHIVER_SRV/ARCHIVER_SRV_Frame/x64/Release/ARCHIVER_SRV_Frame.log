@@ -1,0 +1,9 @@
+﻿  CARCHIVER_SRVEventHandler.cpp
+  CARCHIVER_SRVTask.cpp
+  CARCHIVER_SRVWrapper.cpp
+x:\smc\source\smc_frame\cdataconversion.h(355): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(374): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(627): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+x:\smc\source\smc_frame\cdataconversion.h(628): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  ARCHIVER_SRV_Frame.vcxproj -> X:\SMC\source\XPACT_SMC_BUILD\x64\Release\ARCHIVER_SRV_Frame.lib

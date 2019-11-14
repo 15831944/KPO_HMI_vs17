@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BackupUtility", "BackupUtility.vcproj", "{32F479D9-F0BE-46A3-8D7E-EEC8BB988827}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccProjectUniqueName0 = BackupUtility.vcproj
+		SccProjectName0 = BackupUtility
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:ClearCase
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{32F479D9-F0BE-46A3-8D7E-EEC8BB988827}.Debug.ActiveCfg = Debug|Win32
+		{32F479D9-F0BE-46A3-8D7E-EEC8BB988827}.Debug.Build.0 = Debug|Win32
+		{32F479D9-F0BE-46A3-8D7E-EEC8BB988827}.Release.ActiveCfg = Release|Win32
+		{32F479D9-F0BE-46A3-8D7E-EEC8BB988827}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

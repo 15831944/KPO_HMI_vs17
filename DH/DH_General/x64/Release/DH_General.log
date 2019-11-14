@@ -1,0 +1,7 @@
+﻿  Performing Custom Build Tools on X:\SMC\source\DH\DH_Interface\iDH_Interface.idl 
+  The system cannot find the path specified.
+  Performing Custom Build Tools on X:\SMC\source\DH\DH_Telcom_Interface\iDH_Telcom.idl 
+  The system cannot find the path specified.
+  Performing Custom Build Tools on X:\SMC\source\DM\DM_Interface\iDM_Interface.idl 
+  The system cannot find the path specified.
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets(209,5): error MSB6006: "cmd.exe" exited with code 3.

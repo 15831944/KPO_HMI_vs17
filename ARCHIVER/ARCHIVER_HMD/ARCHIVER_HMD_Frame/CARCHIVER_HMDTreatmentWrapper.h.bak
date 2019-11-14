@@ -1,0 +1,50 @@
+// Copyright (C) 2007 SMS Demag AG
+
+#if defined (_MSC_VER) && (_MSC_VER >= 1000)
+#pragma once
+#endif
+#ifndef _INC_CARCHIVER_HMDTREATMENTWRAPPER_45D5D76801F2_INCLUDED
+#define _INC_CARCHIVER_HMDTREATMENTWRAPPER_45D5D76801F2_INCLUDED
+
+#include "CARCHIVER_TreatmentWrapper.h"
+//#include "CPDH_HEAT_DATA.h"
+#include "CARCHIVER_HMDAnnouncementPresettings.h"
+//SS #include "CPP_GRADE_ANL.h"
+#include "CPD_LADLE_LIFE_DATA.h"
+#include "CGC_LADLE_PARTS.h"
+//#include "CPDH_ACTUAL_RES.h"
+//SS #include "CGC_PRD_STAT.h"
+//SS #include "CPD_REPORT.h"
+
+class CARCHIVER_HMDTreatmentWrapper 
+: public CARCHIVER_TreatmentWrapper
+{
+public:
+	bool doOnUpdateAimDepartureTime(CEventMessage& Event);
+	bool doOnHeatCancel(CEventMessage& Event);
+	bool doOnHeatDeparture(CEventMessage& Event);
+	bool doOnHeatAnnouncement(CEventMessage& Event);
+	bool doOnHeatStart(CEventMessage& Event);
+	bool doOnHeatEnd(CEventMessage& Event);
+	bool doOnHeatAnnounceStatus(CEventMessage& Event);
+  bool doOnChangeAimData(CEventMessage& Event);
+	CARCHIVER_HMDTreatmentWrapper();
+	virtual ~CARCHIVER_HMDTreatmentWrapper();
+
+protected:
+
+  CARCHIVER_HMDAnnouncementPresettings *m_pHMDPresettings;
+
+//	CPDH_HEAT_DATA *m_pPDH_Heat_Data;
+//SS  CPP_GRADE_ANL *m_pPP_Grade_Anl;
+  CGC_LADLE_PARTS *m_pGC_Ladle_Parts;
+//  CPDH_ACTUAL_RES *m_pPDH_Actual_Res;
+  CPD_LADLE_LIFE_DATA *m_pPD_Ladle_Life_Data;
+//SS  CGC_PRD_STAT *m_pGC_Prd_Stat;
+//SS  CPD_REPORT *m_pPD_Report;
+	virtual void deleteDBClasses();
+	virtual void initDBClasses();
+
+};
+
+#endif /* _INC_CARCHIVER_HMDTREATMENTWRAPPER_45D5D76801F2_INCLUDED */

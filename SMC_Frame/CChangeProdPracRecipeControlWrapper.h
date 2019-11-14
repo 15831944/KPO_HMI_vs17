@@ -1,0 +1,18 @@
+// Copyright (C) 2004 SMS Demag AG
+
+#if defined (_MSC_VER) && (_MSC_VER >= 1000)
+#pragma once
+#endif
+#ifndef _INC_CCHANGEPRODPRACRECIPECONTROLWRAPPER_411A5A5D038D_INCLUDED
+#define _INC_CCHANGEPRODPRACRECIPECONTROLWRAPPER_411A5A5D038D_INCLUDED
+
+//##ModelId=411A5A5D038D
+class CChangeProdPracRecipeControlWrapper 
+{
+public:
+	//##ModelId=411A5A7D00ED
+	bool doOnChangeProdPracRecipeControl();
+
+};
+
+#endif /* _INC_CCHANGEPRODPRACRECIPECONTROLWRAPPER_411A5A5D038D_INCLUDED */

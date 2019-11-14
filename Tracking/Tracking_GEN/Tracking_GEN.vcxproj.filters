@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{311aee12-8d26-4bfa-a6e5-d3c24fa13a3e}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="INI Files">
+      <UniqueIdentifier>{93e4d715-b718-47f6-9ab5-c3f499112cc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TSM Rule Sets">
+      <UniqueIdentifier>{f449eedb-a717-4415-8cf3-289cf88b37e6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\cfg\Tracking\Tracking_GEN.ini">
+      <Filter>INI Files</Filter>
+    </None>
+    <None Include="..\..\..\cfg\Tracking\TSM_GEN_RuleSet.asc">
+      <Filter>TSM Rule Sets</Filter>
+    </None>
+  </ItemGroup>
+</Project>

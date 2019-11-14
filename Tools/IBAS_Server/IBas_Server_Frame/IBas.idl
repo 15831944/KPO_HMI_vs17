@@ -1,0 +1,66 @@
+#ifndef IBAS_IDL
+#define IBAS_IDL
+
+#include "BasIntrf.idl"
+
+module IBAS 
+{
+  enum valueKind
+  {
+    e_kindLong
+    ,e_kindFloat
+    ,e_kindString
+  };
+
+  union u_Data switch ( valueKind )
+  {
+    case e_kindLong : long LongVal;
+    case e_kindFloat : float FloatVal;
+    case e_kindString : string StringVal;
+  };
+
+
+  struct NamedValue
+  {
+    string Tag;
+    u_Data Data;
+  };
+
+  typedef sequence< NamedValue >    seqValues;
+  typedef sequence< string >   seqLocks;
+
+  interface IBASIntrf : BASIntrf 
+  {
+    void setTelegram ( in seqValues taggedValues);
+			long forceFloat(in string tag, in float val)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+
+			long forceString(in string tag, in string val)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+
+			long forceLong(in string tag, in long val)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+
+			long forceFlag(in string tag, in long val)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+
+      boolean setLock  (in string tag, in boolean value)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+      boolean isLocked (in string tag)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+      
+      void    clearAllLocks ();
+
+      boolean getListOfLockedValues (out seqLocks list);
+
+  };
+};
+
+
+#endif

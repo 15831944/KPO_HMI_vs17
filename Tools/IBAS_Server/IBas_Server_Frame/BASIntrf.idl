@@ -1,0 +1,65 @@
+#ifndef __BASINTRF_IDL_
+#define __BASINTRF_IDL_ 
+
+
+#include "orb.idl"
+
+
+module IBAS {
+
+	struct IBAS_LastResponse        // this is for the last response time from every system
+	{
+		string	intName;							// name of the system plc1, plc2, plc3, tcs, l3, lab, prm, smc
+		string	lastTime;            	// time of last response in form cCBS_Time::toString(currentTime, timeStr, 25) ;
+		boolean status ;              // interface available = 1, not available = 0
+	};
+
+	typedef sequence <IBAS_LastResponse> seq_IBAS_LastResponses;
+
+	exception EXC_TagNotFound {
+	};
+
+	exception EXC_IncorrectTagType {
+	};
+
+	interface BASIntrf {
+			long getFloat(in string tag, out float val)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+
+			long getString(in string tag, out string val)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+
+			long getLong(in string tag, out long val)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+
+			long getFlag(in string tag, out long val)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+
+			long setFloat(in string tag, in float val)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+
+			long setString(in string tag, in string val)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+
+			long setLong(in string tag, in long val)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+
+			long setFlag(in string tag, in long val)
+				raises (IBAS::EXC_TagNotFound,
+								IBAS::EXC_IncorrectTagType);
+
+			long pulseFlag(in string tag, in long msec);
+
+			void getLastResponses(out seq_IBAS_LastResponses IBAS_LastResponses);
+	};
+
+};
+
+#endif

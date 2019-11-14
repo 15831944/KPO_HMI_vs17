@@ -1,0 +1,57 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FormattedID_Example", "FormattedID_Example.vcproj", "{32B5DE53-1156-4BB5-9525-552C272127DC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885} = {72925ED1-44FA-3AE5-AD4A-FF5C37F10885}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SMC_Frame", "..\..\SMC_Frame\SMC_Frame.vcproj", "{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CBS_StdFrame", "..\..\CBS_StdFrame\CBS_StdFrame.vcproj", "{9BF0B144-3239-3CC9-A42C-BAF0926401AA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccProjectName0 = FormattedID
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:ClearCase
+		CanCheckoutShared = true
+		SolutionUniqueID = {38FD6FE7-F364-4EB5-A05A-F0018EEF0778}
+		SccProjectUniqueName1 = FormattedID_Example.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\..\\SMC_Frame\\SMC_Frame.vcproj
+		SccProjectName2 = SMC_Frame
+		SccLocalPath2 = ..\\..\\SMC_Frame
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\..\\CBS_StdFrame\\CBS_StdFrame.vcproj
+		SccProjectName3 = CBS_StdFrame
+		SccLocalPath3 = ..\\..\\CBS_StdFrame
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{32B5DE53-1156-4BB5-9525-552C272127DC}.Debug.ActiveCfg = Debug|Win32
+		{32B5DE53-1156-4BB5-9525-552C272127DC}.Debug.Build.0 = Debug|Win32
+		{32B5DE53-1156-4BB5-9525-552C272127DC}.Release.ActiveCfg = Release|Win32
+		{32B5DE53-1156-4BB5-9525-552C272127DC}.Release.Build.0 = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Debug.ActiveCfg = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Debug.Build.0 = Debug|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Release.ActiveCfg = Release|Win32
+		{72925ED1-44FA-3AE5-AD4A-FF5C37F10885}.Release.Build.0 = Release|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Debug.ActiveCfg = Debug|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Debug.Build.0 = Debug|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Release.ActiveCfg = Release|Win32
+		{9BF0B144-3239-3CC9-A42C-BAF0926401AA}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

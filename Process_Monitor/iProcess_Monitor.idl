@@ -1,0 +1,46 @@
+#ifndef     __IPROCESS_MONITOR_DEFINED
+#define     __IPROCESS_MONITOR_DEFINED
+
+#include "Data_Provider\iData_Provider.idl"
+#include <CBS_Tasks/CBS.idl>
+
+
+module PM // Process Monitor
+{
+  typedef enum LOG_{
+    NOTHING,//0
+    ERROR_LEVEL,
+    WARNING_LEVEL,
+    INFO_LEVEL,
+    ELSE_LEVEL
+  }LOG;
+
+  const string HeatID = "HeatID";
+  const string TreatID = "TreatID";
+  const string CustHeatID = "CustHeatID";
+  const string CustTreatID = "CustTreatID";
+  const string OrderId = "OrderId";
+  const string PlantID = "PlantID";
+  const string ActModel = "ActModel";
+  const string Destination = "Destination";
+  const string Sender = "Sender";
+  const string PlantUnit = "PlantUnit";
+  const string PlantNo = "PlantNo";
+  const string NotValidValue = "NotAvailable";
+  const string TelegramName = "TelegramName";
+  const string ProductID = "ProductID";
+  const string PlantList = "PlantList";
+  const string Monitor = "Monitor";
+  const string Control = "Control";
+  const string ErrorsMax = "ErrorsMax";
+  const string ErrorCount = "ErrorCount";
+  const string Tracking = "Tracking";
+  const string EventTracking = "EventTracking";
+  const string EventIsSent = "EventIsSent";
+
+  typedef sequence <string> seqPlantList;
+
+  interface iProcess_Monitor : iData_Provider {
+  };
+};
+#endif

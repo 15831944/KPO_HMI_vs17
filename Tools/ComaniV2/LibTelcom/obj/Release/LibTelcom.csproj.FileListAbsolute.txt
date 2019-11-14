@@ -1,0 +1,3 @@
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\bin\Release\LibTelcom.dll
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\obj\Release\ResolveAssemblyReference.cache
+D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\LibTelcom\obj\Release\LibTelcom.dll

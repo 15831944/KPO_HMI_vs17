@@ -1,0 +1,223 @@
+27-8-2013 11:3:28.749	I : Interface: D:\JSW-SMS-3\SMC\source\TELCOM\TELCOM_IN\TELCOM_IN_Frame\Telcom_In.xml;  FILE: .\Form1.cpp; FUNCTION: simulator::Form1::loadInterface; LINE: 1157; .NET Output: ->Int32 loadInterface(System.String)->Void loadInterfaces()->Void initViewComponent()
+27-8-2013 11:3:29.233	I : All telegram objects removed.; FILE: ctlgcontainer.h; FUNCTION: freeTlg; LINE: 161
+27-8-2013 11:3:29.233	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.249	I : Telcom_In->Head For TelCom use only; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.249	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.249	I : Telcom_In->CCSSMC01 Required ladle arrival time from CCS; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.249	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.249	I : Telcom_In->CCSSMC02 Caster and Heat status to SMC; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.264	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.264	I : Telcom_In->EAL200 Acknowledge to Level 2; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.264	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.264	I : Telcom_In->EAL201 Watchdog to Level 2; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.264	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.264	I : Telcom_In->EAL203 Announcement of Heat; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.264	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.264	I : Telcom_In->EAL204 Start of Heat; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.264	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.264	I : Telcom_In->EAL205 End of Heat/Ladle Departure; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.264	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.264	I : Telcom_In->EAL206 Heat Cancellation; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.280	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.280	I : Telcom_In->EAL207 Tapping Start/End; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.280	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.280	I : Telcom_In->EAL209 Sample Taken; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.280	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.280	I : Telcom_In->EAL211 Temperature/CELOX Taken; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.280	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.280	I : Telcom_In->EAL214 Update Tap Ladle Data; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.280	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.280	I : Telcom_In->EAL215 Basket/Hotmetal Charging; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.296	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.296	I : Telcom_In->EAL216 Deslagging Status; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.296	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.296	I : Telcom_In->EAL217 Delay Status; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.296	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.296	I : Telcom_In->EAL220 Computer Modes; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.296	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.296	I : Telcom_In->EAL221 Furnace Status Roof/Gantry; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.311	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.311	I : Telcom_In->EAL222 Furnace Electrical Status; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.311	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.311	I : Telcom_In->EAL223 Electrical Values; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.311	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.311	I : Telcom_In->EAL224 Material Injection Availabilities; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.311	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.311	I : Telcom_In->EAL225 Material Injection Status; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.327	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.327	I : Telcom_In->EAL226 Material Injection Actual Values; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.327	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.327	I : Telcom_In->EAL227 Burner Gas Availabilities; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.327	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.327	I : Telcom_In->EAL228 Burner Status; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.343	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.343	I : Telcom_In->EAL229 Burner Actual Values; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.343	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.343	I : Telcom_In->EAL230 Oxygen Injection Availability; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.343	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.343	I : Telcom_In->EAL231 Oxygen Injector Status; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.343	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.343	I : Telcom_In->EAL232 Oxygen Injection Actual Values; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.358	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.358	I : Telcom_In->EAL233 Cooling Water Values; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.358	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.374	I : Telcom_In->EAL234 Status of Vessel Bottom Stirring; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.374	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.374	I : Telcom_In->EAL235 Actual Values of Vessel Stirring; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.374	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.374	I : Telcom_In->EAL236 Status of Ladle Bottom Stirring; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.374	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.374	I : Telcom_In->EAL237 Actual Values of Ladle Bottom Stirring; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.389	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.389	I : Telcom_In->EAL240 Flame Profiles; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.389	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.389	I : Telcom_In->EAL241 EAF Level 1 Parameter; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.389	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.389	I : Telcom_In->EAL250 Waste Gas Flows; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.405	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.405	I : Telcom_In->EAL260 Material Handling Report; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.421	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.421	I : Telcom_In->EAL261 Material Availabilities; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.421	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.421	I : Telcom_In->EAL262 Material Feeding System; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.436	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.436	I : Telcom_In->EAL263 Material Feeding Status; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.436	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.436	I : Telcom_In->EAL270 Liquid Material Handling Report; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.436	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.436	I : Telcom_In->EAL280 Phase Report; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.436	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.436	I : Telcom_In->EAL281 Basket Request; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.452	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.452	I : Telcom_In->L2HD00 Acknowledge to Level 2; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.452	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.452	I : Telcom_In->HDL201 Watchdog primary; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.452	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.452	I : Telcom_In->HDL203 Announcement of Heat; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.468	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.468	I : Telcom_In->HDL204 Start of Heat; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.468	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.468	I : Telcom_In->HDL205 End of Heat/LDL Departure; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.468	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.468	I : Telcom_In->HDL206 Heat Cancelled; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.468	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.468	I : Telcom_In->HDL209 Sample Taken; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.468	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.468	I : Telcom_In->HDL211 Temp is taken; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.483	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.483	I : Telcom_In->HDL213 Update Aim Departure Time; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.483	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.483	I : Telcom_In->HDL220 HMD Operation Modes; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.483	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.483	I : Telcom_In->HDL221 Plant Status; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.483	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.483	I : Telcom_In->HDL223 HMD Actual Values; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.499	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.499	I : Telcom_In->HDL260 Blowing Report; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.499	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.499	I : Telcom_In->HDL261 Material Availbilities for Powder; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.514	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.514	I : Telcom_In->HDL270 Liquid Material Handling Report; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.514	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.514	I : Telcom_In->HDL281 Treatment Steps; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.514	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.514	I : Telcom_In->L3SMC01 Cyclic alive telegram from L3; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.546	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.546	I : Telcom_In->L3SMC02 Heat Schedule From L3; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.546	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.546	I : Telcom_In->L3SMC03 Production Order Data; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.608	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.608	I : Telcom_In->L3SMC06 Steel Grade Code Definition; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.608	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.608	I : Telcom_In->L3SMC07 Delay Code Definition; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.624	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.624	I : Telcom_In->L3SMC08 Material Code Definition; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.624	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.624	I : Telcom_In->L3SMC09 Status Request; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.624	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.639	I : Telcom_In->LABSMC01 Cyclic alive telegram from LAB; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.639	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.639	I : Telcom_In->LABSMC02 Steel analysis data; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.655	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.655	I : Telcom_In->LABSMC03 Slag analysis data; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.655	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.655	I : Telcom_In->LFL200 Acknowledge to Level 2; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.655	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.655	I : Telcom_In->LFL201 Watchdog to Level 2; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.655	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.655	I : Telcom_In->LFL203 Announcement of Heat; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.671	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.671	I : Telcom_In->LFL204 Start of Heat; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.671	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.671	I : Telcom_In->LFL205 End of Heat/Ladle Departure; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.671	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.671	I : Telcom_In->LFL206 Heat Cancellation; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.671	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.671	I : Telcom_In->LFL209 Sample Taken; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.686	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.686	I : Telcom_In->LFL211 Temperature/CELOX Taken; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.686	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.686	I : Telcom_In->LFL212 Aim Temperature; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.686	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.686	I : Telcom_In->LFL213 Aim Departure Time; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.702	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.702	I : Telcom_In->LFL217 Delay Status; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.702	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.702	I : Telcom_In->LFL220 Computer Modes; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.702	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.702	I : Telcom_In->LFL221 Furnace Status; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.702	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.702	I : Telcom_In->LFL222 Electrical Status; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.718	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.718	I : Telcom_In->LFL223 Electrical Values; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.718	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.718	I : Telcom_In->LFL224 Bottom Stirring Status; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.718	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.718	I : Telcom_In->LFL225 Emergency Lance Stirring Status; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.733	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.733	I : Telcom_In->LFL226 Bottom Stirring Values; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.733	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.733	I : Telcom_In->LFL230 Cooling Water; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.733	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.733	I : Telcom_In->LFL240 LF Level 1Parameter; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.749	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.749	I : Telcom_In->LFL260 Material Handling Report; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.764	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.764	I : Telcom_In->LFL261 Material Availability; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.764	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.764	I : Telcom_In->LFL270 Liquid Material Handling Report; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.764	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.764	I : Telcom_In->LFL281 Treatment Steps; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.780	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.780	I : Telcom_In->L2SY00 For acknowledge, send to SCY; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.780	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.780	I : Telcom_In->SYL291 Watchdog to Level 2; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.780	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.780	I : Telcom_In->SYL292 Scrap Container Loading Results; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.780	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.796	I : Telcom_In->SYL293 Request for Download of Scrap Loading Instructions; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.796	I : Verctor - list of telegram (re)buildet.; FILE: ctlgcontainer.h; FUNCTION: BuildIndex; LINE: 175
+27-8-2013 11:3:29.796	I : Telcom_In->SYL295 Request for Download of Available Scrap Materials; FILE: cxmltlgprototypereader.cpp; FUNCTION: readOneTelegram; LINE: 219
+27-8-2013 11:3:29.827	I :      99  Telegrams found;  FILE: .\Form1.cpp; FUNCTION: simulator::Form1::loadInterface; LINE: 1173; .NET Output: ->Int32 loadInterface(System.String)->Void loadInterfaces()->Void initViewComponent()
+27-8-2013 11:3:29.843	I : All telegram objects removed.; FILE: ctlgcontainer.h; FUNCTION: freeTlg; LINE: 161
+27-8-2013 11:3:39.140	I : Client IPEndPoint created;  FILE: .\CSocketClient.cpp; FUNCTION: CSocketClient::buildConnection; LINE: 35; .NET Output: ->Int32 buildConnection(System.String, Int32)->Int32 buildConnAsClient()->Int32 buildConnection(Int32)
+27-8-2013 11:3:39.171	I : Receive thread (checks server connection) started;  FILE: .\CInterSenderManager.cpp; FUNCTION: CInterSenderManager::InvokeReceiveThread; LINE: 93; .NET Output: ->Void InvokeReceiveThread(Boolean)->Int32 buildConnAsClient()->Int32 buildConnection(Int32)
+27-8-2013 11:3:39.187	I : Connecting to: IP-Addres: 10.182.50.108 Port: 18510;  FILE: .\CSocketConnectionForm.cpp; FUNCTION: simulator::CSocketConnectionForm::OnClickButtConnection; LINE: 131; .NET Output: ->Void OnClickButtConnection(System.Object, System.EventArgs)->Void OnClick(System.EventArgs)->Void OnClick(System.EventArgs)
+27-8-2013 11:3:39.218	I : Start thread for waiting connection;  FILE: .\CSocketClient.cpp; FUNCTION: CSocketClient::waitingForConnection; LINE: 66; .NET Output: ->Void waitingForConnection(Int32)->Void waitingForConnection()->Void OnClickButtConnection(System.Object, System.EventArgs)
+27-8-2013 11:3:39.249	I : Client connected;  FILE: .\CSocketClient.cpp; FUNCTION: CSocketClient::waiting; LINE: 102; .NET Output: ->Void waiting()->Void ThreadStart_Context(System.Object)->Void Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)
+27-8-2013 11:3:43.749	I : Load:  D:\JSW-SMS-3\SMC\source\Tools\Simulator\Simulator\Executable\HMDS.szn;  FILE: .\CSenderForm.cpp; FUNCTION: simulator::CSenderForm::loadSzenarium; LINE: 507; .NET Output: ->Void loadSzenarium(System.String)->Void OnMenuFileSzenOpenClick(System.Object, System.EventArgs)->Void OnClick(System.EventArgs)
+27-8-2013 11:3:43.843	I : All telegrams in szenario removed;  FILE: .\CSzenarium.cpp; FUNCTION: CSzenarium::clearSzenarium; LINE: 562; .NET Output: ->Void clearSzenarium()->Void loadSzenarium(System.String, System.Collections.ArrayList)->Void loadSzenarium(System.String)
+27-8-2013 11:3:51.531	I : Send Tel: 70|1006|1|1|2013|8|20|10|30|45|0|0|126|01|-1|-1|-1|-1|-1|;  FILE: .\CSendItemsServer.cpp; FUNCTION: CSendItemsServer::sendSzenItem; LINE: 171; .NET Output: ->Void sendSzenItem(CInterSenderManager, CSzenItem)->Void sendOneTelegram()->Void ThreadStart_Context(System.Object)
+27-8-2013 11:37:4.137	I : Send Tel: 70|1006|1|1|2013|8|20|10|30|45|0|0|128|01|-1|-1|-1|-1|-1|;  FILE: .\CSendItemsServer.cpp; FUNCTION: CSendItemsServer::sendSzenItem; LINE: 171; .NET Output: ->Void sendSzenItem(CInterSenderManager, CSzenItem)->Void sendOneTelegram()->Void ThreadStart_Context(System.Object)
+27-8-2013 14:5:6.879	I : Send Tel: 70|1006|1|1|2013|8|20|10|30|45|0|0|128|01|-1|-1|-1|-1|-1|;  FILE: .\CSendItemsServer.cpp; FUNCTION: CSendItemsServer::sendSzenItem; LINE: 171; .NET Output: ->Void sendSzenItem(CInterSenderManager, CSzenItem)->Void sendOneTelegram()->Void ThreadStart_Context(System.Object)
+27-8-2013 14:5:12.316	I : Send Tel: 70|1006|1|1|2013|8|20|10|30|45|0|0|128|01|-1|-1|-1|-1|-1|;  FILE: .\CSendItemsServer.cpp; FUNCTION: CSendItemsServer::sendSzenItem; LINE: 171; .NET Output: ->Void sendSzenItem(CInterSenderManager, CSzenItem)->Void sendOneTelegram()->Void ThreadStart_Context(System.Object)
+27-8-2013 14:36:20.288	I : Send Tel: 70|1006|1|1|2013|8|20|10|30|45|0|0|128|01|-1|-1|-1|-1|-1|;  FILE: .\CSendItemsServer.cpp; FUNCTION: CSendItemsServer::sendSzenItem; LINE: 171; .NET Output: ->Void sendSzenItem(CInterSenderManager, CSzenItem)->Void sendOneTelegram()->Void ThreadStart_Context(System.Object)
+27-8-2013 15:55:10.235	I : Send Tel: 70|1006|1|1|2013|8|20|10|30|45|0|0|128|01|-1|-1|-1|-1|-1|;  FILE: .\CSendItemsServer.cpp; FUNCTION: CSendItemsServer::sendSzenItem; LINE: 171; .NET Output: ->Void sendSzenItem(CInterSenderManager, CSzenItem)->Void sendOneTelegram()->Void ThreadStart_Context(System.Object)
+27-8-2013 15:56:5.392	I : Send Tel: 70|1006|1|1|2013|8|20|10|30|45|0|0|129|01|-1|-1|-1|-1|-1|;  FILE: .\CSendItemsServer.cpp; FUNCTION: CSendItemsServer::sendSzenItem; LINE: 171; .NET Output: ->Void sendSzenItem(CInterSenderManager, CSzenItem)->Void sendOneTelegram()->Void ThreadStart_Context(System.Object)
+27-8-2013 16:15:26.118	I : Send Tel: 70|1006|1|1|2013|8|20|10|30|45|0|0|129|01|-1|-1|-1|-1|-1|;  FILE: .\CSendItemsServer.cpp; FUNCTION: CSendItemsServer::sendSzenItem; LINE: 171; .NET Output: ->Void sendSzenItem(CInterSenderManager, CSzenItem)->Void sendOneTelegram()->Void ThreadStart_Context(System.Object)
+27-8-2013 17:28:3.256	I : Closed Connection: IP - Address: 10.182.50.108Port: 18510;  FILE: .\CSocketConnectionForm.cpp; FUNCTION: simulator::CSocketConnectionForm::OnClickButtDisconnect; LINE: 230; .NET Output: ->Void OnClickButtDisconnect(System.Object, System.EventArgs)->Void OnClick(System.EventArgs)->Void OnClick(System.EventArgs)
+27-8-2013 17:28:3.537	I : Connection disconnected;  FILE: .\CSocketConnection.cpp; FUNCTION: CSocketConnection::disConnection; LINE: 168; .NET Output: ->Boolean disConnection()->Boolean disConnection()->Boolean disConnect()
+27-8-2013 17:28:3.553	I : Receive thread (checks server connection) aborted;  FILE: .\CInterSenderManager.cpp; FUNCTION: CInterSenderManager::InvokeReceiveThread; LINE: 101; .NET Output: ->Void InvokeReceiveThread(Boolean)->Boolean disConnect()->Boolean disConnect(Int32)
+27-8-2013 17:28:3.568	I : DisConnect was called!;  FILE: .\CInterConnection.cpp; FUNCTION: CInterConnection::disConnect; LINE: 199; .NET Output: ->Boolean disConnect()->Boolean disConnect(Int32)->Void OnClickButtDisconnect(System.Object, System.EventArgs)
+27-8-2013 17:28:7.678	I : DisConnect was called!;  FILE: .\CInterConnection.cpp; FUNCTION: CInterConnection::disConnect; LINE: 199; .NET Output: ->Boolean disConnect()->Void disConnectAll()->Void disSocketConnection()
+27-8-2013 17:28:10.475	I : All telegrams in szenario removed;  FILE: .\CSzenarium.cpp; FUNCTION: CSzenarium::clearSzenarium; LINE: 562; .NET Output: ->Void clearSzenarium()->Void updateSzenFile()->Void updateSzenFile()

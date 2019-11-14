@@ -1,0 +1,6 @@
+D:\JSW-SMS-3\SMC\source\EmailServer\SendEmailOutlookSmtp\bin\Release\SendEmailOutlookSmtp.dll
+D:\JSW-SMS-3\SMC\source\EmailServer\SendEmailOutlookSmtp\bin\Release\SendEmailOutlookSmtp.pdb
+D:\JSW-SMS-3\SMC\source\EmailServer\SendEmailOutlookSmtp\obj\Release\ResolveAssemblyReference.cache
+D:\JSW-SMS-3\SMC\source\EmailServer\SendEmailOutlookSmtp\obj\Release\SendEmailOutlookSmtp.dll
+V:\SMC\Release\bin\EmailServer\SendEmailOutlookSmtp.dll
+X:\SMC\source\EmailServer\SendEmailOutlookSmtp\obj\Release\SendEmailOutlookSmtp.dll

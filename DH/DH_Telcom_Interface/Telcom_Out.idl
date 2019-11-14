@@ -1,0 +1,656 @@
+
+struct HeaderType
+{
+    /* integer len=2 count=1 */
+  string MessageLength;
+    /* integer len=2 count=1 */
+  string MessageId;
+    /* integer len=2 count=1 */
+  string MessageCount;
+    /* integer len=2 count=1 */
+  string UnitNo;
+};
+
+module Telegram_Head
+{
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+};
+
+module Telegram_L2LF00
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* string len=2 count=1 */
+  const string Status = "Status";
+    /* string len=6 count=1 */
+  const string RcvMsgId = "RcvMsgId";
+    /* string len=4 count=1 */
+  const string ErrInf = "ErrInf";
+    /* string len=64 count=1 */
+  const string ErrMess = "ErrMess";
+};
+
+module Telegram_L2LF01
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+};
+
+module Telegram_L2LF01_WATCH_DOG
+{
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+    /* string len=23 count=1 */
+  const string CreateTime = "CreateTime";
+};
+
+module Telegram_L2LF03
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* string len=10 count=1 */
+  const string ProdOrderId = "ProdOrderId";
+    /* string len=12 count=1 */
+  const string SteelGradeCode = "SteelGradeCode";
+    /* integer len=4 count=8 */
+  const string ProdDate = "ProdDate";
+  typedef  sequence <long> t_ProdDate;
+    /* integer len=4 count=8 */
+  const string DepTime = "DepTime";
+  typedef  sequence <long> t_DepTime;
+    /* integer len=4 count=1 */
+  const string CarNo = "CarNo";
+    /* string len=4 count=1 */
+  const string LadleId = "LadleId";
+    /* string len=2 count=1 */
+  const string ShiftCode = "ShiftCode";
+    /* string len=2 count=1 */
+  const string CrewCode = "CrewCode";
+    /* string len=6 count=1 */
+  const string OperCode = "OperCode";
+    /* string len=20 count=1 */
+  const string RouteCode = "RouteCode";
+    /* number len=4 count=1 */
+  const string AimTemp = "AimTemp";
+    /* integer len=4 count=1 */
+  const string UpdateFlag = "UpdateFlag";
+    /* number len=4 count=1 */
+  const string LadleTareWeight = "LadleTareWeight";
+    /* number len=4 count=1 */
+  const string LadleGrossWeight = "LadleGrossWeight";
+    /* number len=4 count=1 */
+  const string SteelWeight = "SteelWeight";
+    /* string len=10 count=1 */
+  const string HeatIdCust = "HeatIdCust";
+    /* string len=2 count=1 */
+  const string TreatIdCust = "TreatIdCust";
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};
+
+module Telegram_L2LF05
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* integer len=4 count=1 */
+  const string StirrActivity = "StirrActivity";
+    /* integer len=4 count=1 */
+  const string StirrGasType = "StirrGasType";
+    /* integer len=4 count=1 */
+  const string StirrInt = "StirrInt";
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};
+
+module Telegram_L2LF06
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};
+
+module Telegram_L2LF07
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* integer len=4 count=1 */
+  const string ModeElec = "ModeElec";
+    /* integer len=4 count=1 */
+  const string ModeStirr = "ModeStirr";
+    /* integer len=4 count=1 */
+  const string ModeMat = "ModeMat";
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};
+
+module Telegram_L2LF20
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* integer len=4 count=1 */
+  const string AimVoltTap = "AimVoltTap";
+    /* integer len=4 count=1 */
+  const string AimCurveNo = "AimCurveNo";
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};
+
+module Telegram_L2LF20_VOLTAGE_TAP
+{
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+    /* string len=23 count=1 */
+  const string CreateTime = "CreateTime";
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* integer len=4 count=1 */
+  const string AimVoltTap = "AimVoltTap";
+    /* integer len=4 count=1 */
+  const string AimCurveNo = "AimCurveNo";
+    /* integer len=4 count=1 */
+  const string Spare = "Spare";
+};
+
+module Telegram_L2LF22
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};
+
+module Telegram_L2LF23
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* integer len=4 count=1 */
+  const string ActionFlag = "ActionFlag";
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};
+
+module Telegram_L2LF25
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* integer len=4 count=1 */
+  const string Type = "Type";
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};
+
+module Telegram_L2LF30
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* integer len=4 count=7 */
+  const string Enabled = "Enabled";
+  typedef  sequence <long> t_Enabled;
+    /* number len=4 count=7 */
+  const string RemDurStep = "RemDurStep";
+  typedef  sequence <double> t_RemDurStep;
+    /* integer len=4 count=7 */
+  const string ElecEnergyStep = "ElecEnergyStep";
+  typedef  sequence <long> t_ElecEnergyStep;
+    /* integer len=4 count=7 */
+  const string TempEndStep = "TempEndStep";
+  typedef  sequence <long> t_TempEndStep;
+    /* integer len=4 count=7 */
+  const string AimVoltTap = "AimVoltTap";
+  typedef  sequence <long> t_AimVoltTap;
+    /* integer len=4 count=7 */
+  const string AimCurveNo = "AimCurveNo";
+  typedef  sequence <long> t_AimCurveNo;
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};
+
+module Telegram_L2LF30_ELEC_PATT
+{
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+    /* string len=23 count=1 */
+  const string CreateTime = "CreateTime";
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* record len=56 count=7 */
+  const string ENTRY = "ENTRY";
+
+  struct sENTRY
+  {
+    long MessageCount;
+    long MessageIndex;
+    string HeatId;
+    string TreatId;
+    long ActivityType;
+    long StepNo;
+    long Enabled;
+    double RemDurStep;
+    long ElecEnergyStep;
+    long TempEndStep;
+    long AimVoltTap;
+    long AimCurveNo;
+    long Spare_1;
+    long Spare_2;
+  };
+  typedef  sequence <sENTRY> t_ENTRY;
+};
+
+module Telegram_L2LF31
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* integer len=4 count=20 */
+  const string PhaseNo = "PhaseNo";
+  typedef  sequence <long> t_PhaseNo;
+    /* integer len=4 count=20 */
+  const string Enabled = "Enabled";
+  typedef  sequence <long> t_Enabled;
+    /* number len=4 count=20 */
+  const string Duration = "Duration";
+  typedef  sequence <double> t_Duration;
+    /* integer len=4 count=20 */
+  const string StirrInt = "StirrInt";
+  typedef  sequence <long> t_StirrInt;
+    /* number len=4 count=20 */
+  const string StirrGasFlow = "StirrGasFlow";
+  typedef  sequence <double> t_StirrGasFlow;
+    /* integer len=4 count=20 */
+  const string StirrGasType = "StirrGasType";
+  typedef  sequence <long> t_StirrGasType;
+    /* integer len=4 count=20 */
+  const string StepPriority = "StepPriority";
+  typedef  sequence <long> t_StepPriority;
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};
+
+module Telegram_L2LF31_STIRR_PATT
+{
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+    /* string len=23 count=1 */
+  const string CreateTime = "CreateTime";
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* record len=52 count=20 */
+  const string ENTRY = "ENTRY";
+
+  struct sENTRY
+  {
+    long MessageCount;
+    long MessageIndex;
+    string HeatId;
+    string TreatId;
+    long PhaseNo;
+    long Enabled;
+    double Duration;
+    long StirrInt;
+    double StirrGasFlow;
+    long StirrGasType;
+    long StepPriority;
+    long Spare_1;
+    long Spare_2;
+  };
+  typedef  sequence <sENTRY> t_ENTRY;
+};
+
+module Telegram_L2LF40
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* string len=20 count=5 */
+  const string ParamName = "ParamName";
+  typedef  sequence <string> t_ParamName;
+    /* number len=4 count=5 */
+  const string ParamValue = "ParamValue";
+  typedef  sequence <double> t_ParamValue;
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};
+
+module Telegram_L2LF70
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* integer len=4 count=1 */
+  const string Source = "Source";
+    /* integer len=4 count=1 */
+  const string RecipeNo = "RecipeNo";
+    /* string len=10 count=10 */
+  const string MatCode = "MatCode";
+  typedef  sequence <string> t_MatCode;
+    /* integer len=4 count=10 */
+  const string MatWeight = "MatWeight";
+  typedef  sequence <long> t_MatWeight;
+    /* integer len=4 count=10 */
+  const string MatSequence = "MatSequence";
+  typedef  sequence <long> t_MatSequence;
+    /* integer len=4 count=10 */
+  const string FeedRate = "FeedRate";
+  typedef  sequence <long> t_FeedRate;
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};
+
+module Telegram_L2LF70_MAT_HANDL
+{
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+    /* string len=23 count=1 */
+  const string CreateTime = "CreateTime";
+    /* string len=10 count=1 */
+  const string HeatId = "HeatId";
+    /* string len=2 count=1 */
+  const string TreatId = "TreatId";
+    /* record len=54 count=300 */
+  const string ENTRY = "ENTRY";
+
+  struct sENTRY
+  {
+    long MessageCount;
+    long MessageIndex;
+    string HeatId;
+    string TreatId;
+    long Source;
+    long RecipeNo;
+    string MatCode;
+    long MatWeight;
+    long MatSequence;
+    long FeedRate;
+    long Spare_1;
+    long Spare_2;
+  };
+  typedef  sequence <sENTRY> t_ENTRY;
+};
+
+module Telegram_L2LF71
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};
+
+module Telegram_L2LF72
+{
+  /* struct sHeaderType{   */
+    /* integer len=2 count=1 */
+  const string MessageLength = "MessageLength";
+    /* integer len=2 count=1 */
+  const string MessageId = "MessageId";
+    /* integer len=2 count=1 */
+  const string MessageCount = "MessageCount";
+    /* integer len=2 count=1 */
+  const string UnitNo = "UnitNo";
+  /*} HeaderType  */
+    /* integer len=4 count=8 */
+  const string CreateTime = "CreateTime";
+  typedef  sequence <long> t_CreateTime;
+    /* integer len=4 count=5 */
+  const string Spare = "Spare";
+  typedef  sequence <long> t_Spare;
+};

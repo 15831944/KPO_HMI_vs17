@@ -1,0 +1,76 @@
+#********** Log-File Analyzer **********
+IDS_ANALYZER_START = Start automatic log file update
+IDS_ANALYZER_STOP = Stop automatic log file update
+IDS_ANALYZER_TIME_INPUT = Time in ms
+IDS_ANALYZER_ADD = Add telegramm or element to diagramm
+IDS_ANALYZER_REMOVE = Remove telegramm or element from diagramm
+IDS_ANALYZER_DIAGRAMM_TELLEGRAMMS = Change to telegramm diagramm
+IDS_ANALYZER_DIAGRAMM_VALUES = Change to values diagramm
+
+#************** Szenario ***************
+IDS_SZEN_SIMPLE_TIME =
+IDS_SZEN_REAL_TIME = 
+IDS_SZEN_DURATION = 
+IDS_SZEN_DUBLICATE = 
+IDS_SZEN_REMOVE =
+IDS_SZEN_SORT =
+IDS_SZEN_UP =
+IDS_SZEN_DOWN =
+IDS_SZEN_SWITCH_MODE = 
+
+#************ Szenario View ************
+IDS_SZEN_VIEW_ALL =
+IDS_SZEN_VIEW_ADD =
+IDS_SZEN_VIEW_UPDATE_TLG =  
+
+
+#************** Sender View *************
+IDS_SENDER_CONN_STATUS = 
+
+#************** RECIEVER VIEW ***********
+IDS_RECIEVER_SHOW_ALL = 
+IDS_RECIEVER_START_AND_STOP =
+IDS_RECIEVER_CLEAR_VIEW =
+
+#************** Connection **************
+IDS_CONN_CONNECT = 
+IDS_CONN_DESCONNECT =
+IDS_CONN_CLOSE =
+IDS_CONN_HELP =
+IDS_CONN_LOAD_CONF =
+IDS_CONN_SAFE_CONF =
+IDS_CONN_LOCAL_HOST =
+IDS_CONN_CLIENT =
+IDS_CONN_SERVER = 
+IDS_CONN_INTERFACE = 
+IDS_CONN_IP =
+IDS_CONN_PORT =
+
+#*************** FILTER *****************
+IDS_FILTER_OK = 
+IDS_FILTER_INPUT = 
+
+#**************** SORT ******************
+IDS_SORT_TELEGRAMM =
+IDS_SORT_BY = 
+IDS_SORT_ADD =
+IDS_SORT_REMOVE =
+IDS_SORT_SORT =
+IDS_SORT_BY_TIME =
+IDS_SORT_CLOSE =
+
+#*************** FIND *******************
+IDS_FIND_TELEGRAMM = 
+IDS_FIND_FIND = 
+IDS_FIND_CLOSE =
+IDS_FIND_ELEMENT =
+IDS_FIND_VALUE = 
+
+
+
+
+
+
+#***** Tlg and Interface Container *****
+
+#

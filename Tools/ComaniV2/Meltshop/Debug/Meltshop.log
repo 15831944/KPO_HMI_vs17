@@ -1,0 +1,43 @@
+﻿Build started 18/06/2014 4:05:12 PM.
+     1>Project "D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Meltshop\Meltshop.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\Meltshop.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         All outputs are up-to-date.
+       GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       CoreResGen:
+         All outputs are up-to-date.
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\Comani\bin\Debug\Meltshop.dll" /INCREMENTAL /NOLOGO /LIBPATH:"D:\JSW-SMS-3\SMC\packages\omniORB\lib\x86_win32" /LIBPATH:"D:\JSW-SMS-3\SMC\packages\CBS\lib" /LIBPATH:C:\oracle\product\11.2.0\client_1\precomp\lib /LIBPATH:V:\SMC\Debug\lib\HMI winmm.lib odbc32.lib odbccp32.lib wsock32.lib orasql11.lib "CBS-K_d.lib" omniORB4_rtd.lib omniDynamic416_rtd.lib omnithread34_rtd.lib CorbaObjects.lib PCSWrapper.lib /ASSEMBLYRESOURCE:Debug\Meltshop.DlgConfigureSource.resources /ASSEMBLYRESOURCE:Debug\Meltshop.DlgSelectConnection.resources /MANIFEST /ManifestFile:"Debug\Meltshop.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Comani\bin\Debug\Meltshop.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /DLL Debug\app.res
+         Debug\AssemblyInfo.obj
+         Debug\DlgConfigureSource.obj
+         Debug\DlgSelectConnection.obj
+         Debug\IBASConnection.obj
+         Debug\Meltshop.obj
+         Debug\MeltshopTelegram.obj
+         Debug\BASIntrf_dynSK.obj
+         Debug\BASIntrf_s.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+     1>BASIntrf_s.obj : warning LNK4248: unresolved typeref token (0100001C) for 'CORBA._objref_IDLType'; image may not run
+     1>BASIntrf_dynSK.obj : warning LNK4248: unresolved typeref token (01000018) for 'CORBA._objref_IDLType'; image may not run
+     1>Meltshop.obj : warning LNK4248: unresolved typeref token (01000030) for 'CORBA._objref_IDLType'; image may not run
+     1>IBASConnection.obj : warning LNK4248: unresolved typeref token (0100001F) for 'CORBA._objref_IDLType'; image may not run
+     1>DlgSelectConnection.obj : warning LNK4248: unresolved typeref token (0100002C) for 'CORBA._objref_IDLType'; image may not run
+     1>BASIntrf_s.obj : warning LNK4248: unresolved typeref token (01000016) for 'omniIdentity'; image may not run
+         Meltshop.vcxproj -> D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Meltshop\..\Comani\bin\Debug\Meltshop.dll
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"..\Comani\bin\Debug\Meltshop.dll;#2" /manifest Debug\Meltshop.dll.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\Meltshop.unsuccessfulbuild".
+         Touching "Debug\Meltshop.lastbuildstate".
+     1>Done Building Project "D:\JSW-SMS-3\SMC\source\Tools\ComaniV2\Meltshop\Meltshop.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:10.83

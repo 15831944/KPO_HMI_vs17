@@ -1,0 +1,14 @@
+Hello!
+You want to use telcom to receive telegrams? OK! Please follow next marks.
+
+1. To generate 'Telcom_In.xls' you can do it by hand or using macro 'CreateTelcomInOut.xla' from folder 'Macros'.
+   In first step in 'Telcom_In.xls' all sheets after sheet 5 will be deleted to let modul, header and PlantFieldType definitions.
+   PlantFieldType may not used in all interfaces therefor could be deleted before or after generation by hand.
+   'CreateTelcomInOut.xla' macro reads excel files defined in 'UsedInterfaces.txt' from current directory. 
+   This means that 'UsedInterfaces.txt' is project depended and has to be adapted. In files from 'UsedInterfaces.txt' 
+   are telegram-definitions which will be copied to 'Telcom_In.xls' started with sheet number 4 (to avoid copying modul and header definitions) till end.
+   All interface definitions are in '\SMC\doc\External_Communication\ExcelDefinitions\'
+
+2. Generation of telcom-specific code will be done by custom build step during compilation of this package.
+   For this step an environment variable must be set to be able to open excel.
+   For example MSOFFICE_DIR := C:\Program Files\Microsoft Office\Office10

@@ -1,0 +1,6 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets(1879,5): warning : The referenced project '..\..\..\TELCOM\TELCOM_IN\TELCOM_L3_IN_Frame\TELCOM_L3_IN_Frame.vcxproj' does not exist.
+  Performing Custom Build Tools on X:\SMC\source\DH\DH_Interface\iDH_Interface.idl 
+  The system cannot find the path specified.
+  Performing Custom Build Tools on X:\SMC\source\DH\DH_Telcom_Interface\Telcom_In.idl 
+  The system cannot find the path specified.
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets(209,5): error MSB6006: "cmd.exe" exited with code 3.

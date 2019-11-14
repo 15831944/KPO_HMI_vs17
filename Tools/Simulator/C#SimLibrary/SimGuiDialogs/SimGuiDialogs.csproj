@@ -1,0 +1,101 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30B0B2AB-0D2E-4FE3-8E2E-AB40129FD0CA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimGuiDialogs</RootNamespace>
+    <AssemblyName>SimGuiDialogs</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>V:\SMC\L2S1\simulator\debug\bin\SimGuiDialogs\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>V:\SMC\L2S1\simulator\release\bin\SimGuiDialogs\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CCorbaTypeOfNameView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CCorbaTypeOfNameView.Designer.cs">
+      <DependentUpon>CCorbaTypeOfNameView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMultiFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CMultiFilterForm.Designer.cs">
+      <DependentUpon>CMultiFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMultiFilterPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CMultiFilterPanel.Designer.cs">
+      <DependentUpon>CMultiFilterPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPositionCondForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPositionCondForm.Designer.cs">
+      <DependentUpon>CPositionCondForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPositionCondPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CPositionCondPanel.Designer.cs">
+      <DependentUpon>CPositionCondPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CCorbaTypeOfNameView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CCorbaTypeOfNameView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CMultiFilterForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CMultiFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CMultiFilterPanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CMultiFilterPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPositionCondForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CPositionCondForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPositionCondPanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CPositionCondPanel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
